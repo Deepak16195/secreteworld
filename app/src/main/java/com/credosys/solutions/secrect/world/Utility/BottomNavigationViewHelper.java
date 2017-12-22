@@ -36,14 +36,11 @@ public class BottomNavigationViewHelper  {
                 item.setShiftingMode(false);
                 // set once again checked value, so view will be updated
                 item.setChecked(item.getItemData().isChecked());
-
                 if(i==2) {
                     final View iconView = menuView.getChildAt(i).findViewById(icon);
                     final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
                     final DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-                    // set your height here
                     layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, displayMetrics);
-                    // set your width here
                     layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, displayMetrics);
                     iconView.setLayoutParams(layoutParams);
                 }

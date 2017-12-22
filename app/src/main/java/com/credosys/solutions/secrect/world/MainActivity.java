@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 //        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        BottomNavigationViewHelper.removeShiftMode(this,bottomNavigationView);
+//        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        BottomNavigationViewHelper.removeShiftMode(this,bottomNavigationView);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -103,30 +103,30 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-//                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_explore:
-//                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_more:
-//                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-                case R.id.navigation_request:
-//                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-
-                case R.id.navigation_my_diary:
-//                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
-        }
-    };
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            switch (item.getItemId()) {
+//                case R.id.navigation_home:
+////                    mTextMessage.setText(R.string.title_home);
+//                    return true;
+//                case R.id.navigation_explore:
+////                    mTextMessage.setText(R.string.title_dashboard);
+//                    return true;
+//                case R.id.navigation_more:
+////                    mTextMessage.setText(R.string.title_notifications);
+//                    return true;
+//                case R.id.navigation_request:
+////                    mTextMessage.setText(R.string.title_notifications);
+//                    return true;
+//
+//                case R.id.navigation_my_diary:
+////                    mTextMessage.setText(R.string.title_notifications);
+//                    return true;
+//            }
+//            return false;
+//        }
+//    };
 }
