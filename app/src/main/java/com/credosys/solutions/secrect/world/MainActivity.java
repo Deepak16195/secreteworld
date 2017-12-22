@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
 //        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+        BottomNavigationViewHelper.removeShiftMode(this,bottomNavigationView);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
