@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,15 +22,21 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.Toast;
+
 import com.credosys.solutions.secrect.world.Adapters.ViewPagerAdapter;
 import com.credosys.solutions.secrect.world.Utility.BottomNavigationViewHelper;
+import com.credosys.solutions.secrect.world.fragments.ExploreFragment;
 import com.credosys.solutions.secrect.world.fragments.HomeFragement;
+import com.credosys.solutions.secrect.world.fragments.MoreFragment;
+import com.credosys.solutions.secrect.world.fragments.MyDiaryFragment;
+import com.credosys.solutions.secrect.world.fragments.RequestFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 //    private TextView mTextMessage;
+ViewPager viewPager;
     private TabLayout tabLayout;
-    private ViewPager viewPager;
     int[] tabIcons={
             R.drawable.ic_home,
             R.drawable.ic_explore,
@@ -43,10 +50,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
+        viewPager = findViewById(R.id.viewpager);
+        setupViewPager();
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 //        mTextMessage = (TextView) findViewById(R.id.message);
@@ -54,23 +61,35 @@ public class MainActivity extends AppCompatActivity
 //        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 //        BottomNavigationViewHelper.removeShiftMode(this,bottomNavigationView);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Toast.makeText(MainActivity.this, String.valueOf(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
-    private void setupViewPager(ViewPager viewPager) {
+    private void setupViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new HomeFragement(), "HOME");
-        adapter.addFragment(new HomeFragement(), "EXPLORE");
-        adapter.addFragment(new HomeFragement(), "");
-        adapter.addFragment(new HomeFragement(), "REQUEST");
-        adapter.addFragment(new HomeFragement(), "MY DIARY");
         viewPager.setAdapter(adapter);
+
     }
     private void setupTabIcons(){
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);

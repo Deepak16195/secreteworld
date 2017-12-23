@@ -13,7 +13,7 @@
         android:layout_marginBottom="45dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true" />
+        />
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

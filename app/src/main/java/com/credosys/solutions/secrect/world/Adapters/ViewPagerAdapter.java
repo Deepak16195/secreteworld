@@ -7,6 +7,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 
+import com.credosys.solutions.secrect.world.Pojos.Home;
+import com.credosys.solutions.secrect.world.fragments.HomeFragement;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,36 +18,40 @@ import java.util.List;
  */
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    private final List<Fragment> mFragmentList = new ArrayList<>();
-    private final List<String> mFragmentTitleList = new ArrayList<>();
-    private final List<Drawable> mFragmentImageList = new ArrayList<>();
-    public ViewPagerAdapter(FragmentManager supportFragmentManager) {
-        super(supportFragmentManager);
+    private static int NUM_ITEMS = 5;
+    public ViewPagerAdapter(FragmentManager fragmentManager) {
+        super(fragmentManager);
     }
 
-    @Override
-    public Fragment getItem(int position) {
-        return mFragmentList.get(position);
-    }
-
+    // Returns total number of pages
     @Override
     public int getCount() {
-        return mFragmentList.size();
+        return NUM_ITEMS;
     }
 
+    // Returns the fragment to display for that page
     @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return false;
+    public Fragment getItem(int position) {
+        switch (position) {
+            case 0: // Fragment # 0 - This will show FirstFragment
+                return HomeFragement.newInstance(0, "Page # 1");
+            case 1: // Fragment # 0 - This will show FirstFragment different title
+                return HomeFragement.newInstance(1, "Page # 2");
+            case 2: // Fragment # 1 - This will show SecondFragment
+                return HomeFragement.newInstance(2, "Page # 3");
+            case 3: // Fragment # 1 - This will show SecondFragment
+                return HomeFragement.newInstance(3, "Page # 4");
+            case 4: // Fragment # 1 - This will show SecondFragment
+                return HomeFragement.newInstance(4, "Page # 5");
+            default:
+                return null;
+        }
     }
 
-    public void addFragment(Fragment fragment, String title) {
-        mFragmentList.add(fragment);
-        mFragmentTitleList.add(title);
-    }
+    // Returns the page title for the top indicator
     @Override
     public CharSequence getPageTitle(int position) {
-        return mFragmentTitleList.get(position);
+        return "Page " + position;
     }
-
 
 }
