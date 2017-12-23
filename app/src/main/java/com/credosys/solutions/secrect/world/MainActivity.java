@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new HomeFragement(), "HOME");
         adapter.addFragment(new HomeFragement(), "EXPLORE");
-        adapter.addFragment(new HomeFragement(), "MORE");
+        adapter.addFragment(new HomeFragement(), "");
         adapter.addFragment(new HomeFragement(), "REQUEST");
         adapter.addFragment(new HomeFragement(), "MY DIARY");
         viewPager.setAdapter(adapter);
