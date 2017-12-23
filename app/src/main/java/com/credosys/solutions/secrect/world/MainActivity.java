@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -16,20 +17,38 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import com.credosys.solutions.secrect.world.Adapters.ViewPagerAdapter;
 import com.credosys.solutions.secrect.world.Utility.BottomNavigationViewHelper;
+import com.credosys.solutions.secrect.world.fragments.HomeFragement;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 //    private TextView mTextMessage;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    int[] tabIcons={
+            R.drawable.ic_home,
+            R.drawable.ic_explore,
+            R.drawable.ic_more,
+            R.drawable.ic_request,
+            R.drawable.ic_diary
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
 
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+        setupTabIcons();
 //        mTextMessage = (TextView) findViewById(R.id.message);
 //        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
 //        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -44,6 +63,22 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new HomeFragement(), "HOME");
+        adapter.addFragment(new HomeFragement(), "EXPLORE");
+        adapter.addFragment(new HomeFragement(), "MORE");
+        adapter.addFragment(new HomeFragement(), "REQUEST");
+        adapter.addFragment(new HomeFragement(), "MY DIARY");
+        viewPager.setAdapter(adapter);
+    }
+    private void setupTabIcons(){
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
+        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

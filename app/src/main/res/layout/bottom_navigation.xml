@@ -12,121 +12,128 @@ android:layout_height="match_parent">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentTop="true" />
-<View
-    android:id="@+id/view_gradient"
-    android:background="@drawable/bg_gradient"
-    android:layout_marginBottom="45dp"
-    android:layout_alignParentBottom="true"
-    android:layout_width="match_parent"
-    android:layout_height="20dp"/>
-<RelativeLayout
-    android:id="@+id/bottom_first"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:layout_alignParentBottom="true"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/img_home"
-        app:srcCompat="@drawable/ic_home"
-        android:layout_centerHorizontal="true"
-        android:layout_width="35dp"
-        android:layout_height="35dp" />
-    <TextView
-        android:text="HOME"
-        android:textSize="12sp"
-        android:layout_below="@+id/img_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
-<RelativeLayout
-    android:id="@+id/bottom_second"
-    android:padding="10dp"
-    android:layout_toRightOf="@+id/bottom_first"
-    android:layout_alignParentBottom="true"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_toEndOf="@+id/bottom_first">
-    <ImageView
-        android:id="@+id/img_explore"
-        app:srcCompat="@drawable/ic_explore"
-        android:layout_centerHorizontal="true"
-        android:layout_width="35dp"
-        android:layout_height="35dp" />
-    <TextView
-        android:text="EXPLORE"
-        android:textSize="12sp"
-        android:layout_below="@+id/img_explore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:tabMode="fixed"
+        app:tabGravity="fill"/>
+<!--<View-->
+    <!--android:id="@+id/view_gradient"-->
+    <!--android:background="@drawable/bg_gradient"-->
+    <!--android:layout_marginBottom="45dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="20dp"/>-->
+<!--<RelativeLayout-->
+    <!--android:id="@+id/bottom_first"-->
+    <!--android:orientation="vertical"-->
+    <!--android:padding="10dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<ImageView-->
+        <!--android:id="@+id/img_home"-->
+        <!--app:srcCompat="@drawable/ic_home"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp" />-->
+    <!--<TextView-->
+        <!--android:text="HOME"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_below="@+id/img_home"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+<!--</RelativeLayout>-->
+<!--<RelativeLayout-->
+    <!--android:id="@+id/bottom_second"-->
+    <!--android:padding="10dp"-->
+    <!--android:layout_toRightOf="@+id/bottom_first"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_toEndOf="@+id/bottom_first">-->
+    <!--<ImageView-->
+        <!--android:id="@+id/img_explore"-->
+        <!--app:srcCompat="@drawable/ic_explore"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp" />-->
+    <!--<TextView-->
+        <!--android:text="EXPLORE"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_below="@+id/img_explore"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+<!--</RelativeLayout>-->
 
-<RelativeLayout
-    android:id="@+id/bottom_third"
-    android:padding="10dp"
-    android:layout_centerHorizontal="true"
-    android:layout_alignParentBottom="true"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/img_plus"
-        app:srcCompat="@drawable/ic_more"
-        android:layout_centerHorizontal="true"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
-    <TextView
-        android:id="@+id/txt_more"
-        android:text="MORE"
-        android:textSize="12sp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/img_plus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
-<RelativeLayout
-    android:id="@+id/bottom_fourth"
-    android:padding="10dp"
-    android:layout_toLeftOf="@+id/bottom_fifth"
-    android:layout_alignParentBottom="true"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_toStartOf="@+id/bottom_fifth">
-    <ImageView
-        android:id="@+id/img_send_request"
-        app:srcCompat="@drawable/ic_request"
-        android:layout_centerHorizontal="true"
-        android:layout_width="35dp"
-        android:layout_height="35dp" />
-    <TextView
-        android:text="REQUEST"
-        android:textSize="12sp"
-        android:layout_below="@+id/img_send_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+<!--<RelativeLayout-->
+    <!--android:id="@+id/bottom_third"-->
+    <!--android:padding="10dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<ImageView-->
+        <!--android:id="@+id/img_plus"-->
+        <!--app:srcCompat="@drawable/ic_more"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp" />-->
+    <!--<TextView-->
+        <!--android:id="@+id/txt_more"-->
+        <!--android:text="MORE"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_below="@+id/img_plus"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+<!--</RelativeLayout>-->
+<!--<RelativeLayout-->
+    <!--android:id="@+id/bottom_fourth"-->
+    <!--android:padding="10dp"-->
+    <!--android:layout_toLeftOf="@+id/bottom_fifth"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_toStartOf="@+id/bottom_fifth">-->
+    <!--<ImageView-->
+        <!--android:id="@+id/img_send_request"-->
+        <!--app:srcCompat="@drawable/ic_request"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp" />-->
+    <!--<TextView-->
+        <!--android:text="REQUEST"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_below="@+id/img_send_request"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+<!--</RelativeLayout>-->
 
-<RelativeLayout
-    android:id="@+id/bottom_fifth"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:layout_alignParentRight="true"
-    android:layout_alignParentBottom="true"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentEnd="true">
-    <ImageView
-        android:id="@+id/img_diary"
-        app:srcCompat="@drawable/ic_mydiary"
-        android:layout_centerHorizontal="true"
-        android:layout_width="35dp"
-        android:layout_height="35dp"/>
-    <TextView
-        android:text="MY DIARY"
-        android:textSize="12sp"
-        android:layout_below="@+id/img_diary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+<!--<RelativeLayout-->
+    <!--android:id="@+id/bottom_fifth"-->
+    <!--android:orientation="vertical"-->
+    <!--android:padding="10dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true">-->
+    <!--<ImageView-->
+        <!--android:id="@+id/img_diary"-->
+        <!--app:srcCompat="@drawable/ic_mydiary"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp"/>-->
+    <!--<TextView-->
+        <!--android:text="MY DIARY"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_below="@+id/img_diary"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+<!--</RelativeLayout>-->
 <!--<android.support.design.widget.BottomNavigationView-->
 <!--android:id="@+id/navigation"-->
 <!--android:layout_width="match_parent"-->
