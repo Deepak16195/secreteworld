@@ -1,5 +1,6 @@
 package com.credosys.solutions.secrect.world.Adapters;
 
+import android.app.DownloadManager;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,7 +9,11 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 
 import com.credosys.solutions.secrect.world.Pojos.Home;
+import com.credosys.solutions.secrect.world.fragments.ExploreFragment;
 import com.credosys.solutions.secrect.world.fragments.HomeFragement;
+import com.credosys.solutions.secrect.world.fragments.MoreFragment;
+import com.credosys.solutions.secrect.world.fragments.MyDiaryFragment;
+import com.credosys.solutions.secrect.world.fragments.RequestFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +27,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public ViewPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
     }
-
+    private String titles[]={"HOME","EXPLORE","","REQUEST","DIARY"};
     // Returns total number of pages
     @Override
     public int getCount() {
@@ -36,13 +41,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             case 0: // Fragment # 0 - This will show FirstFragment
                 return HomeFragement.newInstance(0, "Page # 1");
             case 1: // Fragment # 0 - This will show FirstFragment different title
-                return HomeFragement.newInstance(1, "Page # 2");
+                return ExploreFragment.newInstance();
             case 2: // Fragment # 1 - This will show SecondFragment
-                return HomeFragement.newInstance(2, "Page # 3");
+                return MoreFragment.newInstance();
             case 3: // Fragment # 1 - This will show SecondFragment
-                return HomeFragement.newInstance(3, "Page # 4");
+                return RequestFragment.newInstance();
             case 4: // Fragment # 1 - This will show SecondFragment
-                return HomeFragement.newInstance(4, "Page # 5");
+                return MyDiaryFragment.newInstance();
             default:
                 return null;
         }
@@ -51,7 +56,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     // Returns the page title for the top indicator
     @Override
     public CharSequence getPageTitle(int position) {
-        return "Page " + position;
+        return titles[position];
     }
 
 }
