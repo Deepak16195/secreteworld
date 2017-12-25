@@ -3,8 +3,10 @@ package com.credosys.solutions.secrect.world.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,9 +47,8 @@ public class HomeFragement extends Fragment {
         rv=view.findViewById(R.id.recyclerview_home);
         HomeAdapter homeAdapter=new HomeAdapter();
         rv.setAdapter(homeAdapter);
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rv.setLayoutManager(llm);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+        rv.setLayoutManager(staggeredGridLayoutManager);
         return view;
     }
 
