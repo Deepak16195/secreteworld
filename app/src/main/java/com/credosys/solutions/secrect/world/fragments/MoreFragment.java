@@ -14,7 +14,7 @@ import com.credosys.solutions.secrect.world.R;
  */
 
 public class MoreFragment extends Fragment {
-    public static Fragment getInstance() {
+    public static Fragment newInstance() {
         return new MoreFragment();
     }
     public MoreFragment() {

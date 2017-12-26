@@ -5,6 +5,7 @@
     android:id="@+id/nested_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.credosys.solutions.secrect.world.MainActivity"
     tools:showIn="@layout/app_bar_main">
@@ -12,11 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <android.support.v4.view.ViewPager
+        <TextView
+            android:id="@+id/txt_home_title"
+            android:text="BEST OF THE FOOD PLACES"
+            android:textStyle="bold"
+            android:textColor="#505050"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.credosys.solutions.secrect.world.NonSwipeableViewPager
             android:id="@+id/viewpager"
             android:background="@android:color/white"
             android:layout_width="match_parent"
-            android:layout_height="700dp" />
+            android:layout_height="500dp" />
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
