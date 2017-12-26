@@ -14,8 +14,6 @@
         android:id="@+id/recyclerview_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:paddingHorizontal="4dp"
         android:scrollbars="vertical" />
     <!--<TextView-->
