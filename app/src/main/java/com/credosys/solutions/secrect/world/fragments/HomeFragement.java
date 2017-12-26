@@ -11,8 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.credosys.solutions.secrect.world.Adapters.HomeAdapter;
+import com.credosys.solutions.secrect.world.MainActivity;
 import com.credosys.solutions.secrect.world.R;
 
 /*
@@ -31,6 +33,7 @@ public class HomeFragement extends Fragment {
         fragmentFirst.setArguments(args);
         return fragmentFirst;
     }
+
 
     // Store instance variables based on arguments passed
     @Override

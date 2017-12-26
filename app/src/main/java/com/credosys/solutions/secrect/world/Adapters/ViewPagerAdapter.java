@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 
@@ -22,7 +23,7 @@ import java.util.List;
  * Created by win7 on 21-Dec-17.
  */
 
-public class ViewPagerAdapter extends FragmentPagerAdapter {
+public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     private static int NUM_ITEMS = 5;
     public ViewPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);

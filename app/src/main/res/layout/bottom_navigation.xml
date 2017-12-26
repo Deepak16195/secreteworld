@@ -24,7 +24,7 @@
     <View
         android:id="@+id/view_gradient"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="45dp"
         android:background="@drawable/bg_gradient" />
@@ -35,12 +35,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:padding="10dp">
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/img_plus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="8dp"
             app:srcCompat="@drawable/ic_more" />

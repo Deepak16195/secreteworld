@@ -9,14 +9,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.credosys.solutions.secrect.world.Adapters.ViewPagerAdapter;
+import com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 //    private TextView mTextMessage;
+    ImageView imgHomeBanner;
+    TextView txtTitle;
 NonSwipeableViewPager viewPager;
     private TabLayout tabLayout;
     int[] tabIcons={
@@ -32,7 +38,8 @@ NonSwipeableViewPager viewPager;
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        viewPager = findViewById(R.id.viewpager);
+        bindViews();
+
         setupViewPager();
 
         tabLayout = findViewById(R.id.tabs);
@@ -49,25 +56,46 @@ NonSwipeableViewPager viewPager;
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+                Log.d("Onpageview","onPageScrolled"+position);
             }
 
             @Override
             public void onPageSelected(int position) {
-
+                Log.d("Onpageview","onPageSelected"+position);
+                if(position==0){
+                    imgHomeBanner.setVisibility(View.VISIBLE);
+                    setActionBarTitle("MUMBAI");}
+                else if(position==1){
+                    imgHomeBanner.setVisibility(View.GONE);
+                    setActionBarTitle("SECRETS AROUND YOU");
+                }
+                else if(position==2){
+                    imgHomeBanner.setVisibility(View.GONE);
+                    setActionBarTitle("MORE");}
+                else if(position==3){
+                    imgHomeBanner.setVisibility(View.GONE);
+                    setActionBarTitle("MY REQUEST");}
+                else if(position==4){
+                    imgHomeBanner.setVisibility(View.GONE);
+                    setActionBarTitle("MY DIARY");
+                }
+                else{setActionBarTitle("NO TITLE");}
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
+                Log.d("Onpageview","onPageScrollStateChanged"+state);
             }
         });
     }
-
+    private void bindViews(){
+        imgHomeBanner=findViewById(R.id.img_home_banner);
+        viewPager = findViewById(R.id.viewpager);
+        txtTitle=findViewById(R.id.txt_title);
+    }
     private void setupViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
-
     }
     private void setupTabIcons(){
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
@@ -85,7 +113,11 @@ NonSwipeableViewPager viewPager;
             super.onBackPressed();
         }
     }
-
+    public void setActionBarTitle(String title) {
+        Log.d("checktitle",title);
+//        getSupportActionBar().setTitle(title);
+        txtTitle.setText(title);
+    }
 
 
     @SuppressWarnings("StatementWithEmptyBody")

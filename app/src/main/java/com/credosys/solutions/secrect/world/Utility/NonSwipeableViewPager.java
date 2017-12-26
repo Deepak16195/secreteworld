@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrect.world;
+package com.credosys.solutions.secrect.world.Utility;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

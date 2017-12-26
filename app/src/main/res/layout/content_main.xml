@@ -22,7 +22,7 @@
             android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <com.credosys.solutions.secrect.world.NonSwipeableViewPager
+        <com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager
             android:id="@+id/viewpager"
             android:background="@android:color/white"
             android:layout_width="match_parent"
