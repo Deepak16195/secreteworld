@@ -21,7 +21,7 @@ import com.credosys.solutions.secrect.world.R;
  */
 
 public class ExploreFragment extends Fragment {
-    static int once=1;
+
 
     public static Fragment newInstance() {
         return new ExploreFragment();
@@ -46,19 +46,19 @@ public class ExploreFragment extends Fragment {
             final View headerView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_explore_tabs, null, false);
             LinearLayout linearLayoutOne = headerView.findViewById(R.id.ll_google_places);
             LinearLayout linearLayout2 = headerView.findViewById(R.id.ll_sworld_places);
-        if(once==1) {
+
             fragmentTab.getTabAt(0).setCustomView(linearLayoutOne);
             Log.d("addFragmentCalled", "0");
             fragmentTab.getTabAt(1).setCustomView(linearLayout2);
             Log.d("addFragmentCalled", "1");
-            once++;
-        }
-        Log.d("onceval",""+once);
+
+
         return v;
     }
     private void setupViewPager(ViewPager viewPager) {
         Log.d("ExploreFragment","setupViewPager");
-        ExploreViewPagerAdapter adapter = new ExploreViewPagerAdapter(getActivity().getSupportFragmentManager());
+
+        ExploreViewPagerAdapter adapter = new ExploreViewPagerAdapter(getChildFragmentManager());
 //        adapter.addFragment(new GooglePlacesFragment(), "ONE");
 //        adapter.addFragment(new SworldPlacesFragment(), "TWO");
         viewPager.setAdapter(adapter);
