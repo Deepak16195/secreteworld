@@ -16,8 +16,8 @@ import java.util.List;
  */
 
 public class ExploreViewPagerAdapter extends FragmentStatePagerAdapter {
-    private final List<Fragment> mFragmentList = new ArrayList<>();
-    private final List<String> mFragmentTitleList = new ArrayList<>();
+//    private final List<Fragment> mFragmentList = new ArrayList<>();
+//    private final List<String> mFragmentTitleList = new ArrayList<>();
     private static final int num=2;
     public ExploreViewPagerAdapter(FragmentManager manager) {
         super(manager);
@@ -41,14 +41,9 @@ public class ExploreViewPagerAdapter extends FragmentStatePagerAdapter {
         return num;
     }
 
-    public void addFragment(Fragment fragment, String title) {
-        mFragmentList.add(fragment);
-        mFragmentTitleList.add(title);
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return null;
-    }
+//    public void addFragment(Fragment fragment, String title) {
+//        mFragmentList.add(fragment);
+//        mFragmentTitleList.add(title);
+//    }
 
 }
