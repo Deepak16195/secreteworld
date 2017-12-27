@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import  android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,7 @@ public class ExploreFragment extends Fragment {
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);
 
+
             final View headerView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_explore_tabs, null, false);
             LinearLayout linearLayoutOne = headerView.findViewById(R.id.ll_google_places);
             LinearLayout linearLayout2 = headerView.findViewById(R.id.ll_sworld_places);
@@ -52,7 +54,8 @@ public class ExploreFragment extends Fragment {
             fragmentTab.getTabAt(1).setCustomView(linearLayout2);
             Log.d("addFragmentCalled", "1");
 
-
+//        final int pageMargin = (int) TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP, 8, getResources() .getDisplayMetrics());
+//        fragmentViewPager.setPageMargin(pageMargin);
         return v;
     }
     private void setupViewPager(ViewPager viewPager) {
