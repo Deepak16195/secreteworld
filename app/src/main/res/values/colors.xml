@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#256380</color>
     <color name="colorAccent">#FF4081</color>
     <color name="transparent">#00000000</color>
+    <color name="customBlue">#006FAD</color>
+    <color name="grayColor">#E6E6E6</color>
+    <color name="tab_background_selected">#006FAD</color>
+    <color name="tab_background_unselected">#E6E6E6</color>
 </resources>

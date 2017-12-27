@@ -3,29 +3,36 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="0dp"
+    android:background="@color/transparent"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/ll_google_places"
-        android:background="@drawable/round_bg"
+        android:background="@color/transparent"
         android:layout_weight="1"
         android:gravity="center"
+        android:tag="tag_google_ll"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <TextView
+            android:id="@+id/tab_google_places"
+            android:tag="txt_google"
             android:text="GOOGLE PLACES"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/ll_sworld_places"
-        android:background="@drawable/round_bg"
         android:gravity="center"
+        android:background="@color/transparent"
+        android:tag="tab_sworld_ll"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <TextView
+            android:id="@+id/sworld_places"
             android:text="SWORLD PLACES"
+            android:tag="txt_sworld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 </LinearLayout>

@@ -1,10 +1,12 @@
 package com.credosys.solutions.secrect.world.fragments;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import  android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.util.TypedValue;
@@ -12,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.credosys.solutions.secrect.world.Adapters.ExploreViewPagerAdapter;
 import com.credosys.solutions.secrect.world.MainActivity;
@@ -43,17 +46,39 @@ public class ExploreFragment extends Fragment {
 
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);
+//            fragmentTab.setTabTextColors(R.color.grayColor,R.color.customBlue);
+//        fragmentTab.setTabTextColors(
+//                ContextCompat.getColor(getActivity(), R.color.grayColor),
+//                ContextCompat.getColor(getActivity(), R.color.customBlue)
+//        );
+
+//            final View headerView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_explore_tabs, null, false);
+//            LinearLayout linearLayoutOne = headerView.findViewById(R.id.ll_google_places);
+//            LinearLayout linearLayout2 = headerView.findViewById(R.id.ll_sworld_places);
+
+//            fragmentTab.getTabAt(0).setCustomView(linearLayoutOne);
+//            Log.d("addFragmentCalled", "0");
+//            fragmentTab.getTabAt(1).setCustomView(linearLayout2);
+//            Log.d("addFragmentCalled", "1");
 
 
-            final View headerView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_explore_tabs, null, false);
-            LinearLayout linearLayoutOne = headerView.findViewById(R.id.ll_google_places);
-            LinearLayout linearLayout2 = headerView.findViewById(R.id.ll_sworld_places);
 
-            fragmentTab.getTabAt(0).setCustomView(linearLayoutOne);
-            Log.d("addFragmentCalled", "0");
-            fragmentTab.getTabAt(1).setCustomView(linearLayout2);
-            Log.d("addFragmentCalled", "1");
-
+//            fragmentTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//                @Override
+//                public void onTabSelected(TabLayout.Tab tab) {
+//
+//                }
+//
+//                @Override
+//                public void onTabUnselected(TabLayout.Tab tab) {
+//
+//                }
+//
+//                @Override
+//                public void onTabReselected(TabLayout.Tab tab) {
+//
+//                }
+//            });
 //        final int pageMargin = (int) TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP, 8, getResources() .getDisplayMetrics());
 //        fragmentViewPager.setPageMargin(pageMargin);
         return v;

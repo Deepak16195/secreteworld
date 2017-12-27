@@ -19,6 +19,7 @@ public class ExploreViewPagerAdapter extends FragmentStatePagerAdapter {
 //    private final List<Fragment> mFragmentList = new ArrayList<>();
 //    private final List<String> mFragmentTitleList = new ArrayList<>();
     private static final int num=2;
+    private String[] txtTitle={"GOOGLE PLACES","SWORLD PLACES"};
     public ExploreViewPagerAdapter(FragmentManager manager) {
         super(manager);
     }
@@ -34,6 +35,11 @@ public class ExploreViewPagerAdapter extends FragmentStatePagerAdapter {
                 return null;
         }
 //        return mFragmentList.get(position);
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return txtTitle[position];
     }
 
     @Override
