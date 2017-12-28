@@ -6,9 +6,12 @@
     android:orientation="vertical">
 
     <TextView
+        android:textStyle="bold"
+        android:textColor="#505050"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Best Food In mumbai" />
+        android:layout_margin="10dp"
+        android:text="BEST OF THE FOOD PLACES" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_home"

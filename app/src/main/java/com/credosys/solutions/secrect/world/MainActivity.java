@@ -1,7 +1,11 @@
 package com.credosys.solutions.secrect.world;
 
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,8 +25,8 @@ import com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 //    private TextView mTextMessage;
-    ImageView imgHomeBanner;
-    TextView txtTitle;
+    ImageView imgHomeBanner,imgGradient,imgPlus;
+    TextView txtTitle,txtMore;
 NonSwipeableViewPager viewPager;
     private TabLayout tabLayout;
     int[] tabIcons={
@@ -78,6 +82,19 @@ NonSwipeableViewPager viewPager;
                 else if(position==4){
                     imgHomeBanner.setVisibility(View.GONE);
                     setActionBarTitle("MY DIARY");
+                    tabLayout.setBackgroundColor(getResources().getColor(R.color.marineGreen));
+                    Resources res=getApplicationContext().getResources();
+                    imgGradient.setColorFilter(res.getColor(R.color.gradientColor));
+                    imgPlus.setColorFilter(res.getColor(R.color.cutomGreen));
+                    txtMore.setTextColor(Color.WHITE);
+
+                    for(int i=0;i<tabLayout.getTabCount();i++) {
+                        if(i!=2) {
+                            tabLayout.getTabAt(i).getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+                            tabLayout.setTabTextColors(Color.WHITE,Color.WHITE);
+                        }
+
+                    }
                 }
                 else{setActionBarTitle("NO TITLE");}
             }
@@ -87,11 +104,15 @@ NonSwipeableViewPager viewPager;
                 Log.d("Onpageview","onPageScrollStateChanged"+state);
             }
         });
+
     }
     private void bindViews(){
         imgHomeBanner=findViewById(R.id.img_home_banner);
         viewPager = findViewById(R.id.viewpager);
         txtTitle=findViewById(R.id.txt_title);
+        imgGradient=findViewById(R.id.iv_gradient);
+        imgPlus=findViewById(R.id.img_plus);
+        txtMore=findViewById(R.id.txt_more);
     }
     private void setupViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());

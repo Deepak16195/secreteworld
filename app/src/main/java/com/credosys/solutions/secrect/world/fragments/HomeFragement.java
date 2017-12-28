@@ -15,7 +15,11 @@ import android.widget.ImageView;
 
 import com.credosys.solutions.secrect.world.Adapters.HomeAdapter;
 import com.credosys.solutions.secrect.world.MainActivity;
+import com.credosys.solutions.secrect.world.Pojos.Home;
 import com.credosys.solutions.secrect.world.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Created by win7 on 21-Dec-17.
@@ -48,11 +52,25 @@ public class HomeFragement extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         rv=view.findViewById(R.id.recyclerview_home);
-        HomeAdapter homeAdapter=new HomeAdapter();
+        HomeAdapter homeAdapter=new HomeAdapter(tempList());
         rv.setAdapter(homeAdapter);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(staggeredGridLayoutManager);
         return view;
     }
 
+    List<Home> tempList(){
+        List<Home> al=new ArrayList<>();
+        al.add(new Home("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new Home("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
+        al.add(new Home("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new Home("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
+        al.add(new Home("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new Home("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
+        al.add(new Home("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new Home("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
+
+
+        return al;
+    }
 }
