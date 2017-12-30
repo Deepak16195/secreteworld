@@ -1,44 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#186A73"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#186A73"
     android:fitsSystemWindows="true">
 
     <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="top"-->
-        <!--android:layout_marginTop="16dp"-->
-        <!--android:gravity="center"-->
-        <!--android:orientation="vertical">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="top"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="vertical">-->
 
-        <!--<Button-->
-            <!--android:id="@+id/cardTypeBtn"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Fragments" />-->
+    <!--<Button-->
+    <!--android:id="@+id/cardTypeBtn"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Fragments" />-->
 
-        <!--<CheckBox-->
-            <!--android:id="@+id/checkBox"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="16dp"-->
-            <!--android:text="Scale" />-->
+    <!--<CheckBox-->
+    <!--android:id="@+id/checkBox"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:text="Scale" />-->
     <!--</LinearLayout>-->
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="330dp"
-        android:layout_gravity="top"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:paddingBottom="30dp"
-        android:paddingEnd="60dp"
-        android:paddingLeft="60dp"
-        android:paddingRight="60dp"
-        android:paddingStart="60dp" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_gravity="top"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="30dp"
+            android:paddingEnd="60dp"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:paddingStart="60dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HELP US TO"
+            android:fontFamily="@font/avenirltstd_light"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KNOW THE WORLD"
+            android:fontFamily="@font/avenirltstd_light"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingVertical="10dp"
+            android:background="@drawable/border_mydiary"
+            android:paddingHorizontal="35dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EXPLORE"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

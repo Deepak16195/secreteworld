@@ -1,23 +1,16 @@
 package com.credosys.solutions.secrect.world.fragments;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import  android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.credosys.solutions.secrect.world.Adapters.ExploreViewPagerAdapter;
-import com.credosys.solutions.secrect.world.MainActivity;
 import com.credosys.solutions.secrect.world.R;
 
 /**
@@ -43,6 +36,7 @@ public class ExploreFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_explore,null,false);
         final TabLayout fragmentTab=v.findViewById(R.id.fragment_tabs);
         final ViewPager fragmentViewPager = v.findViewById(R.id.fragment_viewpager);
+
 
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);

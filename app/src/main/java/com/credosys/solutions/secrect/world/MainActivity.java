@@ -1,11 +1,10 @@
 package com.credosys.solutions.secrect.world;
 
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,6 +24,7 @@ import com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 //    private TextView mTextMessage;
+Typeface tf ;
     ImageView imgHomeBanner,imgGradient,imgPlus;
     TextView txtTitle,txtMore;
 NonSwipeableViewPager viewPager;
@@ -39,6 +39,7 @@ NonSwipeableViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -68,33 +69,43 @@ NonSwipeableViewPager viewPager;
                 Log.d("Onpageview","onPageSelected"+position);
                 if(position==0){
                     imgHomeBanner.setVisibility(View.VISIBLE);
-                    setActionBarTitle("MUMBAI");}
+                    setActionBarTitle("MUMBAI");
+                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text,R.color.tab_layout_text);
+                }
                 else if(position==1){
                     imgHomeBanner.setVisibility(View.GONE);
                     setActionBarTitle("SECRETS AROUND YOU");
+
+                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==2){
                     imgHomeBanner.setVisibility(View.GONE);
-                    setActionBarTitle("MORE");}
+                    setActionBarTitle("MORE");
+                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text,R.color.tab_layout_text);
+                }
                 else if(position==3){
                     imgHomeBanner.setVisibility(View.GONE);
-                    setActionBarTitle("MY REQUEST");}
+                    setActionBarTitle("MY REQUEST");
+                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text,R.color.tab_layout_text);
+                }
                 else if(position==4){
                     imgHomeBanner.setVisibility(View.GONE);
                     setActionBarTitle("MY DIARY");
-                    tabLayout.setBackgroundColor(getResources().getColor(R.color.marineGreen));
-                    Resources res=getApplicationContext().getResources();
-                    imgGradient.setColorFilter(res.getColor(R.color.gradientColor));
-                    imgPlus.setColorFilter(res.getColor(R.color.cutomGreen));
-                    txtMore.setTextColor(Color.WHITE);
+                    setTabLayoutColors(R.color.marineGreen,R.color.gradientColor,R.color.cutomGreen,R.color.white,R.color.white,R.color.white);
 
-                    for(int i=0;i<tabLayout.getTabCount();i++) {
-                        if(i!=2) {
-                            tabLayout.getTabAt(i).getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
-                            tabLayout.setTabTextColors(Color.WHITE,Color.WHITE);
-                        }
-
-                    }
+//                    tabLayout.setBackgroundColor(getResources().getColor(R.color.marineGreen));
+//                    Resources res=getApplicationContext().getResources();
+//                    imgGradient.setColorFilter(res.getColor(R.color.gradientColor));
+//                    imgPlus.setColorFilter(res.getColor(R.color.cutomGreen));
+//                    txtMore.setTextColor(Color.WHITE);
+//
+//                    for(int i=0;i<tabLayout.getTabCount();i++) {
+//                        if(i!=2) {
+//                            tabLayout.getTabAt(i).getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+//                            tabLayout.setTabTextColors(Color.WHITE,Color.WHITE);
+//                        }
+//
+//                    }
                 }
                 else{setActionBarTitle("NO TITLE");}
             }
@@ -105,6 +116,22 @@ NonSwipeableViewPager viewPager;
             }
         });
 
+    }
+
+    void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int tabSelected, int tabUnseleced ){
+        Resources res=getApplicationContext().getResources();
+        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
+        imgGradient.setColorFilter(res.getColor(gradient));
+        imgPlus.setColorFilter(res.getColor(plusIcon));
+        txtMore.setTextColor(res.getColor(tabUnseleced));
+
+        for(int i=0;i<tabLayout.getTabCount();i++) {
+            if(i!=2) {
+                tabLayout.getTabAt(i).getIcon().setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+                tabLayout.setTabTextColors(res.getColor(tabUnseleced),res.getColor(tabSelected));
+            }
+
+        }
     }
     private void bindViews(){
         imgHomeBanner=findViewById(R.id.img_home_banner);
@@ -135,11 +162,14 @@ NonSwipeableViewPager viewPager;
         }
     }
     public void setActionBarTitle(String title) {
-        Log.d("checktitle",title);
-//        getSupportActionBar().setTitle(title);
         txtTitle.setText(title);
     }
 
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

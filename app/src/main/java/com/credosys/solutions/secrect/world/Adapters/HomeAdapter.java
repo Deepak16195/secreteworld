@@ -43,7 +43,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
         TextView txtTitle,txtDetail,txtName;
         MyViewHolder(View view){
             super(view);
-            txtTitle=view.findViewById(R.id.txt_title);
+            txtTitle=view.findViewById(R.id.txt_title_card);
             txtDetail=view.findViewById(R.id.txt_detail);
             txtName=view.findViewById(R.id.txt_user_name);
         }

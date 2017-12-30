@@ -31,7 +31,7 @@
                 android:padding="6dp">
 
                 <TextView
-                    android:id="@+id/txt_title"
+                    android:id="@+id/txt_title_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="SAGO OR SABUDANA KHICHDI"
@@ -43,7 +43,7 @@
                     android:id="@+id/txt_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_title"
+                    android:layout_below="@id/txt_title_card"
                     android:textSize="12sp"
                     android:maxLines="3"
                     android:text="Sabudana is one of those whose recipes that is made during religous..." />

@@ -11,4 +11,6 @@
     <color name="marineGreen">#256380</color>
     <color name="gradientColor">#1F667A</color>
     <color name="cutomGreen">#62B846</color>
+    <color name="white">#ffffff</color>
+    <color name="tab_layout_text">#3C3C3C</color>
 </resources>
