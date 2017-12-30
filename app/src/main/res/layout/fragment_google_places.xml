@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_famous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,15 +69,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_below="@+id/txt_slide_km"
-                android:paddingTop="3dp"
                 android:maxHeight="15dp"
                 android:maxWidth="15dp"
                 android:minHeight="15dp"
                 android:minWidth="15dp"
-                android:thumb="@drawable/ic_blue_dot"
+                android:paddingTop="3dp"
                 android:progressTint="#B4B4B4"
+                android:thumb="@drawable/ic_blue_dot"
 
-               />
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -100,20 +107,27 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/rb_location"
-            android:background="@drawable/ic_location"
+
+        <CheckBox
+            android:id="@+id/chk_location"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
+            android:layout_height="wrap_content"
+            android:button="@drawable/radio_current_location"
+            android:checked="false"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:paddingLeft="5dp"
             android:text="USE YOUR CURRENT LOCATION"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/rb_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="#505050" />
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_toRightOf="@+id/rb_location"-->
+           <!---->
+            <!--android:textSize="12sp"-->
+            <!--android:textStyle="bold" />-->
     </RelativeLayout>
 
 </LinearLayout>

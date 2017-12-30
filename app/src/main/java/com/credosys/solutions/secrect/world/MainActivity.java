@@ -150,7 +150,6 @@ NonSwipeableViewPager viewPager;
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
         tabLayout.getTabAt(4).setIcon(tabIcons[4]);
-
     }
     @Override
     public void onBackPressed() {
