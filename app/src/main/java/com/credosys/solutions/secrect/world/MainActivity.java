@@ -1,7 +1,5 @@
 package com.credosys.solutions.secrect.world;
 
-import android.content.res.Resources;
-import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -13,21 +11,24 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.credosys.solutions.secrect.world.Adapters.ViewPagerAdapter;
+import com.credosys.solutions.secrect.world.Adapters.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 //    private TextView mTextMessage;
 Typeface tf ;
     ImageView imgHomeBanner,imgGradient,imgPlus;
     TextView txtTitle,txtMore;
-NonSwipeableViewPager viewPager;
+    NonSwipeableViewPager viewPager;
+    LinearLayout navOne,navTwo,navThree,navFour,navFive;
     private TabLayout tabLayout;
     int[] tabIcons={
             R.drawable.ic_home,
@@ -75,7 +76,6 @@ NonSwipeableViewPager viewPager;
                 else if(position==1){
                     imgHomeBanner.setVisibility(View.GONE);
                     setActionBarTitle("SECRETS AROUND YOU");
-
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==2){
@@ -92,20 +92,6 @@ NonSwipeableViewPager viewPager;
                     imgHomeBanner.setVisibility(View.GONE);
                     setActionBarTitle("MY DIARY");
                     setTabLayoutColors(R.color.marineGreen,R.color.gradientColor,R.color.cutomGreen,R.color.white,R.color.white,R.color.white);
-
-//                    tabLayout.setBackgroundColor(getResources().getColor(R.color.marineGreen));
-//                    Resources res=getApplicationContext().getResources();
-//                    imgGradient.setColorFilter(res.getColor(R.color.gradientColor));
-//                    imgPlus.setColorFilter(res.getColor(R.color.cutomGreen));
-//                    txtMore.setTextColor(Color.WHITE);
-//
-//                    for(int i=0;i<tabLayout.getTabCount();i++) {
-//                        if(i!=2) {
-//                            tabLayout.getTabAt(i).getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
-//                            tabLayout.setTabTextColors(Color.WHITE,Color.WHITE);
-//                        }
-//
-//                    }
                 }
                 else{setActionBarTitle("NO TITLE");}
             }
@@ -119,19 +105,19 @@ NonSwipeableViewPager viewPager;
     }
 
     void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int tabSelected, int tabUnseleced ){
-        Resources res=getApplicationContext().getResources();
-        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
-        imgGradient.setColorFilter(res.getColor(gradient));
-        imgPlus.setColorFilter(res.getColor(plusIcon));
-        txtMore.setTextColor(res.getColor(tabUnseleced));
-
-        for(int i=0;i<tabLayout.getTabCount();i++) {
-            if(i!=2) {
-                tabLayout.getTabAt(i).getIcon().setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-                tabLayout.setTabTextColors(res.getColor(tabUnseleced),res.getColor(tabSelected));
-            }
-
-        }
+//        Resources res=getApplicationContext().getResources();
+//        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
+//        imgGradient.setColorFilter(res.getColor(gradient));
+//        imgPlus.setColorFilter(res.getColor(plusIcon));
+//        txtMore.setTextColor(res.getColor(tabUnseleced));
+//        for(int i=0;i<tabLayout.getTabCount();i++) {
+//            if(i!=2) {
+//
+//                tabLayout.getTabAt(i).getIcon().setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+//                tabLayout.setTabTextColors(res.getColor(tabUnseleced),res.getColor(tabSelected));
+//            }
+//
+//        }
     }
     private void bindViews(){
         imgHomeBanner=findViewById(R.id.img_home_banner);
@@ -140,16 +126,30 @@ NonSwipeableViewPager viewPager;
         imgGradient=findViewById(R.id.iv_gradient);
         imgPlus=findViewById(R.id.img_plus);
         txtMore=findViewById(R.id.txt_more);
+
+        View navView= LayoutInflater.from(this).inflate(R.layout.navigation,null,false);
+        navOne=navView.findViewById(R.id.nav_one);
+        navTwo=navView.findViewById(R.id.nav_two);
+        navThree=navView.findViewById(R.id.nav_three);
+        navFour=navView.findViewById(R.id.nav_four);
+        navFive=navView.findViewById(R.id.nav_five);
+
+        imgPlus.setOnClickListener(this);
     }
     private void setupViewPager() {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        BottomNavigationViewPagerAdapter adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
     }
     private void setupTabIcons(){
-        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
-        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
+//        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+//        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+//        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
+//        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
+        tabLayout.getTabAt(0).setCustomView(navOne);
+        tabLayout.getTabAt(1).setCustomView(navTwo);
+        tabLayout.getTabAt(2).setCustomView(navThree);
+        tabLayout.getTabAt(3).setCustomView(navFour);
+        tabLayout.getTabAt(4).setCustomView(navFive);
     }
     @Override
     public void onBackPressed() {
@@ -195,4 +195,10 @@ NonSwipeableViewPager viewPager;
         return true;
     }
 
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==R.id.img_plus){
+            viewPager.setCurrentItem(2,true);
+        }
+    }
 }
