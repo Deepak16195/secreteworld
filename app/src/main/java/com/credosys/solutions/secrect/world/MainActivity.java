@@ -112,7 +112,7 @@ Typeface tf ;
         imgPlus.setColorFilter(res.getColor(plusIcon));
         txtMore.setTextColor(res.getColor(tabUnseleced));
         View v=tabLayout.getTabAt(0).getCustomView();
-      
+
 //        for(int i=0;i<tabLayout.getTabCount();i++) {
 //            if(i!=2) {
 //                tabLayout.getTabAt(i).getIcon().setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
@@ -166,12 +166,6 @@ Typeface tf ;
     }
     public void setActionBarTitle(String title) {
         txtTitle.setText(title);
-    }
-
-    @Override
-    public void setContentView(View view) {
-        super.setContentView(view);
-
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
