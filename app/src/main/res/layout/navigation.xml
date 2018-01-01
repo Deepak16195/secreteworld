@@ -18,8 +18,10 @@
             android:layout_width="45dp"
             android:layout_height="30dp" />
         <TextView
+            android:id="@+id/nav_text_zero"
             android:text="HOME"
             android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -39,6 +41,7 @@
             android:id="@+id/nav_text_one"
             android:text="EXPLORE"
             android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -64,6 +67,7 @@
             android:id="@+id/nav_text_three"
             android:text="REQUEST"
             android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -83,6 +87,7 @@
             android:id="@+id/nav_text_four"
             android:text="DIARY"
             android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
