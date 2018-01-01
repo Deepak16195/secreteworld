@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OTHER CATEGORIES"
+                android:text="CATEGORIES"
                 android:textColor="#fff" />
         </LinearLayout>
     </LinearLayout>
@@ -99,7 +99,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginVertical="10dp"
+
         android:background="@drawable/square_border"
         android:hint="Enter destination to explore"
         android:padding="10dp" />
@@ -114,6 +115,7 @@
             android:layout_height="wrap_content"
             android:button="@drawable/radio_current_location"
             android:checked="false"
+            android:textSize="12sp"
             android:fontFamily="@font/avenirltstd_medium"
             android:paddingLeft="5dp"
             android:text="USE YOUR CURRENT LOCATION"

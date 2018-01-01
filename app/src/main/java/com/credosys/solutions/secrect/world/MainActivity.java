@@ -1,5 +1,6 @@
 package com.credosys.solutions.secrect.world;
 
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -25,10 +26,10 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 //    private TextView mTextMessage;
 Typeface tf ;
-    ImageView imgHomeBanner,imgGradient,imgPlus;
-    TextView txtTitle,txtMore;
+    ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour;
+    TextView txtTitle,txtMore,navTextZero,navTextOne,navTextTwo,navTextThree,navTextFour;
     NonSwipeableViewPager viewPager;
-    LinearLayout navOne,navTwo,navThree,navFour,navFive;
+    LinearLayout navZero, navOne, navTwo, navThree, navFour;
     private TabLayout tabLayout;
     int[] tabIcons={
             R.drawable.ic_home,
@@ -105,18 +106,19 @@ Typeface tf ;
     }
 
     void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int tabSelected, int tabUnseleced ){
-//        Resources res=getApplicationContext().getResources();
-//        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
-//        imgGradient.setColorFilter(res.getColor(gradient));
-//        imgPlus.setColorFilter(res.getColor(plusIcon));
-//        txtMore.setTextColor(res.getColor(tabUnseleced));
+        Resources res=getApplicationContext().getResources();
+        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
+        imgGradient.setColorFilter(res.getColor(gradient));
+        imgPlus.setColorFilter(res.getColor(plusIcon));
+        txtMore.setTextColor(res.getColor(tabUnseleced));
+        View v=tabLayout.getTabAt(0).getCustomView();
+      
 //        for(int i=0;i<tabLayout.getTabCount();i++) {
 //            if(i!=2) {
-//
 //                tabLayout.getTabAt(i).getIcon().setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
 //                tabLayout.setTabTextColors(res.getColor(tabUnseleced),res.getColor(tabSelected));
 //            }
-//
+
 //        }
     }
     private void bindViews(){
@@ -128,11 +130,13 @@ Typeface tf ;
         txtMore=findViewById(R.id.txt_more);
 
         View navView= LayoutInflater.from(this).inflate(R.layout.navigation,null,false);
-        navOne=navView.findViewById(R.id.nav_one);
-        navTwo=navView.findViewById(R.id.nav_two);
-        navThree=navView.findViewById(R.id.nav_three);
-        navFour=navView.findViewById(R.id.nav_four);
-        navFive=navView.findViewById(R.id.nav_five);
+        navZero =navView.findViewById(R.id.nav_zero);
+        navOne =navView.findViewById(R.id.nav_one);
+        navTwo =navView.findViewById(R.id.nav_two);
+        navThree =navView.findViewById(R.id.nav_three);
+        navFour =navView.findViewById(R.id.nav_four);
+
+
 
         imgPlus.setOnClickListener(this);
     }
@@ -145,11 +149,11 @@ Typeface tf ;
 //        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
 //        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
 //        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
-        tabLayout.getTabAt(0).setCustomView(navOne);
-        tabLayout.getTabAt(1).setCustomView(navTwo);
-        tabLayout.getTabAt(2).setCustomView(navThree);
-        tabLayout.getTabAt(3).setCustomView(navFour);
-        tabLayout.getTabAt(4).setCustomView(navFive);
+        tabLayout.getTabAt(0).setCustomView(navZero);
+        tabLayout.getTabAt(1).setCustomView(navOne);
+        tabLayout.getTabAt(2).setCustomView(navTwo);
+        tabLayout.getTabAt(3).setCustomView(navThree);
+        tabLayout.getTabAt(4).setCustomView(navFour);
     }
     @Override
     public void onBackPressed() {
