@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.credosys.solutions.secrect.world.Adapters.ExploreViewPagerAdapter;
+import com.credosys.solutions.secrect.world.Adapters.ViewPagers.ExploreViewPagerAdapter;
 import com.credosys.solutions.secrect.world.R;
 
 /**

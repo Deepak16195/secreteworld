@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.credosys.solutions.secrect.world.Adapters.BottomNavigationViewPagerAdapter;
+import com.credosys.solutions.secrect.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager;
 
 public class MainActivity extends AppCompatActivity

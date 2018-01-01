@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrect.world.Adapters;
+package com.credosys.solutions.secrect.world.Adapters.NormalScroll;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

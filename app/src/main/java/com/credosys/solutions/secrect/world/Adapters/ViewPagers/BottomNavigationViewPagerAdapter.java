@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrect.world.Adapters;
+package com.credosys.solutions.secrect.world.Adapters.ViewPagers;
 
 import android.app.DownloadManager;
 import android.graphics.drawable.Drawable;

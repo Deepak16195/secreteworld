@@ -1,15 +1,11 @@
-package com.credosys.solutions.secrect.world.Adapters;
+package com.credosys.solutions.secrect.world.Adapters.ViewPagers;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.credosys.solutions.secrect.world.fragments.GooglePlacesFragment;
 import com.credosys.solutions.secrect.world.fragments.SworldPlacesFragment;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by win7 on 26-Dec-17.
