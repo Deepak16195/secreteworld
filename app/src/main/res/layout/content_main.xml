@@ -22,11 +22,13 @@
             android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager
-            android:id="@+id/viewpager"
-            android:background="@android:color/white"
-            android:layout_width="match_parent"
-            android:layout_height="500dp" />
+        <!--<com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager-->
+            <!--android:id="@+id/viewpager"-->
+            <!--android:background="@android:color/white"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="500dp"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+            <!--tools:context=".MainActivity" />-->
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrect.world.fragments;
+package com.credosys.solutions.secrect.world.fragments.BottomNaviagion;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import  android.support.v4.app.Fragment;

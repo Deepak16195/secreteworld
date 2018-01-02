@@ -5,6 +5,8 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,21 +18,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrect.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager;
+import com.credosys.solutions.secrect.world.fragments.SlideNavigation.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 //    private TextView mTextMessage;
-Typeface tf ;
+    FrameLayout frameContainer;
+    Typeface tf ;
     ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour;
     TextView txtTitle,txtMore,navTextZero,navTextOne,navTextTwo,navTextThree,navTextFour;
     NonSwipeableViewPager viewPager;
     LinearLayout navZero, navOne, navTwo, navThree, navFour;
+    BottomNavigationViewPagerAdapter adapter;
     private TabLayout tabLayout;
     int[] tabIcons={
             R.drawable.ic_home,
@@ -72,26 +78,31 @@ Typeface tf ;
                 Log.d("Onpageview","onPageSelected"+position);
                 if(position==0){
                     imgHomeBanner.setVisibility(View.VISIBLE);
+                    setFrameLayoutVisiblity();
                     setActionBarTitle("MUMBAI");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==1){
                     imgHomeBanner.setVisibility(View.GONE);
+                    setFrameLayoutVisiblity();
                     setActionBarTitle("SECRETS AROUND YOU");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==2){
                     imgHomeBanner.setVisibility(View.GONE);
+                    setFrameLayoutVisiblity();
                     setActionBarTitle("MORE");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==3){
                     imgHomeBanner.setVisibility(View.GONE);
+                    setFrameLayoutVisiblity();
                     setActionBarTitle("MY REQUEST");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==4){
                     imgHomeBanner.setVisibility(View.GONE);
+                    setFrameLayoutVisiblity();
                     setActionBarTitle("MY DIARY");
                     setTabLayoutColors(R.color.marineGreen,R.color.gradientColor,R.color.cutomGreen,R.color.white,R.color.white);
                 }
@@ -104,6 +115,11 @@ Typeface tf ;
             }
         });
 
+    }
+
+    void setFrameLayoutVisiblity(){
+        frameContainer.setVisibility(View.GONE);
+        viewPager.setVisibility(View.VISIBLE);
     }
 
     void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int text){
@@ -141,6 +157,7 @@ Typeface tf ;
     private void bindViews(){
         imgHomeBanner=findViewById(R.id.img_home_banner);
         viewPager = findViewById(R.id.viewpager);
+        frameContainer=findViewById(R.id.frame_container);
         txtTitle=findViewById(R.id.txt_title);
         imgGradient=findViewById(R.id.iv_gradient);
         imgPlus=findViewById(R.id.img_plus);
@@ -166,7 +183,7 @@ Typeface tf ;
         imgPlus.setOnClickListener(this);
     }
     private void setupViewPager() {
-        BottomNavigationViewPagerAdapter adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
+        adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
     }
     private void setupTabIcons(){
@@ -195,8 +212,13 @@ Typeface tf ;
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.nav_profile) {
+            viewPager.setVisibility(View.GONE);
+            frameContainer.setVisibility(View.VISIBLE);
+            imgHomeBanner.setVisibility(View.GONE);
+            FragmentManager fm= getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.frame_container, ProfileFragment.newInstance()).commit();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -217,6 +239,7 @@ Typeface tf ;
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.img_plus){
+
             viewPager.setCurrentItem(2,true);
         }
     }

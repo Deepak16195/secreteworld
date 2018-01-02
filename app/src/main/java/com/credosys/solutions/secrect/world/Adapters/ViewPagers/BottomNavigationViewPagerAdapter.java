@@ -1,23 +1,14 @@
 package com.credosys.solutions.secrect.world.Adapters.ViewPagers;
 
-import android.app.DownloadManager;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.view.View;
 
-import com.credosys.solutions.secrect.world.Pojos.Home;
-import com.credosys.solutions.secrect.world.fragments.ExploreFragment;
-import com.credosys.solutions.secrect.world.fragments.HomeFragement;
-import com.credosys.solutions.secrect.world.fragments.MoreFragment;
-import com.credosys.solutions.secrect.world.fragments.MyDiaryFragment;
-import com.credosys.solutions.secrect.world.fragments.RequestFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.credosys.solutions.secrect.world.fragments.BottomNaviagion.ExploreFragment;
+import com.credosys.solutions.secrect.world.fragments.BottomNaviagion.HomeFragement;
+import com.credosys.solutions.secrect.world.fragments.BottomNaviagion.MoreFragment;
+import com.credosys.solutions.secrect.world.fragments.BottomNaviagion.MyDiaryFragment;
+import com.credosys.solutions.secrect.world.fragments.BottomNaviagion.RequestFragment;
 
 /**
  * Created by win7 on 21-Dec-17.

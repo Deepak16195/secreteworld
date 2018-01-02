@@ -33,7 +33,7 @@
         android:orientation="vertical">
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
+            android:id="@+id/viewpager_mydiary"
             android:layout_width="match_parent"
             android:layout_height="380dp"
             android:layout_gravity="top"
@@ -67,8 +67,7 @@
             android:layout_margin="10dp"
             android:paddingVertical="10dp"
             android:background="@drawable/border_mydiary"
-            android:paddingHorizontal="35dp"
-            >
+            android:paddingHorizontal="35dp">
 
             <TextView
                 android:layout_width="wrap_content"
