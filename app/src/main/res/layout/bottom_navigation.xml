@@ -12,24 +12,25 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="45dp" />
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        app:tabIndicatorHeight="0dp"
-        android:layout_alignParentBottom="true"
-        app:tabGravity="fill"
-        app:tabMode="fixed"
-        app:tabTextAppearance="@style/CustomTextStyle" />
 
     <ImageView
         android:id="@+id/iv_gradient"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
+        android:layout_height="45dp"
         android:scaleType="fitXY"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="25dp"
         android:src="@drawable/bg_gradient" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="fixed"
+        app:tabTextAppearance="@style/CustomTextStyle" />
 
     <RelativeLayout
         android:id="@+id/bottom_third"
@@ -51,6 +52,7 @@
             android:id="@+id/txt_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/avenirltstd_medium"
             android:layout_below="@+id/img_plus"
             android:layout_centerHorizontal="true"
             android:text="MORE"

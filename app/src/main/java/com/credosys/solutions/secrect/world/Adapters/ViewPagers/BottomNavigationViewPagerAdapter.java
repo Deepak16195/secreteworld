@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrect.world.Adapters;
+package com.credosys.solutions.secrect.world.Adapters.ViewPagers;
 
 import android.app.DownloadManager;
 import android.graphics.drawable.Drawable;
@@ -23,9 +23,9 @@ import java.util.List;
  * Created by win7 on 21-Dec-17.
  */
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+public class BottomNavigationViewPagerAdapter extends FragmentStatePagerAdapter {
     private static int NUM_ITEMS = 5;
-    public ViewPagerAdapter(FragmentManager fragmentManager) {
+    public BottomNavigationViewPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
     }
     private String titles[]={"HOME","EXPLORE","","REQUEST","DIARY"};
@@ -55,9 +55,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     }
 
     // Returns the page title for the top indicator
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return titles[position];
-    }
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        return titles[position];
+//    }
 
 }

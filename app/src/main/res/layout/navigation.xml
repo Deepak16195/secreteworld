@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/nav_zero"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/nav_icon_zero"
+            app:srcCompat="@drawable/ic_home"
+            android:scaleType="fitXY"
+            android:layout_width="45dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/nav_text_zero"
+            android:text="HOME"
+            android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nav_one"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/nav_icon_one"
+            app:srcCompat="@drawable/ic_explore"
+            android:scaleType="fitXY"
+            android:layout_width="45dp"
+            android:layout_height="30dp"/>
+        <TextView
+            android:id="@+id/nav_text_one"
+            android:text="EXPLORE"
+            android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nav_two"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nav_three"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/nav_icon_three"
+            app:srcCompat="@drawable/ic_request"
+            android:scaleType="fitXY"
+            android:layout_width="45dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/nav_text_three"
+            android:text="REQUEST"
+            android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nav_four"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/nav_icon_four"
+            app:srcCompat="@drawable/ic_mydiary"
+            android:scaleType="fitXY"
+            android:layout_width="45dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/nav_text_four"
+            android:text="DIARY"
+            android:textSize="8sp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
