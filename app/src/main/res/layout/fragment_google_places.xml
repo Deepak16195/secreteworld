@@ -80,21 +80,33 @@
                 />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.0"
-            android:background="#505050"
-            android:gravity="center"
-            android:padding="5dp">
+        <!--<LinearLayout-->
+            <!---->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.0"-->
+            <!--android:background="#505050"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="5dp">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CATEGORIES"
-                android:textColor="#fff" />
-        </LinearLayout>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="CATEGORIES"-->
+                <!--android:textColor="#fff" />-->
+        <!--</LinearLayout>-->
+        <Button
+            android:id="@+id/btn_category"
+            android:text="CATEGORIES"
+            android:background="#505050"
+            android:textColor="#fff"
+            android:padding="5dp"
+            android:textSize="10sp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
     </LinearLayout>
+
 
     <EditText
         android:layout_width="match_parent"

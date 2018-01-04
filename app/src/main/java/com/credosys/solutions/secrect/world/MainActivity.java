@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
@@ -18,13 +18,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.credosys.solutions.secrect.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager;
+import com.credosys.solutions.secrect.world.fragments.ExploreTab.SearchByCategoryFragment;
 import com.credosys.solutions.secrect.world.fragments.SlideNavigation.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -38,13 +41,8 @@ public class MainActivity extends AppCompatActivity
     LinearLayout navZero, navOne, navTwo, navThree, navFour;
     BottomNavigationViewPagerAdapter adapter;
     private TabLayout tabLayout;
-    int[] tabIcons={
-            R.drawable.ic_home,
-            R.drawable.ic_explore,
-            R.drawable.ic_more,
-            R.drawable.ic_request,
-            R.drawable.ic_diary
-    };
+    Fragment fragment;
+    FragmentTransaction transaction;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +51,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         bindViews();
-
         setupViewPager();
 
         tabLayout = findViewById(R.id.tabs);
@@ -121,6 +118,7 @@ public class MainActivity extends AppCompatActivity
         frameContainer.setVisibility(View.GONE);
         viewPager.setVisibility(View.VISIBLE);
     }
+
 
     void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int text){
         Resources res=getApplicationContext().getResources();
@@ -195,12 +193,20 @@ public class MainActivity extends AppCompatActivity
     }
     @Override
     public void onBackPressed() {
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        else if(fragment !=null && fragment.getTag().equalsIgnoreCase("category")){
+            viewPager.setVisibility(View.VISIBLE);
+            frameContainer.setVisibility(View.GONE);
+            transaction.remove(fragment);
+        }
+        else {
             super.onBackPressed();
         }
+
     }
     public void setActionBarTitle(String title) {
         txtTitle.setText(title);
@@ -216,9 +222,10 @@ public class MainActivity extends AppCompatActivity
             viewPager.setVisibility(View.GONE);
             frameContainer.setVisibility(View.VISIBLE);
             imgHomeBanner.setVisibility(View.GONE);
-            FragmentManager fm= getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-            fragmentTransaction.replace(R.id.frame_container, ProfileFragment.newInstance()).commit();
+            transaction= getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+            transaction.addToBackStack(null);
+            transaction.commit();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -235,11 +242,20 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void setCategoryFragment(){
+            viewPager.setVisibility(View.GONE);
+            frameContainer.setVisibility(View.VISIBLE);
+            imgHomeBanner.setVisibility(View.GONE);
+            transaction= getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
+            fragment = getSupportFragmentManager().findFragmentByTag("category");
+            transaction.addToBackStack(null);
+            transaction.commit();
+    }
 
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.img_plus){
-
             viewPager.setCurrentItem(2,true);
         }
     }

@@ -110,7 +110,6 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="center_horizontal"
@@ -118,12 +117,13 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/wall" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="WALL" />
@@ -134,18 +134,18 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="1"
-                    android:layout_margin="6dp"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/contents" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="CONTENTS" />
@@ -156,18 +156,18 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="2"
-                    android:layout_margin="6dp"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/friends" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="FRIENDS" />
@@ -179,20 +179,20 @@
                     android:gravity="center_horizontal"
                     android:layout_row="0"
                     android:layout_column="3"
-                    android:layout_margin="6dp"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/messages" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="MESSASGE" />
+                        android:text="MESSASGES" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -201,17 +201,17 @@
                     android:gravity="center_horizontal"
                     android:layout_row="1"
                     android:layout_column="0"
-                    android:layout_margin="6dp"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/request" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="REQUEST" />
@@ -223,17 +223,17 @@
                     android:gravity="center_horizontal"
                     android:layout_row="1"
                     android:layout_column="1"
-                    android:layout_margin="6dp"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/orders" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ORDERS" />
@@ -244,18 +244,18 @@
                     android:layout_height="wrap_content"
                     android:layout_row="1"
                     android:layout_column="2"
-                    android:layout_margin="6dp"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/seller" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SELLER" />
@@ -267,17 +267,17 @@
                     android:layout_row="1"
                     android:layout_column="3"
                     android:gravity="center_horizontal"
-                    android:layout_margin="6dp"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@drawable/ic_user" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/expert" />
 
                     <TextView
                         android:fontFamily="@font/avenirltstd_light"
+                        android:textSize="10sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="EXPERT" />
@@ -300,7 +300,7 @@
         android:layout_marginTop="50dp"
         android:layout_toLeftOf="@id/img_user_profle"
         android:background="@drawable/profile_edit_details_round_bg"
-        android:paddingHorizontal="20dp"
+        android:paddingHorizontal="28dp"
         android:paddingVertical="5dp">
 
         <TextView
@@ -318,7 +318,7 @@
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@id/img_user_profle"
         android:background="@drawable/profile_edit_details_round_bg"
-        android:paddingHorizontal="25dp"
+        android:paddingHorizontal="35dp"
         android:paddingVertical="5dp">
 
         <TextView

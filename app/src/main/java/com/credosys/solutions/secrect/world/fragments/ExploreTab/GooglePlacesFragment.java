@@ -8,8 +8,10 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.credosys.solutions.secrect.world.Adapters.NormalScroll.GoogleHorizontalAdapter;
+import com.credosys.solutions.secrect.world.MainActivity;
 import com.credosys.solutions.secrect.world.Pojos.ExploreGooglePlaces;
 import com.credosys.solutions.secrect.world.R;
 
@@ -20,8 +22,8 @@ import java.util.List;
  * Created by win7 on 26-Dec-17.
  */
 
-public class GooglePlacesFragment extends Fragment {
-
+public class GooglePlacesFragment extends Fragment implements View.OnClickListener{
+    Button btnCategory;
     RecyclerView rvFamous;
     public static GooglePlacesFragment newInstance() {
         GooglePlacesFragment fragmentFirst = new GooglePlacesFragment();
@@ -40,6 +42,8 @@ public class GooglePlacesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_google_places, container, false);
         rvFamous=v.findViewById(R.id.rv_famous);
+        btnCategory=v.findViewById(R.id.btn_category);
+        btnCategory.setOnClickListener(this);
         List<ExploreGooglePlaces> gplaces=new ArrayList<>();
         gplaces.add(new ExploreGooglePlaces("Amazing Views",3));
         gplaces.add(new ExploreGooglePlaces("Historical Sites",37));
@@ -51,5 +55,12 @@ public class GooglePlacesFragment extends Fragment {
         rvFamous.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL));
         rvFamous.setAdapter(gha);
         return v;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.btn_category){
+            ((MainActivity)getActivity()).setCategoryFragment();
+        }
     }
 }
