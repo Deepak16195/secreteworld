@@ -7,8 +7,4 @@
     <item
         android:drawable="@drawable/ic_location_on"
         android:state_checked="true" />
-
-
-
-
 </selector>

@@ -12,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="12dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/shadow"
         android:padding="15dp">
@@ -33,10 +33,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:textColor="#505050"
                 android:layout_toEndOf="@+id/img_blue_arrow"
                 android:fontFamily="@font/charcoal"
                 android:text="SEARCH BY CATEGORIES"
+                android:textColor="#505050"
                 android:textSize="16sp" />
         </RelativeLayout>
 
@@ -186,7 +186,10 @@
             </LinearLayout>
 
             <Switch
+                android:id="@+id/switch_search_category"
                 android:layout_width="120dp"
+                android:thumb="@drawable/ic_blue_line"
+
                 android:layout_height="wrap_content"
                 android:switchMinWidth="120dp" />
         </LinearLayout>
@@ -194,7 +197,19 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_search_category"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="280dp"
             android:layout_below="@+id/txt_select" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rv_search_category"
+            android:layout_marginHorizontal="40dp"
+            android:background="#62B846"
+            android:fontFamily="@font/charcoal"
+            android:text="EXPLORE"
+            android:textColor="#fff" />
     </RelativeLayout>
 </RelativeLayout>

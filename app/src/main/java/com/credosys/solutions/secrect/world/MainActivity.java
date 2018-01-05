@@ -201,7 +201,6 @@ public class MainActivity extends AppCompatActivity
         else if(fragment !=null && fragment.getTag().equalsIgnoreCase("category")){
             viewPager.setVisibility(View.VISIBLE);
             frameContainer.setVisibility(View.GONE);
-            transaction.remove(fragment);
         }
         else {
             super.onBackPressed();

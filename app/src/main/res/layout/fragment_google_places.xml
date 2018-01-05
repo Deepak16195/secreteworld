@@ -125,7 +125,7 @@
             android:id="@+id/chk_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@drawable/radio_current_location"
+            android:button="@drawable/checkbox_current_location"
             android:checked="false"
             android:textSize="12sp"
             android:fontFamily="@font/avenirltstd_medium"
