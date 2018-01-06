@@ -51,7 +51,7 @@
             app:tabSelectedTextColor="#fff"
             app:tabTextColor="#A1A1A1" />
 
-        <com.credosys.solutions.secrect.world.Utility.NonSwipeableViewPager
+        <com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager
             android:id="@+id/fragment_viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

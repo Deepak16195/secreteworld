@@ -108,6 +108,7 @@
                 android:rowCount="3">
 
                 <LinearLayout
+                    android:id="@+id/ll_wall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="0"
