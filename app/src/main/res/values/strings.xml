@@ -104,4 +104,5 @@
     <string name="title_pluse_more">MORE</string>
     <string name="title_request">REQUEST</string>
     <string name="title_diary">MY DIARY</string>
+    <string name="title_activity_profile_wall">activity_profile_wall</string>
 </resources>

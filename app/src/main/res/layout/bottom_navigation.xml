@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#ffffff"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <include
         layout="@layout/app_bar_main"
@@ -12,14 +12,13 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="45dp" />
 
-
     <ImageView
         android:id="@+id/iv_gradient"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:scaleType="fitXY"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="25dp"
+        android:scaleType="fitXY"
         android:src="@drawable/bg_gradient" />
 
     <android.support.design.widget.TabLayout
@@ -52,10 +51,10 @@
             android:id="@+id/txt_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/avenirltstd_medium"
             android:layout_below="@+id/img_plus"
             android:layout_centerHorizontal="true"
+            android:fontFamily="@font/avenirltstd_medium"
             android:text="MORE"
-            android:textSize="8sp" />
+            android:textSize="10sp" />
     </RelativeLayout>
 </RelativeLayout>

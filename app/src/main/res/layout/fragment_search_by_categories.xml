@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#186A73" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow"
+        android:padding="15dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_search_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_blue_arrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_blue_arrow" />
+
+            <TextView
+                android:id="@+id/txt_search_category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/img_blue_arrow"
+                android:fontFamily="@font/charcoal"
+                android:text="SEARCH BY CATEGORIES"
+                android:textColor="#505050"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_range_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_search_category"
+            android:layout_marginTop="10dp"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_radius_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="Radius"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/txt_radius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="45 KM"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_slide_km"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3 KM"
+                        android:textSize="10sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3000 KM"
+                        android:textAlignment="center"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/txt_slide_km"
+                    android:maxHeight="15dp"
+                    android:maxWidth="15dp"
+                    android:minHeight="15dp"
+                    android:minWidth="15dp"
+                    android:paddingTop="3dp"
+                    android:progressTint="#B4B4B4"
+                    android:thumb="@drawable/ic_blue_dot"
+
+                    />
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.0"-->
+            <!--android:background="#505050"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="5dp">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="CATEGORIES"-->
+            <!--android:textColor="#fff" />-->
+            <!--</LinearLayout>-->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="#006FAD"
+                android:fontFamily="@font/avenirltstd_light"
+                android:text="CATEGORIES"
+                android:textColor="#fff"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_range_bar"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="28dp"
+            android:layout_toLeftOf="@+id/ll_switch"
+            android:layout_toStartOf="@+id/ll_switch"
+            android:fontFamily="@font/avenirltstd_black"
+            android:text="SELECT" />
+
+        <LinearLayout
+            android:id="@+id/ll_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/ll_range_bar"
+            android:layout_marginEnd="21dp"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:text="NONE"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:text="ALL"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switch_search_category"
+                android:layout_width="120dp"
+                android:thumb="@drawable/ic_blue_line"
+
+                android:layout_height="wrap_content"
+                android:switchMinWidth="120dp" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_search_category"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_below="@+id/txt_select" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/rv_search_category"
+            android:layout_marginHorizontal="40dp"
+            android:background="#62B846"
+            android:fontFamily="@font/charcoal"
+            android:text="EXPLORE"
+            android:textColor="#fff" />
+    </RelativeLayout>
+</RelativeLayout>
