@@ -37,8 +37,6 @@ public class ExploreFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_explore,null,false);
         final TabLayout fragmentTab=v.findViewById(R.id.fragment_tabs);
         final ViewPager fragmentViewPager = v.findViewById(R.id.fragment_viewpager);
-        ((MainActivity) getActivity()).getSupportActionBar()
-                .setTitle("explore");
 
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);

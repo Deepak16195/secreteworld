@@ -3,7 +3,10 @@ package com.credosys.solutions.secrete.world;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -16,7 +19,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -44,7 +49,8 @@ public class MainActivity extends AppCompatActivity
     private TabLayout tabLayout;
     Fragment fragment;
     FragmentTransaction transaction;
-
+    AppBarLayout appBarLayout;
+    CollapsingToolbarLayout collapsingToolbarLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +59,7 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("yo");
-        getSupportActionBar().setTitle("yogesjh");
+
         bindViews();
         setupViewPager();
 
@@ -69,6 +74,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -80,30 +87,48 @@ public class MainActivity extends AppCompatActivity
                 Log.d("Onpageview","onPageSelected"+position);
                 if(position==0){
                     imgHomeBanner.setVisibility(View.VISIBLE);
+//                    imgHomeBanner.setImageResource(R.drawable.launch_banner);
+                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.CENTER);
                     setFrameLayoutVisiblity();
                     setActionBarTitle("MUMBAI");
+
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==1){
                     imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setImageResource(0);
+                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+
+                    appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
-                    setActionBarTitle("SECRETS AROUND YOU");
+//                    setActionBarTitle("SECRETS AROUND YOU");
+                    getSupportActionBar().setTitle("SECRETE AROUND YOU");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==2){
                     imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setImageResource(0);
+                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+                    appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
                     setActionBarTitle("MORE");
+                    getSupportActionBar().setTitle("MORE");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==3){
                     imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setImageResource(0);
+                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+                    appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
                     setActionBarTitle("MY REQUEST");
+                    getSupportActionBar().setTitle("MY REQUEST");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==4){
                     imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setImageResource(0);
+                    appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
                     setActionBarTitle("MY DIARY");
                     setTabLayoutColors(R.color.marineGreen,R.color.gradientColor,R.color.cutomGreen,R.color.white,R.color.white);
@@ -161,6 +186,9 @@ public class MainActivity extends AppCompatActivity
         imgHomeBanner=findViewById(R.id.img_home_banner);
         viewPager = findViewById(R.id.viewpager);
         frameContainer=findViewById(R.id.frame_container);
+        appBarLayout=findViewById(R.id.main_app_bar);
+        collapsingToolbarLayout=findViewById(R.id.collapsing_toolbar_layout);
+
 //        txtTitle=findViewById(R.id.txt_title);
         imgGradient=findViewById(R.id.iv_gradient);
         imgPlus=findViewById(R.id.img_plus);
@@ -213,8 +241,8 @@ public class MainActivity extends AppCompatActivity
 
     }
     public void setActionBarTitle(String title) {
-//        txtTitle.setText(title);
-        this.getSupportActionBar().setTitle(title);
+
+        collapsingToolbarLayout.setTitle(title);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -266,6 +294,8 @@ public class MainActivity extends AppCompatActivity
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.img_plus){

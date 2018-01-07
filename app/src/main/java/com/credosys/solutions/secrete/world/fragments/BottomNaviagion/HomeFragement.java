@@ -48,8 +48,7 @@ public class HomeFragement extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         rv=view.findViewById(R.id.recyclerview_home);
-        ((MainActivity) getActivity()).getSupportActionBar()
-                .setTitle("Your title");
+
         HomeAdapter homeAdapter=new HomeAdapter(tempList());
         rv.setAdapter(homeAdapter);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
