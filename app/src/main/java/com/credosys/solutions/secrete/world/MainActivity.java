@@ -4,10 +4,12 @@ import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.LayerDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
+import android.support.transition.Slide;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity
     Fragment fragment;
     FragmentTransaction transaction;
     AppBarLayout appBarLayout;
+    Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +60,10 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setTitle("MUMBAI");
         bindViews();
         setupViewPager();
 
@@ -86,7 +90,7 @@ public class MainActivity extends AppCompatActivity
             public void onPageSelected(int position) {
                 Log.d("Onpageview","onPageSelected"+position);
                 if(position==0){
-                    imgHomeBanner.setVisibility(View.VISIBLE);
+                    imgHomeBanner.setImageResource(R.drawable.launch_banner);
 //                    imgHomeBanner.setImageResource(R.drawable.launch_banner);
                     collapsingToolbarLayout.setExpandedTitleGravity(Gravity.CENTER);
                     setFrameLayoutVisiblity();
@@ -95,19 +99,21 @@ public class MainActivity extends AppCompatActivity
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==1){
-                    imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setVisibility(View.GONE);
 //                    imgHomeBanner.setImageResource(0);
+                    imgHomeBanner.setImageResource(R.drawable.topbg);
                     collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
 
                     appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
 //                    setActionBarTitle("SECRETS AROUND YOU");
-                    getSupportActionBar().setTitle("SECRETE AROUND YOU");
+                    setActionBarTitle("SECRETE AROUND YOU");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==2){
-                    imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setVisibility(View.GONE);
 //                    imgHomeBanner.setImageResource(0);
+                    imgHomeBanner.setImageResource(R.drawable.topbg);
                     collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
                     appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
@@ -116,8 +122,9 @@ public class MainActivity extends AppCompatActivity
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==3){
-                    imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setVisibility(View.GONE);
 //                    imgHomeBanner.setImageResource(0);
+                    imgHomeBanner.setImageResource(R.drawable.topbg);
                     collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
                     appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
@@ -126,8 +133,9 @@ public class MainActivity extends AppCompatActivity
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==4){
-                    imgHomeBanner.setVisibility(View.GONE);
+//                    imgHomeBanner.setVisibility(View.GONE);
 //                    imgHomeBanner.setImageResource(0);
+                    imgHomeBanner.setImageResource(R.drawable.topbg);
                     appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
                     setActionBarTitle("MY DIARY");
@@ -189,6 +197,10 @@ public class MainActivity extends AppCompatActivity
         appBarLayout=findViewById(R.id.main_app_bar);
         collapsingToolbarLayout=findViewById(R.id.collapsing_toolbar_layout);
 
+        tf =  Typeface.createFromAsset(getAssets(),"charcoal.ttf");
+        collapsingToolbarLayout.setCollapsedTitleTypeface(tf);
+        collapsingToolbarLayout.setExpandedTitleTypeface(tf);
+
 //        txtTitle=findViewById(R.id.txt_title);
         imgGradient=findViewById(R.id.iv_gradient);
         imgPlus=findViewById(R.id.img_plus);
@@ -241,9 +253,16 @@ public class MainActivity extends AppCompatActivity
 
     }
     public void setActionBarTitle(String title) {
-
         collapsingToolbarLayout.setTitle(title);
     }
+    public void setExpandableTitle(int gravity){
+        collapsingToolbarLayout.setExpandedTitleGravity(gravity);
+    }
+
+    public void setCollpsingImage(int drawableImage){
+        imgHomeBanner.setImageResource(drawableImage);
+    }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -254,7 +273,12 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_profile) {
             viewPager.setVisibility(View.GONE);
             frameContainer.setVisibility(View.VISIBLE);
-            imgHomeBanner.setVisibility(View.GONE);
+            imgHomeBanner.setImageResource(R.drawable.topbg);
+            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+            collapsingToolbarLayout.setScrollContainer(false);
+            appBarLayout.setExpanded(false,false);
+
+            setActionBarTitle("PROFILE");
             transaction= getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
             transaction.addToBackStack(null);

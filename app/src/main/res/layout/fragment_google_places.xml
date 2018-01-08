@@ -66,10 +66,13 @@
             </LinearLayout>
 
             <android.support.v7.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_google"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_below="@+id/txt_slide_km"
                 android:maxHeight="15dp"
+                android:min="3"
+                android:max="3000"
                 android:maxWidth="15dp"
                 android:minHeight="15dp"
                 android:minWidth="15dp"

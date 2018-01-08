@@ -5,10 +5,13 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.GoogleHorizontalAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
@@ -22,9 +25,11 @@ import java.util.List;
  * Created by win7 on 26-Dec-17.
  */
 
-public class GooglePlacesFragment extends Fragment implements View.OnClickListener{
+public class GooglePlacesFragment extends Fragment implements View.OnClickListener,SeekBar.OnSeekBarChangeListener{
     Button btnCategory;
     RecyclerView rvFamous;
+    SeekBar seekbarGoogle;
+    TextView txtRadius;
     public static GooglePlacesFragment newInstance() {
         GooglePlacesFragment fragmentFirst = new GooglePlacesFragment();
 //        Bundle args = new Bundle();
@@ -43,6 +48,10 @@ public class GooglePlacesFragment extends Fragment implements View.OnClickListen
         View v= inflater.inflate(R.layout.fragment_google_places, container, false);
         rvFamous=v.findViewById(R.id.rv_famous);
         btnCategory=v.findViewById(R.id.btn_category);
+        seekbarGoogle=v.findViewById(R.id.seekbar_google);
+        txtRadius=v.findViewById(R.id.txt_radius);
+
+        seekbarGoogle.setOnSeekBarChangeListener(this);
         btnCategory.setOnClickListener(this);
         List<ExploreGooglePlaces> gplaces=new ArrayList<>();
         gplaces.add(new ExploreGooglePlaces("Amazing Views",3));
@@ -62,5 +71,21 @@ public class GooglePlacesFragment extends Fragment implements View.OnClickListen
         if(v.getId()==R.id.btn_category){
             ((MainActivity)getActivity()).setCategoryFragment();
         }
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+     Log.d("seekprogress",""+progress);
+     txtRadius.setText(progress+" KM");
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 }

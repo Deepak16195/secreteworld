@@ -4,6 +4,7 @@ package com.credosys.solutions.secrete.world.fragments.SlideNavigation;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.credosys.solutions.secrete.world.R;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener{
     LinearLayout LlWall;
+    NestedScrollView profileNestedScrollView;
      public static ProfileFragment newInstance() {
         Bundle args = new Bundle();
         ProfileFragment fragment = new ProfileFragment();
@@ -27,7 +29,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_profile,container,false);
+        View v=inflater.inflate(R.layout.fragment_profile,null,false);
+        profileNestedScrollView = v.findViewById(R.id.profile_NestedScrollView);
+        profileNestedScrollView.setNestedScrollingEnabled(false);
+
+//        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
+//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.NO_GRAVITY);
+
         LlWall=v.findViewById(R.id.ll_wall);
         LlWall.setOnClickListener(this);
         return v;
