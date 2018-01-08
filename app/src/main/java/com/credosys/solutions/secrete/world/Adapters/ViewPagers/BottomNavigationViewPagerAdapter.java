@@ -3,6 +3,7 @@ package com.credosys.solutions.secrete.world.Adapters.ViewPagers;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ExploreFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.HomeFragement;
@@ -44,6 +45,8 @@ public class BottomNavigationViewPagerAdapter extends FragmentStatePagerAdapter 
                 return null;
         }
     }
+
+
 
     // Returns the page title for the top indicator
 //    @Override
