@@ -15,48 +15,7 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e62d14c-0429-463e-9c56-8f5dbf519afb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/WallFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_profile_wall.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/res/layout/content_main.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/adapter.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/adapter.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/bottom_navigation.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/bottom_navigation.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_explore.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_explore.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_profile.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_profile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/androidTest/java/com/credosys/solutions/secrect/world/ExampleInstrumentedTest.java" afterPath="$PROJECT_DIR$/src/androidTest/java/com/credosys/solutions/secrete/world/ExampleInstrumentedTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Adapters/NormalScroll/CustomItemClickListener.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/CustomItemClickListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Adapters/NormalScroll/GoogleHorizontalAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/GoogleHorizontalAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Adapters/NormalScroll/HomeAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/HomeAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Adapters/NormalScroll/SearchByCategoryAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SearchByCategoryAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Adapters/ViewPagers/BottomNavigationViewPagerAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/ViewPagers/BottomNavigationViewPagerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Adapters/ViewPagers/ExploreViewPagerAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/ViewPagers/ExploreViewPagerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/MainActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Pojos/ExploreGooglePlaces.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/ExploreGooglePlaces.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Pojos/Home.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/Home.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Pojos/SearchCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/SearchCategory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/SliderMaterial/CardAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/SliderMaterial/CardFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/SliderMaterial/CardFragmentPagerAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardFragmentPagerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/SliderMaterial/CardItem.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardItem.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/SliderMaterial/CardPagerAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardPagerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/SliderMaterial/ShadowTransformer.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/ShadowTransformer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/Utility/NonSwipeableViewPager.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Utility/NonSwipeableViewPager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/BottomNaviagion/ExploreFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/ExploreFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/BottomNaviagion/HomeFragement.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/HomeFragement.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/BottomNaviagion/MoreFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/MoreFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/BottomNaviagion/MyDiaryFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/MyDiaryFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/BottomNaviagion/RequestFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/RequestFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/ExploreTab/GooglePlacesFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/GooglePlacesFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/ExploreTab/SearchByCategoryFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SearchByCategoryFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/ExploreTab/SworldPlacesFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SworldPlacesFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrect/world/fragments/SlideNavigation/ProfileFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/ProfileFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/credosys/solutions/secrect/world/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/credosys/solutions/secrete/world/ExampleUnitTest.java" />
-    </list>
+    <list default="true" id="3e62d14c-0429-463e-9c56-8f5dbf519afb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -2360,7 +2319,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515249027820" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515249139215" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2408,7 +2367,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515249027820" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515249139215" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2591,7 +2550,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515249027822" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515249139215" />
       </method>
     </configuration>
     <list size="1">
@@ -2633,7 +2592,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
