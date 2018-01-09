@@ -45,12 +45,6 @@ public class SearchByCategoryFragment extends Fragment implements View.OnClickLi
         return fragment;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -58,8 +52,9 @@ public class SearchByCategoryFragment extends Fragment implements View.OnClickLi
         rvSearchCategory=v.findViewById(R.id.rv_search_category);
         aSwitch=v.findViewById(R.id.switch_search_category);
         imgBlueArrow=v.findViewById(R.id.img_blue_arrow);
-
         imgBlueArrow.setOnClickListener(this);
+
+        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.ic_default_image);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rvSearchCategory.setLayoutManager(mLayoutManager);

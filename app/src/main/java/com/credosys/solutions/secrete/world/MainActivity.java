@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity
     AppBarLayout appBarLayout;
     Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayout;
+    DrawerLayout drawer;
+    ActionBarDrawerToggle toggle;
+    NavigationView navigationView;
+    private boolean mToolBarNavigationListenerIsRegistered = false;;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,14 +75,15 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+         drawer = findViewById(R.id.drawer_layout);
+      toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+       navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Log.d("homeNavigationMain",getSupportActionBar().getDisplayOptions()+"");
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -247,6 +252,9 @@ public class MainActivity extends AppCompatActivity
             viewPager.setVisibility(View.VISIBLE);
             frameContainer.setVisibility(View.GONE);
         }
+        else if(fragment !=null && fragment.getTag().equalsIgnoreCase("wall")){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
         else {
             super.onBackPressed();
         }
@@ -258,11 +266,18 @@ public class MainActivity extends AppCompatActivity
     public void setExpandableTitle(int gravity){
         collapsingToolbarLayout.setExpandedTitleGravity(gravity);
     }
+    public void setAppBarLayoutExpand(boolean expanded,boolean animate){
+        appBarLayout.setExpanded(expanded,animate);
+    }
 
     public void setCollpsingImage(int drawableImage){
         imgHomeBanner.setImageResource(drawableImage);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -273,10 +288,10 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_profile) {
             viewPager.setVisibility(View.GONE);
             frameContainer.setVisibility(View.VISIBLE);
-            imgHomeBanner.setImageResource(R.drawable.topbg);
-            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
-            collapsingToolbarLayout.setScrollContainer(false);
-            appBarLayout.setExpanded(false,false);
+//            imgHomeBanner.setImageResource(R.drawable.topbg);
+//            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+//            collapsingToolbarLayout.setScrollContainer(false);
+//            appBarLayout.setExpanded(false,false);
 
             setActionBarTitle("PROFILE");
             transaction= getSupportFragmentManager().beginTransaction();
@@ -299,10 +314,39 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void showBackButton(boolean enable) {
+
+        if(enable) {
+            // Remove hamburger
+            toggle.setDrawerIndicatorEnabled(false);
+            // Show back button
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            if(!mToolBarNavigationListenerIsRegistered) {
+                toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onBackPressed();
+                    }
+                });
+
+                mToolBarNavigationListenerIsRegistered = true;
+            }
+
+        } else {
+            // Remove back button
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            // Show hamburger
+            toggle.setDrawerIndicatorEnabled(true);
+            // Remove the/any drawer toggle listener
+            toggle.setToolbarNavigationClickListener(null);
+            mToolBarNavigationListenerIsRegistered = false;
+        }
+
+    }
     public void setCategoryFragment(){
             viewPager.setVisibility(View.GONE);
             frameContainer.setVisibility(View.VISIBLE);
-            imgHomeBanner.setVisibility(View.GONE);
             transaction= getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
             fragment = getSupportFragmentManager().findFragmentByTag("category");
@@ -311,6 +355,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void setWall(){
+        Log.d("homeNavigation",getSupportActionBar().isShowing()+"");
         imgHomeBanner.setVisibility(View.VISIBLE);
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");

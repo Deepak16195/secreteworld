@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,9 +33,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         View v=inflater.inflate(R.layout.fragment_profile,null,false);
         profileNestedScrollView = v.findViewById(R.id.profile_NestedScrollView);
         profileNestedScrollView.setNestedScrollingEnabled(false);
-
-//        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.NO_GRAVITY);
+        ((MainActivity)getActivity()).setExpandableTitle(Gravity.NO_GRAVITY);
+        ((MainActivity)getActivity()).showBackButton(false);
+        ((MainActivity)getActivity()).setAppBarLayoutExpand(false,false);
+        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
 
         LlWall=v.findViewById(R.id.ll_wall);
         LlWall.setOnClickListener(this);
