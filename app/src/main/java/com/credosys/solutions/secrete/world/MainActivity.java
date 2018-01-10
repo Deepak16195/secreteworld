@@ -3,27 +3,22 @@ package com.credosys.solutions.secrete.world;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
-import android.graphics.drawable.LayerDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
-import android.support.transition.Slide;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -35,6 +30,8 @@ import android.widget.TextView;
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
 
@@ -354,17 +351,28 @@ public class MainActivity extends AppCompatActivity
             transaction.commit();
     }
 
+    public void setContents(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
+        fragment = getSupportFragmentManager().findFragmentByTag("contents");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
     public void setWall(){
-        Log.d("homeNavigation",getSupportActionBar().isShowing()+"");
-        imgHomeBanner.setVisibility(View.VISIBLE);
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
         fragment = getSupportFragmentManager().findFragmentByTag("wall");
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-
+    public void setFriends(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
+        fragment = getSupportFragmentManager().findFragmentByTag("friends");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.img_plus){

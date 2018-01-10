@@ -1,13 +1,14 @@
 package com.credosys.solutions.secrete.world.fragments.ProfileNavigation;
 
+
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,26 +16,30 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import com.credosys.solutions.secrete.world.Adapters.NormalScroll.WallAdapter;
+import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ContentsAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.Pojos.HomeContents;
 import com.credosys.solutions.secrete.world.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Created by win7 on 06-Jan-18.
+ * Created by win7 on 10-Jan-18.
  */
 
-public class WallFragment extends Fragment implements View.OnClickListener{
+public class ContentsFragment extends Fragment implements View.OnClickListener{
     RelativeLayout rlBackground;
-//    LinearLayout llPublish;
-    RecyclerView rvWall;
+    //    LinearLayout llPublish;
+    RecyclerView rvContents;
     Button btnPublish;
     CardView cvNormalText,cvPublish;
 
-    public static WallFragment newInstance() {
+    public static ContentsFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        WallFragment fragment = new WallFragment();
+        ContentsFragment fragment = new ContentsFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -47,7 +52,7 @@ public class WallFragment extends Fragment implements View.OnClickListener{
 //        rlPublish=v.findViewById(R.id.rl_publish);
         btnPublish=v.findViewById(R.id.btn_publish);
         rlBackground=v.findViewById(R.id.rl_background);
-        rvWall=v.findViewById(R.id.rv_wall_contents);
+        rvContents =v.findViewById(R.id.rv_wall_contents);
 //        llPublish=v.findViewById(R.id.ll_publish);
         cvNormalText=v.findViewById(R.id.cv_normal_text);
         cvPublish=v.findViewById(R.id.cv_publish);
@@ -55,17 +60,21 @@ public class WallFragment extends Fragment implements View.OnClickListener{
         cvNormalText.setOnClickListener(this);
         btnPublish.setOnClickListener(this);
 
-        ((MainActivity)getActivity()).setActionBarTitle("MY WALL");
+        ((MainActivity)getActivity()).setActionBarTitle("CONTENTS");
         ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity)getActivity()).showBackButton(true);
 
-        WallAdapter wa=new WallAdapter();
+//
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+//        rvContents.setLayoutManager(layoutManager);
+//        rvContents.setItemAnimator(new DefaultItemAnimator());
+//        rvContents.setAdapter(wa);
+//        rvContents.setNestedScrollingEnabled(true);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        rvWall.setLayoutManager(layoutManager);
-        rvWall.setItemAnimator(new DefaultItemAnimator());
-        rvWall.setAdapter(wa);
-        rvWall.setNestedScrollingEnabled(true);
+        ContentsAdapter contentsAdapter=new ContentsAdapter(tempList());
+        rvContents.setAdapter(contentsAdapter);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
+        rvContents.setLayoutManager(staggeredGridLayoutManager);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             cvPublish.setNestedScrollingEnabled(false);
@@ -86,7 +95,7 @@ public class WallFragment extends Fragment implements View.OnClickListener{
 //                        @Override
 //                        public void onAnimationEnd(Animator animation) {
 //                            super.onAnimationEnd(animation);
-                            rlBackground.setVisibility(View.GONE);
+            rlBackground.setVisibility(View.GONE);
             cvPublish.setVisibility(View.GONE);
             cvNormalText.setVisibility(View.VISIBLE);
 //                        }
@@ -111,5 +120,17 @@ public class WallFragment extends Fragment implements View.OnClickListener{
             cvPublish.setVisibility(View.VISIBLE);
             rlBackground.setVisibility(View.VISIBLE);
         }
+    }
+    List<HomeContents> tempList(){
+        List<HomeContents> al=new ArrayList<>();
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD"));
+        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...","OTHERS"));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...","HISTORICAL PLACES"));
+        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...","HISTORICAL PLACES"));
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","OTHERS"));
+        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...","FOOD"));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...","OTHERS"));
+        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...","HISTORICAL PLACES"));
+        return al;
     }
 }

@@ -10,8 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.HomeAdapter;
-import com.credosys.solutions.secrete.world.MainActivity;
-import com.credosys.solutions.secrete.world.Pojos.Home;
+import com.credosys.solutions.secrete.world.Pojos.HomeContents;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.ArrayList;
@@ -56,16 +55,16 @@ public class HomeFragement extends Fragment {
         return view;
     }
 
-    List<Home> tempList(){
-        List<Home> al=new ArrayList<>();
-        al.add(new Home("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new Home("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
-        al.add(new Home("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new Home("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
-        al.add(new Home("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new Home("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
-        al.add(new Home("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new Home("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
+    List<HomeContents> tempList(){
+        List<HomeContents> al=new ArrayList<>();
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
+        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
 
 
         return al;

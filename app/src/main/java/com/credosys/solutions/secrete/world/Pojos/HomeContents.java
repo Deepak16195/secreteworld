@@ -4,16 +4,25 @@ package com.credosys.solutions.secrete.world.Pojos;
  * Created by win7 on 23-Dec-17.
  */
 
-public class Home {
+public class HomeContents {
     private String name;
     private String title;
     private String subtitle;
+    private String lable;
 
-    public Home(String name, String title, String subtitle) {
+
+    public HomeContents(String name, String title, String subtitle){
         this.name = name;
         this.title = title;
         this.subtitle = subtitle;
     }
+    public HomeContents(String name, String title, String subtitle,String lable) {
+        this.name = name;
+        this.title = title;
+        this.subtitle = subtitle;
+        this.lable=lable;
+    }
+
     public String getName() {
         return name;
     }
@@ -36,5 +45,13 @@ public class Home {
 
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
+    }
+
+    public String getLable() {
+        return lable;
+    }
+
+    public void setLable(String lable) {
+        this.lable = lable;
     }
 }
