@@ -32,6 +32,7 @@ import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.MessagesFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
 
@@ -370,6 +371,14 @@ public class MainActivity extends AppCompatActivity
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
         fragment = getSupportFragmentManager().findFragmentByTag("friends");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void setMessages(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
+        fragment = getSupportFragmentManager().findFragmentByTag("messages");
         transaction.addToBackStack(null);
         transaction.commit();
     }

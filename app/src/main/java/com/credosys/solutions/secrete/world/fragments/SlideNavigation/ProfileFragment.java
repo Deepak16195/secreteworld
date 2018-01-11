@@ -20,7 +20,7 @@ import com.credosys.solutions.secrete.world.R;
  */
 
 public class ProfileFragment extends Fragment implements View.OnClickListener{
-    LinearLayout LlWall,LlContents,LlFriends;
+    LinearLayout LlWall,LlContents,LlFriends,LlMessages;
     NestedScrollView profileNestedScrollView;
      public static ProfileFragment newInstance() {
         Bundle args = new Bundle();
@@ -45,10 +45,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         LlWall=v.findViewById(R.id.ll_wall);
         LlContents=v.findViewById(R.id.ll_contents);
         LlFriends=v.findViewById(R.id.ll_friends);
+        LlMessages=v.findViewById(R.id.ll_messages);
 
         LlWall.setOnClickListener(this);
         LlContents.setOnClickListener(this);
         LlFriends.setOnClickListener(this);
+        LlMessages.setOnClickListener(this);
         return v;
     }
 
@@ -62,6 +64,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         }
         if(v.getId()==R.id.ll_friends){
             ((MainActivity)getActivity()).setFriends();
+        }
+        if (v.getId()==R.id.ll_messages){
+            ((MainActivity)getActivity()).setMessages();
         }
     }
 }
