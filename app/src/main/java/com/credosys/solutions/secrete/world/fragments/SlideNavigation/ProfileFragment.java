@@ -20,7 +20,7 @@ import com.credosys.solutions.secrete.world.R;
  */
 
 public class ProfileFragment extends Fragment implements View.OnClickListener{
-    LinearLayout LlWall,LlContents,LlFriends,LlMessages;
+    LinearLayout LlWall,LlContents,LlFriends,LlMessages,LlRequest,LlOrders;
     NestedScrollView profileNestedScrollView;
      public static ProfileFragment newInstance() {
         Bundle args = new Bundle();
@@ -46,27 +46,41 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         LlContents=v.findViewById(R.id.ll_contents);
         LlFriends=v.findViewById(R.id.ll_friends);
         LlMessages=v.findViewById(R.id.ll_messages);
+        LlRequest=v.findViewById(R.id.ll_request);
+        LlOrders=v.findViewById(R.id.ll_orders);
 
         LlWall.setOnClickListener(this);
         LlContents.setOnClickListener(this);
         LlFriends.setOnClickListener(this);
         LlMessages.setOnClickListener(this);
+        LlRequest.setOnClickListener(this);
+        LlOrders.setOnClickListener(this);
         return v;
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.ll_wall) {
-            ((MainActivity)getActivity()).setWall();
+
+        switch(v.getId()) {
+            case R.id.ll_wall:
+                ((MainActivity)getActivity()).setWall();
+                break;
+            case R.id.ll_contents:
+                ((MainActivity)getActivity()).setContents();
+                break;
+            case R.id.ll_friends:
+                ((MainActivity)getActivity()).setFriends();
+                break;
+            case R.id.ll_messages:
+                ((MainActivity)getActivity()).setMessages();
+                break;
+            case R.id.ll_request:
+                ((MainActivity)getActivity()).setProfileRequest();
+                break;
+            case R.id.ll_orders:
+                ((MainActivity)getActivity()).setOrders();
+                break;
         }
-        if(v.getId()==R.id.ll_contents){
-            ((MainActivity)getActivity()).setContents();
-        }
-        if(v.getId()==R.id.ll_friends){
-            ((MainActivity)getActivity()).setFriends();
-        }
-        if (v.getId()==R.id.ll_messages){
-            ((MainActivity)getActivity()).setMessages();
-        }
+
     }
 }

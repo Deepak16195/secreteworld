@@ -33,6 +33,8 @@ import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategor
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.MessagesFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.OrderFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestProfileFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
 
@@ -379,6 +381,21 @@ public class MainActivity extends AppCompatActivity
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
         fragment = getSupportFragmentManager().findFragmentByTag("messages");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    public void setProfileRequest(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
+        fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void setOrders(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
+        fragment = getSupportFragmentManager().findFragmentByTag("orders");
         transaction.addToBackStack(null);
         transaction.commit();
     }
