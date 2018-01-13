@@ -54,7 +54,7 @@ public class SearchByCategoryFragment extends Fragment implements View.OnClickLi
         imgBlueArrow=v.findViewById(R.id.img_blue_arrow);
         imgBlueArrow.setOnClickListener(this);
 
-        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.ic_default_image);
+        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rvSearchCategory.setLayoutManager(mLayoutManager);

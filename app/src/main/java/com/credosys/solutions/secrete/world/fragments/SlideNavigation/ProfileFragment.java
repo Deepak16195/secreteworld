@@ -20,7 +20,7 @@ import com.credosys.solutions.secrete.world.R;
  */
 
 public class ProfileFragment extends Fragment implements View.OnClickListener{
-    LinearLayout LlWall,LlContents,LlFriends,LlMessages,LlRequest,LlOrders;
+    LinearLayout LlWall,LlContents,LlFriends,LlMessages,LlRequest,LlOrders,LlExpert;
     NestedScrollView profileNestedScrollView;
      public static ProfileFragment newInstance() {
         Bundle args = new Bundle();
@@ -48,6 +48,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         LlMessages=v.findViewById(R.id.ll_messages);
         LlRequest=v.findViewById(R.id.ll_request);
         LlOrders=v.findViewById(R.id.ll_orders);
+        LlExpert=v.findViewById(R.id.ll_expert);
 
         LlWall.setOnClickListener(this);
         LlContents.setOnClickListener(this);
@@ -55,6 +56,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         LlMessages.setOnClickListener(this);
         LlRequest.setOnClickListener(this);
         LlOrders.setOnClickListener(this);
+        LlExpert.setOnClickListener(this);
         return v;
     }
 
@@ -79,6 +81,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.ll_orders:
                 ((MainActivity)getActivity()).setOrders();
+                break;
+            case R.id.ll_expert:
+                ((MainActivity)getActivity()).setExpert();
                 break;
         }
 

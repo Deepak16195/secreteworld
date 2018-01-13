@@ -31,6 +31,7 @@ import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigation
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ExpertFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.MessagesFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.OrderFragment;
@@ -396,6 +397,14 @@ public class MainActivity extends AppCompatActivity
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
         fragment = getSupportFragmentManager().findFragmentByTag("orders");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void setExpert(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, ExpertFragment.newInstance(), "expert");
+        fragment = getSupportFragmentManager().findFragmentByTag("expert");
         transaction.addToBackStack(null);
         transaction.commit();
     }
