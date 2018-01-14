@@ -75,8 +75,10 @@
             <ImageView
                 android:id="@+id/img_msg_box"
                 android:layout_toRightOf="@+id/tv_comment_num"
-                android:layout_width="10dp"
-                android:layout_height="10dp" />
+                android:layout_marginLeft="5dp"
+                app:srcCompat="@drawable/ic_message_box"
+                android:layout_width="16dp"
+                android:layout_height="16dp" />
         </RelativeLayout>
         <View
             android:background="#A3A3A3"

@@ -408,6 +408,14 @@ public class MainActivity extends AppCompatActivity
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    public void setAddContent(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, .newInstance(), "expert");
+        fragment = getSupportFragmentManager().findFragmentByTag("expert");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.img_plus){
