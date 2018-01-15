@@ -37,6 +37,7 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.Messages
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.OrderFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestProfileFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -300,6 +301,9 @@ public class MainActivity extends AppCompatActivity
             transaction.addToBackStack(null);
             transaction.commit();
         } else if (id == R.id.nav_gallery) {
+            viewPager.setVisibility(View.GONE);
+            frameContainer.setVisibility(View.VISIBLE);
+            setAddContent();
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -405,6 +409,14 @@ public class MainActivity extends AppCompatActivity
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, ExpertFragment.newInstance(), "expert");
         fragment = getSupportFragmentManager().findFragmentByTag("expert");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void setAddContent(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
+        fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
         transaction.addToBackStack(null);
         transaction.commit();
     }
