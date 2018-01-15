@@ -66,6 +66,7 @@
 
             <ScrollView
                 android:id="@+id/sv_main"
+                android:fillViewport="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -75,6 +76,9 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayColor"/>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -133,7 +137,9 @@
                         </RelativeLayout>
 
                     </RelativeLayout>
-
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayColor"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -192,7 +198,9 @@
                         </RelativeLayout>
                     </RelativeLayout>
 
-
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayColor"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -251,7 +259,9 @@
                                 android:text="MAX 500 CHARECTERS" />
                         </RelativeLayout>
                     </RelativeLayout>
-
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayColor"/>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -279,7 +289,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/avenirltstd_medium"
                                 android:gravity="center_vertical"
-                                android:text="EXTENDED DESCRIPTION"
+                                android:text="DATE &amp; TIME"
                                 android:textAlignment="gravity"
                                 android:textColor="#505050"
                                 android:textSize="20sp" />
@@ -291,28 +301,21 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/ll_addcontent_extdesc"
                             android:layout_margin="10dp"
-                            android:visibility="gone">
+                           >
 
-                            <EditText
-                                android:id="@+id/et_addcontent_extdesc"
+                            <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/square_border"
-                                android:fontFamily="@font/avenirltstd_medium"
-                                android:hint="EXTENDED DESCRIPTION"
-                                android:lines="6"
-                                android:padding="10dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_below="@+id/et_addcontent_extdesc"
-                                android:text="MAX 9000 CHARECTERS" />
+                                android:layout_height="230dp"
+                                app:picker_curved="true"
+                                app:picker_cyclic="true"
+                                app:picker_visibleItemCount="7"
+                                />
                         </RelativeLayout>
                     </RelativeLayout>
 
-
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayColor"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -370,7 +373,9 @@
                                 android:text="MAX 80 CHARECTERS" />
                         </RelativeLayout>
                     </RelativeLayout>
-
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayColor"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -424,7 +429,7 @@
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    app:srcCompat="@drawable/ic_user" />
+                                    app:srcCompat="@drawable/ic_camera" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -445,17 +450,19 @@
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    app:srcCompat="@drawable/ic_user" />
+                                    app:srcCompat="@drawable/ic_video" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="TAP TO ADD PHOTO"
+                                    android:text="TAP TO ADD Video"
                                     android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </RelativeLayout>
-
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grayColor"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">

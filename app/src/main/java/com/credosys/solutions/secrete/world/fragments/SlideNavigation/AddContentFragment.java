@@ -95,26 +95,71 @@ public class AddContentFragment extends Fragment implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.ll_addcontent_title:
-                rlTitleExpand.setVisibility(View.VISIBLE);
+                 rlTitleExpand.setVisibility(View.VISIBLE);
+                 rlCategoryExpand.setVisibility(View.GONE);
+                 rlDescExpand.setVisibility(View.GONE);
+                 rlExtdescExpand.setVisibility(View.GONE);
+                 rlTagExpand.setVisibility(View.GONE);
+                 rlPicExpand.setVisibility(View.GONE);
+                  rlLocationExpand.setVisibility(View.GONE);
                 break;
             case R.id.ll_addcontent_category:
                 rlCategoryExpand.setVisibility(View.VISIBLE);
+                rlTitleExpand.setVisibility(View.GONE);
+                rlDescExpand.setVisibility(View.GONE);
+                rlExtdescExpand.setVisibility(View.GONE);
+                rlTagExpand.setVisibility(View.GONE);
+                rlPicExpand.setVisibility(View.GONE);
+                rlLocationExpand.setVisibility(View.GONE);
                 break;
             case R.id.ll_addcontent_description:
                 rlDescExpand.setVisibility(View.VISIBLE);
+                rlCategoryExpand.setVisibility(View.GONE);
+                rlTitleExpand.setVisibility(View.GONE);
+                rlExtdescExpand.setVisibility(View.GONE);
+                rlTagExpand.setVisibility(View.GONE);
+                rlPicExpand.setVisibility(View.GONE);
+                rlLocationExpand.setVisibility(View.GONE);
                 break;
             case R.id.ll_addcontent_extdesc:
                 rlExtdescExpand.setVisibility(View.VISIBLE);
+                rlDescExpand.setVisibility(View.GONE);
+                rlCategoryExpand.setVisibility(View.GONE);
+                rlTitleExpand.setVisibility(View.GONE);
+                rlTagExpand.setVisibility(View.GONE);
+                rlPicExpand.setVisibility(View.GONE);
+                rlLocationExpand.setVisibility(View.GONE);
                 break;
             case R.id.ll_addcontent_tag:
                 rlTagExpand.setVisibility(View.VISIBLE);
+                rlDescExpand.setVisibility(View.GONE);
+                rlCategoryExpand.setVisibility(View.GONE);
+                rlTitleExpand.setVisibility(View.GONE);
+                rlExtdescExpand.setVisibility(View.GONE);
+                rlPicExpand.setVisibility(View.GONE);
+                rlLocationExpand.setVisibility(View.GONE);
                 break;
             case R.id.ll_addcontent_pic:
                 rlPicExpand.setVisibility(View.VISIBLE);
+                rlDescExpand.setVisibility(View.GONE);
+                rlCategoryExpand.setVisibility(View.GONE);
+                rlTitleExpand.setVisibility(View.GONE);
+                rlExtdescExpand.setVisibility(View.GONE);
+                rlTagExpand.setVisibility(View.GONE);
+                rlLocationExpand.setVisibility(View.GONE);
                 break;
             case R.id.ll_addcontent_location:
                 rlLocationExpand.setVisibility(View.VISIBLE);
+                rlDescExpand.setVisibility(View.GONE);
+                rlCategoryExpand.setVisibility(View.GONE);
+                rlTitleExpand.setVisibility(View.GONE);
+                rlExtdescExpand.setVisibility(View.GONE);
+                rlTagExpand.setVisibility(View.GONE);
+                rlPicExpand.setVisibility(View.GONE);
                 break;
+
+
+
         }
     }
 }
