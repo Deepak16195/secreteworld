@@ -13,4 +13,6 @@
     <color name="cutomGreen">#62B846</color>
     <color name="white">#ffffff</color>
     <color name="tab_layout_text">#3C3C3C</color>
+    <color name="red">#FF4003</color>
+    <color name="fontblack">#4A4A4A</color>
 </resources>

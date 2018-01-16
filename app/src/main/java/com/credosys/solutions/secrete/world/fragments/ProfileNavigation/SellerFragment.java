@@ -19,17 +19,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by win7 on 12-Jan-18.
+ * Created by win7 on 16-Jan-18.
  */
 
-public class OrderFragment extends Fragment {
-    RecyclerView rvOrder;
+public class SellerFragment extends Fragment {
+    RecyclerView rvSeller;
 
-    public static OrderFragment newInstance() {
+
+    public static SellerFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        OrderFragment fragment = new OrderFragment();
+        SellerFragment fragment = new SellerFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -37,12 +38,11 @@ public class OrderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_orders_seller,null,false);
-        ((MainActivity)getActivity()).setActionBarTitle("MY ORDER");
+        ((MainActivity)getActivity()).setActionBarTitle("SELLERS");
         ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
         ((MainActivity)getActivity()).showBackButton(true);
-
-        rvOrder=v.findViewById(R.id.rv_order);
+        rvSeller =v.findViewById(R.id.rv_order);
 
 
         List<OrdersSellers> orders=new ArrayList<>();
@@ -56,10 +56,9 @@ public class OrderFragment extends Fragment {
         OrderSellerAdapter oa=new OrderSellerAdapter(getActivity(),orders);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rvOrder.setAdapter(oa);
-        rvOrder.setLayoutManager(llm);
-        rvOrder.setNestedScrollingEnabled(true);
+        rvSeller.setAdapter(oa);
+        rvSeller.setLayoutManager(llm);
+        rvSeller.setNestedScrollingEnabled(true);
         return v;
     }
-
 }

@@ -36,6 +36,7 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsF
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.MessagesFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.OrderFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestProfileFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.SellerFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
@@ -401,6 +402,14 @@ public class MainActivity extends AppCompatActivity
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
         fragment = getSupportFragmentManager().findFragmentByTag("orders");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void setSellers(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
+        fragment = getSupportFragmentManager().findFragmentByTag("sellers");
         transaction.addToBackStack(null);
         transaction.commit();
     }

@@ -1,9 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
-    android:text="two"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_famous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_radius_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radius"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txt_radius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45 KM"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_slide_km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3 KM"
+                    android:textSize="10sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3000 KM"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_google"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/txt_slide_km"
+                android:maxHeight="15dp"
+                android:min="3"
+                android:max="3000"
+                android:maxWidth="15dp"
+                android:minHeight="15dp"
+                android:minWidth="15dp"
+                android:paddingTop="3dp"
+                android:progressTint="#B4B4B4"
+                android:thumb="@drawable/ic_blue_dot"
+
+                />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+        <!---->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="0.0"-->
+        <!--android:background="#505050"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="5dp">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="CATEGORIES"-->
+        <!--android:textColor="#fff" />-->
+        <!--</LinearLayout>-->
+        <Button
+            android:id="@+id/btn_category"
+            android:text="CATEGORIES"
+            android:background="#505050"
+            android:textColor="#fff"
+            android:padding="5dp"
+            android:textSize="10sp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+
+        android:background="@drawable/square_border"
+        android:hint="Enter destination to explore"
+        android:padding="10dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/chk_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox_current_location"
+            android:checked="false"
+            android:textSize="12sp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:paddingLeft="5dp"
+            android:text="USE YOUR CURRENT LOCATION"
+            android:textColor="#505050" />
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_toRightOf="@+id/rb_location"-->
+        <!---->
+        <!--android:textSize="12sp"-->
+        <!--android:textStyle="bold" />-->
+    </RelativeLayout>
+
+</LinearLayout>

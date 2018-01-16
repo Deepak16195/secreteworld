@@ -251,6 +251,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_sellers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="2"
