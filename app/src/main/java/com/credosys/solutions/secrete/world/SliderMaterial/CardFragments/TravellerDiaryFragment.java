@@ -1,26 +1,22 @@
-package com.credosys.solutions.secrete.world.SliderMaterial;
+package com.credosys.solutions.secrete.world.SliderMaterial.CardFragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.SliderMaterial.CardAdapter;
 
+/**
+ * Created by win7 on 17-Jan-18.
+ */
 
-public class CardFragment extends Fragment {
-    int currFragNum;
-    ImageView imgDiaryCardBackground,imgDiaryCardForeground;
+public class TravellerDiaryFragment extends Fragment {
 
-    public void setCurrFragNum(int currFragNum) {
-        this.currFragNum = currFragNum;
-
-    }
     private CardView mCardView;
 
     @Nullable
@@ -31,30 +27,7 @@ public class CardFragment extends Fragment {
         mCardView = (CardView) view.findViewById(R.id.cardView);
         mCardView.setMaxCardElevation(mCardView.getCardElevation()
                 * CardAdapter.MAX_ELEVATION_FACTOR);
-        imgDiaryCardBackground=view.findViewById(R.id.img_diary_card_background);
-        imgDiaryCardForeground=view.findViewById(R.id.img_diary_card_foreground);
-
-        switch(currFragNum){
-                case 0:
-
-                break;
-
-                case 1:
-                break;
-
-                case 2:
-                break;
-
-                case 3:
-                break;
-
-                case 4:
-                break;
-
-                case 5:
-                break;
-
-        }
+        mCardView.setRadius(5.0f);
         return view;
     }
 

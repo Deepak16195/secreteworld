@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.widget.CardView;
 import android.view.ViewGroup;
 
+import com.credosys.solutions.secrete.world.SliderMaterial.CardFragments.HelpUsFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,13 +16,16 @@ public class CardFragmentPagerAdapter extends FragmentStatePagerAdapter implemen
     private List<CardFragment> mFragments;
     private float mBaseElevation;
 
+
     public CardFragmentPagerAdapter(FragmentManager fm, float baseElevation) {
         super(fm);
         mFragments = new ArrayList<>();
         mBaseElevation = baseElevation;
 
         for(int i = 0; i< 6; i++){
-            addCardFragment(new CardFragment());
+            CardFragment cf=new CardFragment();
+            cf.setCurrFragNum(i);
+            addCardFragment(cf);
         }
     }
 
