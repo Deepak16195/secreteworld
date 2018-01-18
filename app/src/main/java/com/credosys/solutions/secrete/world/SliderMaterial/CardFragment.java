@@ -36,22 +36,28 @@ public class CardFragment extends Fragment {
 
         switch(currFragNum){
                 case 0:
-
+                    imgDiaryCardForeground.setImageResource(R.drawable.ic_my_dairy);
                 break;
 
                 case 1:
+                    imgDiaryCardBackground.setImageResource(R.drawable.launch_banner);
+                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_cam);
                 break;
 
                 case 2:
+                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_calendar);
                 break;
 
                 case 3:
+                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_museum);
                 break;
 
                 case 4:
+                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_place);
                 break;
 
                 case 5:
+                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_book);
                 break;
 
         }

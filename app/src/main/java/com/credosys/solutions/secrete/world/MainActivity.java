@@ -39,6 +39,7 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestP
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.SellerFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -307,7 +308,9 @@ public class MainActivity extends AppCompatActivity
             setAddContent();
 
         } else if (id == R.id.nav_slideshow) {
-
+            viewPager.setVisibility(View.GONE);
+            frameContainer.setVisibility(View.VISIBLE);
+            setMuseumConcerts();
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -426,6 +429,15 @@ public class MainActivity extends AppCompatActivity
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
         fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+
+    public void setMuseumConcerts(){
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, MuseumConcertFragment.newInstance(), "museumconcert");
+        fragment = getSupportFragmentManager().findFragmentByTag("museumconcert");
         transaction.addToBackStack(null);
         transaction.commit();
     }

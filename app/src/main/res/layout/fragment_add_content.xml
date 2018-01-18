@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -21,49 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/ll_addcontent_topbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/avenirltstd_medium"
-                    android:text="MY CONTENT"
-                    android:textColor="#505050"
-                    android:textSize="24sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_bell_add_content" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/avenirltstd_roman"
-                        android:text="ASSISTANCE"
-                        android:textColor="#F6412C"
-                        android:textSize="8dp" />
-                </LinearLayout>
-            </LinearLayout>
-
+            <include layout="@layout/common_assistance"/>
             <ScrollView
                 android:id="@+id/sv_main"
                 android:fillViewport="true"

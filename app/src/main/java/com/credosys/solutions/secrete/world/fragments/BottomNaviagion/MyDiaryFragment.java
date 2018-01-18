@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import  android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardFragmentPagerAdapter;
@@ -24,7 +26,7 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
         CompoundButton.OnCheckedChangeListener */{
 //    private Button mButton;
     private ViewPager mViewPager;
-
+    TextView txtMydiaryLableOne,txtMydiaryLableTwo;
     private CardPagerAdapter mCardAdapter;
     private ShadowTransformer mCardShadowTransformer;
     private CardFragmentPagerAdapter mFragmentCardAdapter;
@@ -43,6 +45,8 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_mydiary,null,false);
         mViewPager = (ViewPager) v.findViewById(R.id.viewpager_mydiary);
+        txtMydiaryLableOne=v.findViewById(R.id.txt_mydiary_lable_one);
+        txtMydiaryLableTwo=v.findViewById(R.id.txt_mydiary_lable_two);
 //        mButton = (Button) v.findViewById(R.id.cardTypeBtn);
 //        ((CheckBox) v.findViewById(R.id.checkBox)).setOnCheckedChangeListener(this);
 //        mButton.setOnClickListener(this);
@@ -65,6 +69,48 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
 //        mViewPager.setAdapter(mCardAdapter);
 //        mViewPager.setPageTransformer(false, mCardShadowTransformer);
         mViewPager.setOffscreenPageLimit(3);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch(position)
+                {
+                    case 0:
+                        txtMydiaryLableOne.setText("HELP US TO");
+                        txtMydiaryLableTwo.setText("KNOW THE WORLD");
+                        break;
+                    case 1:
+                        txtMydiaryLableOne.setText("A TRIP");
+                        txtMydiaryLableTwo.setText("TO A PHOTO");
+                        break;
+                    case 2:
+                        txtMydiaryLableOne.setText("PROMOTE EVENTS");
+                        txtMydiaryLableTwo.setText("");
+                        break;
+                    case 3:
+                        txtMydiaryLableOne.setText("MUSEUMS - ARTS GALLERIES");
+                        txtMydiaryLableTwo.setText("CONCERTS - THEATERS");
+                        break;
+                    case 4:
+                        txtMydiaryLableOne.setText("CREATE A");
+                        txtMydiaryLableTwo.setText("TRAVEL ITNERY");
+                        break;
+                    case 5:
+                        txtMydiaryLableOne.setText("CREATE A");
+                        txtMydiaryLableTwo.setText("TRAVEL DIARY");
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         return v;
     }
 
