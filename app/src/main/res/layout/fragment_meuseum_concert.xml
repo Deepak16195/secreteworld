@@ -30,6 +30,7 @@
                 android:paddingHorizontal="10dp">
 
                 <LinearLayout
+                    android:paddingHorizontal="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -38,18 +39,23 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Start Date" />
+                        android:text="@string/mc_start_date" />
 
-                    <EditText
-                        android:id="@+id/et_start_date"
+                    <TextView
+                        android:id="@+id/txt_start_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/ic_user"
-                        android:hint="DD/MM/YYYY" />
-
+                        android:hint="@string/mc_txt_date_format" />
+                    <View
+                        android:background="@color/grayColor"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
                 </LinearLayout>
 
                 <LinearLayout
+                    android:paddingHorizontal="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -58,15 +64,20 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="End Date" />
+                        android:text="@string/mc_end_date" />
 
-                    <EditText
-                        android:id="@+id/et_end_date"
+                    <TextView
+                        android:id="@+id/txt_end_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableEnd="@drawable/ic_user"
                         android:foregroundTint="@color/customBlue"
-                        android:hint="DD/MM/YYYY" />
+                        android:hint="@string/mc_txt_date_format" />
+                    <View
+                        android:background="@color/grayColor"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
                 </LinearLayout>
             </LinearLayout>
 
