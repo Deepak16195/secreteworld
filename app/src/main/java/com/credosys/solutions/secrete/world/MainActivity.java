@@ -1,5 +1,7 @@
 package com.credosys.solutions.secrete.world;
 
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
@@ -26,6 +28,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
@@ -41,6 +44,10 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFrag
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -61,7 +68,8 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
-    private boolean mToolBarNavigationListenerIsRegistered = false;;
+    private boolean mToolBarNavigationListenerIsRegistered = false;
+    Calendar mcurrentTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -440,6 +448,22 @@ public class MainActivity extends AppCompatActivity
         fragment = getSupportFragmentManager().findFragmentByTag("museumconcert");
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public void setTimePickerDialog(Context context, final TextView txtStartEndTime){
+        mcurrentTime = Calendar.getInstance();
+        int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+        int minute = mcurrentTime.get(Calendar.MINUTE);
+
+        TimePickerDialog timePickerDialog=new TimePickerDialog(context, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
+                mcurrentTime.set(Calendar.YEAR,Calendar.MONTH,Calendar.DATE,hourOfDay,minutes,Calendar.SECOND);
+                txtStartEndTime.setText(new SimpleDateFormat("hh:mm a", Locale.US).format(mcurrentTime.getTime()));
+            }
+        },hour,minute,false);
+        timePickerDialog.setTitle(getString(R.string.mc_select_time));
+        timePickerDialog.show();
     }
     @Override
     public void onClick(View view) {

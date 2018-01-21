@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
 
 import java.text.DateFormat;
@@ -53,15 +54,30 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.SplitHolder>
         holder.btnSplit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hold.llSplitTimeList.addView(addLayout());
+                View view = LayoutInflater.from(context).inflate(R.layout.single_common_start_end_time, null, false);
+                final TextView txtStartTime=view.findViewById(R.id.single_start_time); // second index in linerlayout
+                final TextView txtEndTime=view.findViewById(R.id.single_end_time);// second index in linearlayout
+
+                txtStartTime.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ((MainActivity)context).setTimePickerDialog(context,txtStartTime);
+                    }
+                });
+
+
+                txtEndTime.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ((MainActivity)context).setTimePickerDialog(context,txtEndTime);
+                    }
+                });
+
+                hold.llSplitTimeList.addView(view);
             }
         });
     }
 
-    View addLayout(){
-        View inflate = LayoutInflater.from(context).inflate(R.layout.single_common_start_end_time, null, false);
-        return inflate;
-    }
     @Override
     public int getItemCount() {
         return dateList.size();
@@ -69,7 +85,7 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.SplitHolder>
 
 
     class SplitHolder extends RecyclerView.ViewHolder {
-        TextView txtPlanDate;
+        TextView txtPlanDate,txtStartTime,txtEndTime; //default txtStartTime, txtEndTime 1st index in linearlayout
         Button btnSplit;
         LinearLayout llSplitTimeList;
 
@@ -78,7 +94,22 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.SplitHolder>
             txtPlanDate = itemView.findViewById(R.id.txt_plan_date);
             btnSplit = itemView.findViewById(R.id.btn_split);
             llSplitTimeList = itemView.findViewById(R.id.ll_split_time_list);
+            txtStartTime=itemView.findViewById(R.id.single_start_time);
+            txtEndTime=itemView.findViewById(R.id.single_end_time);
 
+            txtStartTime.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((MainActivity)context).setTimePickerDialog(context,txtStartTime);
+                }
+            });
+
+            txtEndTime.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((MainActivity)context).setTimePickerDialog(context,txtEndTime);
+                }
+            });
         }
     }
 }
