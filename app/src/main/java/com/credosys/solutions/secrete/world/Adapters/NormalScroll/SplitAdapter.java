@@ -34,7 +34,6 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.SplitHolder>
     public SplitAdapter(Context context, List<Date> dateList) {
         this.context = context;
         this.dateList = dateList;
-
     }
 
     @Override
@@ -47,7 +46,6 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.SplitHolder>
     @Override
     public void onBindViewHolder(SplitHolder holder, int position) {
         final SplitHolder hold = holder;
-
         params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         dateFormat.format(dateList.get(position));

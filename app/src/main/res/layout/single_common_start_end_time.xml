@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+  android:paddingStart="10dp"
     android:orientation="horizontal"
     android:baselineAligned="false">
 
@@ -13,18 +14,23 @@
 
         <TextView
             android:fontFamily="@font/avenirltstd_medium"
+            android:textColor="@color/fontblack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_time" />
 
         <TextView
             android:id="@+id/single_start_time"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/_00_00_am" />
         <View
             android:background="@color/grayColor"
             android:layout_width="match_parent"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_height="1dp"/>
     </LinearLayout>
 
@@ -36,17 +42,22 @@
 
         <TextView
             android:fontFamily="@font/avenirltstd_medium"
+            android:textColor="@color/fontblack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_time" />
 
         <TextView
             android:id="@+id/single_end_time"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/_00_00_pm" />
         <View
+            android:layout_marginEnd="30dp"
             android:background="@color/grayColor"
+            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
     </LinearLayout>
