@@ -29,7 +29,7 @@ public class SplitAdapter extends RecyclerView.Adapter<SplitAdapter.SplitHolder>
     private Context context;
     private List<Date> dateList;
 
-    LinearLayout.LayoutParams params;
+    private LinearLayout.LayoutParams params;
 
     //    static int viewCount=0;
     public SplitAdapter(Context context, List<Date> dateList) {

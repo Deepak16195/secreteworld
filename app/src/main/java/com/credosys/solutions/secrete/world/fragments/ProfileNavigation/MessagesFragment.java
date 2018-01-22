@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.MessagesAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
-import com.credosys.solutions.secrete.world.Pojos.Messages;
+import com.credosys.solutions.secrete.world.Pojos.App.Messages;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.ArrayList;

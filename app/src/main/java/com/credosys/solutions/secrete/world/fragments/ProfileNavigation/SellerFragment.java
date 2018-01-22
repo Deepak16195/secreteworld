@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.OrderSellerAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
-import com.credosys.solutions.secrete.world.Pojos.OrdersSellers;
+import com.credosys.solutions.secrete.world.Pojos.App.OrdersSellers;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.ArrayList;

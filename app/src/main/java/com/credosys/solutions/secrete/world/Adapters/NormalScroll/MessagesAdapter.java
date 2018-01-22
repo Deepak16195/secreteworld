@@ -4,13 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.credosys.solutions.secrete.world.Pojos.HomeContents;
-import com.credosys.solutions.secrete.world.Pojos.Messages;
+import com.credosys.solutions.secrete.world.Pojos.App.Messages;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.List;

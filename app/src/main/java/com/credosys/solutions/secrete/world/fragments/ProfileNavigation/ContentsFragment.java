@@ -18,7 +18,7 @@ import android.widget.RelativeLayout;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ContentsAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
-import com.credosys.solutions.secrete.world.Pojos.HomeContents;
+import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.ArrayList;

@@ -10,21 +10,52 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ok" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e62d14c-0429-463e-9c56-8f5dbf519afb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SplitAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/corner_radius.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/single_common_start_end_time.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/single_split_time.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_7_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_okhttp3_logging_interceptor_3_8_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_okhttp3_okhttp_3_8_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_okio_okio_1_13_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_otto_1_3_8_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_retrofit2_adapter_rxjava2_2_3_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_retrofit2_retrofit_2_3_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/io_reactivex_rxjava2_rxjava_2_0_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_reactivestreams_reactive_streams_1_0_0_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/Api.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/ApiInterface.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Login.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/ApiModalList/Modal.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Utility/CommonAlertDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/MuseumConcertFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/MuseumConcertFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_meuseum_concert.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_meuseum_concert.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/ContentsAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/ContentsAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/GoogleHorizontalAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/GoogleHorizontalAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/HomeAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/HomeAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/MessagesAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/MessagesAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/OrderSellerAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/OrderSellerAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SearchByCategoryAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SearchByCategoryAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SplitAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SplitAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/HomeFragement.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/HomeFragement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/GooglePlacesFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/GooglePlacesFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SearchByCategoryFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SearchByCategoryFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SworldPlacesFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SworldPlacesFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/ContentsFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/ContentsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/MessagesFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/MessagesFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/OrderFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/OrderFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/SellerFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/SellerFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/ExploreGooglePlaces.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/ExploreGooglePlaces.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/HomeContents.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/HomeContents.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/Messages.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/Messages.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/OrdersSellers.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/OrdersSellers.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/SearchCategory.java" afterPath="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/SearchCategory.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,79 +92,137 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MuseumConcertFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/MuseumConcertFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="106" column="34" lean-forward="false" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2087#2119#0" expanded="true" />
-                <element signature="e#3258#3628#0" expanded="true" />
-                <element signature="e#3445#3511#0" expanded="true" />
-                <element signature="e#3627#3628#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_login.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SplitAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SplitAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1674#1935#0" expanded="true" />
-                <element signature="e#1934#1935#0" expanded="true" />
-                <element signature="e#1989#1990#0" expanded="true" />
-                <element signature="e#2027#2028#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single_split_time.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/single_split_time.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+            <state relative-caret-position="323">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="41" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="25" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/MainActivity.java">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
-                <element signature="e#12478#12479#0" expanded="true" />
-                <element signature="e#12533#12534#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1806#1807#0" expanded="true" />
+                <element signature="e#1857#1858#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_meuseum_concert.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_meuseum_concert.xml">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+            <state relative-caret-position="68">
+              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Messages.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/Messages.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdersSellers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/OrdersSellers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchCategory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/SearchCategory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/ApiModalList/Modal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
-                <element signature="e#1606#1629#0" expanded="true" />
-                <element signature="e#1943#1971#0" expanded="true" />
-                <element signature="e#2748#2769#0" expanded="true" />
-                <element signature="e#3148#3176#0" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#356#357#0" expanded="true" />
+                <element signature="e#401#402#0" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#651#652#0" expanded="true" />
+                <element signature="e#699#700#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
+                <element signature="e#888#889#0" expanded="true" />
               </folding>
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="ApiInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/ApiInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Api.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/Api.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -144,6 +233,7 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -1908,19 +1998,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_profile_request.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/single_order_expandable.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SearchByCategoryFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Utility/SimpleDividerItemDecoration.java" />
-        <option value="$PROJECT_DIR$/src/main/res/drawable/line_divider.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/ExpertAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/ExpertFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_expert.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/single_expert.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Utility/SingleDateAndTimePicker.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/src/main/res/drawable/dotted.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/Orders.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/single_order_row.xml" />
@@ -1959,6 +2036,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/MuseumConcertFragment.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/single_split_time.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SplitAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/HomeFragement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/CommonAlertDialog.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/Api.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Utility/CommonAlertDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/ExploreGooglePlaces.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/HomeContents.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/SearchCategory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/ApiInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/ApiModalList/Modal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Login.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" />
       </list>
     </option>
   </component>
@@ -1986,35 +2076,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidSecretWorld" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidSecretWorld" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2025,24 +2086,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidSecretWorld" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2086,24 +2129,6 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidSecretWorld" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2155,33 +2180,11 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
+              <option name="myItemId" value="Pojos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SlideNavigation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidSecretWorld" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="world" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2203,7 +2206,7 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Adapters" />
+              <option name="myItemId" value="Pojos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2225,24 +2228,49 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Adapters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NormalScroll" />
+              <option name="myItemId" value="ApiCall" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidSecretWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidSecretWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/sdk" />
-    <property name="last_opened_file_path" value="D:/sworld_test/SmallExamples-master/ExpandAnimationExample" />
+    <property name="last_opened_file_path" value="D:/AndroidProjects/GetRestFullApi" />
     <property name="device.picker.selection" value="F5AZFG200052" />
     <property name="android.profiler.active" value="true" />
     <property name="SearchEverywhereHistoryKey" value="profile&#9;FILE&#9;file://D:/AndroidSecretWorld/app/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/ProfileFragment.java&#10;ome&#9;FILE&#9;file://D:/AndroidSecretWorld/app/src/main/res/layout/fragment_home.xml" />
@@ -2261,10 +2289,15 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/res" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\AndroidSecretWorld\app\src\main\assets\fonts" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AndroidSecretWorld\app\src\main\java\com\credosys\solutions\secrete\world\Utility" />
+      <recent name="D:\AndroidSecretWorld\app\src\main\res" />
+      <recent name="D:\AndroidSecretWorld\app\src\main\assets" />
+      <recent name="D:\AndroidSecretWorld\app\src\main\res\font" />
+      <recent name="D:\AndroidSecretWorld\app\src\main\assets\new" />
     </key>
     <key name="android.template.packageName">
+      <recent name="com.credosys.solutions.secrete.world" />
       <recent name="com.credosys.solutions.secrect.world" />
     </key>
     <key name="android.template.parentActivityClass">
@@ -2274,12 +2307,8 @@
       <recent name="com.credosys.solutions.secrete.world.Adapters.NormalScroll" />
       <recent name="com.credosys.solutions.secrect.world.SliderMaterial" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\AndroidSecretWorld\app\src\main\java\com\credosys\solutions\secrete\world\Utility" />
-      <recent name="D:\AndroidSecretWorld\app\src\main\res" />
-      <recent name="D:\AndroidSecretWorld\app\src\main\assets" />
-      <recent name="D:\AndroidSecretWorld\app\src\main\res\font" />
-      <recent name="D:\AndroidSecretWorld\app\src\main\assets\new" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AndroidSecretWorld\app\src\main\assets\fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2365,7 +2394,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516372634182" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516631366107" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2413,7 +2442,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516372634182" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516631366107" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2596,7 +2625,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516372634185" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516631366109" />
       </method>
     </configuration>
     <list size="1">
@@ -2639,30 +2668,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7563884" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33207262" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28517398" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4003407" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2322239" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2672,6 +2701,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="WINDOWED" visible="false" show_stripe_button="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2684,136 +2714,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/OrderSellerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/OrderFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_profile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="253" column="51" lean-forward="false" selection-start-line="253" selection-start-column="41" selection-end-line="253" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/ProfileFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ProfileNavigation/SellerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_google_places.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/GooglePlacesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="89" column="5" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="89" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/ExploreTab/SworldPlacesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_sworld_places.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/single_order_seller_row.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_card_helpus.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/adapter.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardFragments/MuseumsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardFragments/TravellerItneraryFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardFragments/TripPhotoFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardFragments/HelpUsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/SliderMaterial/CardFragments/PromotEventsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -2842,14 +2742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="59" lean-forward="false" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/CustomItemClickListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -2872,7 +2764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="65" lean-forward="false" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2880,7 +2771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2888,7 +2778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2896,7 +2785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2915,7 +2803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="76" lean-forward="false" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2977,7 +2864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="34" column="75" lean-forward="false" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2999,8 +2885,6 @@
           <folding>
             <element signature="e#4739#7812#0" expanded="false" />
             <element signature="e#8012#11148#0" expanded="false" />
-            <element signature="e#14131#17163#0" expanded="false" />
-            <element signature="e#21959#24548#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3012,7 +2896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="73" column="44" lean-forward="true" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3023,17 +2906,6 @@
           <folding>
             <element signature="e#640#645#0" expanded="true" />
             <element signature="e#866#871#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
-          <folding>
-            <element signature="e#12478#12479#0" expanded="true" />
-            <element signature="e#12533#12534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3053,11 +2925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <element signature="e#861#880#0" expanded="true" />
-            <element signature="e#1439#1459#0" expanded="true" />
-            <element signature="e#1650#1669#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3098,14 +2965,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_meuseum_concert.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="1275">
           <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-          <folding>
-            <element signature="e#1606#1629#0" expanded="true" />
-            <element signature="e#1943#1971#0" expanded="true" />
-            <element signature="e#2748#2769#0" expanded="true" />
-            <element signature="e#3148#3176#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3114,21 +2976,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/SlideNavigation/MuseumConcertFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="1394">
           <caret line="106" column="34" lean-forward="false" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2087#2119#0" expanded="true" />
-            <element signature="e#3258#3628#0" expanded="true" />
-            <element signature="e#3445#3511#0" expanded="true" />
-            <element signature="e#3627#3628#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <marker date="1516598656928" expanded="true" signature="4287:4824" ph="{...}" />
+            <marker date="1516598656928" expanded="true" signature="4888:5514" ph="{...}" />
+            <marker date="1516598656928" expanded="true" signature="5339:5508" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SplitAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-977">
+          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="11" />
+          <folding>
+            <element signature="e#1852#2956#0" expanded="false" />
+            <element signature="e#2344#2586#0" expanded="false" />
+            <element signature="e#2585#2586#0" expanded="false" />
+            <element signature="e#2637#2877#0" expanded="false" />
+            <element signature="e#2876#2877#0" expanded="false" />
+            <element signature="e#2955#2956#0" expanded="false" />
+            <element signature="e#3755#3977#0" expanded="false" />
+            <element signature="e#3976#3977#0" expanded="false" />
+            <element signature="e#4023#4243#0" expanded="false" />
+            <element signature="e#4242#4243#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/single_split_time.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="17">
           <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
           <folding />
         </state>
@@ -3137,17 +3017,190 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Adapters/NormalScroll/SplitAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="211">
+          <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+          <folding>
+            <marker date="1516598656928" expanded="true" signature="20710:20719" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/fragments/BottomNaviagion/HomeFragement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="32" column="78" lean-forward="false" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.8.0/db21293949e200f08d5325e8a8eefdcc9134b752/okhttp-3.8.0-sources.jar!/okhttp3/OkHttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Utility/CommonAlertDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#264#265#0" expanded="false" />
+            <element signature="e#294#295#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/ExploreGooglePlaces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/HomeContents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/Messages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/SearchCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/App/OrdersSellers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/76f3c69879d3e01c082f49d8661c5590838148e1/retrofit-2.3.0-sources.jar!/retrofit2/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="e#4218#4219#0" expanded="false" />
+            <element signature="e#4239#4240#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Pojos/ApiModalList/Modal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#888#889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/Api.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1674#1935#0" expanded="true" />
-            <element signature="e#1934#1935#0" expanded="true" />
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2027#2028#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/ApiCall/ApiInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/credosys/solutions/secrete/world/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1806#1807#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_login.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

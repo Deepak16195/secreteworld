@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.credosys.solutions.secrete.world.Pojos.SearchCategory;
+import com.credosys.solutions.secrete.world.Pojos.App.SearchCategory;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.List;

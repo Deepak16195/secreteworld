@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.credosys.solutions.secrete.world.Pojos.HomeContents;
+import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.List;

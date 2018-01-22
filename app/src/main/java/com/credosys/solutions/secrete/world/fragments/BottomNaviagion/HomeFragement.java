@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.HomeAdapter;
-import com.credosys.solutions.secrete.world.Pojos.HomeContents;
+import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.ArrayList;
@@ -65,7 +65,6 @@ public class HomeFragement extends Fragment {
         al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
         al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
         al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
-
 
         return al;
     }

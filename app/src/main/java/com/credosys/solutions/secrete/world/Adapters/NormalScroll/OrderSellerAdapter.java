@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.credosys.solutions.secrete.world.Pojos.OrdersSellers;
+import com.credosys.solutions.secrete.world.Pojos.App.OrdersSellers;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.List;

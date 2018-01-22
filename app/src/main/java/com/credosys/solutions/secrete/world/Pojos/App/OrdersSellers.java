@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrete.world.Pojos;
+package com.credosys.solutions.secrete.world.Pojos.App;
 
 /**
  * Created by win7 on 16-Jan-18.

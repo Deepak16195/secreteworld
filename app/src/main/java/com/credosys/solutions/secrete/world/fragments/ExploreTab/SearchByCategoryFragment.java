@@ -7,20 +7,17 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.SearchByCategoryAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
-import com.credosys.solutions.secrete.world.Pojos.SearchCategory;
+import com.credosys.solutions.secrete.world.Pojos.App.SearchCategory;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.ArrayList;
