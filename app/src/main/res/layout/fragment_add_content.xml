@@ -262,6 +262,7 @@
                             <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
                                 android:layout_width="match_parent"
                                 android:layout_height="230dp"
+                                app:picker_textSize="14dp"
                                 app:picker_curved="true"
                                 app:picker_cyclic="true"
                                 app:picker_visibleItemCount="7"

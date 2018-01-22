@@ -103,8 +103,8 @@ public class MuseumConcertFragment extends Fragment implements View.OnClickListe
 
     public void gotoSplit() {
         dateDifferenceAndDateList();
-        View inflate=LayoutInflater.from(getActivity()).inflate(R.layout.single_common_start_end_time,null,false);
-        SplitAdapter sa=new SplitAdapter(getActivity(),dateList,inflate);
+//        View inflate=LayoutInflater.from(getActivity()).inflate(R.layout.single_common_start_end_time,null,false);
+        SplitAdapter sa=new SplitAdapter(getActivity(),dateList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rvMuseumConcert.setLayoutManager(mLayoutManager);
         rvMuseumConcert.setItemAnimator(new DefaultItemAnimator());
