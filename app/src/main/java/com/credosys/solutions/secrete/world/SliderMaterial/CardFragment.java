@@ -28,42 +28,60 @@ public class CardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_adapter, container, false);
-        mCardView = (CardView) view.findViewById(R.id.cardView);
+        mCardView = view.findViewById(R.id.cardView);
         mCardView.setMaxCardElevation(mCardView.getCardElevation()
                 * CardAdapter.MAX_ELEVATION_FACTOR);
         imgDiaryCardBackground=view.findViewById(R.id.img_diary_card_background);
         imgDiaryCardForeground=view.findViewById(R.id.img_diary_card_foreground);
+        setEachCard();
 
+        return view;
+    }
+    public void setEachCard(){
         switch(currFragNum){
-                case 0:
-                    imgDiaryCardForeground.setImageResource(R.drawable.ic_my_dairy);
+            case 0:
+                imgDiaryCardBackground.setImageResource(R.drawable.my_diary_img1);
+                imgDiaryCardForeground.setImageResource(R.drawable.ic_my_dairy);
                 break;
 
-                case 1:
-                    imgDiaryCardBackground.setImageResource(R.drawable.launch_banner);
-                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_cam);
+            case 1:
+                imgDiaryCardBackground.setImageResource(R.drawable.launch_banner);
+                imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_cam);
                 break;
 
-                case 2:
-                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_calendar);
+            case 2:
+                imgDiaryCardBackground.setImageResource(R.drawable.my_diary_img1);
+                imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_calendar);
                 break;
 
-                case 3:
-                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_museum);
+            case 3:
+                imgDiaryCardBackground.setImageResource(R.drawable.my_diary_img1);
+                imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_museum);
                 break;
 
-                case 4:
-                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_place);
+            case 4:
+                imgDiaryCardBackground.setImageResource(R.drawable.my_diary_img1);
+                imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_place);
                 break;
 
-                case 5:
-                    imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_book);
+            case 5:
+                imgDiaryCardBackground.setImageResource(R.drawable.my_diary_img1);
+                imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_book);
                 break;
 
         }
-        return view;
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        Log.d("isVisibletouser",isVisibleToUser+"");
+        if (!isVisibleToUser && mCardView!=null) {
+            Log.d("isVisibletouserExe","yes");
+            setEachCard();
+
+        }
+    }
     public CardView getCardView() {
         return mCardView;
     }

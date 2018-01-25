@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.SliderMaterial.CardFragment;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardFragmentPagerAdapter;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardItem;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardPagerAdapter;
@@ -77,6 +78,13 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
 
             @Override
             public void onPageSelected(int position) {
+                try {
+                    ((CardFragment) mFragmentCardAdapter.getItem(position)).setCurrFragNum(position);
+                    ((CardFragment) mFragmentCardAdapter.getItem(position)).setEachCard();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
                 switch(position)
                 {
                     case 0:

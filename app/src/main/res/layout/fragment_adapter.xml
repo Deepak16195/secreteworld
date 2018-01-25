@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/my_diary_img1" />
+             />
 
 
         <LinearLayout
@@ -27,7 +27,6 @@
             android:padding="24dp">
             <ImageView
                 android:id="@+id/img_diary_card_foreground"
-                app:srcCompat="@drawable/ic_my_dairy"
                 android:layout_width="80dp"
                 android:layout_height="80dp" />
         </LinearLayout>
