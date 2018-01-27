@@ -32,9 +32,6 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
     private ShadowTransformer mCardShadowTransformer;
     private CardFragmentPagerAdapter mFragmentCardAdapter;
     private ShadowTransformer mFragmentCardShadowTransformer;
-
-    private boolean mShowingFragments = false;
-
     public static Fragment newInstance() {
         return new MyDiaryFragment();
     }
