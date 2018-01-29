@@ -55,8 +55,8 @@
         <ImageView
             android:src="@drawable/launch_banner"
             android:layout_width="wrap_content"
-            android:scaleType="fitXY"
-            android:layout_height="200dp" />
+            android:scaleType="centerCrop"
+            android:layout_height="130dp" />
         <!--<com.google.android.youtube.player.YouTubePlayerView-->
             <!--android:id="@+id/youtube_view"-->
             <!--android:layout_width="match_parent"-->

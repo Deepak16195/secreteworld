@@ -5,11 +5,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.HomeAdapter;
+import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
 import com.credosys.solutions.secrete.world.R;
 
@@ -35,11 +37,6 @@ public class HomeFragement extends Fragment {
 
 
     // Store instance variables based on arguments passed
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     // Inflate the view for the fragment based on layout XML
     @Override
@@ -47,6 +44,13 @@ public class HomeFragement extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         rv=view.findViewById(R.id.recyclerview_home);
+
+
+        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+
+
+
 
         HomeAdapter homeAdapter=new HomeAdapter(tempList());
         rv.setAdapter(homeAdapter);

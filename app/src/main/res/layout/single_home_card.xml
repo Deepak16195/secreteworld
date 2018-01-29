@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_margin="4dp"
+        android:layout_margin="8dp"
         android:elevation="3dp"
         android:layoutMode="opticalBounds"
         card_view:cardCornerRadius="4dp">
@@ -20,6 +20,7 @@
 
             <ImageView
                 android:id="@+id/thumbnail"
+                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/launch_banner" />

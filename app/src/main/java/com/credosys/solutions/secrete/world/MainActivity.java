@@ -27,6 +27,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -45,6 +46,9 @@ import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContent
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
 
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity
 //    private TextView mTextMessage;
     FrameLayout frameContainer;
     Typeface tf ;
-    ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour;
+    ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour,ivGradient;
     TextView txtTitle,txtMore,navTextZero,navTextOne,navTextTwo,navTextThree,navTextFour;
     NonSwipeableViewPager viewPager;
     LinearLayout navZero, navOne, navTwo, navThree, navFour;
@@ -70,6 +74,7 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     private boolean mToolBarNavigationListenerIsRegistered = false;
     Calendar mcurrentTime;
+    RelativeLayout bottomThird;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +101,16 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Log.d("homeNavigationMain",getSupportActionBar().getDisplayOptions()+"");
-
+        KeyboardVisibilityEvent.setEventListener(
+                this,
+                new KeyboardVisibilityEventListener() {
+                    @Override
+                    public void onVisibilityChanged(boolean isOpen) {
+                        tabLayout.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+                        bottomThird.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+                        ivGradient.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+                    }
+                });
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -208,6 +222,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
     private void bindViews(){
+        ivGradient=findViewById(R.id.iv_gradient);
         imgHomeBanner=findViewById(R.id.img_home_banner);
         viewPager = findViewById(R.id.viewpager);
         frameContainer=findViewById(R.id.frame_container);
@@ -217,7 +232,7 @@ public class MainActivity extends AppCompatActivity
         tf =  Typeface.createFromAsset(getAssets(),"charcoal.ttf");
         collapsingToolbarLayout.setCollapsedTitleTypeface(tf);
         collapsingToolbarLayout.setExpandedTitleTypeface(tf);
-
+        bottomThird=findViewById(R.id.bottom_third);
 //        txtTitle=findViewById(R.id.txt_title);
         imgGradient=findViewById(R.id.iv_gradient);
         imgPlus=findViewById(R.id.img_plus);
