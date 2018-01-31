@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
@@ -32,6 +33,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
         holder.txtTitle.setText(list.get(position).getTitle());
         holder.txtDetail.setText(list.get(position).getSubtitle());
         holder.txtName.setText(list.get(position).getName());
+        holder.imgSingleThumbnail.setImageResource(list.get(position).getImg());
     }
 
     @Override
@@ -41,11 +43,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
 
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView txtTitle,txtDetail,txtName;
+        ImageView imgSingleThumbnail;
         MyViewHolder(View view){
             super(view);
             txtTitle=view.findViewById(R.id.txt_title_card);
             txtDetail=view.findViewById(R.id.txt_detail);
             txtName=view.findViewById(R.id.txt_user_name);
+            imgSingleThumbnail= view.findViewById(R.id.img_single_thumbnail);
         }
     }
 }

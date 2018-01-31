@@ -6,6 +6,5 @@
         android:title="Red"
         android:icon="@drawable/ic_bell"
         app:showAsAction="always|withText"
-        android:orderInCategory="1"
-        />
+        android:orderInCategory="1" />
 </menu>

@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity
                     appBarLayout.setExpanded(false);
                     setFrameLayoutVisiblity();
 //                    setActionBarTitle("SECRETS AROUND YOU");
-                    setActionBarTitle("SECRETE AROUND YOU");
+                    setActionBarTitle("SECRET AROUND YOU");
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==2){
@@ -327,6 +327,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_profile) {
             viewPager.setVisibility(View.GONE);
             frameContainer.setVisibility(View.VISIBLE);
+            setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
 //            imgHomeBanner.setImageResource(R.drawable.topbg);
 //            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
 //            collapsingToolbarLayout.setScrollContainer(false);

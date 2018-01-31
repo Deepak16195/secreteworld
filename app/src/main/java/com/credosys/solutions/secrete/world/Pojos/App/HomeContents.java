@@ -10,12 +10,14 @@ public class HomeContents {
     private String subtitle;
     private String lable;
     private int color;
+    private int img;
 
 
-    public HomeContents(String name, String title, String subtitle){
+    public HomeContents(String name, String title, String subtitle, int img){
         this.name = name;
         this.title = title;
         this.subtitle = subtitle;
+        this.img=img;
     }
     public HomeContents(String name, String title, String subtitle,String lable, int color) {
         this.name = name;
@@ -63,5 +65,13 @@ public class HomeContents {
 
     public void setLable(String lable) {
         this.lable = lable;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }

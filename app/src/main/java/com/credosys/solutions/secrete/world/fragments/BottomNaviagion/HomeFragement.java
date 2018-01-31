@@ -47,7 +47,7 @@ public class HomeFragement extends Fragment {
 
 
         ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(false,false);
+        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
 
 
 
@@ -61,14 +61,14 @@ public class HomeFragement extends Fragment {
 
     List<HomeContents> tempList(){
         List<HomeContents> al=new ArrayList<>();
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger..."));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius..."));
-        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger..."));
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
 
         return al;
     }
