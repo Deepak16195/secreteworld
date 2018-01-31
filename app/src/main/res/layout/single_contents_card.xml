@@ -4,10 +4,10 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="8dp"
     android:elevation="3dp"
     android:layoutMode="opticalBounds"
-    card_view:cardCornerRadius="4dp">
+    card_view:cardCornerRadius="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -44,42 +44,33 @@
                 android:fontFamily="@font/avenirltstd_medium"
                 android:text="SAGO OR SABUDANA KHICHDI"
                 android:textColor="#0268A3"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_detail"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txt_title_card"
                 android:fontFamily="@font/avenirltstd_light"
                 android:maxLines="3"
+                android:rating="5"
                 android:text="Sabudana is one of those whose recipes that is made during religous..."
-                android:textSize="12sp" />
+                android:textSize="14sp" />
 
             <RatingBar
+                android:layout_marginTop="10dp"
                 android:id="@+id/ratingBar1"
                 style="?attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txt_detail"
+                android:theme="@style/RatingBar"
+                android:rating="5"
                 android:numStars="5" />
 
-            <TextView
-                android:id="@+id/kilo_miters"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_detail"
-                android:layout_toLeftOf="@+id/kilo_miters_units"
-                android:text="20" />
 
-            <TextView
-                android:id="@+id/kilo_miters_units"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/txt_detail"
-                android:text=" km" />
 
 
         </RelativeLayout>

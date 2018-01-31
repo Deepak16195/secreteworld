@@ -60,7 +60,7 @@ public class ContentsFragment extends Fragment implements View.OnClickListener{
         cvNormalText.setOnClickListener(this);
         btnPublish.setOnClickListener(this);
 
-        ((MainActivity)getActivity()).setActionBarTitle("CONTENTS");
+        ((MainActivity)getActivity()).setActionBarTitle("MY CONTENT");
         ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity)getActivity()).showBackButton(true);
 
