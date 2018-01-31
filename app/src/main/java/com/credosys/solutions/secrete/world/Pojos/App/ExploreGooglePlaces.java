@@ -7,10 +7,12 @@ package com.credosys.solutions.secrete.world.Pojos.App;
 public class ExploreGooglePlaces {
     String places;
     int count;
+    int color;
 
-    public ExploreGooglePlaces(String places, int count) {
+    public ExploreGooglePlaces(String places, int count,int color) {
         this.places = places;
         this.count = count;
+        this.color=color;
     }
 
     public String getPlaces() {
@@ -27,5 +29,13 @@ public class ExploreGooglePlaces {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 }

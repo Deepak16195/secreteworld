@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
@@ -29,23 +30,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/thumbnail"
-                android:padding="6dp">
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/txt_title_card"
-                    android:fontFamily="@font/avenirltstd_medium"
+                    android:fontFamily="@font/avenirltstd_heavy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="SAGO OR SABUDANA KHICHDI"
                     android:textColor="#0268A3"
-                    android:textSize="14sp"
+                    android:textSize="12dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txt_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="#535353"
                     android:fontFamily="@font/avenirltstd_light"
+                    android:layout_marginVertical="8dp"
                     android:layout_below="@id/txt_title_card"
                     android:textSize="12sp"
                     android:maxLines="3"
@@ -54,29 +57,54 @@
                 <RatingBar
                     android:id="@+id/ratingBar1"
                     style="?attr/ratingBarStyleSmall"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_detail"
                     android:numStars="5" />
+                <ImageView
+                    android:id="@+id/iv_lines"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/ratingBar1"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/dotted"
+                    android:layerType="software" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_above="@+id/iv_lines"
+                    android:layout_marginEnd="4dp"
+                    android:layout_toStartOf="@+id/kilo_miters"
+                    app:srcCompat="@drawable/ic_map_grey" />
 
                 <TextView
                     android:id="@+id/kilo_miters"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/avenirltstd_black"
+                    android:textColor="#515151"
                     android:layout_below="@+id/txt_detail"
                     android:layout_toLeftOf="@+id/kilo_miters_units"
-                    android:text="20" />
+                    android:text="30" />
 
                 <TextView
                     android:id="@+id/kilo_miters_units"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textColor="#515151"
+                    android:fontFamily="@font/avenirltstd_black"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/txt_detail"
-                    android:text=" km" />
+                    android:text=" Km" />
 
                 <RelativeLayout
-                    android:layout_below="@+id/ratingBar1"
+                    android:layout_below="@+id/iv_lines"
+                    android:layout_marginTop="6dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -93,11 +121,24 @@
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/avenirltstd_roman"
                         android:textSize="12sp"
+                        android:textColor="#535353"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@id/img_user"
                         android:text="Kim Gomaz" />
                 </RelativeLayout>
             </RelativeLayout>
+            <TextView
+                android:text="FOOD"
+                android:background="#0087D9"
+                android:textSize="10sp"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:layout_marginTop="14dp"
+                android:paddingLeft="10dp"
+                android:paddingVertical="2dp"
+                android:paddingRight="6dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

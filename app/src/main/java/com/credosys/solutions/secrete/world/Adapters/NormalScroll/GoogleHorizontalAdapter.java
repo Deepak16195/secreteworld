@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Pojos.App.ExploreGooglePlaces;
@@ -35,6 +36,8 @@ public class GoogleHorizontalAdapter extends RecyclerView.Adapter<GoogleHorizont
             holder.txtGoogleFamous.setText(exploreGooglePlaces.getPlaces());
         else
             holder.txtGoogleFamous.setText(exploreGooglePlaces.getPlaces()+"("+exploreGooglePlaces.getCount()+")");
+
+        holder.llTextBackground.setBackgroundResource(exploreGooglePlaces.getColor());
     }
 
     @Override
@@ -44,9 +47,11 @@ public class GoogleHorizontalAdapter extends RecyclerView.Adapter<GoogleHorizont
 
     class TextHolder extends RecyclerView.ViewHolder{
         TextView txtGoogleFamous;
+        LinearLayout llTextBackground;
         private TextHolder(View itemView) {
             super(itemView);
             txtGoogleFamous=itemView.findViewById(R.id.card_google_places);
+            llTextBackground=itemView.findViewById(R.id.ll_textbackground);
         }
     }
 }

@@ -54,12 +54,12 @@ public class SworldPlacesFragment extends Fragment implements View.OnClickListen
         seekbarGoogle.setOnSeekBarChangeListener(this);
         btnCategory.setOnClickListener(this);
         List<ExploreGooglePlaces> gplaces=new ArrayList<>();
-        gplaces.add(new ExploreGooglePlaces("Amazing Views",3));
-        gplaces.add(new ExploreGooglePlaces("Historical Sites",37));
-        gplaces.add(new ExploreGooglePlaces("Others",0));
-        gplaces.add(new ExploreGooglePlaces("Art, Muesums and Theaters",20));
-        gplaces.add(new ExploreGooglePlaces("Typical Dishes & Food",0));
-        gplaces.add(new ExploreGooglePlaces("Music World",0));
+        gplaces.add(new ExploreGooglePlaces("Amazing Views",3,R.color.cutomGreen));
+        gplaces.add(new ExploreGooglePlaces("Historical Sites",37,R.color.lable_one));
+        gplaces.add(new ExploreGooglePlaces("Others",0,R.color.customBlue));
+        gplaces.add(new ExploreGooglePlaces("Art, Muesums and Theaters",20,R.color.lable_two));
+        gplaces.add(new ExploreGooglePlaces("Typical Dishes & Food",0,R.color.lable_three));
+        gplaces.add(new ExploreGooglePlaces("Music World",0,R.color.lable_four));
         GoogleHorizontalAdapter gha=new GoogleHorizontalAdapter(gplaces);
         rvFamous.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL));
         rvFamous.setAdapter(gha);

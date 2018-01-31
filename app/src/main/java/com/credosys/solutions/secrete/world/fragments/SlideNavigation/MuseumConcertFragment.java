@@ -73,7 +73,6 @@ public class MuseumConcertFragment extends Fragment implements View.OnClickListe
         mMonth = calendar.get(Calendar.MONTH);
         mDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-
         return v;
     }
 

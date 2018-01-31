@@ -21,5 +21,9 @@
         <item name="android:textSize">8sp</item>
         <item name="android:layout_margin">0dp</item>
     </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/lightGrey</item>
+        <item name="colorControlActivated">@color/duskYellow</item>
+    </style>
 
 </resources>

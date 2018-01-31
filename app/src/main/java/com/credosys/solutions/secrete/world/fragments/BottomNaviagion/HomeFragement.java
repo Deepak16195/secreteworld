@@ -47,7 +47,7 @@ public class HomeFragement extends Fragment {
 
 
         ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+        ((MainActivity)getActivity()).setAppBarLayoutExpand(false,false);
 
 
 

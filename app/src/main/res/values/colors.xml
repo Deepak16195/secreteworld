@@ -15,4 +15,11 @@
     <color name="tab_layout_text">#3C3C3C</color>
     <color name="red">#FF4003</color>
     <color name="fontblack">#4A4A4A</color>
+    <color name="duskYellow">#F2B040</color>
+    <color name="lightGrey">#CFCED3</color>
+    <color name="lable_one">#3F606F</color>
+    <color name="lable_two">#163446</color>
+    <color name="lable_three">#865A33</color>
+    <color name="lable_four">#D68845</color>
+
 </resources>
