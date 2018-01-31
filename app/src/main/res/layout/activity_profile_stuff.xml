@@ -2,27 +2,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center_horizontal"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="10dp"
+    android:background="@drawable/profile_stuff_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".ProfileStuffActivity">
+    <ImageView
+        android:src="@drawable/cross_profile_stuff"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
 
     <RelativeLayout
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/iv_"
-            app:srcCompat="@drawable/ic_user"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_prof"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/ic_profile_man"/>
+
         <TextView
-            android:background="@drawable/profile_edit_details_round_bg"
-            android:text="VIEW PROFILE"
-            android:paddingHorizontal="10dp"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
+
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_prof"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:paddingVertical="3dp"
+            android:background="@drawable/profile_edit_details_round_bg"
+            android:fontFamily="@font/avenirltstd_heavy"
+            android:paddingHorizontal="10dp"
+            android:text="VIEW PROFILE"
+            android:textColor="@color/white" />
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenirltstd_medium"
+        android:text="ANTONIO KIM"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_profile_stuff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
