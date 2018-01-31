@@ -20,9 +20,9 @@
             android:background="@drawable/launch_banner" />
         <TextView
             android:id="@+id/txt_lable"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="14dp"
             android:textColor="@color/white"
-            android:paddingVertical="5dp"
+            android:paddingVertical="2dp"
             android:paddingLeft="20dp"
             android:paddingRight="5dp"
             android:fontFamily="@font/avenirltstd_roman"

@@ -102,7 +102,7 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
                         break;
                     case 4:
                         txtMydiaryLableOne.setText("CREATE A");
-                        txtMydiaryLableTwo.setText("TRAVEL ITNERY");
+                        txtMydiaryLableTwo.setText("TRAVEL ITINERARY");
                         break;
                     case 5:
                         txtMydiaryLableOne.setText("CREATE A");

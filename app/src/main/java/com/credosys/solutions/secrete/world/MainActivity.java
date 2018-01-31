@@ -2,6 +2,7 @@ package com.credosys.solutions.secrete.world;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
@@ -346,6 +347,7 @@ public class MainActivity extends AppCompatActivity
             frameContainer.setVisibility(View.VISIBLE);
             setMuseumConcerts();
         } else if (id == R.id.nav_manage) {
+            startActivity(new Intent(MainActivity.this,ProfileStuffActivity.class));
 
         } else if (id == R.id.nav_share) {
 

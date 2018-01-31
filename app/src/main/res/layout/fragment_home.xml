@@ -36,18 +36,18 @@
         <ImageView
             app:srcCompat="@drawable/ic_map_blue"
             android:layout_toLeftOf="@+id/txt_mapview"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="11dp"
             android:layout_marginRight="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
         <TextView
             android:id="@+id/txt_mapview"
             android:text="MAP VIEW"
             android:fontFamily="@font/avenirltstd_heavy"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:layout_marginRight="10dp"
             android:textColor="#0C6A90"
-            android:layout_marginVertical="12dp"
+            android:layout_marginVertical="14dp"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

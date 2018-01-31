@@ -28,27 +28,31 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:layout_toRightOf="@+id/img_profile_wall"
                 android:fontFamily="@font/avenirltstd_heavy"
                 android:text="ANTONIO KIM"
                 android:textAllCaps="true"
                 android:textColor="#505050"
-                android:textSize="10sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#B4B4B4"
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/tv_profile_username_wall"
                 android:layout_toRightOf="@+id/img_profile_wall"
                 android:text="DD/MM/YY, 14.42"
-                android:textSize="10sp" />
+                android:textSize="13sp" />
         </RelativeLayout>
         <TextView
             android:id="@+id/tv_video"
             android:text="Hello this is message on your Wall"
-            android:fontFamily="@font/avenirltstd_medium"
+            android:fontFamily="@font/avenirltstd_book"
+            android:textColor="@color/fontblack"
+            android:textSize="16sp"
             android:layout_marginVertical="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -69,7 +73,8 @@
                 android:id="@+id/tv_comment_num"
                 android:fontFamily="@font/avenirltstd_roman"
                 android:text="2"
-                android:textColor="#505050"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/fontblack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <ImageView

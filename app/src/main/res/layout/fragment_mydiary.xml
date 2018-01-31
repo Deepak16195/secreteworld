@@ -35,11 +35,11 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager_mydiary"
             android:layout_width="match_parent"
-            android:layout_height="380dp"
+            android:layout_height="370dp"
             android:layout_gravity="top"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingBottom="30dp"
+            android:paddingBottom="20dp"
             android:paddingEnd="60dp"
             android:paddingLeft="60dp"
             android:paddingRight="60dp"
@@ -52,7 +52,7 @@
             android:text="HELP US TO"
             android:fontFamily="@font/avenirltstd_light"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txt_mydiary_lable_two"
@@ -61,20 +61,22 @@
             android:text="KNOW THE WORLD"
             android:fontFamily="@font/avenirltstd_light"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:paddingVertical="10dp"
+            android:layout_margin="16dp"
+            android:paddingVertical="6dp"
             android:background="@drawable/border_mydiary"
-            android:paddingHorizontal="35dp">
+            android:paddingHorizontal="18dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="EXPLORE"
+                android:textSize="12sp"
+                android:letterSpacing="0.2"
                 android:fontFamily="@font/avenirltstd_medium"
                 android:textColor="@color/white" />
         </RelativeLayout>

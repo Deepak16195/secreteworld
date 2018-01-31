@@ -9,6 +9,7 @@ public class HomeContents {
     private String title;
     private String subtitle;
     private String lable;
+    private int color;
 
 
     public HomeContents(String name, String title, String subtitle){
@@ -16,11 +17,20 @@ public class HomeContents {
         this.title = title;
         this.subtitle = subtitle;
     }
-    public HomeContents(String name, String title, String subtitle,String lable) {
+    public HomeContents(String name, String title, String subtitle,String lable, int color) {
         this.name = name;
         this.title = title;
         this.subtitle = subtitle;
         this.lable=lable;
+        this.color=color;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
     }
 
     public String getName() {
