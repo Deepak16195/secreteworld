@@ -10,8 +10,9 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".ProfileStuffActivity">
-    <ImageView
-        android:src="@drawable/cross_profile_stuff"
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/img_cross_profile_stuff"
+        app:srcCompat="@drawable/cross_profile_stuff"
         android:layout_width="50dp"
         android:layout_height="50dp" />
 
