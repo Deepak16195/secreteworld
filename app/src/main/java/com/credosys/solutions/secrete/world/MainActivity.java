@@ -35,7 +35,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
@@ -84,8 +86,9 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     private boolean mToolBarNavigationListenerIsRegistered = false;
     Calendar mcurrentTime;
-    RelativeLayout bottomThird;
+    RelativeLayout bottomThird,rlProfileView;
     RecyclerView rvNavigation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -203,7 +206,24 @@ public class MainActivity extends AppCompatActivity
         list.add(new Naviagion("SETTINGS",R.drawable.ic_nav_settings));
         list.add(new Naviagion("LOGOUT",R.drawable.ic_nav_logout));
 
-        NavigationAdapter navigationAdapter = new NavigationAdapter(list);
+        NavigationAdapter navigationAdapter = new NavigationAdapter(list, new CustomItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                switch(position) {
+                    case 0:
+                        viewPager.setVisibility(View.GONE);
+                        frameContainer.setVisibility(View.VISIBLE);
+                        setMuseumConcerts();
+                        break;
+                    case 1:
+                        viewPager.setVisibility(View.GONE);
+                        frameContainer.setVisibility(View.VISIBLE);
+                        setAddContent();
+                        break;
+                }
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rvNavigation.setLayoutManager(mLayoutManager);
         rvNavigation.setItemAnimator(new DefaultItemAnimator());
@@ -249,6 +269,8 @@ public class MainActivity extends AppCompatActivity
         }
     }
     private void bindViews(){
+        drawer = findViewById(R.id.drawer_layout);
+        rlProfileView=findViewById(R.id.rl_profile_view);
         imgNavigationCross=findViewById(R.id.img_navigation_cross);
         imgNavigationCross.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_IN);
         rvNavigation=findViewById(R.id.rv_navigation);
@@ -287,6 +309,7 @@ public class MainActivity extends AppCompatActivity
 
 //        imgPlus.setOnClickListener(this);
         bottomThird.setOnClickListener(this);
+        rlProfileView.setOnClickListener(this);
     }
     private void setupViewPager() {
         adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
@@ -538,10 +561,28 @@ public class MainActivity extends AppCompatActivity
 //        if(view.getId()==R.id.img_plus){
 //            viewPager.setCurrentItem(2,true);
 //        }
-        if(view.getId()==R.id.bottom_third){
-            Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
-            startActivity(i2);
-            overridePendingTransition(R.anim.slide_up_info,R.anim.no_change);
+        switch (view.getId()) {
+            case R.id.bottom_third:
+                Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
+                startActivity(i2);
+                overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
+                break;
+            case R.id.rl_profile_view:
+                viewPager.setVisibility(View.GONE);
+                frameContainer.setVisibility(View.VISIBLE);
+                setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+//            imgHomeBanner.setImageResource(R.drawable.topbg);
+//            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+//            collapsingToolbarLayout.setScrollContainer(false);
+//            appBarLayout.setExpanded(false,false);
+
+                setActionBarTitle("PROFILE");
+                transaction= getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+                transaction.addToBackStack(null);
+                transaction.commit();
+                drawer.closeDrawer(GravityCompat.START);
+                break;
         }
     }
 }

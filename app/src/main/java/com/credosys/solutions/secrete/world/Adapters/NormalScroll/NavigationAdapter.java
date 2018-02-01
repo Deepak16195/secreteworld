@@ -17,16 +17,24 @@ import java.util.List;
 
 public class NavigationAdapter extends RecyclerView.Adapter<NavigationAdapter.NavigationHolder>{
     List<Naviagion> list;
-
-    public NavigationAdapter(List<Naviagion> list) {
+    private CustomItemClickListener listener;
+    public NavigationAdapter(List<Naviagion> list,CustomItemClickListener listener) {
         this.list = list;
+        this.listener=listener;
     }
 
     @Override
     public NavigationHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.single_navigation, parent, false);
-        return new NavigationHolder(v);
+        final NavigationHolder mViewHolder=new NavigationHolder(v);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(v, mViewHolder.getAdapterPosition());
+            }
+        });
+        return mViewHolder;
     }
 
     @Override
