@@ -16,10 +16,67 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
+        android:background="@drawable/profile_stuff_bg"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        android:fitsSystemWindows="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/img_navigation_cross"
+                app:srcCompat="@drawable/ic_cross_profile_stuff"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="end"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <RelativeLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_prof"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/ic_profile_man"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/img_prof"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="9sp"
+                    android:letterSpacing="0.1"
+                    android:paddingVertical="3dp"
+                    android:background="@drawable/profile_edit_details_round_bg"
+                    android:fontFamily="@font/avenirltstd_book"
+                    android:paddingHorizontal="15dp"
+                    android:text="VIEW PROFILE"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenirltstd_book"
+                android:layout_gravity="center_horizontal"
+                android:text="ANTONIO KIM"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>
+    <!--app:headerLayout="@layout/nav_header_main"-->
+    <!--app:menu="@menu/activity_main_drawer"-->

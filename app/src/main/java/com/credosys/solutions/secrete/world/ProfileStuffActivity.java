@@ -28,8 +28,8 @@ ImageView cross;
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_profile_stuff);
-
         cross=findViewById(R.id.img_cross_profile_stuff);
+
 
         cross.setColorFilter(getResources().getColor(R.color.cutomGreen), PorterDuff.Mode.SRC_IN);
 

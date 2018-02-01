@@ -18,6 +18,9 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -33,7 +36,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
+import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
 import com.credosys.solutions.secrete.world.Pojos.App.ProfileStuff;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
@@ -53,7 +58,9 @@ import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
@@ -61,7 +68,7 @@ public class MainActivity extends AppCompatActivity
 //    private TextView mTextMessage;
     FrameLayout frameContainer;
     Typeface tf ;
-    ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour,ivGradient;
+    ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour,ivGradient,imgNavigationCross;
     TextView txtTitle,txtMore,navTextZero,navTextOne,navTextTwo,navTextThree,navTextFour;
     NonSwipeableViewPager viewPager;
     LinearLayout navZero, navOne, navTwo, navThree, navFour;
@@ -78,6 +85,7 @@ public class MainActivity extends AppCompatActivity
     private boolean mToolBarNavigationListenerIsRegistered = false;
     Calendar mcurrentTime;
     RelativeLayout bottomThird;
+    RecyclerView rvNavigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,8 +104,8 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-         drawer = findViewById(R.id.drawer_layout);
-      toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer = findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -185,6 +193,21 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
+        List<Naviagion> list=new ArrayList<Naviagion>();
+        list.add(new Naviagion("CHANGE LOCATIONS",R.drawable.ic_nav_location));
+        list.add(new Naviagion("SELECT LANGUAGE",R.drawable.ic_nav_language));
+        list.add(new Naviagion("SELECT RATE THE APP",R.drawable.ic_nav_star));
+        list.add(new Naviagion("TERMS & CONDITIONS",R.drawable.ic_nav_terms_conditions));
+        list.add(new Naviagion("PRIVACY POLICY",R.drawable.ic_nav_privacy_policy));
+        list.add(new Naviagion("SETTINGS",R.drawable.ic_nav_settings));
+        list.add(new Naviagion("LOGOUT",R.drawable.ic_nav_logout));
+
+        NavigationAdapter navigationAdapter = new NavigationAdapter(list);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        rvNavigation.setLayoutManager(mLayoutManager);
+        rvNavigation.setItemAnimator(new DefaultItemAnimator());
+        rvNavigation.setAdapter(navigationAdapter);
     }
 
     void setFrameLayoutVisiblity(){
@@ -226,6 +249,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
     private void bindViews(){
+        imgNavigationCross=findViewById(R.id.img_navigation_cross);
+        imgNavigationCross.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_IN);
+        rvNavigation=findViewById(R.id.rv_navigation);
         ivGradient=findViewById(R.id.iv_gradient);
         imgHomeBanner=findViewById(R.id.img_home_banner);
         viewPager = findViewById(R.id.viewpager);

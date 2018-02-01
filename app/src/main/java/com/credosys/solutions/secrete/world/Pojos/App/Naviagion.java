@@ -1,0 +1,31 @@
+package com.credosys.solutions.secrete.world.Pojos.App;
+
+/**
+ * Created by win7 on 01-Feb-18.
+ */
+
+public class Naviagion {
+    String strNav;
+    int img;
+
+    public Naviagion(String strNav, int img) {
+        this.strNav = strNav;
+        this.img = img;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
+    }
+
+    public String getStrNav() {
+        return strNav;
+    }
+
+    public void setStrNav(String strNav) {
+        this.strNav = strNav;
+    }
+}

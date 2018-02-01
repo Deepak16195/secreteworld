@@ -14,6 +14,10 @@
         android:id="@+id/txt_single_profile_stuff"
         android:text="ADD CONTENT"
         android:textSize="12dp"
+        android:fontFamily="@font/avenirltstd_book"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="-10dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
