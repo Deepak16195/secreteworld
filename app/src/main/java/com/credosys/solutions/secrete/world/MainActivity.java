@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
@@ -90,9 +91,15 @@ public class MainActivity extends AppCompatActivity
     RecyclerView rvNavigation;
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString("WORKAROUND_FOR_BUG_19917_KEY", "WORKAROUND_FOR_BUG_19917_VALUE");
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        MainApplication.mainActivity = this;
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
@@ -138,10 +145,10 @@ public class MainActivity extends AppCompatActivity
                 if(position==0){
                     imgHomeBanner.setImageResource(R.drawable.launch_banner);
 //                    imgHomeBanner.setImageResource(R.drawable.launch_banner);
+                    appBarLayout.setExpanded(true);
                     collapsingToolbarLayout.setExpandedTitleGravity(Gravity.CENTER);
                     setFrameLayoutVisiblity();
                     setActionBarTitle("MUMBAI");
-
                     setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
                 }
                 else if(position==1){
@@ -211,14 +218,14 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(View v, int position) {
                 switch(position) {
                     case 0:
-                        viewPager.setVisibility(View.GONE);
-                        frameContainer.setVisibility(View.VISIBLE);
-                        setMuseumConcerts();
-                        break;
+//                        viewPager.setVisibility(View.GONE);
+//                        frameContainer.setVisibility(View.VISIBLE);
+//                        setMuseumConcerts();
+//                        break;
                     case 1:
-                        viewPager.setVisibility(View.GONE);
-                        frameContainer.setVisibility(View.VISIBLE);
-                        setAddContent();
+//                        viewPager.setVisibility(View.GONE);
+//                        frameContainer.setVisibility(View.VISIBLE);
+//                        setAddContent();
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);
@@ -268,6 +275,7 @@ public class MainActivity extends AppCompatActivity
 
         }
     }
+
     private void bindViews(){
         drawer = findViewById(R.id.drawer_layout);
         rlProfileView=findViewById(R.id.rl_profile_view);
@@ -529,7 +537,7 @@ public class MainActivity extends AppCompatActivity
         transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
         fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
         transaction.addToBackStack(null);
-        transaction.commit();
+        transaction.commitAllowingStateLoss();
     }
 
 
@@ -555,6 +563,23 @@ public class MainActivity extends AppCompatActivity
         },hour,minute,false);
         timePickerDialog.setTitle(getString(R.string.mc_select_time));
         timePickerDialog.show();
+    }
+
+    public void addContentOpen(){ // called from ProfileStuff activity
+        viewPager.setVisibility(View.GONE);
+        frameContainer.setVisibility(View.VISIBLE);
+        setAddContent();
+    }
+
+    public void setProfile(){
+        viewPager.setVisibility(View.GONE);
+        frameContainer.setVisibility(View.VISIBLE);
+        setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+        setActionBarTitle("PROFILE");
+        transaction= getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+        transaction.addToBackStack(null);
+        transaction.commitAllowingStateLoss();
     }
     @Override
     public void onClick(View view) {

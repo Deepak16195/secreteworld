@@ -17,17 +17,25 @@ import java.util.List;
  */
 
 public class ProfileStuffAdapter extends RecyclerView.Adapter<ProfileStuffAdapter.ProfileStuffHolder> {
-    List<ProfileStuff> list;
-
-    public ProfileStuffAdapter(List<ProfileStuff> list) {
+    private List<ProfileStuff> list;
+    private CustomItemClickListener listener;
+    public ProfileStuffAdapter(List<ProfileStuff> list, CustomItemClickListener listener) {
         this.list = list;
+        this.listener=listener;
     }
 
     @Override
     public ProfileStuffHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.single_profile_stuff_card,parent, false);
-        return new ProfileStuffHolder(v);
+        final ProfileStuffHolder mViewHolder=new ProfileStuffHolder(v);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(v, mViewHolder.getAdapterPosition());
+            }
+        });
+        return mViewHolder;
     }
 
     @Override

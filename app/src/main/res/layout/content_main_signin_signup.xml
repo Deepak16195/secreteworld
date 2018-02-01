@@ -41,11 +41,12 @@
                 android:background="@color/white"
                 android:backgroundTint="@color/white"
                 android:ems="10"
+                android:textSize="12sp"
                 android:fontFamily="@font/avenirltstd_book"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="5dp"
-                android:text="yogesh@credosyssolutions.com" />
+                android:text="numit@hotmail.com" />
 
             <EditText
                 android:id="@+id/et_password"
@@ -54,10 +55,10 @@
                 android:layout_marginVertical="15dp"
                 android:background="@color/white"
                 android:ems="10"
+                android:textSize="12sp"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:padding="5dp"
-                android:text="credo123" />
+                android:padding="5dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -113,8 +114,6 @@
             android:textColor="@color/white"
             android:textSize="16sp" />
     </RelativeLayout>
-
-
     <RelativeLayout
         android:id="@+id/rl_signup"
         android:layout_width="match_parent"
@@ -195,9 +194,10 @@
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/avenirltstd_book"
                 android:hint="Full Name"
+                android:textSize="12sp"
                 android:inputType="textEmailAddress"
                 android:padding="5dp"
-                android:text="yogesh@credosyssolutions.com" />
+                 />
 
             <EditText
                 android:id="@+id/et_email_signup"
@@ -205,12 +205,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:background="@color/white"
+                android:textSize="12sp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/avenirltstd_book"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="5dp"
-                android:text="yogesh@credosyssolutions.com" />
+                 />
 
             <EditText
                 android:id="@+id/et_pwd_signup"
@@ -219,9 +220,9 @@
                 android:background="@color/white"
                 android:ems="30"
                 android:hint="Password"
+                android:textSize="12sp"
                 android:inputType="textPassword"
-                android:padding="5dp"
-                android:text="credo123" />
+                android:padding="5dp" />
 
             <EditText
                 android:id="@+id/et_pwd_confirm_signup"
@@ -231,9 +232,10 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:hint="Password"
+                android:textSize="12sp"
                 android:inputType="textPassword"
                 android:padding="5dp"
-                android:text="credo123" />
+                 />
 
             <LinearLayout
                 android:layout_width="match_parent"

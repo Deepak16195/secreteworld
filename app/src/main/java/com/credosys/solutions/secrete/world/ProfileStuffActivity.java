@@ -12,7 +12,9 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
+import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.FriendsAdapter;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ProfileStuffAdapter;
 import com.credosys.solutions.secrete.world.Pojos.App.ProfileStuff;
@@ -22,6 +24,7 @@ import java.util.List;
 
 public class ProfileStuffActivity extends Activity implements View.OnClickListener {
 ImageView cross;
+RelativeLayout rlProfileView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +32,13 @@ ImageView cross;
 //        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_profile_stuff);
         cross=findViewById(R.id.img_cross_profile_stuff);
-
+        rlProfileView=findViewById(R.id.rl_profile_view_user);
 
         cross.setColorFilter(getResources().getColor(R.color.cutomGreen), PorterDuff.Mode.SRC_IN);
-
         Animation startRotateAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.android_rotate_animation);
         cross.startAnimation(startRotateAnimation);
         cross.setOnClickListener(this);
+        rlProfileView.setOnClickListener(this);
         RecyclerView rvProfileStuff=findViewById(R.id.rv_profile_stuff);
         List<ProfileStuff> list= new ArrayList<>();
         list.add(new ProfileStuff(R.drawable.profile_stuff_pencil,"ADD\nCONTENT"));
@@ -50,7 +53,17 @@ ImageView cross;
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this,3);
         rvProfileStuff.setLayoutManager(mLayoutManager);
-        ProfileStuffAdapter fa=new ProfileStuffAdapter(list);
+        ProfileStuffAdapter fa=new ProfileStuffAdapter(list, new CustomItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                switch(position){
+                    case 0:
+                        onBackPressed();
+                        MainApplication.mainActivity.addContentOpen();
+                        break;
+                }
+            }
+        });
         rvProfileStuff.setAdapter(fa);
     }
 
@@ -65,6 +78,11 @@ ImageView cross;
         switch(v.getId()){
             case R.id.img_cross_profile_stuff:
                 onBackPressed();
+                break;
+
+            case R.id.rl_profile_view_user:
+                onBackPressed();
+                MainApplication.mainActivity.setProfile();
                 break;
         }
     }

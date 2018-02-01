@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -19,9 +22,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
+import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
 import com.credosys.solutions.secrete.world.ApiCall.Api;
 import com.credosys.solutions.secrete.world.Pojos.ApiModalList.Modal;
+import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
 import com.credosys.solutions.secrete.world.Utility.CommonWaitingDialog;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,6 +43,8 @@ public class MainSigninSignupActivity extends AppCompatActivity
     CommonWaitingDialog cwd;
     Button btnLogin, btnCreateAc, btnSigninSignup, btnSignupSignin;
     RelativeLayout rlSignin, rlSignup;
+    RecyclerView rvNavigation;
+    DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +55,7 @@ public class MainSigninSignupActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("SECRETE WORLD");
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -58,7 +71,8 @@ public class MainSigninSignupActivity extends AppCompatActivity
         btnCreateAc = findViewById(R.id.btn_create_account);
         rlSignin = findViewById(R.id.rl_signin);
         rlSignup = findViewById(R.id.rl_signup);
-
+        rvNavigation=findViewById(R.id.rv_navigation);
+        drawer = findViewById(R.id.drawer_layout);
         cwd=new CommonWaitingDialog(this);
 
         btnLogin.setOnClickListener(this);
@@ -67,11 +81,36 @@ public class MainSigninSignupActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
+        List<Naviagion> list=new ArrayList<Naviagion>();
+        list.add(new Naviagion("CHANGE LOCATIONS",R.drawable.ic_nav_location));
+        list.add(new Naviagion("SELECT LANGUAGE",R.drawable.ic_nav_language));
+        list.add(new Naviagion("SELECT RATE THE APP",R.drawable.ic_nav_star));
+        list.add(new Naviagion("TERMS & CONDITIONS",R.drawable.ic_nav_terms_conditions));
+        list.add(new Naviagion("PRIVACY POLICY",R.drawable.ic_nav_privacy_policy));
+        list.add(new Naviagion("SETTINGS",R.drawable.ic_nav_settings));
+        list.add(new Naviagion("LOGOUT",R.drawable.ic_nav_logout));
+
+        NavigationAdapter navigationAdapter = new NavigationAdapter(list, new CustomItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                switch(position) {
+
+                }
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        rvNavigation.setLayoutManager(mLayoutManager);
+        rvNavigation.setItemAnimator(new DefaultItemAnimator());
+        rvNavigation.setAdapter(navigationAdapter);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
