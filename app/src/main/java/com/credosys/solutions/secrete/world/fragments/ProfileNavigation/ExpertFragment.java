@@ -13,8 +13,11 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ExpertAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.Pojos.App.pojoExperts;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.SimpleDividerItemDecoration;
+
+import java.util.ArrayList;
 
 /**
  * Created by win7 on 13-Jan-18.
@@ -42,7 +45,20 @@ public class ExpertFragment extends Fragment {
         ((MainActivity)getActivity()).showBackButton(true);
 
         rvExpert=v.findViewById(R.id.rv_expert);
-        ExpertAdapter expertAdapter=new ExpertAdapter();
+        ArrayList<pojoExperts> Experts = new ArrayList<>();
+        Experts.add(new pojoExperts(R.drawable.p1));
+        Experts.add(new pojoExperts(R.drawable.p2));
+        Experts.add(new pojoExperts(R.drawable.p3));
+        Experts.add(new pojoExperts(R.drawable.p4));
+        Experts.add(new pojoExperts(R.drawable.p5));
+        Experts.add(new pojoExperts(R.drawable.p6));
+        Experts.add(new pojoExperts(R.drawable.p1));
+        Experts.add(new pojoExperts(R.drawable.p2));
+        Experts.add(new pojoExperts(R.drawable.p3));
+        Experts.add(new pojoExperts(R.drawable.p4));
+        Experts.add(new pojoExperts(R.drawable.p5));
+        Experts.add(new pojoExperts(R.drawable.p6));
+        ExpertAdapter expertAdapter=new ExpertAdapter(Experts);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         rvExpert.setLayoutManager(layoutManager);

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Pojos.App.Messages;
@@ -48,16 +49,18 @@ public class MessagesAdapter extends BaseAdapter {
         View v = holder.getHolder();
         holder.name.setText(list.get(position).getName());
         holder.content.setText(list.get(position).getContent());
+        holder.image.setBackgroundResource(list.get(position).getImg());
         return v;
     }
 
     class MessageHolder {
         TextView name;
         TextView content;
-
+ImageView image;
         View getHolder() {
            View view=inflater.inflate(R.layout.single_message_row,null,false);
             name = view.findViewById(R.id.txt_message_user_name);
+            image = view.findViewById(R.id.img_message_user);
             content = view.findViewById(R.id.txt_message_content);
             return view;
         }

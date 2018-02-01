@@ -123,14 +123,16 @@ public class ContentsFragment extends Fragment implements View.OnClickListener{
     }
     List<HomeContents> tempList(){
         List<HomeContents> al=new ArrayList<>();
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD",R.color.customBlue));
-        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...","OTHERS",R.color.cutomGreen));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...","HISTORICAL PLACES",R.color.customChocolate));
-        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...","HISTORICAL PLACES",R.color.customChocolate));
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","OTHERS",R.color.cutomGreen));
-        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...","FOOD",R.color.customBlue));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...","OTHERS",R.color.cutomGreen));
-        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...","HISTORICAL PLACES",R.color.customChocolate));
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD",R.color.customBlue,R.drawable.img_sabudana));
+        al.add(new HomeContents("Kim Gomaz","FOUNTAIN OF NEPTUNE","The Fountain of Neptune is a fountain in Florence, Italy","HISTORICAL PLACES",R.color.Historical_place,R.drawable.historial));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Pav bhaji is a fast food dish from Maharashtra, India","FOOD",R.color.customBlue,R.drawable.pavbhagi));
+        al.add(new HomeContents("Kim Gomaz","GOA","Goa is a state in western India with coastlines stretching along the Arabian Sea","OTHERS",R.color.cutomGreen,R.drawable.goa));
+        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD",R.color.customBlue,R.drawable.img_sabudana));
+        al.add(new HomeContents("Kim Gomaz","FOUNTAIN OF NEPTUNE","The Fountain of Neptune is a fountain in Florence, Italy","HISTORICAL PLACES",R.color.Historical_place,R.drawable.historial));
+        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Pav bhaji is a fast food dish from Maharashtra, India","FOOD",R.color.customBlue,R.drawable.pavbhagi));
+        al.add(new HomeContents("Kim Gomaz","GOA","Goa is a state in western India with coastlines stretching along the Arabian Sea","OTHERS",R.color.cutomGreen,R.drawable.goa));
+
+
         return al;
     }
 }

@@ -2,72 +2,117 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv_order"
-    android:layout_marginHorizontal="20dp"
-    android:layout_marginVertical="5dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginVertical="5dp"
+    android:background="#F0F0F0"
+    android:elevation="10dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="5dp">
 
     <LinearLayout
         android:id="@+id/ll_singleorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.0"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenirltstd_black"
+                        android:text="14"
+                        android:textColor="@color/fontblack"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-4dp"
+                        android:fontFamily="@font/avenirltstd_light"
+                        android:text="TH"
+                        android:textColor="@color/fontblack"
+                        android:textSize="8sp" />
+                </LinearLayout>
 
                 <TextView
-                    android:text="14"
-                    android:fontFamily="@font/avenirltstd_black"
-                    android:textColor="@color/fontblack"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="MON 2017"
-                    android:textColor="@color/fontblack"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/avenirltstd_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="JAN 2017"
+                    android:textColor="@color/fontblack"
+                    android:textSize="12sp" />
             </LinearLayout>
 
-            <TextView
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:fontFamily="@font/avenirltstd_medium"
-                android:layout_weight="5"
-                android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
-                />
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:text="ORDER TITLE"
+                    android:textColor="@color/fontblack"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="5"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
+                    android:textSize="14sp" />
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/img_expand"
-                android:layout_weight="0.0"
-                app:srcCompat="@drawable/ic_expand_btn"
-                android:padding="5dp"
                 android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_expand_btn" />
         </LinearLayout>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:layout_marginTop="5dp"
-            android:src="@drawable/dotted"
-            android:layerType="software" />
+            android:layerType="software"
+            android:src="@drawable/dotted" />
+
         <LinearLayout
-            android:layout_weight="3"
-            android:layout_marginVertical="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="3"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -88,66 +133,75 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
-                    android:text="Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/avenirltstd_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="Price" />
+
                 <TextView
-                    android:text="25"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="25" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
-                    android:text="Qty."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/avenirltstd_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="Qty." />
+
                 <TextView
-                    android:text="1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="1" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
-                    android:text="Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/avenirltstd_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="Time" />
+
                 <TextView
-                    android:text="16:50"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="16:50" />
             </LinearLayout>
+
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
-                    android:text="Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/avenirltstd_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="Status" />
+
                 <TextView
-                    android:text="Delivered"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="Delivered" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

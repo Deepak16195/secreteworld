@@ -35,6 +35,9 @@ public class ContentsAdapter extends RecyclerView.Adapter<ContentsAdapter.MyView
 //        holder.txtName.setText(list.get(position).getName());
         holder.txtLable.setText(list.get(position).getLable());
         holder.txtLable.setBackgroundResource(list.get(position).getColor());
+        holder.imgSingleThumbnail.setBackgroundResource(list.get(position).getImg());
+//        holder.imgSingleThumbnail.setImageDrawable(list.get(position).getImg());
+
 //        holder.imgSingleThumbnail.setColorFilter();
     }
 
