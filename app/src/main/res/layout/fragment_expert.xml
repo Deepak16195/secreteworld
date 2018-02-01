@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    android:background="#F0F0F0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,7 +11,7 @@
         layout="@layout/separate_search_bar" />
 
     <android.support.v7.widget.CardView
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="15dp"
         app:cardCornerRadius="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,6 +19,8 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_expert"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            />
     </android.support.v7.widget.CardView>
 </LinearLayout>

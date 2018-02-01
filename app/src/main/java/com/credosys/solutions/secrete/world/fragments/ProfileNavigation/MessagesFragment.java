@@ -52,22 +52,14 @@ public class MessagesFragment extends Fragment {
     }
     List<Messages> getTemp() {
         List<Messages> list=new ArrayList<>();
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
-        list.add(new Messages("MARCO ALENSSANDO","its long establish fact"));
+        list.add(new Messages("MARCO ALENSSANDO","its long establish fact its long establish fact",R.drawable.p1));
+        list.add(new Messages("MARCO ALENSSANDO","its long establish fact its long establish fact",R.drawable.p2));
+        list.add(new Messages("MARCO ALENSSANDO","its long establish fact its long establish fact",R.drawable.p3));
+        list.add(new Messages("MARCO ALENSSANDO","its long establish fact its long establish fact",R.drawable.p4));
+        list.add(new Messages("MARCO ALENSSANDO","its long establish fact its long establish fact",R.drawable.p5));
+        list.add(new Messages("MARCO ALENSSANDO","its long establish fact its long establish fact",R.drawable.p6));
+
+
 
         return  list;
     }

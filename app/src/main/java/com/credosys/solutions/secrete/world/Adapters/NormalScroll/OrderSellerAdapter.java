@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Pojos.App.OrdersSellers;
 import com.credosys.solutions.secrete.world.R;
@@ -23,10 +24,12 @@ public class OrderSellerAdapter extends RecyclerView.Adapter<OrderSellerAdapter.
 //    private CustomItemClickListener listener;
 Context context;
     List<OrdersSellers> list;
+    String fragmentString;
     Boolean mini;
-    public OrderSellerAdapter(Context context, List<OrdersSellers> list) {
+    public OrderSellerAdapter(Context context, List<OrdersSellers> list, String s) {
         this.context=context;
         this.list=list;
+        fragmentString = s;
     }
 
     @Override
@@ -70,7 +73,7 @@ Context context;
         final int heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         mLinearLayout.measure(widthSpec, heightSpec);
 
-        ValueAnimator mAnimator = slideAnimator(130, mLinearLayout.getMeasuredHeight()+120,mLinearLayout);
+        ValueAnimator mAnimator = slideAnimator(130, mLinearLayout.getMeasuredHeight(),mLinearLayout);
         mAnimator.start();
     }
     private ValueAnimator slideAnimator(int start, int end, final CardView mLinearLayout) {
@@ -94,7 +97,7 @@ Context context;
     private void collapse(final CardView mLinearLayout) {
         int finalHeight = mLinearLayout.getHeight();
 
-        ValueAnimator mAnimator = slideAnimator(finalHeight, 130,mLinearLayout);
+        ValueAnimator mAnimator = slideAnimator(finalHeight, 95,mLinearLayout);
         mAnimator.start();
     }
     @Override
@@ -107,11 +110,18 @@ Context context;
         LinearLayout llSingleorder;
         ImageView imgExpand;
         CardView cvOrder;
+        TextView order;
         private OrderHolder(View itemView) {
             super(itemView);
             llSingleorder=itemView.findViewById(R.id.ll_singleorder);
             imgExpand=itemView.findViewById(R.id.img_expand);
             cvOrder=itemView.findViewById(R.id.cv_order);
+            order=itemView.findViewById(R.id.title_order);
+
+
+            if(fragmentString.equalsIgnoreCase("MY_ORDER")){
+                order.setVisibility(View.VISIBLE);
+            }
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

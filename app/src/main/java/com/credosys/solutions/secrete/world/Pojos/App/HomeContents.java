@@ -19,12 +19,13 @@ public class HomeContents {
         this.subtitle = subtitle;
         this.img=img;
     }
-    public HomeContents(String name, String title, String subtitle,String lable, int color) {
+    public HomeContents(String name, String title, String subtitle,String lable, int color,int img) {
         this.name = name;
         this.title = title;
         this.subtitle = subtitle;
         this.lable=lable;
         this.color=color;
+        this.img=img;
     }
 
     public int getColor() {

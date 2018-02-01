@@ -53,7 +53,7 @@ public class OrderFragment extends Fragment {
         orders.add(new OrdersSellers(true));
         orders.add(new OrdersSellers(true));
 
-        OrderSellerAdapter oa=new OrderSellerAdapter(getActivity(),orders);
+        OrderSellerAdapter oa=new OrderSellerAdapter(getActivity(),orders,"MY_ORDER");
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rvOrder.setAdapter(oa);
