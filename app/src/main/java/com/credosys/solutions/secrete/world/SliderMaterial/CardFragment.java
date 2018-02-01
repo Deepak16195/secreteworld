@@ -65,7 +65,7 @@ public class CardFragment extends Fragment {
                 break;
 
             case 5:
-                imgDiaryCardBackground.setImageResource(R.drawable.my_diary_img1);
+                imgDiaryCardBackground.setImageResource(R.drawable.diary_card_tree);
                 imgDiaryCardForeground.setImageResource(R.drawable.ic_mydiary_book);
                 break;
 

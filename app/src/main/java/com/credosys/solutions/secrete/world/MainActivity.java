@@ -34,6 +34,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
+import com.credosys.solutions.secrete.world.Pojos.App.ProfileStuff;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
@@ -258,7 +259,8 @@ public class MainActivity extends AppCompatActivity
         navTextThree=navView.findViewById(R.id.nav_text_three);
         navTextFour=navView.findViewById(R.id.nav_text_four);
 
-        imgPlus.setOnClickListener(this);
+//        imgPlus.setOnClickListener(this);
+        bottomThird.setOnClickListener(this);
     }
     private void setupViewPager() {
         adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
@@ -270,6 +272,7 @@ public class MainActivity extends AppCompatActivity
         tabLayout.getTabAt(2).setCustomView(navTwo);
         tabLayout.getTabAt(3).setCustomView(navThree);
         tabLayout.getTabAt(4).setCustomView(navFour);
+        viewPager.setPageTransformer(false, new NoPageTransformer());
     }
     @Override
     public void onBackPressed() {
@@ -317,7 +320,17 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-
+    private static class NoPageTransformer implements ViewPager.PageTransformer {
+        public void transformPage(View view, float position) {
+            if (position < 0) {
+                view.setScrollX((int)((float)(view.getWidth()) * position));
+            } else if (position > 0) {
+                view.setScrollX(-(int) ((float) (view.getWidth()) * -position));
+            } else {
+                view.setScrollX(0);
+            }
+        }
+    }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -496,8 +509,13 @@ public class MainActivity extends AppCompatActivity
     }
     @Override
     public void onClick(View view) {
-        if(view.getId()==R.id.img_plus){
-            viewPager.setCurrentItem(2,true);
+//        if(view.getId()==R.id.img_plus){
+//            viewPager.setCurrentItem(2,true);
+//        }
+        if(view.getId()==R.id.bottom_third){
+            Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
+            startActivity(i2);
+            overridePendingTransition(R.anim.slide_up_info,R.anim.no_change);
         }
     }
 }

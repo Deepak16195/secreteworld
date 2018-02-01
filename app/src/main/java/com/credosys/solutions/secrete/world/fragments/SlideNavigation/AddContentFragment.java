@@ -73,11 +73,7 @@ public class AddContentFragment extends Fragment implements View.OnClickListener
         llPic.setOnClickListener(this);
         llLocation.setOnClickListener(this);
 
-        slide_down = AnimationUtils.loadAnimation(getActivity(),
-                R.anim.slide_down);
 
-        Animation slide_up = AnimationUtils.loadAnimation(getActivity(),
-                R.anim.slide_up);
 
 
 
