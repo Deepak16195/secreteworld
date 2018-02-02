@@ -2,20 +2,17 @@ package com.credosys.solutions.secrete.world;
 
 import android.app.Activity;
 import android.graphics.PorterDuff;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
-import com.credosys.solutions.secrete.world.Adapters.NormalScroll.FriendsAdapter;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ProfileStuffAdapter;
 import com.credosys.solutions.secrete.world.Pojos.App.ProfileStuff;
 
@@ -59,7 +56,7 @@ RelativeLayout rlProfileView;
                 switch(position){
                     case 0:
                         onBackPressed();
-                        MainApplication.mainActivity.addContentOpen();
+                        MainApplication.getInstance().getMainActivity().addContentOpen();
                         break;
                 }
             }
@@ -82,7 +79,7 @@ RelativeLayout rlProfileView;
 
             case R.id.rl_profile_view_user:
                 onBackPressed();
-                MainApplication.mainActivity.setProfile();
+                MainApplication.getInstance().getMainActivity().setProfile();
                 break;
         }
     }

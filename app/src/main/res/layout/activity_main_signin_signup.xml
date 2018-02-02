@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
-
     <include
         layout="@layout/app_bar_main_signin_signup"
         android:layout_width="match_parent"
@@ -19,7 +18,7 @@
         android:background="@drawable/profile_stuff_bg"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="end"
+        android:layout_gravity="start"
         android:fitsSystemWindows="true">
         <include layout="@layout/navigation_drawer_sworld"/>
     </android.support.design.widget.NavigationView>
