@@ -32,7 +32,7 @@ public class BottomNavigationViewPagerAdapter extends FragmentStatePagerAdapter 
     public Fragment getItem(int position) {
         switch (position) {
             case 0: // Fragment # 0 - This will show FirstFragment
-                return HomeFragement.newInstance(0, "Page # 1");
+                return HomeFragement.newInstance();
             case 1: // Fragment # 0 - This will show FirstFragment different title
                 return ExploreFragment.newInstance();
             case 2: // Fragment # 1 - This will show SecondFragment

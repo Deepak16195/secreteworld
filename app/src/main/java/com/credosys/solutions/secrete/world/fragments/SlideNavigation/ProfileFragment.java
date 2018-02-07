@@ -67,28 +67,28 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         switch(v.getId()) {
             case R.id.ll_wall:
-                ((MainActivity)getActivity()).setWall();
+                ((MainActivity)getActivity()).setFragments(7);
                 break;
             case R.id.ll_contents:
-                ((MainActivity)getActivity()).setContents();
+                ((MainActivity)getActivity()).setFragments(6);
                 break;
             case R.id.ll_friends:
-                ((MainActivity)getActivity()).setFriends();
+                ((MainActivity)getActivity()).setFragments(8);
                 break;
             case R.id.ll_messages:
-                ((MainActivity)getActivity()).setMessages();
+                ((MainActivity)getActivity()).setFragments(10);
                 break;
             case R.id.ll_request:
-                ((MainActivity)getActivity()).setProfileRequest();
+                ((MainActivity)getActivity()).setFragments(11);
                 break;
             case R.id.ll_orders:
-                ((MainActivity)getActivity()).setOrders();
+                ((MainActivity)getActivity()).setFragments(12);
                 break;
             case R.id.ll_expert:
                 ((MainActivity)getActivity()).setExpert();
                 break;
             case R.id.ll_sellers:
-                ((MainActivity)getActivity()).setSellers();
+                ((MainActivity)getActivity()).setFragments(13);
                 break;
         }
 

@@ -68,7 +68,7 @@ public class SworldPlacesFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btn_category){
-            ((MainActivity)getActivity()).setCategoryFragment();
+            ((MainActivity)getActivity()).setFragments(5);
         }
     }
 

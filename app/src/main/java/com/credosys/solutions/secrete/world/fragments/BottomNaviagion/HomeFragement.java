@@ -26,11 +26,9 @@ public class HomeFragement extends Fragment {
     // Store instance variables
     RecyclerView rv;
     // newInstance constructor for creating fragment with arguments
-    public static HomeFragement newInstance(int page, String title) {
+    public static HomeFragement newInstance() {
         HomeFragement fragmentFirst = new HomeFragement();
         Bundle args = new Bundle();
-        args.putInt("someInt", page);
-        args.putString("someTitle", title);
         fragmentFirst.setArguments(args);
         return fragmentFirst;
     }

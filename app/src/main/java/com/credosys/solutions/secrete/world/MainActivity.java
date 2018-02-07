@@ -35,12 +35,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
+import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ExploreFragment;
+import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.HomeFragement;
+import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.RequestFragment;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ExpertFragment;
@@ -64,7 +68,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+        implements  View.OnClickListener {
 //    private TextView mTextMessage;
 
     FrameLayout frameContainer;
@@ -72,9 +76,9 @@ public class MainActivity extends AppCompatActivity
     ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour,ivGradient,imgNavigationCross;
     TextView txtTitle,txtMore,navTextZero,navTextOne,navTextTwo,navTextThree,navTextFour;
     NonSwipeableViewPager viewPager;
-    LinearLayout navZero, navOne, navTwo, navThree, navFour;
-    BottomNavigationViewPagerAdapter adapter;
-    private TabLayout tabLayout;
+    LinearLayout navZero, navOne, navTwo, navThree, navFour,bottomThird;
+//    BottomNavigationViewPagerAdapter adapter;
+//    private TabLayout tabLayout;
     Fragment fragment;
     FragmentTransaction transaction;
     AppBarLayout appBarLayout;
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     private boolean mToolBarNavigationListenerIsRegistered = false;
     Calendar mcurrentTime;
-    RelativeLayout bottomThird,rlProfileView;
+    RelativeLayout rlProfileView;
     RecyclerView rvNavigation;
 
     @Override
@@ -106,10 +110,10 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setTitle("MUMBAI");
 
         bindViews();
-        setupViewPager();
+//        setupViewPager();
 
-        tabLayout = findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
+//        tabLayout = findViewById(R.id.tabs);
+//        tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
         drawer = findViewById(R.id.drawer_layout);
@@ -118,88 +122,88 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
        navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         Log.d("homeNavigationMain",getSupportActionBar().getDisplayOptions()+"");
-        KeyboardVisibilityEvent.setEventListener(
-                this,
-                new KeyboardVisibilityEventListener() {
-                    @Override
-                    public void onVisibilityChanged(boolean isOpen) {
-                        tabLayout.setVisibility(isOpen ? View.GONE : View.VISIBLE);
-                        bottomThird.setVisibility(isOpen ? View.GONE : View.VISIBLE);
-                        ivGradient.setVisibility(isOpen ? View.GONE : View.VISIBLE);
-                    }
-                });
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Log.d("Onpageview","onPageScrolled"+position);
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                Log.d("Onpageview","onPageSelected"+position);
-                if(position==0){
-                    imgHomeBanner.setImageResource(R.drawable.launch_banner);
+//        KeyboardVisibilityEvent.setEventListener(
+//                this,
+//                new KeyboardVisibilityEventListener() {
+//                    @Override
+//                    public void onVisibilityChanged(boolean isOpen) {
+//                        tabLayout.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+//                        bottomThird.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+//                        ivGradient.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+//                    }
+//                });
+//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//                Log.d("Onpageview","onPageScrolled"+position);
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                Log.d("Onpageview","onPageSelected"+position);
+//                if(position==0){
 //                    imgHomeBanner.setImageResource(R.drawable.launch_banner);
-                    appBarLayout.setExpanded(true);
-                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.CENTER);
-                    setFrameLayoutVisiblity();
-                    setActionBarTitle("MUMBAI");
-                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
-                }
-                else if(position==1){
-//                    imgHomeBanner.setVisibility(View.GONE);
-//                    imgHomeBanner.setImageResource(0);
-                    imgHomeBanner.setImageResource(R.drawable.topbg);
-                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
-
-                    appBarLayout.setExpanded(false);
-                    setFrameLayoutVisiblity();
-//                    setActionBarTitle("SECRETS AROUND YOU");
-                    setActionBarTitle("SECRET AROUND YOU");
-                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
-                }
-                else if(position==2){
-//                    imgHomeBanner.setVisibility(View.GONE);
-//                    imgHomeBanner.setImageResource(0);
-                    imgHomeBanner.setImageResource(R.drawable.topbg);
-                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
-                    appBarLayout.setExpanded(false);
-                    setFrameLayoutVisiblity();
-                    setActionBarTitle("MORE");
-                    getSupportActionBar().setTitle("MORE");
-                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
-                }
-                else if(position==3){
-//                    imgHomeBanner.setVisibility(View.GONE);
-//                    imgHomeBanner.setImageResource(0);
-                    imgHomeBanner.setImageResource(R.drawable.topbg);
-                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
-                    appBarLayout.setExpanded(false);
-                    setFrameLayoutVisiblity();
-                    setActionBarTitle("MY REQUEST");
-                    getSupportActionBar().setTitle("MY REQUEST");
-                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
-                }
-                else if(position==4){
-//                    imgHomeBanner.setVisibility(View.GONE);
-//                    imgHomeBanner.setImageResource(0);
-                    imgHomeBanner.setImageResource(R.drawable.topbg);
-                    appBarLayout.setExpanded(false);
-                    setFrameLayoutVisiblity();
-                    setActionBarTitle("MY DIARY");
-                    setTabLayoutColors(R.color.marineGreen,R.color.gradientColor,R.color.cutomGreen,R.color.white,R.color.white);
-                }
-                else{setActionBarTitle("NO TITLE");}
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                Log.d("Onpageview","onPageScrollStateChanged"+state);
-            }
-        });
+////                    imgHomeBanner.setImageResource(R.drawable.launch_banner);
+//                    appBarLayout.setExpanded(true);
+//                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.CENTER);
+//                    setFrameLayoutVisiblity();
+//                    setActionBarTitle("MUMBAI");
+//                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+//                }
+//                else if(position==1){
+////                    imgHomeBanner.setVisibility(View.GONE);
+////                    imgHomeBanner.setImageResource(0);
+//                    imgHomeBanner.setImageResource(R.drawable.topbg);
+//                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+//
+//                    appBarLayout.setExpanded(false);
+//                    setFrameLayoutVisiblity();
+////                    setActionBarTitle("SECRETS AROUND YOU");
+//                    setActionBarTitle("SECRET AROUND YOU");
+//                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+//                }
+//                else if(position==2){
+////                    imgHomeBanner.setVisibility(View.GONE);
+////                    imgHomeBanner.setImageResource(0);
+//                    imgHomeBanner.setImageResource(R.drawable.topbg);
+//                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+//                    appBarLayout.setExpanded(false);
+//                    setFrameLayoutVisiblity();
+//                    setActionBarTitle("MORE");
+//                    getSupportActionBar().setTitle("MORE");
+//                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+//                }
+//                else if(position==3){
+////                    imgHomeBanner.setVisibility(View.GONE);
+////                    imgHomeBanner.setImageResource(0);
+//                    imgHomeBanner.setImageResource(R.drawable.topbg);
+//                    collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+//                    appBarLayout.setExpanded(false);
+//                    setFrameLayoutVisiblity();
+//                    setActionBarTitle("MY REQUEST");
+//                    getSupportActionBar().setTitle("MY REQUEST");
+//                    setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+//                }
+//                else if(position==4){
+////                    imgHomeBanner.setVisibility(View.GONE);
+////                    imgHomeBanner.setImageResource(0);
+//                    imgHomeBanner.setImageResource(R.drawable.topbg);
+//                    appBarLayout.setExpanded(false);
+//                    setFrameLayoutVisiblity();
+//                    setActionBarTitle("MY DIARY");
+//                    setTabLayoutColors(R.color.marineGreen,R.color.gradientColor,R.color.cutomGreen,R.color.white,R.color.white);
+//                }
+//                else{setActionBarTitle("NO TITLE");}
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//                Log.d("Onpageview","onPageScrollStateChanged"+state);
+//            }
+//        });
 
 
         List<Naviagion> list=new ArrayList<Naviagion>();
@@ -233,7 +237,10 @@ public class MainActivity extends AppCompatActivity
         rvNavigation.setLayoutManager(mLayoutManager);
         rvNavigation.setItemAnimator(new DefaultItemAnimator());
         rvNavigation.setAdapter(navigationAdapter);
+        setFragments(0);
     }
+
+
 
     void setFrameLayoutVisiblity(){
         frameContainer.setVisibility(View.GONE);
@@ -243,53 +250,50 @@ public class MainActivity extends AppCompatActivity
 
     void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int text){
         Resources res=getApplicationContext().getResources();
-        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
+//        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
         imgGradient.setColorFilter(res.getColor(gradient));
         imgPlus.setColorFilter(res.getColor(plusIcon));
         txtMore.setTextColor(res.getColor(text));
 
-        for(int i=0;i<tabLayout.getTabCount();i++) {
-//            if(i!=2) {
-//                tabLayout.getTabAt(i).getIcon().setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-//                tabLayout.setTabTextColors(res.getColor(tabUnseleced),res.getColor(tabSelected));
+//        for(int i=0;i<tabLayout.getTabCount();i++) {
+//
+//            switch(i) {
+//                case 0:
+//                    navIconZero.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+//                    navTextZero.setTextColor(res.getColor(text));
+//                    break;
+//                case 1:
+//                    navIconOne.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+//                    navTextOne.setTextColor(res.getColor(text));
+//                    break;
+//                case 3:
+//                    navIconThree.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+//                    navTextThree.setTextColor(res.getColor(text));
+//                    break;
+//                case 4:
+//                    navIconFour.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+//                    navTextFour.setTextColor(res.getColor(text));
 //            }
-            switch(i) {
-                case 0:
-                    navIconZero.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-                    navTextZero.setTextColor(res.getColor(text));
-                    break;
-                case 1:
-                    navIconOne.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-                    navTextOne.setTextColor(res.getColor(text));
-                    break;
-                case 3:
-                    navIconThree.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-                    navTextThree.setTextColor(res.getColor(text));
-                    break;
-                case 4:
-                    navIconFour.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-                    navTextFour.setTextColor(res.getColor(text));
-            }
+//
+//        }
 
-        }
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                Log.d("checkvisivlity","visiblity");
-                setFrameLayoutVisiblity();
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                Log.d("check visivlity","visiblity");
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                Log.d("checkvisivlity","visiblity");
+//                setFrameLayoutVisiblity();
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//                Log.d("check visivlity","visiblity");
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
     }
 
     private void bindViews(){
@@ -300,7 +304,7 @@ public class MainActivity extends AppCompatActivity
         rvNavigation=findViewById(R.id.rv_navigation);
         ivGradient=findViewById(R.id.iv_gradient);
         imgHomeBanner=findViewById(R.id.img_home_banner);
-        viewPager = findViewById(R.id.viewpager);
+//        viewPager = findViewById(R.id.viewpager);
         frameContainer=findViewById(R.id.frame_container);
         appBarLayout=findViewById(R.id.main_app_bar);
         collapsingToolbarLayout=findViewById(R.id.collapsing_toolbar_layout);
@@ -308,44 +312,50 @@ public class MainActivity extends AppCompatActivity
         tf =  Typeface.createFromAsset(getAssets(),"charcoal.ttf");
         collapsingToolbarLayout.setCollapsedTitleTypeface(tf);
         collapsingToolbarLayout.setExpandedTitleTypeface(tf);
-        bottomThird=findViewById(R.id.bottom_third);
+//        bottomThird=findViewById(R.id.bottom_third);
 //        txtTitle=findViewById(R.id.txt_title);
         imgGradient=findViewById(R.id.iv_gradient);
         imgPlus=findViewById(R.id.img_plus);
         txtMore=findViewById(R.id.txt_more);
 
-        View navView= LayoutInflater.from(this).inflate(R.layout.navigation,null,false);
-        navZero =navView.findViewById(R.id.nav_zero);
-        navOne =navView.findViewById(R.id.nav_one);
-        navTwo =navView.findViewById(R.id.nav_two);
-        navThree =navView.findViewById(R.id.nav_three);
-        navFour =navView.findViewById(R.id.nav_four);
+//        View navView= LayoutInflater.from(this).inflate(R.layout.navigation,null,false);
+        navZero =findViewById(R.id.nav_zero);
+        navOne =findViewById(R.id.nav_one);
+        navTwo =findViewById(R.id.nav_two);
+        navThree =findViewById(R.id.nav_three);
+        navFour =findViewById(R.id.nav_four);
 
-        navIconZero=navView.findViewById(R.id.nav_icon_zero);
-        navIconOne=navView.findViewById(R.id.nav_icon_one);
-        navIconThree=navView.findViewById(R.id.nav_icon_three);
-        navIconFour=navView.findViewById(R.id.nav_icon_four);
+        navZero.setOnClickListener(this);
+        navOne.setOnClickListener(this);
+        navTwo.setOnClickListener(this);
+        navThree.setOnClickListener(this);
+        navFour.setOnClickListener(this);
 
-        navTextZero=navView.findViewById(R.id.nav_text_zero);
-        navTextOne=navView.findViewById(R.id.nav_text_one);
-        navTextThree=navView.findViewById(R.id.nav_text_three);
-        navTextFour=navView.findViewById(R.id.nav_text_four);
+        navIconZero=findViewById(R.id.nav_icon_zero);
+        navIconOne=findViewById(R.id.nav_icon_one);
+        navIconThree=findViewById(R.id.nav_icon_three);
+        navIconFour=findViewById(R.id.nav_icon_four);
+
+        navTextZero=findViewById(R.id.nav_text_zero);
+        navTextOne=findViewById(R.id.nav_text_one);
+        navTextThree=findViewById(R.id.nav_text_three);
+        navTextFour=findViewById(R.id.nav_text_four);
 
 //        imgPlus.setOnClickListener(this);
-        bottomThird.setOnClickListener(this);
+//        bottomThird.setOnClickListener(this);
         rlProfileView.setOnClickListener(this);
     }
-    private void setupViewPager() {
-        adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
-    }
+//    private void setupViewPager() {
+//        adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
+//        viewPager.setAdapter(adapter);
+//    }
     private void setupTabIcons(){
-        tabLayout.getTabAt(0).setCustomView(navZero);
-        tabLayout.getTabAt(1).setCustomView(navOne);
-        tabLayout.getTabAt(2).setCustomView(navTwo);
-        tabLayout.getTabAt(3).setCustomView(navThree);
-        tabLayout.getTabAt(4).setCustomView(navFour);
-        viewPager.setPageTransformer(false, new NoPageTransformer());
+//        tabLayout.getTabAt(0).setCustomView(navZero);
+//        tabLayout.getTabAt(1).setCustomView(navOne);
+//        tabLayout.getTabAt(2).setCustomView(navTwo);
+//        tabLayout.getTabAt(3).setCustomView(navThree);
+//        tabLayout.getTabAt(4).setCustomView(navFour);
+//        viewPager.setPageTransformer(false, new NoPageTransformer());
     }
     @Override
     public void onBackPressed() {
@@ -393,59 +403,59 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-    private static class NoPageTransformer implements ViewPager.PageTransformer {
-        public void transformPage(View view, float position) {
-            if (position < 0) {
-                view.setScrollX((int)((float)(view.getWidth()) * position));
-            } else if (position > 0) {
-                view.setScrollX(-(int) ((float) (view.getWidth()) * -position));
-            } else {
-                view.setScrollX(0);
-            }
-        }
-    }
+//    private static class NoPageTransformer implements ViewPager.PageTransformer {
+//        public void transformPage(View view, float position) {
+//            if (position < 0) {
+//                view.setScrollX((int)((float)(view.getWidth()) * position));
+//            } else if (position > 0) {
+//                view.setScrollX(-(int) ((float) (view.getWidth()) * -position));
+//            } else {
+//                view.setScrollX(0);
+//            }
+//        }
+//    }
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_profile) {
-            viewPager.setVisibility(View.GONE);
-            frameContainer.setVisibility(View.VISIBLE);
-            setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
-//            imgHomeBanner.setImageResource(R.drawable.topbg);
-//            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
-//            collapsingToolbarLayout.setScrollContainer(false);
-//            appBarLayout.setExpanded(false,false);
-
-            setActionBarTitle("PROFILE");
-            transaction= getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
-            transaction.addToBackStack(null);
-            transaction.commit();
-        } else if (id == R.id.nav_gallery) {
-            viewPager.setVisibility(View.GONE);
-            frameContainer.setVisibility(View.VISIBLE);
-            setAddContent();
-
-        } else if (id == R.id.nav_slideshow) {
-            viewPager.setVisibility(View.GONE);
-            frameContainer.setVisibility(View.VISIBLE);
-            setMuseumConcerts();
-        } else if (id == R.id.nav_manage) {
-            startActivity(new Intent(MainActivity.this,ProfileStuffActivity.class));
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handle navigation view item clicks here.
+//        int id = item.getItemId();
+//
+//        if (id == R.id.nav_profile) {
+//            viewPager.setVisibility(View.GONE);
+//            frameContainer.setVisibility(View.VISIBLE);
+//            setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+////            imgHomeBanner.setImageResource(R.drawable.topbg);
+////            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
+////            collapsingToolbarLayout.setScrollContainer(false);
+////            appBarLayout.setExpanded(false,false);
+//
+//            setActionBarTitle("PROFILE");
+//            transaction= getSupportFragmentManager().beginTransaction();
+//            transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+//            transaction.addToBackStack(null);
+//            transaction.commit();
+//        } else if (id == R.id.nav_gallery) {
+//            viewPager.setVisibility(View.GONE);
+//            frameContainer.setVisibility(View.VISIBLE);
+//            setAddContent();
+//
+//        } else if (id == R.id.nav_slideshow) {
+//            viewPager.setVisibility(View.GONE);
+//            frameContainer.setVisibility(View.VISIBLE);
+//            setMuseumConcerts();
+//        } else if (id == R.id.nav_manage) {
+//            startActivity(new Intent(MainActivity.this,ProfileStuffActivity.class));
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+//        }
+//
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
 
     public void showBackButton(boolean enable) {
 
@@ -476,69 +486,142 @@ public class MainActivity extends AppCompatActivity
         }
 
     }
-    public void setCategoryFragment(){
-            viewPager.setVisibility(View.GONE);
-            frameContainer.setVisibility(View.VISIBLE);
-            transaction= getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
-            fragment = getSupportFragmentManager().findFragmentByTag("category");
-            transaction.addToBackStack(null);
-            transaction.commit();
+
+
+    public void setFragments(int loc){
+        transaction= getSupportFragmentManager().beginTransaction();
+        switch(loc){
+            case 0:
+                transaction.replace(R.id.frame_container, HomeFragement.newInstance(), "home");
+                fragment = getSupportFragmentManager().findFragmentByTag("home");
+                break;
+
+            case 1:
+                transaction.replace(R.id.frame_container, ExploreFragment.newInstance(), "explore");
+                fragment = getSupportFragmentManager().findFragmentByTag("explore");
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "more");
+                fragment = getSupportFragmentManager().findFragmentByTag("more");
+                break;
+            case 4:
+                transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "diary");
+                fragment = getSupportFragmentManager().findFragmentByTag("diary");
+                break;
+            case 5:
+                transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
+                fragment = getSupportFragmentManager().findFragmentByTag("category");
+                break;
+
+            case 6:
+                transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
+                fragment = getSupportFragmentManager().findFragmentByTag("contents");
+                break;
+            case 7:
+                transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
+                fragment = getSupportFragmentManager().findFragmentByTag("wall");
+                break;
+            case 8:
+                transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
+                fragment = getSupportFragmentManager().findFragmentByTag("friends");
+                break;
+            case 9:
+                transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
+                fragment = getSupportFragmentManager().findFragmentByTag("messages");
+                break;
+            case 10:
+                transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
+                fragment = getSupportFragmentManager().findFragmentByTag("messages");
+                break;
+            case 11:
+                transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
+                fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
+                break;
+            case 12:
+                transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
+                fragment = getSupportFragmentManager().findFragmentByTag("orders");
+                break;
+            case 13:
+                transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
+                fragment = getSupportFragmentManager().findFragmentByTag("sellers");
+                break;
+            case 14:
+                break;
+        }
+
+        transaction.addToBackStack(null);
+        transaction.commit();
+
     }
 
-    public void setContents(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
-        fragment = getSupportFragmentManager().findFragmentByTag("contents");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
 
-    public void setWall(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
-        fragment = getSupportFragmentManager().findFragmentByTag("wall");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-    public void setFriends(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
-        fragment = getSupportFragmentManager().findFragmentByTag("friends");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
+//    public void setCategoryFragment(){
+////            viewPager.setVisibility(View.GONE);
+////            frameContainer.setVisibility(View.VISIBLE);
+//            transaction= getSupportFragmentManager().beginTransaction();
+//            transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
+//            fragment = getSupportFragmentManager().findFragmentByTag("category");
+//            transaction.addToBackStack(null);
+//            transaction.commit();
+//    }
 
-    public void setMessages(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
-        fragment = getSupportFragmentManager().findFragmentByTag("messages");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-    public void setProfileRequest(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
-        fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
+//    public void setContents(){
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
+//        fragment = getSupportFragmentManager().findFragmentByTag("contents");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
 
-    public void setOrders(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
-        fragment = getSupportFragmentManager().findFragmentByTag("orders");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
+//    public void setWall(){
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
+//        fragment = getSupportFragmentManager().findFragmentByTag("wall");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
+//    public void setFriends(){
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
+//        fragment = getSupportFragmentManager().findFragmentByTag("friends");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
 
-    public void setSellers(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
-        fragment = getSupportFragmentManager().findFragmentByTag("sellers");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
+//    public void setMessages(){
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
+//        fragment = getSupportFragmentManager().findFragmentByTag("messages");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
+//    public void setProfileRequest(){
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
+//        fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
+
+//    public void setOrders(){
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
+//        fragment = getSupportFragmentManager().findFragmentByTag("orders");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
+
+//    public void setSellers(){
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
+//        fragment = getSupportFragmentManager().findFragmentByTag("sellers");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
 
     public void setExpert(){
         transaction= getSupportFragmentManager().beginTransaction();
@@ -603,11 +686,25 @@ public class MainActivity extends AppCompatActivity
 //            viewPager.setCurrentItem(2,true);
 //        }
         switch (view.getId()) {
-            case R.id.bottom_third:
+            case R.id.nav_zero:
+                setFragments(0);
+                break;
+            case R.id.nav_one:
+                setFragments(1);
+                break;
+            case R.id.nav_two:
                 Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
                 startActivity(i2);
                 overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
                 break;
+            case R.id.nav_three:
+                setFragments(3);
+                break;
+            case R.id.nav_four:
+                setFragments(4);
+                break;
+
+
             case R.id.rl_profile_view:
                 viewPager.setVisibility(View.GONE);
                 frameContainer.setVisibility(View.VISIBLE);
