@@ -66,6 +66,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 //    private TextView mTextMessage;
+
     FrameLayout frameContainer;
     Typeface tf ;
     ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour,ivGradient,imgNavigationCross;

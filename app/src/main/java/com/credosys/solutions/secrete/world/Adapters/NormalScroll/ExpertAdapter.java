@@ -17,16 +17,16 @@ import java.util.List;
  */
 
 public class ExpertAdapter extends RecyclerView.Adapter<ExpertAdapter.ExpertHolder> {
-List<pojoExperts>experts;
-    ImageView image;
+    private List<pojoExperts> experts;
+    private ImageView image;
+
     public ExpertAdapter(ArrayList<pojoExperts> experts) {
         this.experts = experts;
     }
 
     @Override
     public ExpertAdapter.ExpertHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.single_expert,null, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_expert,null, false);
           image = v.findViewById(R.id.img_expert_user);
         return new ExpertHolder(v);
     }

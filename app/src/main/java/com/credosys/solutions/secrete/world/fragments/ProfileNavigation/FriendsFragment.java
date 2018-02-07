@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.FriendsAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.Pojos.App.pojoFriends;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.ArrayList;

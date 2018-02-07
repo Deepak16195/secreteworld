@@ -189,7 +189,6 @@
                 android:id="@+id/switch_search_category"
                 android:layout_width="120dp"
                 android:thumb="@drawable/ic_blue_line"
-
                 android:layout_height="wrap_content"
                 android:switchMinWidth="120dp" />
         </LinearLayout>

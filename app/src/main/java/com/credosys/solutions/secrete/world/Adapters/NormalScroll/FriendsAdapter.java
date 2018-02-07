@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.credosys.solutions.secrete.world.R;
-import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.pojoFriends;
+import com.credosys.solutions.secrete.world.Pojos.App.pojoFriends;
 
 import java.util.ArrayList;
 import java.util.List;

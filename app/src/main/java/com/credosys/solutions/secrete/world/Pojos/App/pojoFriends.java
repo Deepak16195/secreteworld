@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrete.world.fragments.ProfileNavigation;
+package com.credosys.solutions.secrete.world.Pojos.App;
 
 /**
  * Created by credosys on 31/1/18.
