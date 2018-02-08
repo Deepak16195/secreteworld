@@ -56,7 +56,7 @@ RelativeLayout rlProfileView;
                 switch(position){
                     case 0:
                         onBackPressed();
-                        MainApplication.getInstance().getMainActivity().addContentOpen();
+                        MainApplication.getInstance().getMainActivity(). setAddContent();
                         break;
                 }
             }

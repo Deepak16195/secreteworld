@@ -40,9 +40,9 @@ public class ExpertFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_expert,null,false);
 
         ((MainActivity)getActivity()).setActionBarTitle("EXPERT");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+//        ((MainActivity)getActivity()).showBackButton(true);
 
         rvExpert=v.findViewById(R.id.rv_expert);
         ArrayList<pojoExperts> Experts = new ArrayList<>();

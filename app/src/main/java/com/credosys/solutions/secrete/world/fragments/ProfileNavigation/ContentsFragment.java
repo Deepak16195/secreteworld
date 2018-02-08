@@ -61,8 +61,8 @@ public class ContentsFragment extends Fragment implements View.OnClickListener{
         btnPublish.setOnClickListener(this);
 
         ((MainActivity)getActivity()).setActionBarTitle("MY CONTENT");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).showBackButton(true);
+//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+//        ((MainActivity)getActivity()).showBackButton(true);
 
 //
 //        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

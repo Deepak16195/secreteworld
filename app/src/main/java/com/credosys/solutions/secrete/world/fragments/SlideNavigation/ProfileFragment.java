@@ -67,28 +67,28 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         switch(v.getId()) {
             case R.id.ll_wall:
-                ((MainActivity)getActivity()).setFragments(7);
+                ((MainActivity)getActivity()).setFragments(7,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_contents:
-                ((MainActivity)getActivity()).setFragments(6);
+                ((MainActivity)getActivity()).setFragments(6,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_friends:
-                ((MainActivity)getActivity()).setFragments(8);
+                ((MainActivity)getActivity()).setFragments(8,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_messages:
-                ((MainActivity)getActivity()).setFragments(10);
+                ((MainActivity)getActivity()).setFragments(9,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_request:
-                ((MainActivity)getActivity()).setFragments(11);
+                ((MainActivity)getActivity()).setFragments(11,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_orders:
-                ((MainActivity)getActivity()).setFragments(12);
+                ((MainActivity)getActivity()).setFragments(12,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_expert:
-                ((MainActivity)getActivity()).setExpert();
+                ((MainActivity)getActivity()).setFragments(14,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_sellers:
-                ((MainActivity)getActivity()).setFragments(13);
+                ((MainActivity)getActivity()).setFragments(13,R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
         }
 

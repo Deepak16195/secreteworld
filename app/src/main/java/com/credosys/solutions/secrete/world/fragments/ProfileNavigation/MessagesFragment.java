@@ -38,9 +38,9 @@ public class MessagesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_messages,null,false);
         ((MainActivity)getActivity()).setActionBarTitle("MY MESSAGE");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+//        ((MainActivity)getActivity()).showBackButton(true);
 
         LvMessages=v.findViewById(R.id.lv_message);
         MessagesAdapter ma=new MessagesAdapter(getActivity(),getTemp());

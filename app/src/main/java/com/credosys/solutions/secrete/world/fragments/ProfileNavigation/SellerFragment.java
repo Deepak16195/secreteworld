@@ -39,9 +39,9 @@ public class SellerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_orders_seller,null,false);
         ((MainActivity)getActivity()).setActionBarTitle("SELLERS");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+//        ((MainActivity)getActivity()).showBackButton(true);
         rvSeller =v.findViewById(R.id.rv_order);
 
 

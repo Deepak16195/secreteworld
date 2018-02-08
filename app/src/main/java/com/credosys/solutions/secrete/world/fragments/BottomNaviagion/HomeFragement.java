@@ -44,8 +44,9 @@ public class HomeFragement extends Fragment {
         rv=view.findViewById(R.id.recyclerview_home);
 
 
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+
+        ((MainActivity)getActivity()).setActionBarTitle("MUMBAI");
+//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
 
 
 

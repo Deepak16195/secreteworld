@@ -36,9 +36,9 @@ public class RequestProfileFragment extends Fragment {
         rvProfileRequest=v.findViewById(R.id.rv_profile_request);
 
         ((MainActivity)getActivity()).setActionBarTitle("MY REQUEST");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+//        ((MainActivity)getActivity()).showBackButton(true);
 
         ProfileRequestAdapter pra=new ProfileRequestAdapter();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

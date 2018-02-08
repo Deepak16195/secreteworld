@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +69,7 @@ public class SworldPlacesFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btn_category){
-            ((MainActivity)getActivity()).setFragments(5);
+            ((MainActivity)getActivity()).setFragments(5,R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
         }
     }
 

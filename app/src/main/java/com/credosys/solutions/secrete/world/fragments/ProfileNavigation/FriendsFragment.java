@@ -40,9 +40,9 @@ public class FriendsFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_friends, null, false);
 
         ((MainActivity) getActivity()).setActionBarTitle("MY FRIENDS");
-        ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
-        ((MainActivity) getActivity()).showBackButton(true);
+//        ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
+//        ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
+//        ((MainActivity) getActivity()).showBackButton(true);
 
         rvFriends = v.findViewById(R.id.rv_friends);
         mLayoutManager = new GridLayoutManager(getActivity(), 3);

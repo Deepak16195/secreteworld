@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import  android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,9 +39,11 @@ public class ExploreFragment extends Fragment {
         final TabLayout fragmentTab=v.findViewById(R.id.fragment_tabs);
         final ViewPager fragmentViewPager = v.findViewById(R.id.fragment_viewpager);
 
+        ((MainActivity)getActivity()).setActionBarTitle("SECRETS AROUND YOU");
+
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);
-//            fragmentTab.setTabTextColors(R.color.grayColor,R.color.customBlue);
+            fragmentTab.setTabTextColors(R.color.grayColor,R.color.customBlue);
 //        fragmentTab.setTabTextColors(
 //                ContextCompat.getColor(getActivity(), R.color.grayColor),
 //                ContextCompat.getColor(getActivity(), R.color.customBlue)

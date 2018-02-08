@@ -56,8 +56,8 @@ public class WallFragment extends Fragment implements View.OnClickListener{
         btnPublish.setOnClickListener(this);
 
         ((MainActivity)getActivity()).setActionBarTitle("MY WALL");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).showBackButton(true);
+//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+//        ((MainActivity)getActivity()).showBackButton(true);
 
         WallAdapter wa=new WallAdapter();
 

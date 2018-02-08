@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardFragment;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardFragmentPagerAdapter;
@@ -45,6 +46,7 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
         mViewPager = (ViewPager) v.findViewById(R.id.viewpager_mydiary);
         txtMydiaryLableOne=v.findViewById(R.id.txt_mydiary_lable_one);
         txtMydiaryLableTwo=v.findViewById(R.id.txt_mydiary_lable_two);
+        ((MainActivity)getActivity()).setActionBarTitle("DIARY");
 //        mButton = (Button) v.findViewById(R.id.cardTypeBtn);
 //        ((CheckBox) v.findViewById(R.id.checkBox)).setOnCheckedChangeListener(this);
 //        mButton.setOnClickListener(this);

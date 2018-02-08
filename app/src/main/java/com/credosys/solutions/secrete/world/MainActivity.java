@@ -44,6 +44,7 @@ import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ExploreFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.HomeFragement;
+import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.MyDiaryFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.RequestFragment;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
@@ -237,7 +238,7 @@ public class MainActivity extends AppCompatActivity
         rvNavigation.setLayoutManager(mLayoutManager);
         rvNavigation.setItemAnimator(new DefaultItemAnimator());
         rvNavigation.setAdapter(navigationAdapter);
-        setFragments(0);
+        setFragments(0,R.drawable.launch_banner,Gravity.CENTER,true,true,true);
     }
 
 
@@ -364,10 +365,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
-        else if(fragment !=null && fragment.getTag().equalsIgnoreCase("category")){
-            viewPager.setVisibility(View.VISIBLE);
-            frameContainer.setVisibility(View.GONE);
-        }
+//        else if(fragment !=null && fragment.getTag().equalsIgnoreCase("category")){
+//            viewPager.setVisibility(View.VISIBLE);
+//            frameContainer.setVisibility(View.GONE);
+//        }
         else if(fragment !=null && fragment.getTag().equalsIgnoreCase("wall")){
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
@@ -488,150 +489,88 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void setFragments(int loc){
+    public void setFragments(int loc,int imgTitleBgBanner,int gravity,boolean isToolbarScroll,boolean isExpanded,boolean isExpandedAnimate){
         transaction= getSupportFragmentManager().beginTransaction();
-        switch(loc){
-            case 0:
-                transaction.replace(R.id.frame_container, HomeFragement.newInstance(), "home");
-                fragment = getSupportFragmentManager().findFragmentByTag("home");
-                break;
+        if(loc>=0 && loc<6) {
+            switch (loc) {
+                case 0:
+                    transaction.replace(R.id.frame_container, HomeFragement.newInstance(), "home");
+                    fragment = getSupportFragmentManager().findFragmentByTag("home");
+                    break;
+                case 1:
+                    transaction.replace(R.id.frame_container, ExploreFragment.newInstance(), "explore");
+                    fragment = getSupportFragmentManager().findFragmentByTag("explore");
+                    break;
 
-            case 1:
-                transaction.replace(R.id.frame_container, ExploreFragment.newInstance(), "explore");
-                fragment = getSupportFragmentManager().findFragmentByTag("explore");
-                break;
+                case 3:
+                    transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "request");
+                    fragment = getSupportFragmentManager().findFragmentByTag("request");
+                    break;
 
-            case 2:
-                break;
+                case 4:
+                    transaction.replace(R.id.frame_container, MyDiaryFragment.newInstance(), "diary");
+                    fragment = getSupportFragmentManager().findFragmentByTag("diary");
+                    break;
 
-            case 3:
-                transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "more");
-                fragment = getSupportFragmentManager().findFragmentByTag("more");
-                break;
-            case 4:
-                transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "diary");
-                fragment = getSupportFragmentManager().findFragmentByTag("diary");
-                break;
-            case 5:
-                transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
-                fragment = getSupportFragmentManager().findFragmentByTag("category");
-                break;
+                case 5:
+                    transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
+                    fragment = getSupportFragmentManager().findFragmentByTag("category");
+                    break;
 
-            case 6:
-                transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
-                fragment = getSupportFragmentManager().findFragmentByTag("contents");
-                break;
-            case 7:
-                transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
-                fragment = getSupportFragmentManager().findFragmentByTag("wall");
-                break;
-            case 8:
-                transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
-                fragment = getSupportFragmentManager().findFragmentByTag("friends");
-                break;
-            case 9:
-                transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
-                fragment = getSupportFragmentManager().findFragmentByTag("messages");
-                break;
-            case 10:
-                transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
-                fragment = getSupportFragmentManager().findFragmentByTag("messages");
-                break;
-            case 11:
-                transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
-                fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
-                break;
-            case 12:
-                transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
-                fragment = getSupportFragmentManager().findFragmentByTag("orders");
-                break;
-            case 13:
-                transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
-                fragment = getSupportFragmentManager().findFragmentByTag("sellers");
-                break;
-            case 14:
-                break;
+            }
         }
 
-        transaction.addToBackStack(null);
+
+       else if(loc>5 && loc<=10){
+            switch (loc){
+
+                case 6:
+                    transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
+                    fragment = getSupportFragmentManager().findFragmentByTag("contents");
+                    break;
+                case 7:
+                    transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
+                    fragment = getSupportFragmentManager().findFragmentByTag("wall");
+                    break;
+                case 8:
+                    transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
+                    fragment = getSupportFragmentManager().findFragmentByTag("friends");
+                    break;
+                case 9:
+                    transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
+                    fragment = getSupportFragmentManager().findFragmentByTag("messages");
+                    break;
+            }
+        }
+
+      else if(loc>=11 && loc<16){
+            switch (loc){
+
+
+                case 11:
+                    transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
+                    fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
+                    break;
+                case 12:
+                    transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
+                    fragment = getSupportFragmentManager().findFragmentByTag("orders");
+                    break;
+                case 13:
+                    transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
+                    fragment = getSupportFragmentManager().findFragmentByTag("sellers");
+                    break;
+                case 14:
+                    transaction.replace(R.id.frame_container, ExpertFragment.newInstance(), "expert");
+                    fragment = getSupportFragmentManager().findFragmentByTag("expert");
+                    break;
+            }
+        }
         transaction.commit();
+        setUpTopHeader(imgTitleBgBanner,gravity,isToolbarScroll,isExpanded,isExpandedAnimate);
 
     }
 
-
-//    public void setCategoryFragment(){
-////            viewPager.setVisibility(View.GONE);
-////            frameContainer.setVisibility(View.VISIBLE);
-//            transaction= getSupportFragmentManager().beginTransaction();
-//            transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
-//            fragment = getSupportFragmentManager().findFragmentByTag("category");
-//            transaction.addToBackStack(null);
-//            transaction.commit();
-//    }
-
-//    public void setContents(){
-//        transaction= getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
-//        fragment = getSupportFragmentManager().findFragmentByTag("contents");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//    }
-
-//    public void setWall(){
-//        transaction= getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
-//        fragment = getSupportFragmentManager().findFragmentByTag("wall");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//    }
-//    public void setFriends(){
-//        transaction= getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
-//        fragment = getSupportFragmentManager().findFragmentByTag("friends");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//    }
-
-//    public void setMessages(){
-//        transaction= getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
-//        fragment = getSupportFragmentManager().findFragmentByTag("messages");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//    }
-//    public void setProfileRequest(){
-//        transaction= getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
-//        fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//    }
-
-//    public void setOrders(){
-//        transaction= getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
-//        fragment = getSupportFragmentManager().findFragmentByTag("orders");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//    }
-
-//    public void setSellers(){
-//        transaction= getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
-//        fragment = getSupportFragmentManager().findFragmentByTag("sellers");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//    }
-
-    public void setExpert(){
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, ExpertFragment.newInstance(), "expert");
-        fragment = getSupportFragmentManager().findFragmentByTag("expert");
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
-    public void setAddContent(){
+    public void setAddContent(){// called from ProfileStuff activity
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
         fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
@@ -664,33 +603,32 @@ public class MainActivity extends AppCompatActivity
         timePickerDialog.show();
     }
 
-    public void addContentOpen(){ // called from ProfileStuff activity
-        viewPager.setVisibility(View.GONE);
-        frameContainer.setVisibility(View.VISIBLE);
-        setAddContent();
-    }
+
 
     public void setProfile(){
-        viewPager.setVisibility(View.GONE);
-        frameContainer.setVisibility(View.VISIBLE);
-        setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+//        setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
         setActionBarTitle("PROFILE");
         transaction= getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
         transaction.addToBackStack(null);
         transaction.commitAllowingStateLoss();
     }
+
+    public void setUpTopHeader(int imgTitleBgBanner,int gravity,boolean isToolbarScroll,boolean isExpanded,boolean isExpandedAnimate){
+        imgHomeBanner.setImageResource(imgTitleBgBanner);
+        collapsingToolbarLayout.setExpandedTitleGravity(gravity);
+        collapsingToolbarLayout.setScrollContainer(isToolbarScroll);
+        appBarLayout.setExpanded(isExpanded,isExpandedAnimate);
+    }
     @Override
     public void onClick(View view) {
-//        if(view.getId()==R.id.img_plus){
-//            viewPager.setCurrentItem(2,true);
-//        }
+
         switch (view.getId()) {
             case R.id.nav_zero:
-                setFragments(0);
+                setFragments(0,R.drawable.launch_banner,Gravity.CENTER,true,true,true);
                 break;
             case R.id.nav_one:
-                setFragments(1);
+                setFragments(1,R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
                 break;
             case R.id.nav_two:
                 Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
@@ -698,21 +636,15 @@ public class MainActivity extends AppCompatActivity
                 overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
                 break;
             case R.id.nav_three:
-                setFragments(3);
+                setFragments(3,R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
                 break;
             case R.id.nav_four:
-                setFragments(4);
+                setFragments(4,R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
                 break;
 
 
             case R.id.rl_profile_view:
-                viewPager.setVisibility(View.GONE);
-                frameContainer.setVisibility(View.VISIBLE);
-                setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
-//            imgHomeBanner.setImageResource(R.drawable.topbg);
-//            collapsingToolbarLayout.setExpandedTitleGravity(Gravity.NO_GRAVITY);
-//            collapsingToolbarLayout.setScrollContainer(false);
-//            appBarLayout.setExpanded(false,false);
+                setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
 
                 setActionBarTitle("PROFILE");
                 transaction= getSupportFragmentManager().beginTransaction();
