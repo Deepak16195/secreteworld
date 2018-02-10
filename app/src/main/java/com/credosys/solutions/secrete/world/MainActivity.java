@@ -428,8 +428,9 @@ public class MainActivity extends AppCompatActivity
     public void setFragments(int loc,int imgTitleBgBanner,int gravity,boolean isToolbarScroll,boolean isExpanded,boolean isExpandedAnimate){
         transaction= getSupportFragmentManager().beginTransaction();
         if(loc>=0 && loc<6) {
+            setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
             if(mainApp.isDiary()) {
-                setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+
                 mainApp.setDiary(false);
             }
             switch (loc) {
