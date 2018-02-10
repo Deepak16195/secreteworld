@@ -9,10 +9,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -22,9 +20,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,11 +31,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
-import com.credosys.solutions.secrete.world.Adapters.ViewPagers.BottomNavigationViewPagerAdapter;
 import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ExploreFragment;
@@ -70,16 +64,15 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements  View.OnClickListener {
-//    private TextView mTextMessage;
+
 
     FrameLayout frameContainer;
     Typeface tf ;
-    ImageView imgHomeBanner, imgGradient, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour,ivGradient,imgNavigationCross;
+    ImageView imgHomeBanner, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour, imgGradient,imgNavigationCross;
+    View viewFixedBottom;
     TextView txtTitle,txtMore,navTextZero,navTextOne,navTextTwo,navTextThree,navTextFour;
     NonSwipeableViewPager viewPager;
-    LinearLayout navZero, navOne, navTwo, navThree, navFour,bottomThird;
-//    BottomNavigationViewPagerAdapter adapter;
-//    private TabLayout tabLayout;
+    LinearLayout navZero, navOne, navTwo, navThree, navFour,bottomThird,llNav;
     Fragment fragment;
     FragmentTransaction transaction;
     AppBarLayout appBarLayout;
@@ -92,6 +85,7 @@ public class MainActivity extends AppCompatActivity
     Calendar mcurrentTime;
     RelativeLayout rlProfileView;
     RecyclerView rvNavigation;
+    MainApplication mainApp;
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -102,7 +96,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainApplication.getInstance().setMainActivity(this);
+        mainApp=MainApplication.getInstance();
+        mainApp.setMainActivity(this);
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
@@ -111,11 +106,7 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setTitle("MUMBAI");
 
         bindViews();
-//        setupViewPager();
 
-//        tabLayout = findViewById(R.id.tabs);
-//        tabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();
 
         drawer = findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -125,17 +116,17 @@ public class MainActivity extends AppCompatActivity
        navigationView = findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);
 
-        Log.d("homeNavigationMain",getSupportActionBar().getDisplayOptions()+"");
-//        KeyboardVisibilityEvent.setEventListener(
-//                this,
-//                new KeyboardVisibilityEventListener() {
-//                    @Override
-//                    public void onVisibilityChanged(boolean isOpen) {
-//                        tabLayout.setVisibility(isOpen ? View.GONE : View.VISIBLE);
-//                        bottomThird.setVisibility(isOpen ? View.GONE : View.VISIBLE);
-//                        ivGradient.setVisibility(isOpen ? View.GONE : View.VISIBLE);
-//                    }
-//                });
+
+        KeyboardVisibilityEvent.setEventListener(
+                this,
+                new KeyboardVisibilityEventListener() {
+                    @Override
+                    public void onVisibilityChanged(boolean isOpen) {
+                        viewFixedBottom.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+                        llNav.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+                        imgGradient.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+                    }
+                });
 //        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 //            @Override
 //            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -252,60 +243,33 @@ public class MainActivity extends AppCompatActivity
     void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int text){
         Resources res=getApplicationContext().getResources();
 //        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
+        viewFixedBottom.setBackgroundColor(res.getColor(tabLayoutColor));
         imgGradient.setColorFilter(res.getColor(gradient));
         imgPlus.setColorFilter(res.getColor(plusIcon));
         txtMore.setTextColor(res.getColor(text));
 
-//        for(int i=0;i<tabLayout.getTabCount();i++) {
-//
-//            switch(i) {
-//                case 0:
-//                    navIconZero.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-//                    navTextZero.setTextColor(res.getColor(text));
-//                    break;
-//                case 1:
-//                    navIconOne.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-//                    navTextOne.setTextColor(res.getColor(text));
-//                    break;
-//                case 3:
-//                    navIconThree.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-//                    navTextThree.setTextColor(res.getColor(text));
-//                    break;
-//                case 4:
-//                    navIconFour.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
-//                    navTextFour.setTextColor(res.getColor(text));
-//            }
-//
-//        }
+        navIconZero.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+        navIconOne.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+        navIconThree.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
+        navIconFour.setColorFilter(res.getColor(icon), PorterDuff.Mode.SRC_IN);
 
-//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                Log.d("checkvisivlity","visiblity");
-//                setFrameLayoutVisiblity();
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//                Log.d("check visivlity","visiblity");
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
+        navTextZero.setTextColor(res.getColor(text));
+        navTextOne.setTextColor(res.getColor(text));
+        navTextThree.setTextColor(res.getColor(text));
+        navTextFour.setTextColor(res.getColor(text));
+
     }
 
     private void bindViews(){
+        llNav=findViewById(R.id.ll_nav);
+        viewFixedBottom =findViewById(R.id.img_fixed_bottom);
         drawer = findViewById(R.id.drawer_layout);
         rlProfileView=findViewById(R.id.rl_profile_view);
         imgNavigationCross=findViewById(R.id.img_navigation_cross);
         imgNavigationCross.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_IN);
         rvNavigation=findViewById(R.id.rv_navigation);
-        ivGradient=findViewById(R.id.iv_gradient);
+        imgGradient =findViewById(R.id.iv_gradient);
         imgHomeBanner=findViewById(R.id.img_home_banner);
-//        viewPager = findViewById(R.id.viewpager);
         frameContainer=findViewById(R.id.frame_container);
         appBarLayout=findViewById(R.id.main_app_bar);
         collapsingToolbarLayout=findViewById(R.id.collapsing_toolbar_layout);
@@ -313,24 +277,13 @@ public class MainActivity extends AppCompatActivity
         tf =  Typeface.createFromAsset(getAssets(),"charcoal.ttf");
         collapsingToolbarLayout.setCollapsedTitleTypeface(tf);
         collapsingToolbarLayout.setExpandedTitleTypeface(tf);
-//        bottomThird=findViewById(R.id.bottom_third);
-//        txtTitle=findViewById(R.id.txt_title);
-        imgGradient=findViewById(R.id.iv_gradient);
         imgPlus=findViewById(R.id.img_plus);
         txtMore=findViewById(R.id.txt_more);
-
-//        View navView= LayoutInflater.from(this).inflate(R.layout.navigation,null,false);
         navZero =findViewById(R.id.nav_zero);
         navOne =findViewById(R.id.nav_one);
         navTwo =findViewById(R.id.nav_two);
         navThree =findViewById(R.id.nav_three);
         navFour =findViewById(R.id.nav_four);
-
-        navZero.setOnClickListener(this);
-        navOne.setOnClickListener(this);
-        navTwo.setOnClickListener(this);
-        navThree.setOnClickListener(this);
-        navFour.setOnClickListener(this);
 
         navIconZero=findViewById(R.id.nav_icon_zero);
         navIconOne=findViewById(R.id.nav_icon_one);
@@ -342,26 +295,19 @@ public class MainActivity extends AppCompatActivity
         navTextThree=findViewById(R.id.nav_text_three);
         navTextFour=findViewById(R.id.nav_text_four);
 
-//        imgPlus.setOnClickListener(this);
-//        bottomThird.setOnClickListener(this);
         rlProfileView.setOnClickListener(this);
+        navZero.setOnClickListener(this);
+        navOne.setOnClickListener(this);
+        navTwo.setOnClickListener(this);
+        navThree.setOnClickListener(this);
+        navFour.setOnClickListener(this);
     }
-//    private void setupViewPager() {
-//        adapter = new BottomNavigationViewPagerAdapter(getSupportFragmentManager());
-//        viewPager.setAdapter(adapter);
-//    }
-    private void setupTabIcons(){
-//        tabLayout.getTabAt(0).setCustomView(navZero);
-//        tabLayout.getTabAt(1).setCustomView(navOne);
-//        tabLayout.getTabAt(2).setCustomView(navTwo);
-//        tabLayout.getTabAt(3).setCustomView(navThree);
-//        tabLayout.getTabAt(4).setCustomView(navFour);
-//        viewPager.setPageTransformer(false, new NoPageTransformer());
-    }
+
+
     @Override
     public void onBackPressed() {
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
@@ -404,18 +350,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-//    private static class NoPageTransformer implements ViewPager.PageTransformer {
-//        public void transformPage(View view, float position) {
-//            if (position < 0) {
-//                view.setScrollX((int)((float)(view.getWidth()) * position));
-//            } else if (position > 0) {
-//                view.setScrollX(-(int) ((float) (view.getWidth()) * -position));
-//            } else {
-//                view.setScrollX(0);
-//            }
-//        }
-//    }
-    @SuppressWarnings("StatementWithEmptyBody")
+
+//    @SuppressWarnings("StatementWithEmptyBody")
 //    @Override
 //    public boolean onNavigationItemSelected(MenuItem item) {
 //        // Handle navigation view item clicks here.
@@ -492,11 +428,16 @@ public class MainActivity extends AppCompatActivity
     public void setFragments(int loc,int imgTitleBgBanner,int gravity,boolean isToolbarScroll,boolean isExpanded,boolean isExpandedAnimate){
         transaction= getSupportFragmentManager().beginTransaction();
         if(loc>=0 && loc<6) {
+            if(mainApp.isDiary()) {
+                setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+                mainApp.setDiary(false);
+            }
             switch (loc) {
                 case 0:
                     transaction.replace(R.id.frame_container, HomeFragement.newInstance(), "home");
                     fragment = getSupportFragmentManager().findFragmentByTag("home");
                     break;
+
                 case 1:
                     transaction.replace(R.id.frame_container, ExploreFragment.newInstance(), "explore");
                     fragment = getSupportFragmentManager().findFragmentByTag("explore");
@@ -508,6 +449,10 @@ public class MainActivity extends AppCompatActivity
                     break;
 
                 case 4:
+                    if(!mainApp.isDiary()) {
+                        setTabLayoutColors(R.color.marineGreen, R.color.gradientColor, R.color.cutomGreen, R.color.white, R.color.white);
+                        mainApp.setDiary(true);
+                    }
                     transaction.replace(R.id.frame_container, MyDiaryFragment.newInstance(), "diary");
                     fragment = getSupportFragmentManager().findFragmentByTag("diary");
                     break;
@@ -642,10 +587,8 @@ public class MainActivity extends AppCompatActivity
                 setFragments(4,R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
                 break;
 
-
             case R.id.rl_profile_view:
                 setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
-
                 setActionBarTitle("PROFILE");
                 transaction= getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_container,ProfileFragment.newInstance());

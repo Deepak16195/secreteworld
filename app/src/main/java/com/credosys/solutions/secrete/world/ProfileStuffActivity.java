@@ -22,6 +22,7 @@ import java.util.List;
 public class ProfileStuffActivity extends Activity implements View.OnClickListener {
 ImageView cross;
 RelativeLayout rlProfileView;
+MainApplication mainApp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ RelativeLayout rlProfileView;
         setContentView(R.layout.activity_profile_stuff);
         cross=findViewById(R.id.img_cross_profile_stuff);
         rlProfileView=findViewById(R.id.rl_profile_view_user);
-
+        mainApp=MainApplication.getInstance();
         cross.setColorFilter(getResources().getColor(R.color.cutomGreen), PorterDuff.Mode.SRC_IN);
         Animation startRotateAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.android_rotate_animation);
         cross.startAnimation(startRotateAnimation);
@@ -56,7 +57,9 @@ RelativeLayout rlProfileView;
                 switch(position){
                     case 0:
                         onBackPressed();
-                        MainApplication.getInstance().getMainActivity(). setAddContent();
+                        mainApp.getMainActivity(). setAddContent();
+                        if(mainApp.isDiary())
+                            mainApp.getMainActivity().setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
                         break;
                 }
             }
