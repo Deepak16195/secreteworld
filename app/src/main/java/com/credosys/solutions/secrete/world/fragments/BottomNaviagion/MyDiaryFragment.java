@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import  android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +20,13 @@ import com.credosys.solutions.secrete.world.SliderMaterial.CardFragmentPagerAdap
 import com.credosys.solutions.secrete.world.SliderMaterial.CardItem;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardPagerAdapter;
 import com.credosys.solutions.secrete.world.SliderMaterial.ShadowTransformer;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by win7 on 23-Dec-17.
  */
 
-public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
+public class MyDiaryFragment extends MainFragment/* implements View.OnClickListener,
         CompoundButton.OnCheckedChangeListener */{
 //    private Button mButton;
     private ViewPager mViewPager;
@@ -43,10 +45,11 @@ public class MyDiaryFragment extends Fragment/* implements View.OnClickListener,
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_mydiary,null,false);
-        mViewPager = (ViewPager) v.findViewById(R.id.viewpager_mydiary);
+        mViewPager =v.findViewById(R.id.viewpager_mydiary);
         txtMydiaryLableOne=v.findViewById(R.id.txt_mydiary_lable_one);
         txtMydiaryLableTwo=v.findViewById(R.id.txt_mydiary_lable_two);
         ((MainActivity)getActivity()).setActionBarTitle("DIARY");
+        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
 //        mButton = (Button) v.findViewById(R.id.cardTypeBtn);
 //        ((CheckBox) v.findViewById(R.id.checkBox)).setOnCheckedChangeListener(this);
 //        mButton.setOnClickListener(this);

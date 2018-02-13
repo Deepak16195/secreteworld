@@ -18,12 +18,13 @@ import android.widget.RelativeLayout;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.WallAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by win7 on 06-Jan-18.
  */
 
-public class WallFragment extends Fragment implements View.OnClickListener{
+public class WallFragment extends MainFragment implements View.OnClickListener{
     RelativeLayout rlBackground;
 //    LinearLayout llPublish;
     RecyclerView rvWall;
@@ -57,7 +58,7 @@ public class WallFragment extends Fragment implements View.OnClickListener{
 
         ((MainActivity)getActivity()).setActionBarTitle("MY WALL");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).showBackButton(true);
 
         WallAdapter wa=new WallAdapter();
 

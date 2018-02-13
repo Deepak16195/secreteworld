@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by win7 on 23-Dec-17.
  */
 
-public class MoreFragment extends Fragment {
+public class MoreFragment extends MainFragment {
     public static Fragment newInstance() {
         return new MoreFragment();
     }

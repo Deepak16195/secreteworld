@@ -15,6 +15,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.MessagesAdapte
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.Messages;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ import java.util.List;
  * Created by win7 on 11-Jan-18.
  */
 
-public class MessagesFragment extends Fragment {
+public class MessagesFragment extends MainFragment {
     ListView LvMessages;
     public static MessagesFragment newInstance() {
 
@@ -40,7 +41,7 @@ public class MessagesFragment extends Fragment {
         ((MainActivity)getActivity()).setActionBarTitle("MY MESSAGE");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-//        ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).showBackButton(true);
 
         LvMessages=v.findViewById(R.id.lv_message);
         MessagesAdapter ma=new MessagesAdapter(getActivity(),getTemp());

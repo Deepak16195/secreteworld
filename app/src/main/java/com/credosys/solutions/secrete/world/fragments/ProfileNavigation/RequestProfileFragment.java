@@ -14,12 +14,13 @@ import android.view.ViewGroup;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ProfileRequestAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by win7 on 12-Jan-18.
  */
 
-public class RequestProfileFragment extends Fragment {
+public class RequestProfileFragment extends MainFragment {
     RecyclerView rvProfileRequest;
     public static RequestProfileFragment newInstance() {
 
@@ -38,7 +39,7 @@ public class RequestProfileFragment extends Fragment {
         ((MainActivity)getActivity()).setActionBarTitle("MY REQUEST");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-//        ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).showBackButton(true);
 
         ProfileRequestAdapter pra=new ProfileRequestAdapter();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

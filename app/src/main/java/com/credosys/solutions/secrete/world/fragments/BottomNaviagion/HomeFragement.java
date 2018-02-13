@@ -14,6 +14,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.HomeAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  * Created by win7 on 21-Dec-17.
  */
 
-public class HomeFragement extends Fragment {
+public class HomeFragement extends MainFragment {
     // Store instance variables
     RecyclerView rv;
     // newInstance constructor for creating fragment with arguments
@@ -46,6 +47,7 @@ public class HomeFragement extends Fragment {
 
 
         ((MainActivity)getActivity()).setActionBarTitle("MUMBAI");
+        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
 
 

@@ -18,6 +18,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.GoogleHorizont
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.ExploreGooglePlaces;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.List;
  * Created by win7 on 26-Dec-17.
  */
 
-public class GooglePlacesFragment extends Fragment implements View.OnClickListener,SeekBar.OnSeekBarChangeListener{
+public class GooglePlacesFragment extends MainFragment implements View.OnClickListener,SeekBar.OnSeekBarChangeListener{
     Button btnCategory;
     RecyclerView rvFamous;
     SeekBar seekbarGoogle;
@@ -70,7 +71,8 @@ public class GooglePlacesFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btn_category){
-            ((MainActivity)getActivity()).setFragments(5,R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+            ((MainActivity)getActivity()).setFragments(5);
+            ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
         }
     }
 

@@ -19,6 +19,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.SearchByCatego
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.SearchCategory;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ import java.util.List;
  * Created by win7 on 03-Jan-18.
  */
 
-public class SearchByCategoryFragment extends Fragment implements View.OnClickListener{
+public class SearchByCategoryFragment extends MainFragment implements View.OnClickListener{
     RecyclerView rvSearchCategory;
     Switch aSwitch;
     ImageView imgBlueArrow;

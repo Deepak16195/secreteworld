@@ -16,6 +16,7 @@ import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.pojoExperts;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.SimpleDividerItemDecoration;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ import java.util.ArrayList;
  * Created by win7 on 13-Jan-18.
  */
 
-public class ExpertFragment extends Fragment {
+public class ExpertFragment extends MainFragment {
     RecyclerView rvExpert;
     public static ExpertFragment newInstance() {
 
@@ -42,7 +43,7 @@ public class ExpertFragment extends Fragment {
         ((MainActivity)getActivity()).setActionBarTitle("EXPERT");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-//        ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).showBackButton(true);
 
         rvExpert=v.findViewById(R.id.rv_expert);
         ArrayList<pojoExperts> Experts = new ArrayList<>();

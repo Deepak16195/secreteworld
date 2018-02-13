@@ -20,6 +20,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ContentsAdapte
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ import java.util.List;
  * Created by win7 on 10-Jan-18.
  */
 
-public class ContentsFragment extends Fragment implements View.OnClickListener{
+public class ContentsFragment extends MainFragment implements View.OnClickListener{
     RelativeLayout rlBackground;
     //    LinearLayout llPublish;
     RecyclerView rvContents;
@@ -62,7 +63,7 @@ public class ContentsFragment extends Fragment implements View.OnClickListener{
 
         ((MainActivity)getActivity()).setActionBarTitle("MY CONTENT");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).showBackButton(true);
 
 //
 //        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

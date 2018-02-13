@@ -7,6 +7,7 @@ import  android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,13 @@ import android.view.ViewGroup;
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.ExploreViewPagerAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by win7 on 23-Dec-17.
  */
 
-public class ExploreFragment extends Fragment {
+public class ExploreFragment extends MainFragment {
 
 
     public static Fragment newInstance() {
@@ -31,6 +33,11 @@ public class ExploreFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("framgneexploreresume","called");
+    }
 
     @Nullable
     @Override
@@ -40,14 +47,14 @@ public class ExploreFragment extends Fragment {
         final ViewPager fragmentViewPager = v.findViewById(R.id.fragment_viewpager);
 
         ((MainActivity)getActivity()).setActionBarTitle("SECRETS AROUND YOU");
+        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
 
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);
-            fragmentTab.setTabTextColors(R.color.grayColor,R.color.customBlue);
-//        fragmentTab.setTabTextColors(
-//                ContextCompat.getColor(getActivity(), R.color.grayColor),
-//                ContextCompat.getColor(getActivity(), R.color.customBlue)
-//        );
+//            fragmentTab.setTabTextColors(R.color.grayColor,R.color.customBlue);
+        fragmentTab.setTabTextColors(ContextCompat.getColor(getActivity(), R.color.customBlue),
+                ContextCompat.getColor(getActivity(), R.color.grayColor));
+
 
 //            final View headerView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_explore_tabs, null, false);
 //            LinearLayout linearLayoutOne = headerView.findViewById(R.id.ll_google_places);

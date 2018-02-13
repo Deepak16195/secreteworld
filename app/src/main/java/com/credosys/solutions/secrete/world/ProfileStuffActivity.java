@@ -57,7 +57,7 @@ MainApplication mainApp;
                 switch(position){
                     case 0:
                         onBackPressed();
-                        mainApp.getMainActivity(). setAddContent();
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(1);
                         if(mainApp.isDiary())
                             mainApp.getMainActivity().setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
                         break;
@@ -82,7 +82,7 @@ MainApplication mainApp;
 
             case R.id.rl_profile_view_user:
                 onBackPressed();
-                MainApplication.getInstance().getMainActivity().setProfile();
+                MainApplication.getInstance().getMainActivity().setFragmentsCommitAllowing(2);
                 break;
         }
     }

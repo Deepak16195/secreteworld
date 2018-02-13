@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.SplitAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -30,7 +31,7 @@ import java.util.List;
  * Created by win7 on 18-Jan-18.
  */
 
-public class MuseumConcertFragment extends Fragment implements View.OnClickListener {
+public class MuseumConcertFragment extends MainFragment implements View.OnClickListener {
     RecyclerView rvMuseumConcert;
     TextView txtCommonAssistance;
     TextView txtStartDate, txtEndDate;

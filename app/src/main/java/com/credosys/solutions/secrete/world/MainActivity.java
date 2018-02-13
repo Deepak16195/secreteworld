@@ -20,6 +20,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -61,6 +62,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
         implements  View.OnClickListener {
@@ -229,7 +231,8 @@ public class MainActivity extends AppCompatActivity
         rvNavigation.setLayoutManager(mLayoutManager);
         rvNavigation.setItemAnimator(new DefaultItemAnimator());
         rvNavigation.setAdapter(navigationAdapter);
-        setFragments(0,R.drawable.launch_banner,Gravity.CENTER,true,true,true);
+        setFragments(0);
+        setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
     }
 
 
@@ -301,13 +304,14 @@ public class MainActivity extends AppCompatActivity
         navTwo.setOnClickListener(this);
         navThree.setOnClickListener(this);
         navFour.setOnClickListener(this);
+
     }
 
 
     @Override
     public void onBackPressed() {
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
@@ -315,12 +319,25 @@ public class MainActivity extends AppCompatActivity
 //            viewPager.setVisibility(View.VISIBLE);
 //            frameContainer.setVisibility(View.GONE);
 //        }
-        else if(fragment !=null && fragment.getTag().equalsIgnoreCase("wall")){
+
+//        else if(fragment!=null &&
+//                ( Objects.equals(fragment.getTag(),"home")
+//                || Objects.equals(fragment.getTag(), "explore")
+//                || Objects.equals(fragment.getTag(), "request")
+//                || Objects.equals(fragment.getTag(), "diary" ))){
+//            super.onBackPressed();
+//        }
+        else if(fragment !=null) {
+            if(fragment instanceof HomeFragement || fragment instanceof ExploreFragment || fragment instanceof RequestFragment || fragment instanceof MyDiaryFragment)
+                super.onBackPressed();
+        }
+        else if(fragment !=null && Objects.equals(fragment.getTag(), "wall")){
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
         else {
             super.onBackPressed();
         }
+
 
     }
     public void setActionBarTitle(String title) {
@@ -425,9 +442,9 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void setFragments(int loc,int imgTitleBgBanner,int gravity,boolean isToolbarScroll,boolean isExpanded,boolean isExpandedAnimate){
+    public void setFragments(int loc){
         transaction= getSupportFragmentManager().beginTransaction();
-        if(loc>=0 && loc<6) {
+        if(loc<6) {
             setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
             if(mainApp.isDiary()) {
 
@@ -435,18 +452,15 @@ public class MainActivity extends AppCompatActivity
             }
             switch (loc) {
                 case 0:
-                    transaction.replace(R.id.frame_container, HomeFragement.newInstance(), "home");
-                    fragment = getSupportFragmentManager().findFragmentByTag("home");
+                    fragment = HomeFragement.newInstance();
                     break;
 
                 case 1:
-                    transaction.replace(R.id.frame_container, ExploreFragment.newInstance(), "explore");
-                    fragment = getSupportFragmentManager().findFragmentByTag("explore");
+                    fragment = ExploreFragment.newInstance();
                     break;
 
                 case 3:
-                    transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "request");
-                    fragment = getSupportFragmentManager().findFragmentByTag("request");
+                    fragment=RequestFragment.newInstance();
                     break;
 
                 case 4:
@@ -454,13 +468,11 @@ public class MainActivity extends AppCompatActivity
                         setTabLayoutColors(R.color.marineGreen, R.color.gradientColor, R.color.cutomGreen, R.color.white, R.color.white);
                         mainApp.setDiary(true);
                     }
-                    transaction.replace(R.id.frame_container, MyDiaryFragment.newInstance(), "diary");
-                    fragment = getSupportFragmentManager().findFragmentByTag("diary");
+                    fragment = MyDiaryFragment.newInstance();
                     break;
 
                 case 5:
-                    transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "category");
-                    fragment = getSupportFragmentManager().findFragmentByTag("category");
+                    fragment =  SearchByCategoryFragment.newInstance();
                     break;
 
             }
@@ -468,61 +480,55 @@ public class MainActivity extends AppCompatActivity
 
 
        else if(loc>5 && loc<=10){
+            transaction.remove(getSupportFragmentManager().findFragmentById(R.id.frame_container)).commit();
+            transaction= getSupportFragmentManager().beginTransaction();
             switch (loc){
 
                 case 6:
-                    transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
-                    fragment = getSupportFragmentManager().findFragmentByTag("contents");
+                    fragment = ContentsFragment.newInstance();
                     break;
                 case 7:
-                    transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
-                    fragment = getSupportFragmentManager().findFragmentByTag("wall");
+                    fragment = WallFragment.newInstance();
                     break;
                 case 8:
-                    transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
-                    fragment = getSupportFragmentManager().findFragmentByTag("friends");
+                    fragment = FriendsFragment.newInstance();
                     break;
                 case 9:
-                    transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "messages");
-                    fragment = getSupportFragmentManager().findFragmentByTag("messages");
+                    fragment =  MessagesFragment.newInstance();
                     break;
             }
         }
 
-      else if(loc>=11 && loc<16){
+      else if(loc>=11){
+            transaction.remove(getSupportFragmentManager().findFragmentById(R.id.frame_container)).commit();
+            transaction= getSupportFragmentManager().beginTransaction();
             switch (loc){
-
-
                 case 11:
-                    transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "proflieRequest");
-                    fragment = getSupportFragmentManager().findFragmentByTag("proflieRequest");
+                    fragment =  RequestProfileFragment.newInstance();
                     break;
                 case 12:
-                    transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "orders");
-                    fragment = getSupportFragmentManager().findFragmentByTag("orders");
+                    fragment = OrderFragment.newInstance();
                     break;
                 case 13:
-                    transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellers");
-                    fragment = getSupportFragmentManager().findFragmentByTag("sellers");
+                    fragment = SellerFragment.newInstance();
                     break;
                 case 14:
-                    transaction.replace(R.id.frame_container, ExpertFragment.newInstance(), "expert");
-                    fragment = getSupportFragmentManager().findFragmentByTag("expert");
+                    fragment =ExpertFragment.newInstance();
                     break;
             }
         }
+        transaction.replace(R.id.frame_container, fragment);
         transaction.commit();
-        setUpTopHeader(imgTitleBgBanner,gravity,isToolbarScroll,isExpanded,isExpandedAnimate);
-
-    }
-
-    public void setAddContent(){// called from ProfileStuff activity
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
-        fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
         transaction.addToBackStack(null);
-        transaction.commitAllowingStateLoss();
     }
+
+//    public void setAddContent(){// called from ProfileStuff activity
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
+//        fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
+//        transaction.addToBackStack(null);
+//        transaction.commitAllowingStateLoss();
+//    }
 
 
     public void setMuseumConcerts(){
@@ -533,6 +539,28 @@ public class MainActivity extends AppCompatActivity
         transaction.commit();
     }
 
+
+    public void setFragmentsCommitAllowing(int loc){
+        transaction= getSupportFragmentManager().beginTransaction();
+        if(loc<6){
+            switch (loc){
+                case 1:
+                    transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
+                    fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
+                    break;
+                case 2:
+                    setActionBarTitle("PROFILE");
+                    transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+                    fragment = getSupportFragmentManager().findFragmentByTag("profile");
+                    break;
+            }
+
+        }
+
+        transaction.addToBackStack(null);
+        transaction.commitAllowingStateLoss();
+
+    }
     public void setTimePickerDialog(Context context, final TextView txtStartEndTime){
         mcurrentTime = Calendar.getInstance();
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
@@ -551,14 +579,14 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    public void setProfile(){
-//        setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
-        setActionBarTitle("PROFILE");
-        transaction= getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
-        transaction.addToBackStack(null);
-        transaction.commitAllowingStateLoss();
-    }
+//    public void setProfile(){
+////        setTabLayoutColors(R.color.white,R.color.white,R.color.customBlue,R.color.tab_layout_text,R.color.tab_layout_text);
+//        setActionBarTitle("PROFILE");
+//        transaction= getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+//        transaction.addToBackStack(null);
+//        transaction.commitAllowingStateLoss();
+//    }
 
     public void setUpTopHeader(int imgTitleBgBanner,int gravity,boolean isToolbarScroll,boolean isExpanded,boolean isExpandedAnimate){
         imgHomeBanner.setImageResource(imgTitleBgBanner);
@@ -571,10 +599,12 @@ public class MainActivity extends AppCompatActivity
 
         switch (view.getId()) {
             case R.id.nav_zero:
-                setFragments(0,R.drawable.launch_banner,Gravity.CENTER,true,true,true);
+                setFragments(0);
+                setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
                 break;
             case R.id.nav_one:
-                setFragments(1,R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
+                setFragments(1);
+                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
                 break;
             case R.id.nav_two:
                 Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
@@ -582,10 +612,12 @@ public class MainActivity extends AppCompatActivity
                 overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
                 break;
             case R.id.nav_three:
-                setFragments(3,R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
+                setFragments(3);
+                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
                 break;
             case R.id.nav_four:
-                setFragments(4,R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
+                setFragments(4);
+                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
                 break;
 
             case R.id.rl_profile_view:

@@ -16,13 +16,14 @@ import android.widget.ScrollView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 
 /**
  * Created by SONY on 14-01-18.
  */
 
-public class AddContentFragment extends Fragment implements View.OnClickListener {
+public class AddContentFragment extends MainFragment implements View.OnClickListener {
 
     LinearLayout llTitle,llMain,llCategory,llDesc,llExtdesc,llTag,llPic,rlPicExpand,llLocation;
     RelativeLayout rlTitleExpand,rlCategoryExpand,rlDescExpand,rlExtdescExpand,rlTagExpand,rlLocationExpand;

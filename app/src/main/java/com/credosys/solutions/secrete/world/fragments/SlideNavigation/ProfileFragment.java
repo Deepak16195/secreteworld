@@ -14,12 +14,13 @@ import android.widget.LinearLayout;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by win7 on 02-Jan-18.
  */
 
-public class ProfileFragment extends Fragment implements View.OnClickListener{
+public class ProfileFragment extends MainFragment implements View.OnClickListener{
     LinearLayout LlWall,LlContents,LlFriends,LlMessages,LlRequest,LlOrders,LlSellers,LlExpert;
     NestedScrollView profileNestedScrollView;
      public static ProfileFragment newInstance() {
@@ -67,28 +68,36 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         switch(v.getId()) {
             case R.id.ll_wall:
-                ((MainActivity)getActivity()).setFragments(7,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(7);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_contents:
-                ((MainActivity)getActivity()).setFragments(6,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(6);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_friends:
-                ((MainActivity)getActivity()).setFragments(8,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(8);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_messages:
-                ((MainActivity)getActivity()).setFragments(9,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(9);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_request:
-                ((MainActivity)getActivity()).setFragments(11,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(11);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_orders:
-                ((MainActivity)getActivity()).setFragments(12,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(12);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_expert:
-                ((MainActivity)getActivity()).setFragments(14,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(14);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_sellers:
-                ((MainActivity)getActivity()).setFragments(13,R.drawable.topbg,Gravity.CENTER,true,true,true);
+                ((MainActivity)getActivity()).setFragments(13);
+                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
         }
 

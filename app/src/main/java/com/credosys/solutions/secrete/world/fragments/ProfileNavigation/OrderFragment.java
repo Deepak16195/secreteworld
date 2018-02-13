@@ -14,6 +14,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.OrderSellerAda
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.OrdersSellers;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  * Created by win7 on 12-Jan-18.
  */
 
-public class OrderFragment extends Fragment {
+public class OrderFragment extends MainFragment {
     RecyclerView rvOrder;
 
     public static OrderFragment newInstance() {
@@ -40,7 +41,7 @@ public class OrderFragment extends Fragment {
         ((MainActivity)getActivity()).setActionBarTitle("MY ORDER");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-//        ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).showBackButton(true);
 
         rvOrder=v.findViewById(R.id.rv_order);
 

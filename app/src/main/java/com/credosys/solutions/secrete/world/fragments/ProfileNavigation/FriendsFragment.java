@@ -14,6 +14,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.FriendsAdapter
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.pojoFriends;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  * Created by win7 on 10-Jan-18.
  */
 
-public class FriendsFragment extends Fragment {
+public class FriendsFragment extends MainFragment {
     RecyclerView rvFriends;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -42,7 +43,7 @@ public class FriendsFragment extends Fragment {
         ((MainActivity) getActivity()).setActionBarTitle("MY FRIENDS");
 //        ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
-//        ((MainActivity) getActivity()).showBackButton(true);
+        ((MainActivity) getActivity()).showBackButton(true);
 
         rvFriends = v.findViewById(R.id.rv_friends);
         mLayoutManager = new GridLayoutManager(getActivity(), 3);
