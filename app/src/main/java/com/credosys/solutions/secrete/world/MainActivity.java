@@ -47,6 +47,7 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ExpertFr
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.MessagesFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.OrderFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ProfileDeatailsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestProfileFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.SellerFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
@@ -65,16 +66,16 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
-        implements  View.OnClickListener {
+        implements View.OnClickListener {
 
 
     FrameLayout frameContainer;
-    Typeface tf ;
-    ImageView imgHomeBanner, imgPlus, navIconZero ,navIconOne ,navIconTwo ,navIconThree ,navIconFour, imgGradient,imgNavigationCross;
+    Typeface tf;
+    ImageView imgHomeBanner, imgPlus, navIconZero, navIconOne, navIconTwo, navIconThree, navIconFour, imgGradient, imgNavigationCross;
     View viewFixedBottom;
-    TextView txtTitle,txtMore,navTextZero,navTextOne,navTextTwo,navTextThree,navTextFour;
+    TextView txtTitle, txtMore, navTextZero, navTextOne, navTextTwo, navTextThree, navTextFour;
     NonSwipeableViewPager viewPager;
-    LinearLayout navZero, navOne, navTwo, navThree, navFour,bottomThird,llNav;
+    LinearLayout navZero, navOne, navTwo, navThree, navFour, bottomThird, llNav;
     Fragment fragment;
     FragmentTransaction transaction;
     AppBarLayout appBarLayout;
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainApp=MainApplication.getInstance();
+        mainApp = MainApplication.getInstance();
         mainApp.setMainActivity(this);
         setContentView(R.layout.activity_main);
 
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-       navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -200,24 +201,22 @@ public class MainActivity extends AppCompatActivity
 //        });
 
 
-        List<Naviagion> list=new ArrayList<Naviagion>();
-        list.add(new Naviagion("CHANGE LOCATIONS",R.drawable.ic_nav_location));
-        list.add(new Naviagion("SELECT LANGUAGE",R.drawable.ic_nav_language));
-        list.add(new Naviagion("SELECT RATE THE APP",R.drawable.ic_nav_star));
-        list.add(new Naviagion("TERMS & CONDITIONS",R.drawable.ic_nav_terms_conditions));
-        list.add(new Naviagion("PRIVACY POLICY",R.drawable.ic_nav_privacy_policy));
-        list.add(new Naviagion("SETTINGS",R.drawable.ic_nav_settings));
-        list.add(new Naviagion("LOGOUT",R.drawable.ic_nav_logout));
+        List<Naviagion> list = new ArrayList<Naviagion>();
+        list.add(new Naviagion("CHANGE LOCATIONS", R.drawable.ic_nav_location));
+        list.add(new Naviagion("SELECT LANGUAGE", R.drawable.ic_nav_language));
+        list.add(new Naviagion("SELECT RATE THE APP", R.drawable.ic_nav_star));
+        list.add(new Naviagion("TERMS & CONDITIONS", R.drawable.ic_nav_terms_conditions));
+        list.add(new Naviagion("PRIVACY POLICY", R.drawable.ic_nav_privacy_policy));
+        list.add(new Naviagion("SETTINGS", R.drawable.ic_nav_settings));
+        list.add(new Naviagion("LOGOUT", R.drawable.ic_nav_logout));
 
         NavigationAdapter navigationAdapter = new NavigationAdapter(list, new CustomItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                switch(position) {
+                switch (position) {
                     case 0:
-//                        viewPager.setVisibility(View.GONE);
-//                        frameContainer.setVisibility(View.VISIBLE);
-//                        setMuseumConcerts();
-//                        break;
+                        setFragments(16);
+                        break;
                     case 1:
 //                        viewPager.setVisibility(View.GONE);
 //                        frameContainer.setVisibility(View.VISIBLE);
@@ -232,19 +231,18 @@ public class MainActivity extends AppCompatActivity
         rvNavigation.setItemAnimator(new DefaultItemAnimator());
         rvNavigation.setAdapter(navigationAdapter);
         setFragments(0);
-        setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
+        setUpTopHeader(R.drawable.launch_banner, Gravity.CENTER, true, true, true);
     }
 
 
-
-    void setFrameLayoutVisiblity(){
+    void setFrameLayoutVisiblity() {
         frameContainer.setVisibility(View.GONE);
         viewPager.setVisibility(View.VISIBLE);
     }
 
 
-    void setTabLayoutColors(int tabLayoutColor,int gradient,int plusIcon,int icon,int text){
-        Resources res=getApplicationContext().getResources();
+    public void setTabLayoutColors(int tabLayoutColor, int gradient, int plusIcon, int icon, int text) {
+        Resources res = getApplicationContext().getResources();
 //        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
         viewFixedBottom.setBackgroundColor(res.getColor(tabLayoutColor));
         imgGradient.setColorFilter(res.getColor(gradient));
@@ -263,40 +261,40 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void bindViews(){
-        llNav=findViewById(R.id.ll_nav);
-        viewFixedBottom =findViewById(R.id.img_fixed_bottom);
+    private void bindViews() {
+        llNav = findViewById(R.id.ll_nav);
+        viewFixedBottom = findViewById(R.id.img_fixed_bottom);
         drawer = findViewById(R.id.drawer_layout);
-        rlProfileView=findViewById(R.id.rl_profile_view);
-        imgNavigationCross=findViewById(R.id.img_navigation_cross);
+        rlProfileView = findViewById(R.id.rl_profile_view);
+        imgNavigationCross = findViewById(R.id.img_navigation_cross);
         imgNavigationCross.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_IN);
-        rvNavigation=findViewById(R.id.rv_navigation);
-        imgGradient =findViewById(R.id.iv_gradient);
-        imgHomeBanner=findViewById(R.id.img_home_banner);
-        frameContainer=findViewById(R.id.frame_container);
-        appBarLayout=findViewById(R.id.main_app_bar);
-        collapsingToolbarLayout=findViewById(R.id.collapsing_toolbar_layout);
+        rvNavigation = findViewById(R.id.rv_navigation);
+        imgGradient = findViewById(R.id.iv_gradient);
+        imgHomeBanner = findViewById(R.id.img_home_banner);
+        frameContainer = findViewById(R.id.frame_container);
+        appBarLayout = findViewById(R.id.main_app_bar);
+        collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar_layout);
 
-        tf =  Typeface.createFromAsset(getAssets(),"charcoal.ttf");
+        tf = Typeface.createFromAsset(getAssets(), "charcoal.ttf");
         collapsingToolbarLayout.setCollapsedTitleTypeface(tf);
         collapsingToolbarLayout.setExpandedTitleTypeface(tf);
-        imgPlus=findViewById(R.id.img_plus);
-        txtMore=findViewById(R.id.txt_more);
-        navZero =findViewById(R.id.nav_zero);
-        navOne =findViewById(R.id.nav_one);
-        navTwo =findViewById(R.id.nav_two);
-        navThree =findViewById(R.id.nav_three);
-        navFour =findViewById(R.id.nav_four);
+        imgPlus = findViewById(R.id.img_plus);
+        txtMore = findViewById(R.id.txt_more);
+        navZero = findViewById(R.id.nav_zero);
+        navOne = findViewById(R.id.nav_one);
+        navTwo = findViewById(R.id.nav_two);
+        navThree = findViewById(R.id.nav_three);
+        navFour = findViewById(R.id.nav_four);
 
-        navIconZero=findViewById(R.id.nav_icon_zero);
-        navIconOne=findViewById(R.id.nav_icon_one);
-        navIconThree=findViewById(R.id.nav_icon_three);
-        navIconFour=findViewById(R.id.nav_icon_four);
+        navIconZero = findViewById(R.id.nav_icon_zero);
+        navIconOne = findViewById(R.id.nav_icon_one);
+        navIconThree = findViewById(R.id.nav_icon_three);
+        navIconFour = findViewById(R.id.nav_icon_four);
 
-        navTextZero=findViewById(R.id.nav_text_zero);
-        navTextOne=findViewById(R.id.nav_text_one);
-        navTextThree=findViewById(R.id.nav_text_three);
-        navTextFour=findViewById(R.id.nav_text_four);
+        navTextZero = findViewById(R.id.nav_text_zero);
+        navTextOne = findViewById(R.id.nav_text_one);
+        navTextThree = findViewById(R.id.nav_text_three);
+        navTextFour = findViewById(R.id.nav_text_four);
 
         rlProfileView.setOnClickListener(this);
         navZero.setOnClickListener(this);
@@ -327,30 +325,31 @@ public class MainActivity extends AppCompatActivity
 //                || Objects.equals(fragment.getTag(), "diary" ))){
 //            super.onBackPressed();
 //        }
-        else if(fragment !=null) {
-            if(fragment instanceof HomeFragement || fragment instanceof ExploreFragment || fragment instanceof RequestFragment || fragment instanceof MyDiaryFragment)
+        else if (fragment != null) {
+            if (fragment instanceof HomeFragement || fragment instanceof ExploreFragment || fragment instanceof RequestFragment || fragment instanceof MyDiaryFragment)
                 super.onBackPressed();
-        }
-        else if(fragment !=null && Objects.equals(fragment.getTag(), "wall")){
+        } else if (fragment != null && fragment.getTag().equalsIgnoreCase("wall")) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
 
 
     }
+
     public void setActionBarTitle(String title) {
         collapsingToolbarLayout.setTitle(title);
     }
-    public void setExpandableTitle(int gravity){
+
+    public void setExpandableTitle(int gravity) {
         collapsingToolbarLayout.setExpandedTitleGravity(gravity);
     }
-    public void setAppBarLayoutExpand(boolean expanded,boolean animate){
-        appBarLayout.setExpanded(expanded,animate);
+
+    public void setAppBarLayoutExpand(boolean expanded, boolean animate) {
+        appBarLayout.setExpanded(expanded, animate);
     }
 
-    public void setCollpsingImage(int drawableImage){
+    public void setCollpsingImage(int drawableImage) {
         imgHomeBanner.setImageResource(drawableImage);
     }
 
@@ -360,7 +359,6 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
 
 
     @Override
@@ -413,12 +411,12 @@ public class MainActivity extends AppCompatActivity
 
     public void showBackButton(boolean enable) {
 
-        if(enable) {
+        if (enable) {
             // Remove hamburger
             toggle.setDrawerIndicatorEnabled(false);
             // Show back button
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            if(!mToolBarNavigationListenerIsRegistered) {
+            if (!mToolBarNavigationListenerIsRegistered) {
                 toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -442,84 +440,80 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void setFragments(int loc){
-        transaction= getSupportFragmentManager().beginTransaction();
-        if(loc<6) {
-            setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
-            if(mainApp.isDiary()) {
-
-                mainApp.setDiary(false);
-            }
+    public void setFragments(int loc) {
+        transaction = getSupportFragmentManager().beginTransaction();
+        if (loc < 6) {
             switch (loc) {
                 case 0:
-                    fragment = HomeFragement.newInstance();
+                    transaction.replace(R.id.frame_container, HomeFragement.newInstance(), "home");
                     break;
 
                 case 1:
-                    fragment = ExploreFragment.newInstance();
+                    transaction.replace(R.id.frame_container, ExploreFragment.newInstance(), "explore");
                     break;
 
                 case 3:
-                    fragment=RequestFragment.newInstance();
+                    transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "request");
                     break;
 
                 case 4:
-                    if(!mainApp.isDiary()) {
-                        setTabLayoutColors(R.color.marineGreen, R.color.gradientColor, R.color.cutomGreen, R.color.white, R.color.white);
-                        mainApp.setDiary(true);
-                    }
-                    fragment = MyDiaryFragment.newInstance();
+                    transaction.replace(R.id.frame_container, MyDiaryFragment.newInstance(), "diary");
                     break;
 
                 case 5:
-                    fragment =  SearchByCategoryFragment.newInstance();
+                    transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "searchbycat");
                     break;
 
             }
-        }
-
-
-       else if(loc>5 && loc<=10){
-            transaction.remove(getSupportFragmentManager().findFragmentById(R.id.frame_container)).commit();
-            transaction= getSupportFragmentManager().beginTransaction();
-            switch (loc){
+        } else if (loc > 5 && loc <= 10) {
+            switch (loc) {
 
                 case 6:
-                    fragment = ContentsFragment.newInstance();
+                    transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
                     break;
                 case 7:
-                    fragment = WallFragment.newInstance();
+                    transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
                     break;
                 case 8:
-                    fragment = FriendsFragment.newInstance();
+
+                    transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
                     break;
                 case 9:
-                    fragment =  MessagesFragment.newInstance();
+
+                    transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "msg");
                     break;
             }
-        }
-
-      else if(loc>=11){
-            transaction.remove(getSupportFragmentManager().findFragmentById(R.id.frame_container)).commit();
-            transaction= getSupportFragmentManager().beginTransaction();
-            switch (loc){
+        } else if (loc >= 11 && loc<15) {
+            switch (loc) {
                 case 11:
-                    fragment =  RequestProfileFragment.newInstance();
+                    transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "profilerequest");
                     break;
                 case 12:
-                    fragment = OrderFragment.newInstance();
+                    transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "ordersprofile");
                     break;
                 case 13:
-                    fragment = SellerFragment.newInstance();
+                    transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellerprofile");
                     break;
                 case 14:
-                    fragment =ExpertFragment.newInstance();
+                    transaction.replace(R.id.frame_container, ExpertFragment.newInstance(), "expert");
+                    break;
+            }
+
+
+        }
+        else if(loc>=15 && loc<20){
+            switch (loc){
+                case 15:
+                    transaction.replace(R.id.frame_container, ProfileDeatailsFragment.newInstance(),"profiledetails");
+                    break;
+                case 16:
+                    transaction.replace(R.id.frame_container, MuseumConcertFragment.newInstance(), "museumconcert");
                     break;
             }
         }
-        transaction.replace(R.id.frame_container, fragment);
-        transaction.commit();
+//        transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 //    public void setAddContent(){// called from ProfileStuff activity
@@ -531,8 +525,8 @@ public class MainActivity extends AppCompatActivity
 //    }
 
 
-    public void setMuseumConcerts(){
-        transaction= getSupportFragmentManager().beginTransaction();
+    public void setMuseumConcerts() {
+        transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, MuseumConcertFragment.newInstance(), "museumconcert");
         fragment = getSupportFragmentManager().findFragmentByTag("museumconcert");
         transaction.addToBackStack(null);
@@ -540,17 +534,17 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void setFragmentsCommitAllowing(int loc){
-        transaction= getSupportFragmentManager().beginTransaction();
-        if(loc<6){
-            switch (loc){
+    public void setFragmentsCommitAllowing(int loc) {
+        transaction = getSupportFragmentManager().beginTransaction();
+        if (loc < 6) {
+            switch (loc) {
                 case 1:
                     transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
                     fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
                     break;
                 case 2:
                     setActionBarTitle("PROFILE");
-                    transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+                    transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
                     fragment = getSupportFragmentManager().findFragmentByTag("profile");
                     break;
             }
@@ -561,22 +555,22 @@ public class MainActivity extends AppCompatActivity
         transaction.commitAllowingStateLoss();
 
     }
-    public void setTimePickerDialog(Context context, final TextView txtStartEndTime){
+
+    public void setTimePickerDialog(Context context, final TextView txtStartEndTime) {
         mcurrentTime = Calendar.getInstance();
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mcurrentTime.get(Calendar.MINUTE);
 
-        TimePickerDialog timePickerDialog=new TimePickerDialog(context, new TimePickerDialog.OnTimeSetListener() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(context, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
-                mcurrentTime.set(Calendar.YEAR,Calendar.MONTH,Calendar.DATE,hourOfDay,minutes,Calendar.SECOND);
+                mcurrentTime.set(Calendar.YEAR, Calendar.MONTH, Calendar.DATE, hourOfDay, minutes, Calendar.SECOND);
                 txtStartEndTime.setText(new SimpleDateFormat("hh:mm a", Locale.US).format(mcurrentTime.getTime()));
             }
-        },hour,minute,false);
+        }, hour, minute, false);
         timePickerDialog.setTitle(getString(R.string.mc_select_time));
         timePickerDialog.show();
     }
-
 
 
 //    public void setProfile(){
@@ -588,23 +582,24 @@ public class MainActivity extends AppCompatActivity
 //        transaction.commitAllowingStateLoss();
 //    }
 
-    public void setUpTopHeader(int imgTitleBgBanner,int gravity,boolean isToolbarScroll,boolean isExpanded,boolean isExpandedAnimate){
+    public void setUpTopHeader(int imgTitleBgBanner, int gravity, boolean isToolbarScroll, boolean isExpanded, boolean isExpandedAnimate) {
         imgHomeBanner.setImageResource(imgTitleBgBanner);
         collapsingToolbarLayout.setExpandedTitleGravity(gravity);
         collapsingToolbarLayout.setScrollContainer(isToolbarScroll);
-        appBarLayout.setExpanded(isExpanded,isExpandedAnimate);
+        appBarLayout.setExpanded(isExpanded, isExpandedAnimate);
     }
+
     @Override
     public void onClick(View view) {
 
         switch (view.getId()) {
             case R.id.nav_zero:
                 setFragments(0);
-                setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
+                setUpTopHeader(R.drawable.launch_banner, Gravity.CENTER, true, true, true);
                 break;
             case R.id.nav_one:
                 setFragments(1);
-                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
                 break;
             case R.id.nav_two:
                 Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
@@ -613,18 +608,18 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_three:
                 setFragments(3);
-                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
                 break;
             case R.id.nav_four:
                 setFragments(4);
-                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
                 break;
 
             case R.id.rl_profile_view:
-                setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
+                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
                 setActionBarTitle("PROFILE");
-                transaction= getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_container,ProfileFragment.newInstance());
+                transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
                 transaction.addToBackStack(null);
                 transaction.commit();
                 drawer.closeDrawer(GravityCompat.START);

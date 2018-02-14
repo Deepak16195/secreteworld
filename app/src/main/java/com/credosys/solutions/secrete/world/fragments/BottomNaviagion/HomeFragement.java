@@ -47,6 +47,7 @@ public class HomeFragement extends MainFragment {
 
 
         ((MainActivity)getActivity()).setActionBarTitle("MUMBAI");
+        ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
 

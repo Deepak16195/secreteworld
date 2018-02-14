@@ -48,7 +48,7 @@ public class ExploreFragment extends MainFragment {
 
         ((MainActivity)getActivity()).setActionBarTitle("SECRETS AROUND YOU");
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
-
+        ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);
 //            fragmentTab.setTabTextColors(R.color.grayColor,R.color.customBlue);

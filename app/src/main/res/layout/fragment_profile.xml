@@ -40,22 +40,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="6dp"
                     android:textColor="@color/fontblack"
                     android:fontFamily="@font/avenirltstd_black"
                     android:text="ITALY" />
 
-
-                <Button
-                    android:text="POINTS"
-                    android:textSize="11sp"
-                    android:paddingHorizontal="25dp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/avenirltstd_medium"
-                    android:background="@drawable/profile_edit_details_round_bg"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -291,6 +280,33 @@
                             android:textSize="10sp" />
                     </LinearLayout>
                 </GridLayout>
+                <LinearLayout
+                    android:layout_marginTop="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:text="BE SELLER USER"
+                        android:textSize="11sp"
+                        android:backgroundTint="@color/customBlue"
+                        android:paddingHorizontal="10dp"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_marginRight="10dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/profile_edit_details_round_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+                    <Button
+                        android:text="BE EXPERT USER"
+                        android:textSize="11sp"
+                        android:backgroundTint="@color/customBlue"
+                        android:paddingHorizontal="10dp"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/profile_edit_details_round_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+                </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
 
@@ -302,40 +318,33 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/ic_profile_man" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btn_profile_details"
+            android:text="DETAILS"
+            android:textSize="11sp"
+            android:background="@drawable/profile_edit_details_round_bg"
             android:layout_marginTop="50dp"
             android:layout_toLeftOf="@id/img_user_profle"
-            android:background="@drawable/profile_edit_details_round_bg"
-            android:paddingHorizontal="28dp"
-            android:paddingVertical="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/avenirltstd_medium"
-                android:text="DETAILS"
-                android:textColor="@color/white"
-                android:textSize="10sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/avenirltstd_medium"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="22dp" />
+
+
+
+        <Button
+            android:text="Get Premium"
+            android:textSize="11sp"
             android:layout_marginTop="50dp"
             android:layout_toRightOf="@id/img_user_profle"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/avenirltstd_medium"
             android:background="@drawable/profile_edit_details_round_bg"
-            android:paddingHorizontal="35dp"
-            android:paddingVertical="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/avenirltstd_medium"
-                android:text="EDIT"
-                android:textColor="@color/white"
-                android:textSize="10sp" />
-        </RelativeLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="22dp" />
     </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
