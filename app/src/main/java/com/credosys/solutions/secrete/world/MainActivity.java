@@ -52,8 +52,10 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestP
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.SellerFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.TicketFragment;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
@@ -200,7 +202,6 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
 
-
         List<Naviagion> list = new ArrayList<Naviagion>();
         list.add(new Naviagion("CHANGE LOCATIONS", R.drawable.ic_nav_location));
         list.add(new Naviagion("SELECT LANGUAGE", R.drawable.ic_nav_language));
@@ -218,9 +219,10 @@ public class MainActivity extends AppCompatActivity
                         setFragments(16);
                         break;
                     case 1:
-//                        viewPager.setVisibility(View.GONE);
-//                        frameContainer.setVisibility(View.VISIBLE);
-//                        setAddContent();
+                        setFragments(17);
+                        break;
+                    case 2:
+                        setFragments(18);
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);
@@ -508,6 +510,12 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case 16:
                     transaction.replace(R.id.frame_container, MuseumConcertFragment.newInstance(), "museumconcert");
+                    break;
+                case 17:
+                    transaction.replace(R.id.frame_container, TicketFragment.newInstance(),"ticket");
+                    break;
+                case 18:
+                    transaction.replace(R.id.frame_container, ExpertUserFragment.newInstance(),"expertuser");
                     break;
             }
         }

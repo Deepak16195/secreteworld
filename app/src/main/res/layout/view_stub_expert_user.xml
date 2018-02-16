@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenirltstd_roman"
+        android:text="BECOME EXPERT USER"
+        android:textSize="30dp" />
+
+    <View
+        android:layout_marginVertical="20dp"
+        android:background="#C4C4C4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:fontFamily="@font/avenirltstd_medium"
+        android:layout_marginHorizontal="10dp"
+        android:text="t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="EDUCATION"
+        android:layout_marginBottom="5dp"
+        android:labelFor="@+id/et_education"
+        android:fontFamily="@font/avenirltstd_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_education"
+            android:hint="TYPE HERE"
+            android:layout_weight="1"
+            android:background="@drawable/square_border"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:inputType="text" />
+        <CheckBox
+            android:button="@drawable/checkbox_eye"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="JOB"
+        android:layout_marginBottom="5dp"
+        android:labelFor="@+id/et_job"
+        android:fontFamily="@font/avenirltstd_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_job"
+            android:hint="TYPE HERE"
+            android:layout_weight="1"
+            android:background="@drawable/square_border"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:inputType="text" />
+        <CheckBox
+            android:button="@drawable/checkbox_eye"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="CATEGORY"
+        android:layout_marginBottom="5dp"
+        android:labelFor="@+id/spin_category"
+        android:fontFamily="@font/avenirltstd_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/spin_category"
+            android:hint="TYPE HERE"
+            android:layout_weight="1"
+            android:background="@drawable/square_border"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:inputType="text" />
+        <CheckBox
+            android:button="@drawable/checkbox_eye"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
