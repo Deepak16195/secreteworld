@@ -55,6 +55,7 @@ import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContent
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.SellerUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.TicketFragment;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
@@ -224,6 +225,8 @@ public class MainActivity extends AppCompatActivity
                     case 2:
                         setFragments(18);
                         break;
+                    case 3:
+                        setFragments(19);
                 }
                 drawer.closeDrawer(GravityCompat.START);
             }
@@ -516,6 +519,9 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case 18:
                     transaction.replace(R.id.frame_container, ExpertUserFragment.newInstance(),"expertuser");
+                    break;
+                case 19:
+                    transaction.replace(R.id.frame_container, SellerUserFragment.newInstance(),"selleruser");
                     break;
             }
         }

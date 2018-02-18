@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
+    android:padding="10dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenirltstd_roman"
         android:text="BECOME EXPERT USER"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
 
     <View
         android:layout_marginVertical="20dp"
@@ -24,12 +24,13 @@
     <TextView
         android:fontFamily="@font/avenirltstd_medium"
         android:layout_marginHorizontal="10dp"
-        android:text="t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+        android:text="t that The point of using Lorem  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
         android:layout_marginTop="20dp"
         android:text="EDUCATION"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="5dp"
         android:labelFor="@+id/et_education"
         android:fontFamily="@font/avenirltstd_black"
@@ -42,6 +43,8 @@
         <EditText
             android:id="@+id/et_education"
             android:hint="TYPE HERE"
+            android:textSize="12sp"
+            android:padding="5dp"
             android:layout_weight="1"
             android:background="@drawable/square_border"
             android:layout_width="match_parent"
@@ -58,6 +61,7 @@
     <TextView
         android:layout_marginTop="20dp"
         android:text="JOB"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="5dp"
         android:labelFor="@+id/et_job"
         android:fontFamily="@font/avenirltstd_black"
@@ -72,6 +76,8 @@
             android:hint="TYPE HERE"
             android:layout_weight="1"
             android:background="@drawable/square_border"
+            android:textSize="12sp"
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:inputType="text" />
@@ -86,6 +92,7 @@
     <TextView
         android:layout_marginTop="20dp"
         android:text="CATEGORY"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="5dp"
         android:labelFor="@+id/spin_category"
         android:fontFamily="@font/avenirltstd_black"
@@ -112,4 +119,15 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+<Button
+    android:text="BECOME EXPERT USER"
+    android:backgroundTint="@color/customBlue"
+    android:textColor="@color/white"
+    android:layout_gravity="center_horizontal"
+    android:fontFamily="@font/avenirltstd_light"
+    android:letterSpacing="1"
+    android:layout_marginTop="20dp"
+    android:textSize="12sp"
+    android:layout_width="250dp"
+    android:layout_height="40dp" />
 </LinearLayout>

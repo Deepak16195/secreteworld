@@ -14,15 +14,15 @@ import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
 
 /**
- * Created by Yogesh on 16-Feb-18.
+ * Created by SONY on 18-02-18.
  */
 
-public class ExpertUserFragment extends Fragment {
-    public static ExpertUserFragment newInstance() {
+public class SellerUserFragment extends Fragment {
+    public static SellerUserFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        ExpertUserFragment fragment = new ExpertUserFragment();
+        SellerUserFragment fragment = new SellerUserFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -30,13 +30,14 @@ public class ExpertUserFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
+        View v = inflater.inflate(R.layout.fragment_common_content, container, false);
         ((MainActivity)getActivity()).setActionBarTitle("");
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
-        ViewStub viewStub=v.findViewById(R.id.vs_all);
-        viewStub.setLayoutResource(R.layout.view_stub_expert_user);
-         View inflated=viewStub.inflate();
+        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
 
+
+        ViewStub viewStub = v.findViewById(R.id.vs_all);
+        viewStub.setLayoutResource(R.layout.view_stub_seller_user);
+        View inflated = viewStub.inflate();
         return v;
     }
 }
