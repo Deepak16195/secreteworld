@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.TicketAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
@@ -26,7 +28,8 @@ import java.util.List;
  * Created by Yogesh on 15-Feb-18.
  */
 
-public class TicketFragment extends Fragment {
+public class TicketFragment extends Fragment implements View.OnClickListener{
+    ImageView imgTicketAdd;
     public static TicketFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -48,6 +51,9 @@ public class TicketFragment extends Fragment {
         ViewStub simpleViewStub = v.findViewById(R.id.vs_all);
         simpleViewStub.setLayoutResource(R.layout.view_stub_museum_add_concert_ticket);
         View inflated = simpleViewStub.inflate();
+        imgTicketAdd=inflated.findViewById(R.id.img_ticket_add);
+        TextView txtCommonAssistance=inflated.findViewById(R.id.txt_common_assistance);
+        txtCommonAssistance.setText("TICKETS");
         RecyclerView rvTicket=inflated.findViewById(R.id.rv_ticket);
 
         List<Ticket> list=new ArrayList<Ticket>();
@@ -63,7 +69,17 @@ public class TicketFragment extends Fragment {
 
         TicketView ticketView=inflated.findViewById(R.id.ticketView);
 
+        imgTicketAdd.setOnClickListener(this);
 
         return v;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.img_ticket_add:
+                ((MainActivity)getActivity()).setFragments(20);
+                break;
+        }
     }
 }

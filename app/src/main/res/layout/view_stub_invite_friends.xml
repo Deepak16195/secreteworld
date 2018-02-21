@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:orientation="vertical">
+    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/fontblack"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/charcoal"
+        android:text="INVITE YOUR FRIENDS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/grayColor"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"/>
+
+    <TextView
+        android:text="Lorem Ipsum available,suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum"
+        android:lines="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/grayColor"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"/>
+    <TextView
+        android:textColor="@color/fontblack"
+        android:fontFamily="@font/avenirltstd_medium"
+        android:text="SOCIAL MEDIA CONTACTS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            app:srcCompat="@drawable/ic_fb"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <ImageView
+            app:srcCompat="@drawable/ic_google"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <ImageView
+            app:srcCompat="@drawable/ic_linkind"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <ImageView
+            app:srcCompat="@drawable/ic_twt"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+    </LinearLayout>
+</LinearLayout>

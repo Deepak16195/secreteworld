@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -125,7 +124,7 @@
     android:textColor="@color/white"
     android:layout_gravity="center_horizontal"
     android:fontFamily="@font/avenirltstd_light"
-    android:letterSpacing="1"
+    android:letterSpacing="0.1"
     android:layout_marginTop="20dp"
     android:textSize="12sp"
     android:layout_width="250dp"

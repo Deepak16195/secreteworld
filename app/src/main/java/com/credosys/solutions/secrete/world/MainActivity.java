@@ -45,6 +45,7 @@ import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategor
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ExpertFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsFragment;
+import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.InviteFriendsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.MessagesFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.OrderFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ProfileDeatailsFragment;
@@ -52,6 +53,7 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestP
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.SellerFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddEnterTicketFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
@@ -522,6 +524,16 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case 19:
                     transaction.replace(R.id.frame_container, SellerUserFragment.newInstance(),"selleruser");
+                    break;
+            }
+        }
+        else if(loc>=20 && loc<25){
+            switch(loc){
+                case 20:
+                    transaction.replace(R.id.frame_container, AddEnterTicketFragment.newInstance(),"addticket");
+                    break;
+                case 21:
+                    transaction.replace(R.id.frame_container, InviteFriendsFragment.newInstance(),"invitefriends");
                     break;
             }
         }

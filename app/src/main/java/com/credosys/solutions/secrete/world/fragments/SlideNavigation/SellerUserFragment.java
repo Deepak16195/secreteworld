@@ -47,7 +47,7 @@ public class SellerUserFragment extends Fragment {
         viewStub.setLayoutResource(R.layout.view_stub_seller_user);
         View inflated = viewStub.inflate();
         txtPaypal=inflated.findViewById(R.id.txt_paypal);
-        SpannableStringBuilder stringBuilder=new SpannableStringBuilder("Do not have a PayPal account?\nOpen PayPal account in a few seconds");
+
 
         return v;
     }

@@ -2,13 +2,12 @@ package com.credosys.solutions.secrete.world.fragments.ProfileNavigation;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.FriendsAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
@@ -22,7 +21,7 @@ import java.util.ArrayList;
  * Created by win7 on 10-Jan-18.
  */
 
-public class FriendsFragment extends MainFragment {
+public class FriendsFragment extends MainFragment implements View.OnClickListener{
     RecyclerView rvFriends;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -38,14 +37,19 @@ public class FriendsFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_friends, null, false);
-
+        View v = inflater.inflate(R.layout.fragment_profile_friends, null, false);
         ((MainActivity) getActivity()).setActionBarTitle("MY FRIENDS");
 //        ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
         ((MainActivity) getActivity()).showBackButton(true);
 
+        ImageView imgInvite=v.findViewById(R.id.img_invite);
         rvFriends = v.findViewById(R.id.rv_friends);
+
+
+        imgInvite.setOnClickListener(this);
+
+
         mLayoutManager = new GridLayoutManager(getActivity(), 3);
         rvFriends.setLayoutManager(mLayoutManager);
         ArrayList<pojoFriends> friend = new ArrayList<>();
@@ -65,5 +69,14 @@ public class FriendsFragment extends MainFragment {
         rvFriends.setAdapter(fa);
         rvFriends.setNestedScrollingEnabled(true);
         return v;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.img_invite:
+                ((MainActivity)getActivity()).setFragments(21);
+                break;
+        }
     }
 }
