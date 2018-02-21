@@ -1,62 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp">
+
     <TextView
-        android:textSize="20sp"
-        android:textColor="@color/fontblack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/charcoal"
         android:text="INVITE YOUR FRIENDS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/fontblack"
+        android:textSize="20sp" />
+
     <View
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
-        android:background="@color/grayColor"
         android:layout_width="match_parent"
-        android:layout_height="0.8dp"/>
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/grayColor" />
 
     <TextView
-        android:text="Lorem Ipsum available,suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenirltstd_light"
         android:lines="5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="Lorem Ipsum available,suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum" />
+
     <View
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/grayColor"
         android:layout_width="match_parent"
-        android:layout_height="0.8dp"/>
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grayColor" />
+
     <TextView
-        android:textColor="@color/fontblack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
         android:fontFamily="@font/avenirltstd_medium"
         android:text="SOCIAL MEDIA CONTACTS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/fontblack" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
         <ImageView
-            app:srcCompat="@drawable/ic_fb"
             android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_fb" />
+
         <ImageView
-            app:srcCompat="@drawable/ic_google"
             android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_google" />
+
         <ImageView
-            app:srcCompat="@drawable/ic_linkind"
             android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_linkind" />
+
         <ImageView
-            app:srcCompat="@drawable/ic_twt"
             android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_twt" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_twt" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="12sp"
+        android:fontFamily="@font/avenirltstd_medium"
+        android:text="IMPORT CONTACTS"
+        android:textColor="@color/fontblack" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:fontFamily="@font/avenirltstd_roman"
+            android:drawablePadding="5dp"
+            android:backgroundTint="#FD1016"
+            android:drawableLeft="@drawable/ic_gmail"
+            android:text="GMAIL"
+            android:textColor="@color/white" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#0074B1"
+            android:fontFamily="@font/avenirltstd_roman"
+            android:drawablePadding="5dp"
+            android:textSize="10sp"
+            android:drawableLeft="@drawable/outlook"
+            android:text="HOTMAIL"
+            android:textColor="@color/white" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:fontFamily="@font/avenirltstd_roman"
+            android:backgroundTint="#720E9E"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_yahoo"
+            android:text="YAHOO"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grayColor" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:fontFamily="@font/avenirltstd_medium"
+        android:text="TYPE EMAIL ID WHO YOU WANT TO INVITE"
+        android:textColor="@color/fontblack" />
+    <EditText
+        android:hint="TYPE EMAIL ID"
+        android:padding="5dp"
+        android:textSize="12sp"
+        android:background="@drawable/square_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:paddingHorizontal="10dp"
+        android:fontFamily="@font/charcoal"
+        android:textSize="12sp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/cutomGreen"
+        android:textColor="@color/white"
+        android:text="INVITE"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
 </LinearLayout>
