@@ -20,7 +20,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +34,7 @@ import android.widget.TimePicker;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
-import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
+import com.credosys.solutions.secrete.world.Pojos.App.Navigation;
 import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ExploreFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.HomeFragement;
@@ -69,7 +68,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
@@ -206,14 +204,14 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
 
-        List<Naviagion> list = new ArrayList<Naviagion>();
-        list.add(new Naviagion("CHANGE LOCATIONS", R.drawable.ic_nav_location));
-        list.add(new Naviagion("SELECT LANGUAGE", R.drawable.ic_nav_language));
-        list.add(new Naviagion("SELECT RATE THE APP", R.drawable.ic_nav_star));
-        list.add(new Naviagion("TERMS & CONDITIONS", R.drawable.ic_nav_terms_conditions));
-        list.add(new Naviagion("PRIVACY POLICY", R.drawable.ic_nav_privacy_policy));
-        list.add(new Naviagion("SETTINGS", R.drawable.ic_nav_settings));
-        list.add(new Naviagion("LOGOUT", R.drawable.ic_nav_logout));
+        List<Navigation> list = new ArrayList<Navigation>();
+        list.add(new Navigation("CHANGE LOCATIONS", R.drawable.ic_nav_location));
+        list.add(new Navigation("SELECT LANGUAGE", R.drawable.ic_nav_language));
+        list.add(new Navigation("SELECT RATE THE APP", R.drawable.ic_nav_star));
+        list.add(new Navigation("TERMS & CONDITIONS", R.drawable.ic_nav_terms_conditions));
+        list.add(new Navigation("PRIVACY POLICY", R.drawable.ic_nav_privacy_policy));
+        list.add(new Navigation("SETTINGS", R.drawable.ic_nav_settings));
+        list.add(new Navigation("LOGOUT", R.drawable.ic_nav_logout));
 
         NavigationAdapter navigationAdapter = new NavigationAdapter(list, new CustomItemClickListener() {
             @Override

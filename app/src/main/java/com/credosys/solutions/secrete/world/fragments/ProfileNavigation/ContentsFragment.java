@@ -4,12 +4,10 @@ package com.credosys.solutions.secrete.world.fragments.ProfileNavigation;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ContentsAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
-import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
+import com.credosys.solutions.secrete.world.Pojos.App.HomeContentsPlaces;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -122,16 +120,16 @@ public class ContentsFragment extends MainFragment implements View.OnClickListen
             rlBackground.setVisibility(View.VISIBLE);
         }
     }
-    List<HomeContents> tempList(){
-        List<HomeContents> al=new ArrayList<>();
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD",R.color.customBlue,R.drawable.img_sabudana));
-        al.add(new HomeContents("Kim Gomaz","FOUNTAIN OF NEPTUNE","The Fountain of Neptune is a fountain in Florence, Italy","HISTORICAL PLACES",R.color.Historical_place,R.drawable.historial));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Pav bhaji is a fast food dish from Maharashtra, India","FOOD",R.color.customBlue,R.drawable.pavbhagi));
-        al.add(new HomeContents("Kim Gomaz","GOA","Goa is a state in western India with coastlines stretching along the Arabian Sea","OTHERS",R.color.cutomGreen,R.drawable.goa));
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD",R.color.customBlue,R.drawable.img_sabudana));
-        al.add(new HomeContents("Kim Gomaz","FOUNTAIN OF NEPTUNE","The Fountain of Neptune is a fountain in Florence, Italy","HISTORICAL PLACES",R.color.Historical_place,R.drawable.historial));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Pav bhaji is a fast food dish from Maharashtra, India","FOOD",R.color.customBlue,R.drawable.pavbhagi));
-        al.add(new HomeContents("Kim Gomaz","GOA","Goa is a state in western India with coastlines stretching along the Arabian Sea","OTHERS",R.color.cutomGreen,R.drawable.goa));
+    List<HomeContentsPlaces> tempList(){
+        List<HomeContentsPlaces> al=new ArrayList<>();
+        al.add(new HomeContentsPlaces("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD",R.color.customBlue,R.drawable.img_sabudana));
+        al.add(new HomeContentsPlaces("Kim Gomaz","FOUNTAIN OF NEPTUNE","The Fountain of Neptune is a fountain in Florence, Italy","HISTORICAL PLACES",R.color.Historical_place,R.drawable.historial));
+        al.add(new HomeContentsPlaces("Kim Gomaz","PAO BHAJI","Pav bhaji is a fast food dish from Maharashtra, India","FOOD",R.color.customBlue,R.drawable.pavbhagi));
+        al.add(new HomeContentsPlaces("Kim Gomaz","GOA","Goa is a state in western India with coastlines stretching along the Arabian Sea","OTHERS",R.color.cutomGreen,R.drawable.goa));
+        al.add(new HomeContentsPlaces("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...","FOOD",R.color.customBlue,R.drawable.img_sabudana));
+        al.add(new HomeContentsPlaces("Kim Gomaz","FOUNTAIN OF NEPTUNE","The Fountain of Neptune is a fountain in Florence, Italy","HISTORICAL PLACES",R.color.Historical_place,R.drawable.historial));
+        al.add(new HomeContentsPlaces("Kim Gomaz","PAO BHAJI","Pav bhaji is a fast food dish from Maharashtra, India","FOOD",R.color.customBlue,R.drawable.pavbhagi));
+        al.add(new HomeContentsPlaces("Kim Gomaz","GOA","Goa is a state in western India with coastlines stretching along the Arabian Sea","OTHERS",R.color.cutomGreen,R.drawable.goa));
 
 
         return al;

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
+import com.credosys.solutions.secrete.world.Pojos.App.HomeContentsPlaces;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.List;
@@ -17,8 +17,8 @@ import java.util.List;
  */
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
-    List<HomeContents> list;
-    public HomeAdapter(List<HomeContents> list){
+    List<HomeContentsPlaces> list;
+    public HomeAdapter(List<HomeContentsPlaces> list){
         this.list=list;
     }
     @Override

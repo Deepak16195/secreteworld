@@ -22,7 +22,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClic
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
 import com.credosys.solutions.secrete.world.ApiCall.Api;
 import com.credosys.solutions.secrete.world.Pojos.ApiModalList.Modal;
-import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
+import com.credosys.solutions.secrete.world.Pojos.App.Navigation;
 import com.credosys.solutions.secrete.world.Utility.CommonWaitingDialog;
 
 import java.util.ArrayList;
@@ -71,14 +71,14 @@ public class MainSigninSignupActivity extends AppCompatActivity
         btnSigninSignup.setOnClickListener(this);
         btnSignupSignin.setOnClickListener(this);
 
-        List<Naviagion> list=new ArrayList<Naviagion>();
-        list.add(new Naviagion("CHANGE LOCATIONS",R.drawable.ic_nav_location));
-        list.add(new Naviagion("SELECT LANGUAGE",R.drawable.ic_nav_language));
-        list.add(new Naviagion("SELECT RATE THE APP",R.drawable.ic_nav_star));
-        list.add(new Naviagion("TERMS & CONDITIONS",R.drawable.ic_nav_terms_conditions));
-        list.add(new Naviagion("PRIVACY POLICY",R.drawable.ic_nav_privacy_policy));
-        list.add(new Naviagion("SETTINGS",R.drawable.ic_nav_settings));
-        list.add(new Naviagion("LOGOUT",R.drawable.ic_nav_logout));
+        List<Navigation> list=new ArrayList<Navigation>();
+        list.add(new Navigation("CHANGE LOCATIONS",R.drawable.ic_nav_location));
+        list.add(new Navigation("SELECT LANGUAGE",R.drawable.ic_nav_language));
+        list.add(new Navigation("SELECT RATE THE APP",R.drawable.ic_nav_star));
+        list.add(new Navigation("TERMS & CONDITIONS",R.drawable.ic_nav_terms_conditions));
+        list.add(new Navigation("PRIVACY POLICY",R.drawable.ic_nav_privacy_policy));
+        list.add(new Navigation("SETTINGS",R.drawable.ic_nav_settings));
+        list.add(new Navigation("LOGOUT",R.drawable.ic_nav_logout));
 
         NavigationAdapter navigationAdapter = new NavigationAdapter(list, new CustomItemClickListener() {
             @Override

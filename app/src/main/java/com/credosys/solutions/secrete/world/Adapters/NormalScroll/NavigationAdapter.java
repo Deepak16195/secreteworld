@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.credosys.solutions.secrete.world.Pojos.App.Naviagion;
+import com.credosys.solutions.secrete.world.Pojos.App.Navigation;
 import com.credosys.solutions.secrete.world.R;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  */
 
 public class NavigationAdapter extends RecyclerView.Adapter<NavigationAdapter.NavigationHolder>{
-    List<Naviagion> list;
+    List<Navigation> list;
     private CustomItemClickListener listener;
-    public NavigationAdapter(List<Naviagion> list,CustomItemClickListener listener) {
+    public NavigationAdapter(List<Navigation> list, CustomItemClickListener listener) {
         this.list = list;
         this.listener=listener;
     }

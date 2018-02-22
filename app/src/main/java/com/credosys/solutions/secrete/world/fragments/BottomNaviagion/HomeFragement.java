@@ -1,7 +1,6 @@
 package com.credosys.solutions.secrete.world.fragments.BottomNaviagion;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -12,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.HomeAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
-import com.credosys.solutions.secrete.world.Pojos.App.HomeContents;
+import com.credosys.solutions.secrete.world.Pojos.App.HomeContentsPlaces;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -61,16 +60,16 @@ public class HomeFragement extends MainFragment {
         return view;
     }
 
-    List<HomeContents> tempList(){
-        List<HomeContents> al=new ArrayList<>();
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
-        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
-        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
-        al.add(new HomeContents("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
-        al.add(new HomeContents("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
-        al.add(new HomeContents("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
-        al.add(new HomeContents("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
+    List<HomeContentsPlaces> tempList(){
+        List<HomeContentsPlaces> al=new ArrayList<>();
+        al.add(new HomeContentsPlaces("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContentsPlaces("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
+        al.add(new HomeContentsPlaces("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContentsPlaces("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
+        al.add(new HomeContentsPlaces("Kim Gomaz","SAGO OR SABUDANA KHICHDI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContentsPlaces("Kim Gomaz","VADA PAO","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
+        al.add(new HomeContentsPlaces("Kim Gomaz","PAO BHAJI","Sabudana is one of those recipes that is made during religius...",R.drawable.img_sabudana));
+        al.add(new HomeContentsPlaces("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
 
         return al;
     }

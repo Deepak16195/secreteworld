@@ -56,19 +56,39 @@
 
                 <TextView
                     android:id="@+id/txt_phone"
-                    android:text="022485785"
-                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_address"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:text="022485785"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_phone"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:text="Rs."
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_price_tag"
+                    android:text="50"
+                    android:layout_toRightOf="@id/txt_currency"
+                    android:layout_below="@id/txt_phone"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-               
                 <RatingBar
                     android:id="@+id/ratingBar1"
                     style="?attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_address"
+                    android:layout_below="@+id/iv_lines"
                     android:numStars="5"
                     android:rating="3"
                     android:theme="@style/RatingBar" />
@@ -77,19 +97,19 @@
                     android:id="@+id/iv_lines"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
-                    android:layout_below="@+id/ratingBar1"
+                    android:layout_below="@+id/txt_currency"
                     android:layout_marginTop="5dp"
                     android:layerType="software"
                     android:src="@drawable/dotted" />
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_above="@+id/iv_lines"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="4dp"
                     android:layout_toStartOf="@+id/kilo_miters"
-                    app:srcCompat="@drawable/ic_map_grey" />
+                    app:srcCompat="@drawable/ic_review" />
 
             </RelativeLayout>
         </RelativeLayout>
