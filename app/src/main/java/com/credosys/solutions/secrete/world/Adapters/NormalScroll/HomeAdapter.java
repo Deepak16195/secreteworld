@@ -47,7 +47,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
         MyViewHolder(View view){
             super(view);
             txtTitle=view.findViewById(R.id.txt_title_card);
-            txtDetail=view.findViewById(R.id.txt_detail);
+            txtDetail=view.findViewById(R.id.txt_address);
             txtName=view.findViewById(R.id.txt_user_name);
             imgSingleThumbnail= view.findViewById(R.id.img_single_thumbnail);
         }

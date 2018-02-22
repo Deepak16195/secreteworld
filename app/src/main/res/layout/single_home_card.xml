@@ -43,7 +43,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_detail"
+                    android:id="@+id/txt_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#535353"
@@ -61,7 +61,7 @@
                     android:theme="@style/RatingBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_detail"
+                    android:layout_below="@+id/txt_address"
                     android:numStars="5" />
                 <ImageView
                     android:id="@+id/iv_lines"
@@ -87,7 +87,7 @@
                     android:textSize="10sp"
                     android:fontFamily="@font/avenirltstd_black"
                     android:textColor="#515151"
-                    android:layout_below="@+id/txt_detail"
+                    android:layout_below="@+id/txt_address"
                     android:layout_toLeftOf="@+id/kilo_miters_units"
                     android:text="30" />
 
@@ -99,7 +99,7 @@
                     android:textColor="#515151"
                     android:fontFamily="@font/avenirltstd_black"
                     android:layout_alignParentRight="true"
-                    android:layout_below="@+id/txt_detail"
+                    android:layout_below="@+id/txt_address"
                     android:text=" Km" />
 
                 <RelativeLayout

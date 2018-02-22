@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:elevation="3dp"
+        android:layoutMode="opticalBounds"
+        card_view:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_single_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/launch_banner"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/img_single_thumbnail"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_title_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenirltstd_heavy"
+                    android:text="SAGO OR SABUDANA KHICHDI"
+                    android:textColor="#0268A3"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_title_card"
+                    android:layout_marginVertical="8dp"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:maxLines="3"
+                    android:text="Sabudana is one of those whose recipes that is made during religous..."
+                    android:textColor="#535353"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_phone"
+                    android:text="022485785"
+                    android:textSize="12sp"
+                    android:layout_below="@+id/txt_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+               
+                <RatingBar
+                    android:id="@+id/ratingBar1"
+                    style="?attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_address"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar" />
+
+                <ImageView
+                    android:id="@+id/iv_lines"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/ratingBar1"
+                    android:layout_marginTop="5dp"
+                    android:layerType="software"
+                    android:src="@drawable/dotted" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_above="@+id/iv_lines"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_toStartOf="@+id/kilo_miters"
+                    app:srcCompat="@drawable/ic_map_grey" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

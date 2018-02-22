@@ -57,6 +57,7 @@ import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddEnterTi
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.RecommendedPlacesFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.SellerUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.TicketFragment;
 
@@ -229,6 +230,10 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 3:
                         setFragments(19);
+                        break;
+                    case 4:
+                        setFragments(22);
+                        break;
                 }
                 drawer.closeDrawer(GravityCompat.START);
             }
@@ -534,6 +539,9 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case 21:
                     transaction.replace(R.id.frame_container, InviteFriendsFragment.newInstance(),"invitefriends");
+                    break;
+                case 22:
+                    transaction.replace(R.id.frame_container, RecommendedPlacesFragment.newInstance(),"recommplace");
                     break;
             }
         }
