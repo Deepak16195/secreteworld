@@ -9,21 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.view.WindowManager;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
- * Created by Yogesh on 16-Feb-18.
+ * Created by credosys on 23/2/18.
  */
 
-public class ExpertUserFragment extends MainFragment {
-    public static ExpertUserFragment newInstance() {
+public class GetPrimiumFragment extends MainFragment {
+    public static GetPrimiumFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        ExpertUserFragment fragment = new ExpertUserFragment();
+        GetPrimiumFragment fragment = new GetPrimiumFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -31,13 +32,13 @@ public class ExpertUserFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         ((MainActivity)getActivity()).setActionBarTitle("");
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
+        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
         ViewStub viewStub=v.findViewById(R.id.vs_all);
-        viewStub.setLayoutResource(R.layout.view_stub_expert_user);
-         View inflated=viewStub.inflate();
-
+        viewStub.setLayoutResource(R.layout.view_stub_get_primium);
+        viewStub.inflate();
         return v;
     }
 }

@@ -18,12 +18,13 @@ import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by SONY on 18-02-18.
  */
 
-public class SellerUserFragment extends Fragment {
+public class SellerUserFragment extends MainFragment {
 
     TextView txtPaypal;
     public static SellerUserFragment newInstance() {

@@ -54,6 +54,7 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFrag
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddEnterTicketFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUserFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.GetPrimiumFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.RecommendedPlacesFragment;
@@ -231,6 +232,9 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 4:
                         setFragments(22);
+                        break;
+                    case 5:
+                        setFragments(23);
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);
@@ -541,6 +545,8 @@ public class MainActivity extends AppCompatActivity
                 case 22:
                     transaction.replace(R.id.frame_container, RecommendedPlacesFragment.newInstance(),"recommplace");
                     break;
+                case 23:
+                    transaction.replace(R.id.frame_container, GetPrimiumFragment.newInstance(),"getprimium");
             }
         }
 //        transaction.replace(R.id.frame_container, fragment);

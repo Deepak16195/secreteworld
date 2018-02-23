@@ -12,12 +12,13 @@ import android.view.ViewStub;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by credosys on 21/2/18.
  */
 
-public class InviteFriendsFragment extends Fragment {
+public class InviteFriendsFragment extends MainFragment {
     public static InviteFriendsFragment newInstance() {
 
         Bundle args = new Bundle();

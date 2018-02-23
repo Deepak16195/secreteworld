@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by credosys on 22/2/18.
  */
 
-public class SuggestFragment extends Fragment {
+public class SuggestFragment extends MainFragment {
     public static SuggestFragment newInstance() {
 
         Bundle args = new Bundle();

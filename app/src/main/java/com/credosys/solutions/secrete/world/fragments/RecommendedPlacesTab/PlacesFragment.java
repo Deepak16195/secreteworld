@@ -15,6 +15,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.HomeAdapter;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.PlacesAdapter;
 import com.credosys.solutions.secrete.world.Pojos.App.HomeContentsPlaces;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ import java.util.List;
  * Created by credosys on 22/2/18.
  */
 
-public class PlacesFragment extends Fragment {
+public class PlacesFragment extends MainFragment {
     public static PlacesFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -51,6 +52,7 @@ public class PlacesFragment extends Fragment {
         rvPlaces.setAdapter(homeAdapter);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
         rvPlaces.setLayoutManager(staggeredGridLayoutManager);
+        rvPlaces.setNestedScrollingEnabled(false);
        return v;
     }
 }

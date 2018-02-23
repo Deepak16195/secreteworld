@@ -18,12 +18,13 @@ import android.widget.TextView;
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.RecommendedPlacesAdaper;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by credosys on 22/2/18.
  */
 
-public class RecommendedPlacesFragment extends Fragment implements TabLayout.OnTabSelectedListener {
+public class RecommendedPlacesFragment extends MainFragment implements TabLayout.OnTabSelectedListener {
     String[] tabText = {"PLACES", "WANT TO SUGGEST?"};
     Typeface typeface;
 
@@ -39,16 +40,14 @@ public class RecommendedPlacesFragment extends Fragment implements TabLayout.OnT
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity) getActivity()).setActionBarTitle("MUMBAI");
+        ((MainActivity) getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
         View v = inflater.inflate(R.layout.fragment_common_content, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "avenirltstd_light.otf");
-        ((MainActivity) getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
-        ((MainActivity) getActivity()).setActionBarTitle("MUMBAI");
         ViewStub viewStub = v.findViewById(R.id.vs_all);
         viewStub.setLayoutResource(R.layout.view_stub_recommended_places);
         View inflated = viewStub.inflate();
         TabLayout tabLayout = inflated.findViewById(R.id.fragment_tabs);
-
-
 
         ViewPager viewPager = inflated.findViewById(R.id.frg_rec_places_view_pager);
         RecommendedPlacesAdaper recommendedPlacesAdaper = new RecommendedPlacesAdaper(getChildFragmentManager());

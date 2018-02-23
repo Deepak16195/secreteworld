@@ -19,6 +19,7 @@ import com.credosys.solutions.secrete.world.Adapters.NormalScroll.TicketAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.Ticket;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 import com.vipulasri.ticketview.TicketView;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.List;
  * Created by Yogesh on 15-Feb-18.
  */
 
-public class TicketFragment extends Fragment implements View.OnClickListener{
+public class TicketFragment extends MainFragment implements View.OnClickListener{
     ImageView imgTicketAdd;
     public static TicketFragment newInstance() {
 

@@ -11,7 +11,7 @@
         android:name=".MainApplication"
         android:theme="@style/AppTheme">
         <activity
-            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:windowSoftInputMode="adjustPan|adjustResize"
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />

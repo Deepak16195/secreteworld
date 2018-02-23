@@ -15,12 +15,13 @@ import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by credosys on 20/2/18.
  */
 
-public class AddEnterTicketFragment extends Fragment {
+public class AddEnterTicketFragment extends MainFragment {
 
     public static AddEnterTicketFragment newInstance() {
 
