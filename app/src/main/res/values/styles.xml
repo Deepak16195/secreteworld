@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -26,5 +26,12 @@
         <item name="colorControlActivated">@color/duskYellow</item>
     </style>
 
+    <style name="titlecollapse">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing" tools:ignore="NewApi">0.1</item>
+    </style>
+    <style name="titleexpand">
+        <item name="android:textSize">20sp</item>
+    </style>
 
 </resources>

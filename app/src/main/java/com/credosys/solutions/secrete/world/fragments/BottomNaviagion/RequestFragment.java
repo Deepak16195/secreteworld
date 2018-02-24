@@ -30,6 +30,7 @@ public class RequestFragment extends MainFragment {
         ((MainActivity)getActivity()).setActionBarTitle("REQUEST");
         ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+        ((MainActivity)getActivity()).showBackButton(false);
         return v;
     }
 }

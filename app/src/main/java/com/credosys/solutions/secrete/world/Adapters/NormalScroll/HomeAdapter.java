@@ -18,14 +18,23 @@ import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
     List<HomeContentsPlaces> list;
-    public HomeAdapter(List<HomeContentsPlaces> list){
+    CustomItemClickListener listener;
+    public HomeAdapter(List<HomeContentsPlaces> list,CustomItemClickListener listener){
         this.list=list;
+        this.listener=listener;
     }
     @Override
     public HomeAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.single_home_card,parent, false);
-        return new MyViewHolder(v);
+        final MyViewHolder mViewHolder=new MyViewHolder(v);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(v, mViewHolder.getAdapterPosition());
+            }
+        });
+        return mViewHolder;
     }
 
     @Override

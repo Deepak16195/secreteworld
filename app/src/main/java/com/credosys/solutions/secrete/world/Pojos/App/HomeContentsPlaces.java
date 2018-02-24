@@ -17,8 +17,9 @@ public class HomeContentsPlaces {
     private float rating;
 
 
-    public HomeContentsPlaces(int img,String address,String phoneNumber,String price,float rating){
+    public HomeContentsPlaces(int img,String title,String address,String phoneNumber,String price,float rating){
         this.img=img;
+        this.title=title;
         this.address=address;
         this.phoneNumber=phoneNumber;
         this.price=price;

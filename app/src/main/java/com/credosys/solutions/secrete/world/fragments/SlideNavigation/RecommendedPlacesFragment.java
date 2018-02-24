@@ -42,6 +42,7 @@ public class RecommendedPlacesFragment extends MainFragment implements TabLayout
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ((MainActivity) getActivity()).setActionBarTitle("MUMBAI");
         ((MainActivity) getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
+        ((MainActivity) getActivity()).showBackButton(false);
         View v = inflater.inflate(R.layout.fragment_common_content, container, false);
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "avenirltstd_light.otf");
         ViewStub viewStub = v.findViewById(R.id.vs_all);

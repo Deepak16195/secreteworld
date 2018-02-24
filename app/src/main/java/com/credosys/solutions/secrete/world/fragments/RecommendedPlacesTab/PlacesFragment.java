@@ -41,12 +41,12 @@ public class PlacesFragment extends MainFragment {
         RecyclerView rvPlaces=v.findViewById(R.id.rv_places);
 
         List<HomeContentsPlaces> list= new ArrayList<>();
-        list.add(new HomeContentsPlaces(R.drawable.vadapav,"N/7/12, Ganpati Niwas, Bangur Nagar, Link Road, Goregoan (West)","022 878778787","50",2.0f));
-        list.add(new HomeContentsPlaces(R.drawable.vadapav,"Address","022 88787454","50",4.0f));
-        list.add(new HomeContentsPlaces(R.drawable.vadapav,"N/7/12, Ganpati Niwas, Bangur Nagar, Link Road, Goregoan (West)","022 878778787","50",2.0f));
-        list.add(new HomeContentsPlaces(R.drawable.vadapav,"Address","022 88787454","50",4.0f));
-        list.add(new HomeContentsPlaces(R.drawable.vadapav,"N/7/12, Ganpati Niwas, Bangur Nagar, Link Road, Goregoan (West)","022 878778787","50",2.0f));
-        list.add(new HomeContentsPlaces(R.drawable.vadapav,"Address","022 88787454","50",4.0f));
+        list.add(new HomeContentsPlaces(R.drawable.vadapav,"SHIVAYAM SAGAR PALACE","N/7/12, Ganpati Niwas, Bangur Nagar, Link Road, Goregoan (West)","022 878778787","50",2.0f));
+        list.add(new HomeContentsPlaces(R.drawable.vadapav,"RESTAURANT NAME","Address","022 88787454","50",4.0f));
+        list.add(new HomeContentsPlaces(R.drawable.vadapav,"SHIVAYAM SAGAR PALACE","N/7/12, Ganpati Niwas, Bangur Nagar, Link Road, Goregoan (West)","022 878778787","50",2.0f));
+        list.add(new HomeContentsPlaces(R.drawable.vadapav,"RESTAURANT NAME","Address","022 88787454","50",4.0f));
+        list.add(new HomeContentsPlaces(R.drawable.vadapav,"SHIVAYAM SAGAR PALACE","N/7/12, Ganpati Niwas, Bangur Nagar, Link Road, Goregoan (West)","022 878778787","50",2.0f));
+        list.add(new HomeContentsPlaces(R.drawable.vadapav,"RESTAURANT NAME","Address","022 88787454","50",4.0f));
 
         PlacesAdapter homeAdapter=new PlacesAdapter(list);
         rvPlaces.setAdapter(homeAdapter);

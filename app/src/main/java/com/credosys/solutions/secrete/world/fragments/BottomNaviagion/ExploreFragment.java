@@ -1,6 +1,7 @@
 package com.credosys.solutions.secrete.world.fragments.BottomNaviagion;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import  android.support.v4.app.Fragment;
@@ -33,15 +34,10 @@ public class ExploreFragment extends MainFragment {
         super.onCreate(savedInstanceState);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.d("framgneexploreresume","called");
-    }
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_explore,null,false);
         final TabLayout fragmentTab=v.findViewById(R.id.fragment_tabs);
         final ViewPager fragmentViewPager = v.findViewById(R.id.fragment_viewpager);
@@ -49,6 +45,7 @@ public class ExploreFragment extends MainFragment {
         ((MainActivity)getActivity()).setActionBarTitle("SECRETS AROUND YOU");
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
         ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+        ((MainActivity)getActivity()).showBackButton(false);
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);
 //            fragmentTab.setTabTextColors(R.color.grayColor,R.color.customBlue);

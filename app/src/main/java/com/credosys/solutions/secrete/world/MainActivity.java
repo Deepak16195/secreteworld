@@ -56,10 +56,11 @@ import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddEnterTi
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.GetPrimiumFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
-import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ProfileFragment;
+import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ProfileFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.RecommendedPlacesFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.SellerUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.TicketFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.WhereEatFragment;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
@@ -236,6 +237,9 @@ public class MainActivity extends AppCompatActivity
                     case 5:
                         setFragments(23);
                         break;
+                    case 6:
+                        setFragments(24);
+                        break;
                 }
                 drawer.closeDrawer(GravityCompat.START);
             }
@@ -347,7 +351,6 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-
 
     }
 
@@ -471,7 +474,7 @@ public class MainActivity extends AppCompatActivity
                     break;
 
                 case 4:
-                    transaction.replace(R.id.frame_container, MyDiaryFragment.newInstance(), "diary");
+                    transaction.replace(R.id.frame_container, ProfileFragment.newInstance(), "diary");
                     break;
 
                 case 5:
@@ -547,6 +550,10 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case 23:
                     transaction.replace(R.id.frame_container, GetPrimiumFragment.newInstance(),"getprimium");
+                    break;
+                case 24:
+                    transaction.replace(R.id.frame_container, WhereEatFragment.newInstance(),"whereeat");
+                    break;
             }
         }
 //        transaction.replace(R.id.frame_container, fragment);
