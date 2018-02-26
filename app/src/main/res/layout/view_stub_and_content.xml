@@ -253,13 +253,67 @@
                     android:layout_margin="10dp"
                     android:visibility="gone">
 
-                    <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
-                        app:picker_curved="true"
-                        app:picker_cyclic="true"
-                        app:picker_textSize="14dp"
-                        app:picker_visibleItemCount="7"
+                    <LinearLayout
+                         android:id="@+id/ll_"
                         android:layout_width="match_parent"
-                        android:layout_height="230dp" />
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/ll_date"
+                            android:paddingHorizontal="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ADD DATE" />
+
+                            <TextView
+                                android:id="@+id/txt_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableEnd="@drawable/ic_calendar"
+                                android:hint="@string/mc_txt_date_format" />
+                            <View
+                                android:background="@color/grayColor"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_time"
+                            android:paddingHorizontal="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ADD TIME" />
+
+                            <TextView
+                                android:id="@+id/txt_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableEnd="@drawable/ic_time"
+                                android:foregroundTint="@color/customBlue"
+                                android:hint="@string/mc_txt_date_format" />
+                            <View
+                                android:background="@color/grayColor"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
                 </RelativeLayout>
             </RelativeLayout>
 
@@ -468,7 +522,6 @@
                         android:fontFamily="@font/avenirltstd_medium"
                         android:hint="Type Location"
                         android:padding="10dp" />
-
                 </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>

@@ -77,7 +77,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_twt" />
+            app:srcCompat="@drawable/ic_whatsapp" />
 
     </LinearLayout>
 

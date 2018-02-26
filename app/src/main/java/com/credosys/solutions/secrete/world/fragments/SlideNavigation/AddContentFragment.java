@@ -1,7 +1,10 @@
 package com.credosys.solutions.secrete.world.fragments.SlideNavigation;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -9,13 +12,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.view.animation.Animation;
+import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
+
+import java.util.Calendar;
 
 
 /**
@@ -27,12 +35,18 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
     LinearLayout llTitle,llMain,llCategory,llDesc,llExtdesc,llTag,llPic,rlPicExpand,llLocation;
     RelativeLayout rlTitleExpand,rlCategoryExpand,rlDescExpand,rlExtdescExpand,rlTagExpand,rlLocationExpand;
     ScrollView svMain;
+    LinearLayout llDate,llTime;
     Animation slide_down;
+    Calendar calendar = Calendar.getInstance();
+    int mYear, mMonth, mDay,hour,minute;
+    DatePickerDialog datePickerDialog;
+    TimePickerDialog timePickerDialog;
+    TextView txtDate,txtTime;
 //   ExpandableRelativeLayout rlTitleExpand;
-    public static AddContentFragment newInstance() {
+    public static AddContentFragment newInstance(int titleIndex) {
 
         Bundle args = new Bundle();
-
+        args.putInt("position",titleIndex);
         AddContentFragment fragment = new AddContentFragment();
         fragment.setArguments(args);
         return fragment;
@@ -40,16 +54,45 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_common_content,null,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
         ViewStub simpleViewStub = v.findViewById(R.id.vs_all);
         simpleViewStub.setLayoutResource(R.layout.view_stub_and_content);
         View inflated = simpleViewStub.inflate();
-        ((MainActivity)getActivity()).setActionBarTitle("ADD CONTENT");
-        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(false);
+
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            int myInt = bundle.getInt("position", 0);
+            switch (myInt){
+                case 1:
+                    ((MainActivity)getActivity()).setActionBarTitle("ADD CONTENT");
+
+
+//                    ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
+//                    ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+//                    ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+
+                    break;
+                case 2:
+                    ((MainActivity)getActivity()).setActionBarTitle("ADD TRIP ALBUM");
+                    break;
+                case 3:
+                    ((MainActivity)getActivity()).setActionBarTitle("ADD TRIP DIARY");
+                    break;
+                case 4:
+                    ((MainActivity)getActivity()).setActionBarTitle("ADD ITIEARY");
+                    break;
+                case 5:
+                    ((MainActivity)getActivity()).setActionBarTitle("ADD EVENT");
+                    break;
+
+
+
+            }
+            ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+            ((MainActivity)getActivity()).showBackButton(false);
+        }
+
 
         llMain=inflated.findViewById(R.id.ll_main_addcontent);
         llTitle=inflated.findViewById(R.id.ll_addcontent_title);
@@ -67,6 +110,10 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
         rlPicExpand=inflated.findViewById(R.id.rl_pic_expand);
         llLocation=inflated.findViewById(R.id.ll_addcontent_location);
         rlLocationExpand=inflated.findViewById(R.id.rl_location_expand);
+        llDate=inflated.findViewById(R.id.ll_date);
+        llTime=inflated.findViewById(R.id.ll_time);
+        txtDate=inflated.findViewById(R.id.txt_date);
+        txtTime=inflated.findViewById(R.id.txt_time);
 
         llTitle.setOnClickListener(this);
         llCategory.setOnClickListener(this);
@@ -75,11 +122,17 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
         llTag.setOnClickListener(this);
         llPic.setOnClickListener(this);
         llLocation.setOnClickListener(this);
+        llDate.setOnClickListener(this);
+        llTime.setOnClickListener(this);
 
+        mYear = calendar.get(Calendar.YEAR);
+        mMonth = calendar.get(Calendar.MONTH);
+        mDay = calendar.get(Calendar.DAY_OF_MONTH);
+        hour= calendar.get(Calendar.HOUR_OF_DAY);
+        minute=calendar.get(Calendar.MINUTE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             svMain.setNestedScrollingEnabled(true);
-
         }
 
         return v;
@@ -151,9 +204,32 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
                 rlTagExpand.setVisibility(View.GONE);
                 rlPicExpand.setVisibility(View.GONE);
                 break;
-
-
+            case R.id.ll_date:
+                setDatePickerDialog();
+                break;
+            case R.id.ll_time:
+                setTime();
+                break;
 
         }
+    }
+
+    private void setTime(){
+        timePickerDialog= new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                txtTime.setText(hourOfDay+" "+minute);
+            }
+        },hour, minute, false);
+    }
+
+    private void setDatePickerDialog() {
+        datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                txtDate.setText(getString(R.string.mc_start_date_set, dayOfMonth, month + 1, year));
+            }
+        }, mYear, mMonth, mDay);
+        datePickerDialog.show();
     }
 }

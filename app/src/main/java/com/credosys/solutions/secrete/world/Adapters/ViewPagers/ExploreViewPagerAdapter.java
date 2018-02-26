@@ -33,10 +33,10 @@ public class ExploreViewPagerAdapter extends FragmentStatePagerAdapter {
 //        return mFragmentList.get(position);
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return txtTitle[position];
-    }
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        return txtTitle[position];
+//    }
 
     @Override
     public int getCount() {

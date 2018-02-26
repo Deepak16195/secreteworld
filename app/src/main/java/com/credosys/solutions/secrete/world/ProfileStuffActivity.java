@@ -57,10 +57,27 @@ MainApplication mainApp;
                 switch(position){
                     case 0:
                         onBackPressed();
-                        mainApp.getMainActivity().setFragmentsCommitAllowing(1);
-                        if(mainApp.isDiary())
-                            mainApp.getMainActivity().setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(1,1);
+//                        if(mainApp.isDiary())
+//                            mainApp.getMainActivity().setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
                         break;
+                    case 1:
+                        onBackPressed();
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(1,2);
+                        break;
+                    case 2:
+                        onBackPressed();
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(1,3);
+                        break;
+                    case 3:
+                        onBackPressed();
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(1,4);
+                        break;
+                    case 4:
+                        onBackPressed();
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(1,5);
+                        break;
+
                 }
             }
         });

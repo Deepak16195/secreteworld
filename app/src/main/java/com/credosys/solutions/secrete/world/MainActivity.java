@@ -581,11 +581,10 @@ public class MainActivity extends AppCompatActivity
 
     public void setFragmentsCommitAllowing(int loc) {
         transaction = getSupportFragmentManager().beginTransaction();
-        if (loc < 6) {
             switch (loc) {
                 case 1:
-                    transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
-                    fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
+//                    transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
+//                    fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
                     break;
                 case 2:
                     setActionBarTitle("PROFILE");
@@ -593,12 +592,25 @@ public class MainActivity extends AppCompatActivity
                     fragment = getSupportFragmentManager().findFragmentByTag("profile");
                     break;
             }
-
-        }
-
         transaction.addToBackStack(null);
         transaction.commitAllowingStateLoss();
+    }
 
+    public void setFragmentsCommitAllowing(int loc,int titleIndex) {
+        transaction = getSupportFragmentManager().beginTransaction();
+        switch (loc) {
+            case 1:
+                transaction.replace(R.id.frame_container, AddContentFragment.newInstance(titleIndex), "addcontent");
+                fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
+                break;
+            case 2:
+                setActionBarTitle("PROFILE");
+                transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
+                fragment = getSupportFragmentManager().findFragmentByTag("profile");
+                break;
+        }
+        transaction.addToBackStack(null);
+        transaction.commitAllowingStateLoss();
     }
 
     public void setTimePickerDialog(Context context, final TextView txtStartEndTime) {

@@ -45,7 +45,7 @@
                         android:id="@+id/txt_start_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/ic_user"
+                        android:drawableEnd="@drawable/ic_calendar"
                         android:hint="@string/mc_txt_date_format" />
                     <View
                         android:background="@color/grayColor"
@@ -70,7 +70,7 @@
                         android:id="@+id/txt_end_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableEnd="@drawable/ic_user"
+                        android:drawableEnd="@drawable/ic_calendar"
                         android:foregroundTint="@color/customBlue"
                         android:hint="@string/mc_txt_date_format" />
                     <View

@@ -26,7 +26,6 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 public class RecommendedPlacesFragment extends MainFragment implements TabLayout.OnTabSelectedListener {
     String[] tabText = {"PLACES", "WANT TO SUGGEST?"};
-    Typeface typeface;
 
     public static RecommendedPlacesFragment newInstance() {
 
