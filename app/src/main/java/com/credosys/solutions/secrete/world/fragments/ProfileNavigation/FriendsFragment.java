@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.FriendsAdapter;
@@ -39,15 +41,15 @@ public class FriendsFragment extends MainFragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile_friends, null, false);
         ((MainActivity) getActivity()).setActionBarTitle("MY FRIENDS");
-//        ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
+        ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
+        ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
         ((MainActivity) getActivity()).showBackButton(true);
 
-        ImageView imgInvite=v.findViewById(R.id.img_invite);
+        Button btnInvite=v.findViewById(R.id.btn_invite);
         rvFriends = v.findViewById(R.id.rv_friends);
 
 
-        imgInvite.setOnClickListener(this);
+        btnInvite.setOnClickListener(this);
 
 
         mLayoutManager = new GridLayoutManager(getActivity(), 3);
@@ -74,7 +76,7 @@ public class FriendsFragment extends MainFragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.img_invite:
+            case R.id.btn_invite:
                 ((MainActivity)getActivity()).setFragments(21);
                 break;
         }

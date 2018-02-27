@@ -20,13 +20,13 @@ import java.util.List;
  * Created by win7 on 16-Jan-18.
  */
 
-public class OrderSellerAdapter extends RecyclerView.Adapter<OrderSellerAdapter.OrderHolder> {
+public class SellerAdapter extends RecyclerView.Adapter<SellerAdapter.OrderHolder> {
 //    private CustomItemClickListener listener;
 Context context;
     List<OrdersSellers> list;
     String fragmentString;
     Boolean mini;
-    public OrderSellerAdapter(Context context, List<OrdersSellers> list, String s) {
+    public SellerAdapter(Context context, List<OrdersSellers> list, String s) {
         this.context=context;
         this.list=list;
         fragmentString = s;

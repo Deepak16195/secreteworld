@@ -1,59 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingBottom="20dp">
+
     <include layout="@layout/common_assistance" />
+
     <ScrollView
         android:id="@+id/sv_main"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true">
 
         <LinearLayout
             android:id="@+id/ll_main_addcontent"
+            android:paddingBottom="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayColor" />
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+
+                <RelativeLayout
                     android:id="@+id/ll_addcontent_title"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_add_content_bar" />
+
+                    <ImageView
+                        android:id="@+id/l1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add_content_arrow" />
+
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="#F6412C"
-                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/avenirltstd_light"
                         android:gravity="center"
-                        android:text="1"
+                        android:text="01"
                         android:textAlignment="gravity"
                         android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:gravity="center_vertical"
                         android:text="TITLE"
                         android:textAlignment="gravity"
                         android:textColor="#505050"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/a1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/ic_add_content_down_arrow" />
+                </RelativeLayout>
+
 
                 <RelativeLayout
                     android:id="@+id/rl_title_expand"
@@ -81,43 +105,89 @@
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayColor" />
+
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/ll_addcontent_category"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="#EC1660"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="2"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="34sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="CATEGORY"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="#505050"-->
+                        <!--android:textSize="20sp" />-->
+                <!--</LinearLayout>-->
+                <RelativeLayout
                     android:id="@+id/ll_addcontent_category"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_add_content_bar" />
+
+                    <ImageView
+                        android:id="@+id/l2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add_content_arrow" />
+
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="#EC1660"
-                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/avenirltstd_light"
                         android:gravity="center"
-                        android:text="2"
+                        android:text="02"
                         android:textAlignment="gravity"
                         android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:gravity="center_vertical"
                         android:text="CATEGORY"
                         android:textAlignment="gravity"
                         android:textColor="#505050"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:textSize="16sp" />
 
+                    <ImageView
+                        android:id="@+id/a2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/ic_add_content_down_arrow" />
+                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/rl_category_expand"
                     android:layout_width="match_parent"
@@ -144,43 +214,88 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayColor" />
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/ll_addcontent_description"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="#264BB8"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="3"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="34sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="BRIF DESCRIPTION"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="#505050"-->
+                        <!--android:textSize="20sp" />-->
+                <!--</LinearLayout>-->
+                <RelativeLayout
                     android:id="@+id/ll_addcontent_description"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_add_content_bar" />
+
+                    <ImageView
+                        android:id="@+id/l3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add_content_arrow" />
+
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="#264BB8"
-                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/avenirltstd_light"
                         android:gravity="center"
-                        android:text="3"
+                        android:text="03"
                         android:textAlignment="gravity"
                         android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:gravity="center_vertical"
                         android:text="BRIF DESCRIPTION"
                         android:textAlignment="gravity"
                         android:textColor="#505050"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:textSize="16sp" />
 
+                    <ImageView
+                        android:id="@+id/a3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/ic_add_content_down_arrow" />
+                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/rl_description_expand"
                     android:layout_width="match_parent"
@@ -208,53 +323,98 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayColor" />
+
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/ll_addcontent_extdesc"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="#1573F8"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="4"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="34sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="DATE &amp; TIME"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="#505050"-->
+                        <!--android:textSize="20sp" />-->
+                <!--</LinearLayout>-->
+                <RelativeLayout
                     android:id="@+id/ll_addcontent_extdesc"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_add_content_bar" />
+
+                    <ImageView
+                        android:id="@+id/l4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add_content_arrow" />
+
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="#1573F8"
-                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/avenirltstd_light"
                         android:gravity="center"
-                        android:text="4"
+                        android:text="04"
                         android:textAlignment="gravity"
                         android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:gravity="center_vertical"
                         android:text="DATE &amp; TIME"
                         android:textAlignment="gravity"
                         android:textColor="#505050"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:textSize="16sp" />
 
+                    <ImageView
+                        android:id="@+id/a4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/ic_add_content_down_arrow" />
+                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/rl_extdesc_expand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ll_addcontent_extdesc"
                     android:layout_margin="10dp"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <LinearLayout
-                         android:id="@+id/ll_"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:baselineAligned="false"
@@ -263,11 +423,11 @@
 
                         <LinearLayout
                             android:id="@+id/ll_date"
-                            android:paddingHorizontal="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:paddingHorizontal="5dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -280,20 +440,21 @@
                                 android:layout_height="wrap_content"
                                 android:drawableEnd="@drawable/ic_calendar"
                                 android:hint="@string/mc_txt_date_format" />
+
                             <View
-                                android:background="@color/grayColor"
-                                android:layout_marginTop="10dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"/>
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/grayColor" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/ll_time"
-                            android:paddingHorizontal="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:paddingHorizontal="5dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -307,53 +468,100 @@
                                 android:drawableEnd="@drawable/ic_time"
                                 android:foregroundTint="@color/customBlue"
                                 android:hint="@string/mc_txt_date_format" />
+
                             <View
-                                android:background="@color/grayColor"
-                                android:layout_marginTop="10dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"/>
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/grayColor" />
                         </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayColor" />
+
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/ll_addcontent_tag"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="#1573F8"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="5"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="34sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="TAG"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="#505050"-->
+                        <!--android:textSize="20sp" />-->
+                <!--</LinearLayout>-->
+                <RelativeLayout
                     android:id="@+id/ll_addcontent_tag"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_add_content_bar" />
+
+                    <ImageView
+                        android:id="@+id/l5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add_content_arrow" />
+
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="#1573F8"
-                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/avenirltstd_light"
                         android:gravity="center"
-                        android:text="5"
+                        android:text="05"
                         android:textAlignment="gravity"
                         android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:gravity="center_vertical"
                         android:text="TAG"
                         android:textAlignment="gravity"
                         android:textColor="#505050"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:textSize="16sp" />
 
+                    <ImageView
+                        android:id="@+id/a5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/ic_add_content_down_arrow" />
+                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/rl_tag_expand"
                     android:layout_width="match_parent"
@@ -380,43 +588,88 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayColor" />
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/ll_addcontent_pic"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="#89C541"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="6"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="34sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="PICTURE"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="#505050"-->
+                        <!--android:textSize="20sp" />-->
+                <!--</LinearLayout>-->
+                <RelativeLayout
                     android:id="@+id/ll_addcontent_pic"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_add_content_bar" />
+
+                    <ImageView
+                        android:id="@+id/l6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add_content_arrow" />
+
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="#89C541"
-                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/avenirltstd_light"
                         android:gravity="center"
-                        android:text="6"
+                        android:text="06"
                         android:textAlignment="gravity"
                         android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:gravity="center_vertical"
                         android:text="PICTURE"
                         android:textAlignment="gravity"
                         android:textColor="#505050"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:textSize="16sp" />
 
+                    <ImageView
+                        android:id="@+id/a6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/ic_add_content_down_arrow" />
+                </RelativeLayout>
                 <LinearLayout
                     android:id="@+id/rl_pic_expand"
                     android:layout_width="match_parent"
@@ -436,9 +689,9 @@
                         android:paddingVertical="10dp">
 
                         <ImageView
-                            app:srcCompat="@drawable/ic_camera"
                             android:layout_width="70dp"
-                            android:layout_height="35dp" />
+                            android:layout_height="35dp"
+                            app:srcCompat="@drawable/ic_camera" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -457,9 +710,9 @@
                         android:paddingVertical="10dp">
 
                         <ImageView
-                            app:srcCompat="@drawable/ic_video"
                             android:layout_width="70dp"
-                            android:layout_height="35dp" />
+                            android:layout_height="35dp"
+                            app:srcCompat="@drawable/ic_video" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -470,43 +723,89 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grayColor" />
+
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/ll_addcontent_location"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="60dp"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="#CADE1D"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="7"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="34sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:fontFamily="@font/avenirltstd_medium"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="LOCATION"-->
+                        <!--android:textAlignment="gravity"-->
+                        <!--android:textColor="#505050"-->
+                        <!--android:textSize="20sp" />-->
+                <!--</LinearLayout>-->
+                <RelativeLayout
                     android:id="@+id/ll_addcontent_location"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="0dp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_add_content_bar" />
+
+                    <ImageView
+                        android:id="@+id/l7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_add_content_arrow" />
+
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="#CADE1D"
-                        android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/avenirltstd_light"
                         android:gravity="center"
-                        android:text="7"
+                        android:text="07"
                         android:textAlignment="gravity"
                         android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:gravity="center_vertical"
                         android:text="LOCATION"
                         android:textAlignment="gravity"
                         android:textColor="#505050"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:textSize="16sp" />
 
+                    <ImageView
+                        android:id="@+id/a7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/ic_add_content_down_arrow" />
+                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/rl_location_expand"
                     android:layout_width="match_parent"
@@ -524,6 +823,17 @@
                         android:padding="10dp" />
                 </RelativeLayout>
             </RelativeLayout>
+            <Button
+                android:layout_marginTop="10dp"
+                android:text="publish"
+                android:fontFamily="@font/charcoal"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/cutomGreen"
+                android:layout_width="200dp"
+                android:layout_height="40dp" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

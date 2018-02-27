@@ -136,27 +136,27 @@
         android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English." />
 
     <LinearLayout
-        android:layout_marginTop="10dp"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="10dp">
 
         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginRight="25dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:srcCompat="@drawable/ic_review" />
+            app:srcCompat="@drawable/direction" />
 
         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginRight="25dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
             app:srcCompat="@drawable/ic_review" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/ic_review" />
+            app:srcCompat="@drawable/audio" />
     </LinearLayout>
     <ImageView
         android:id="@+id/iv_lines"
@@ -207,7 +207,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_twt" />
+            app:srcCompat="@drawable/ic_whatsapp" />
 
     </LinearLayout>
     <Button

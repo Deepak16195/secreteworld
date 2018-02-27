@@ -12,26 +12,30 @@
 
 
         <ImageView
+            android:id="@+id/img_left"
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:src="@drawable/launch_banner" />
 
         <RelativeLayout
-            android:padding="5dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txt_profile_request_title"
-                android:fontFamily="@font/avenirltstd_black"
+                android:textSize="12sp"
+                android:textColor="@color/fontblack"
+                android:fontFamily="@font/avenirltstd_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FOOD TRAVLLER" />
 
             <TextView
                 android:id="@+id/tc_date"
+                android:textSize="10sp"
                 android:fontFamily="@font/avenirltstd_light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -40,8 +44,10 @@
 
             <TextView
                 android:layout_marginTop="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/fontblack"
                 android:id="@+id/txt_profile_request_content"
-                android:fontFamily="@font/avenirltstd_black"
+                android:fontFamily="@font/avenirltstd_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tc_date"
@@ -52,7 +58,8 @@
                 android:id="@+id/v_line"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginVertical="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5sp"
                 android:background="@color/grayColor" />
 
             <Button

@@ -2,10 +2,12 @@ package com.credosys.solutions.secrete.world.fragments.SlideNavigation;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.view.animation.Animation;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -31,8 +34,8 @@ import java.util.Calendar;
  */
 
 public class AddContentFragment extends MainFragment implements View.OnClickListener {
-
-    LinearLayout llTitle,llMain,llCategory,llDesc,llExtdesc,llTag,llPic,rlPicExpand,llLocation;
+    LinearLayout llMain,rlPicExpand;
+    RelativeLayout llTitle,llCategory,llDesc,llExtdesc,llTag,llPic,llLocation;
     RelativeLayout rlTitleExpand,rlCategoryExpand,rlDescExpand,rlExtdescExpand,rlTagExpand,rlLocationExpand;
     ScrollView svMain;
     LinearLayout llDate,llTime;
@@ -42,6 +45,10 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
     TextView txtDate,txtTime;
+    ImageView[] l;
+    ImageView[] a;
+    String[] colors={"FF422B","EC1660","0055AE","007CEE","008E80","82BB51","CAD441"};
+
 //   ExpandableRelativeLayout rlTitleExpand;
     public static AddContentFragment newInstance(int titleIndex) {
 
@@ -115,6 +122,25 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
         txtDate=inflated.findViewById(R.id.txt_date);
         txtTime=inflated.findViewById(R.id.txt_time);
 
+
+        l=new ImageView[7];
+        a=new ImageView[7];
+        l[0]=inflated.findViewById(R.id.l1);
+        l[1]=inflated.findViewById(R.id.l2);
+        l[2]=inflated.findViewById(R.id.l3);
+        l[3]=inflated.findViewById(R.id.l4);
+        l[4]=inflated.findViewById(R.id.l5);
+        l[5]=inflated.findViewById(R.id.l6);
+        l[6]=inflated.findViewById(R.id.l7);
+
+        a[0]=inflated.findViewById(R.id.a1);
+        a[1]=inflated.findViewById(R.id.a2);
+        a[2]=inflated.findViewById(R.id.a3);
+        a[3]=inflated.findViewById(R.id.a4);
+        a[4]=inflated.findViewById(R.id.a5);
+        a[5]=inflated.findViewById(R.id.a6);
+        a[6]=inflated.findViewById(R.id.a7);
+
         llTitle.setOnClickListener(this);
         llCategory.setOnClickListener(this);
         llDesc.setOnClickListener(this);
@@ -134,7 +160,11 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             svMain.setNestedScrollingEnabled(true);
         }
-
+        for(int i=0;i<7;i++) {
+            int myColor = Color.parseColor("#" + colors[i]);
+            l[i].setColorFilter(myColor, android.graphics.PorterDuff.Mode.SRC_IN);
+            a[i].setColorFilter(myColor, android.graphics.PorterDuff.Mode.SRC_IN);
+        }
         return v;
     }
 
@@ -221,6 +251,7 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
                 txtTime.setText(hourOfDay+" "+minute);
             }
         },hour, minute, false);
+        timePickerDialog.show();
     }
 
     private void setDatePickerDialog() {

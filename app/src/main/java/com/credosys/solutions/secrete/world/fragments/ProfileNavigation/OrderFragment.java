@@ -2,15 +2,13 @@ package com.credosys.solutions.secrete.world.fragments.ProfileNavigation;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.credosys.solutions.secrete.world.Adapters.NormalScroll.OrderSellerAdapter;
+import com.credosys.solutions.secrete.world.Adapters.NormalScroll.OrderAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.OrdersSellers;
 import com.credosys.solutions.secrete.world.R;
@@ -54,7 +52,7 @@ public class OrderFragment extends MainFragment {
         orders.add(new OrdersSellers(true));
         orders.add(new OrdersSellers(true));
 
-        OrderSellerAdapter oa=new OrderSellerAdapter(getActivity(),orders,"MY_ORDER");
+        OrderAdapter oa=new OrderAdapter(getActivity(),orders);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rvOrder.setAdapter(oa);

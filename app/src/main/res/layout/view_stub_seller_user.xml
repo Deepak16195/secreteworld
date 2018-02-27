@@ -124,12 +124,12 @@
                     android:padding="5dp"
                     android:textSize="12sp" />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="0"
-                    android:button="@drawable/checkbox_eye" />
+                <!--<CheckBox-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginHorizontal="10dp"-->
+                    <!--android:layout_weight="0"-->
+                    <!--android:button="@drawable/checkbox_eye" />-->
             </LinearLayout>
 
             <LinearLayout
@@ -193,12 +193,12 @@
                     android:padding="5dp"
                     android:textSize="12sp" />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="0"
-                    android:button="@drawable/checkbox_eye" />
+                <!--<CheckBox-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginHorizontal="10dp"-->
+                    <!--android:layout_weight="0"-->
+                    <!--android:button="@drawable/checkbox_eye" />-->
             </LinearLayout>
 
             <TextView
@@ -228,12 +228,12 @@
                     android:padding="5dp"
                     android:textSize="12sp" />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="0"
-                    android:button="@drawable/checkbox_eye" />
+                <!--<CheckBox-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginHorizontal="10dp"-->
+                    <!--android:layout_weight="0"-->
+                    <!--android:button="@drawable/checkbox_eye" />-->
             </LinearLayout>
 
             <TextView

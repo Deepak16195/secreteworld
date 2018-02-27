@@ -285,6 +285,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/btn_seller_user"
                         android:text="BE SELLER USER"
                         android:textSize="11sp"
                         android:backgroundTint="@color/customBlue"
@@ -296,6 +297,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp" />
                     <Button
+                        android:id="@+id/btn_expert_user"
                         android:text="BE EXPERT USER"
                         android:textSize="11sp"
                         android:backgroundTint="@color/customBlue"
@@ -335,6 +337,7 @@
 
 
         <Button
+            android:id="@+id/btn_get_premium"
             android:text="Get Premium"
             android:textSize="11sp"
             android:layout_marginTop="50dp"

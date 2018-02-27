@@ -225,18 +225,6 @@ public class MainActivity extends AppCompatActivity
                     case 1:
                         setFragments(17);
                         break;
-                    case 2:
-                        setFragments(18);
-                        break;
-                    case 3:
-                        setFragments(19);
-                        break;
-                    case 4:
-                        setFragments(22);
-                        break;
-                    case 5:
-                        setFragments(23);
-                        break;
                     case 6:
                         setFragments(24);
                         break;

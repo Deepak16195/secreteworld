@@ -13,8 +13,12 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ProfileRequestAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.Pojos.App.Request;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by win7 on 12-Jan-18.
@@ -40,8 +44,16 @@ public class RequestProfileFragment extends MainFragment {
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
         ((MainActivity)getActivity()).showBackButton(true);
+        List<Request> list=new ArrayList<>();
+        list.add(new Request(R.drawable.vadapav,"",""));
+        list.add(new Request(R.drawable.savpuri,"",""));
+        list.add(new Request(R.drawable.img_sabudana,"",""));
+        list.add(new Request(R.drawable.vadapav,"",""));
+        list.add(new Request(R.drawable.savpuri,"",""));
+        list.add(new Request(R.drawable.img_sabudana,"",""));
 
-        ProfileRequestAdapter pra=new ProfileRequestAdapter();
+
+        ProfileRequestAdapter pra=new ProfileRequestAdapter(list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         rvProfileRequest.setLayoutManager(layoutManager);
         rvProfileRequest.setItemAnimator(new DefaultItemAnimator());
