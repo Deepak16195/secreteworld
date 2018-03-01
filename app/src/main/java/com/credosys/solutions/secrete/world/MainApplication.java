@@ -10,7 +10,7 @@ public class MainApplication extends Application {
     private static final MainApplication ourInstance = new MainApplication();
     private boolean diary=false;
     private MainActivity mainActivity;
-    static MainApplication getInstance() {
+    public static MainApplication getInstance() {
         return ourInstance;
     }
     public MainActivity getMainActivity() {

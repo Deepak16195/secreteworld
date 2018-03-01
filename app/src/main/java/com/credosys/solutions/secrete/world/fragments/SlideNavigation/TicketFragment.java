@@ -48,7 +48,7 @@ public class TicketFragment extends MainFragment implements View.OnClickListener
         ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
         ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
 
-        View v=inflater.inflate(R.layout.fragment_common_content,null,false);
+        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
         ViewStub simpleViewStub = v.findViewById(R.id.vs_all);
         simpleViewStub.setLayoutResource(R.layout.view_stub_museum_add_concert_ticket);
         View inflated = simpleViewStub.inflate();

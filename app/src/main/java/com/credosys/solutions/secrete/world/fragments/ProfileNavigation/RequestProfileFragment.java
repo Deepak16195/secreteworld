@@ -1,6 +1,7 @@
 package com.credosys.solutions.secrete.world.fragments.ProfileNavigation;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -36,13 +37,13 @@ public class RequestProfileFragment extends MainFragment {
     }
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_profile_request,null,false);
         rvProfileRequest=v.findViewById(R.id.rv_profile_request);
 
         ((MainActivity)getActivity()).setActionBarTitle("MY REQUEST");
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
+        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
         ((MainActivity)getActivity()).showBackButton(true);
         List<Request> list=new ArrayList<>();
         list.add(new Request(R.drawable.vadapav,"",""));
@@ -51,7 +52,6 @@ public class RequestProfileFragment extends MainFragment {
         list.add(new Request(R.drawable.vadapav,"",""));
         list.add(new Request(R.drawable.savpuri,"",""));
         list.add(new Request(R.drawable.img_sabudana,"",""));
-
 
         ProfileRequestAdapter pra=new ProfileRequestAdapter(list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

@@ -7,72 +7,85 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/rl_main_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/txt_num_result"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/charcoal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
-            android:text="87" />
-        <TextView
-            android:layout_toRightOf="@+id/txt_num_result"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="12dp"
-            android:textColor="#505050"
             android:fontFamily="@font/charcoal"
+            android:text="87"
+            android:textColor="#505050"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:layout_marginStart="8dp"
-          android:layout_marginTop="12dp"
-            android:text="Results" />
-        <ImageView
-            app:srcCompat="@drawable/ic_map_blue"
-            android:layout_toLeftOf="@+id/txt_mapview"
-            android:layout_marginTop="11dp"
-            android:layout_marginRight="5dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp" />
-        <TextView
-            android:id="@+id/txt_mapview"
-            android:text="MAP VIEW"
-            android:fontFamily="@font/avenirltstd_heavy"
-            android:textSize="12sp"
-            android:layout_marginRight="10dp"
-            android:textColor="#0C6A90"
-            android:layout_marginVertical="14dp"
-            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/txt_num_result"
+            android:fontFamily="@font/charcoal"
+            android:text="Results"
+            android:textColor="#505050"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/rl_map"
+            android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_mapview"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="11dp"
+                app:srcCompat="@drawable/ic_map_blue" />
+
+            <TextView
+                android:id="@+id/txt_mapview"
+                android:layout_toRightOf="@+id/img_mapview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginVertical="14dp"
+                android:fontFamily="@font/avenirltstd_heavy"
+                android:text="MAP VIEW"
+                android:textColor="#0C6A90"
+                android:textSize="12sp" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/txt_sort"
-            android:layout_below="@+id/txt_num_result"
-            android:textSize="14sp"
-            android:text="SORT BY:"
-            android:fontFamily="@font/avenirltstd_light"
-            android:layout_marginStart="12dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_num_result"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/avenirltstd_light"
+            android:text="SORT BY:"
+            android:textSize="14sp" />
+
         <TextView
-            android:layout_toRightOf="@+id/txt_sort"
             android:id="@+id/txt_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_num_result"
+            android:layout_marginStart="4dp"
+            android:layout_toRightOf="@+id/txt_sort"
+            android:drawableRight="@drawable/ic_caret_down"
+            android:fontFamily="@font/avenirltstd_heavy"
             android:text="DISTANCE "
             android:textColor="#0C6A90"
-            android:layout_marginStart="4dp"
-            android:fontFamily="@font/avenirltstd_heavy"
-            android:textSize="14sp"
-            android:layout_below="@+id/txt_num_result"
-            android:drawableRight="@drawable/ic_caret_down"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="14sp" />
 
 
     </RelativeLayout>
@@ -82,8 +95,8 @@
         android:id="@+id/recyclerview_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="20dp"
         android:layout_marginTop="12dp"
+        android:paddingBottom="20dp"
         android:paddingHorizontal="4dp"
         android:scrollbars="vertical" />
     <!--<TextView-->

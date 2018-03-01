@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -25,6 +26,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -41,6 +43,7 @@ import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.HomeFragem
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.MyDiaryFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.RequestFragment;
 import com.credosys.solutions.secrete.world.fragments.ExploreTab.SearchByCategoryFragment;
+import com.credosys.solutions.secrete.world.fragments.MapViewFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ContentsFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ExpertFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.FriendsFragment;
@@ -57,6 +60,7 @@ import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUser
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.GetPrimiumFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ProfileFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.QuickRequestFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.RecommendedPlacesFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.SellerUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.TicketFragment;
@@ -225,6 +229,9 @@ public class MainActivity extends AppCompatActivity
                     case 1:
                         setFragments(17);
                         break;
+                    case 2:
+                        setFragments(26);
+                        break;
                     case 6:
                         setFragments(24);
                         break;
@@ -242,11 +249,17 @@ public class MainActivity extends AppCompatActivity
 
 
     void setFrameLayoutVisiblity() {
+
         frameContainer.setVisibility(View.GONE);
         viewPager.setVisibility(View.VISIBLE);
     }
 
-
+    public void configureFrameHeight(int horizontalMargin,int top){
+        FrameLayout mylayout = (FrameLayout) findViewById(R.id.frame_container);
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mylayout.getLayoutParams();
+        params.setMargins(horizontalMargin, top, horizontalMargin, 0);
+        mylayout.setLayoutParams(params);
+    }
     public void setTabLayoutColors(int tabLayoutColor, int gradient, int plusIcon, int icon, int text) {
         Resources res = getApplicationContext().getResources();
 //        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
@@ -308,6 +321,10 @@ public class MainActivity extends AppCompatActivity
         navTwo.setOnClickListener(this);
         navThree.setOnClickListener(this);
         navFour.setOnClickListener(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            frameContainer.setNestedScrollingEnabled(true);
+        }
 
     }
 
@@ -543,6 +560,16 @@ public class MainActivity extends AppCompatActivity
                     transaction.replace(R.id.frame_container, WhereEatFragment.newInstance(),"whereeat");
                     break;
             }
+
+        }
+        else if(loc>24 && loc<30){
+            switch(loc){
+                case 25:
+                    transaction.replace(R.id.frame_container, MapViewFragment.newInstance(),"mapview");
+                    break;
+                case 26:
+                    transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance(),"quickrequest");
+            }
         }
 //        transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
@@ -565,6 +592,8 @@ public class MainActivity extends AppCompatActivity
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
 
 
     public void setFragmentsCommitAllowing(int loc) {

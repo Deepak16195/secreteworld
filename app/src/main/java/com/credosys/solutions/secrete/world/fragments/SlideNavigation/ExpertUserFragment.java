@@ -33,6 +33,7 @@ public class ExpertUserFragment extends MainFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_common_content,container,false);
         ((MainActivity)getActivity()).setActionBarTitle("");
+        ((MainActivity)getActivity()).showBackButton(true);
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
         ViewStub viewStub=v.findViewById(R.id.vs_all);
         viewStub.setLayoutResource(R.layout.view_stub_expert_user);

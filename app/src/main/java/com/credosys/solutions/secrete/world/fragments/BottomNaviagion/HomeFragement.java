@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
@@ -25,22 +26,17 @@ import java.util.List;
  * Created by win7 on 21-Dec-17.
  */
 
-public class HomeFragement extends MainFragment {
-    // Store instance variables
+public class HomeFragement extends MainFragment implements View.OnClickListener{
+    RelativeLayout rlMap;
     RecyclerView rv;
     Context context;
-    // newInstance constructor for creating fragment with arguments
+
     public static HomeFragement newInstance() {
         HomeFragement fragmentFirst = new HomeFragement();
         Bundle args = new Bundle();
         fragmentFirst.setArguments(args);
         return fragmentFirst;
     }
-
-
-    // Store instance variables based on arguments passed
-
-    // Inflate the view for the fragment based on layout XML
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,16 +44,13 @@ public class HomeFragement extends MainFragment {
         rv=view.findViewById(R.id.recyclerview_home);
         context=getActivity();
 
+        rlMap=view.findViewById(R.id.rl_map);
+        rlMap.setOnClickListener(this);
 
         ((MainActivity)getActivity()).setActionBarTitle("MUMBAI");
         ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
         ((MainActivity)getActivity()).showBackButton(false);
-
-//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-
-
-
 
         HomeAdapter homeAdapter=new HomeAdapter(tempList(), new CustomItemClickListener() {
             @Override
@@ -83,5 +76,14 @@ public class HomeFragement extends MainFragment {
         al.add(new HomeContentsPlaces("Kim Gomaz","SHEV PURI","VADA PAO  is the indian version of burger...",R.drawable.img_vadapav));
 
         return al;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.rl_map:
+                ((MainActivity)getActivity()).setFragments(25);
+                break;
+        }
     }
 }
