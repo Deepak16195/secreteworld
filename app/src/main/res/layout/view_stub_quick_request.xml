@@ -1,84 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+
+    <include layout="@layout/common_assistance" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:fontFamily="@font/charcoal"
+        android:text="WHAT KIND OF HELP DO YOU NEED?"
+        android:textColor="@color/fontblack" />
+
+    <EditText
+        android:id="@+id/et_education"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/square_border"
+        android:hint="LOCATION"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textSize="12sp" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/square_border">
 
-        <include layout="@layout/common_assistance" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp"
-            android:fontFamily="@font/charcoal"
-            android:text="WHAT KIND OF HELP DO YOU NEED?"
-            android:textColor="@color/fontblack" />
-
-        <EditText
-            android:id="@+id/et_education"
+        <Spinner
+            android:id="@+id/spin_category"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/square_border"
-            android:hint="LOCATION"
-            android:inputType="text"
-            android:padding="5dp"
-            android:textSize="12sp" />
+            android:layout_height="30dp" />
+    </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/square_border">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/square_border"
+        android:gravity="top|left"
+        android:hint="ASK YOUR QUESTION"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        android:textSize="12sp" />
 
-            <Spinner
-                android:id="@+id/spin_category"
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
-        </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/avenirltstd_light"
+        android:text="MAX 200 CHARACTERS"
+        android:textSize="12dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/square_border"
-            android:gravity="top|left"
-            android:hint="ASK YOUR QUESTION"
-            android:inputType="textMultiLine"
-            android:lines="8"
-            android:maxLines="10"
-            android:minLines="6"
-            android:padding="5dp"
-            android:scrollbars="vertical"
-            android:textSize="12sp" />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="500dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/cutomGreen"
+        android:fontFamily="@font/charcoal"
+        android:letterSpacing="0.1"
+        android:text="SUBMIT"
+        android:textColor="@color/white" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/avenirltstd_light"
-            android:text="MAX 200 CHARACTERS"
-            android:textSize="12dp" />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="500dp"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@color/cutomGreen"
-            android:fontFamily="@font/charcoal"
-            android:letterSpacing="0.1"
-            android:text="SUBMIT"
-            android:textColor="@color/white" />
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

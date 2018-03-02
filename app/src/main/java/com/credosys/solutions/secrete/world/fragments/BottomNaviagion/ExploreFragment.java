@@ -49,7 +49,7 @@ public class ExploreFragment extends MainFragment  implements TabLayout.OnTabSel
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "avenirltstd_light.otf");
         ((MainActivity)getActivity()).setActionBarTitle("SECRETS AROUND YOU");
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
-        ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+//        ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
         ((MainActivity)getActivity()).showBackButton(false);
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);

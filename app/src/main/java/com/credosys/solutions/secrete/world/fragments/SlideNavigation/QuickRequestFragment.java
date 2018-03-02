@@ -36,7 +36,7 @@ public class QuickRequestFragment extends MainFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
+        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
 //        ((MainActivity)getActivity()).setActionBarTitle("");
 
 
