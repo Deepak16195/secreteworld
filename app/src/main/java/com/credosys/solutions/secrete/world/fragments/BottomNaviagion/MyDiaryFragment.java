@@ -49,7 +49,7 @@ public class MyDiaryFragment extends MainFragment/* implements View.OnClickListe
         txtMydiaryLableOne=v.findViewById(R.id.txt_mydiary_lable_one);
         txtMydiaryLableTwo=v.findViewById(R.id.txt_mydiary_lable_two);
         ((MainActivity)getActivity()).setActionBarTitle("DIARY");
-        ((MainActivity)getActivity()).  setTabLayoutColors(R.color.marineGreen, R.color.gradientColor, R.color.cutomGreen, R.color.white, R.color.white);
+//        ((MainActivity)getActivity()).  setTabLayoutColors(R.color.marineGreen, R.color.gradientColor, R.color.cutomGreen, R.color.white, R.color.white);
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
 //        mButton = (Button) v.findViewById(R.id.cardTypeBtn);
 //        ((CheckBox) v.findViewById(R.id.checkBox)).setOnCheckedChangeListener(this);

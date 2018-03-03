@@ -63,6 +63,7 @@ import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ProfileFra
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.QuickRequestFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.RecommendedPlacesFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.SellerUserFragment;
+import com.credosys.solutions.secrete.world.fragments.SlideNavigation.StrangleAnglesFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.TicketFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.WhereEatFragment;
 
@@ -232,7 +233,10 @@ public class MainActivity extends AppCompatActivity
                     case 2:
                         setFragments(26);
                         break;
-                    case 6:
+                    case 3:
+                        setFragments(27);
+                        break;
+                    case 4:
                         setFragments(24);
                         break;
                 }
@@ -247,22 +251,8 @@ public class MainActivity extends AppCompatActivity
         setUpTopHeader(R.drawable.launch_banner, Gravity.CENTER, true, true, true);
     }
 
-
-    void setFrameLayoutVisiblity() {
-
-        frameContainer.setVisibility(View.GONE);
-        viewPager.setVisibility(View.VISIBLE);
-    }
-
-    public void configureFrameHeight(int horizontalMargin,int top){
-        FrameLayout mylayout = (FrameLayout) findViewById(R.id.frame_container);
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mylayout.getLayoutParams();
-        params.setMargins(horizontalMargin, top, horizontalMargin, 0);
-        mylayout.setLayoutParams(params);
-    }
     public void setTabLayoutColors(int tabLayoutColor, int gradient, int plusIcon, int icon, int text) {
         Resources res = getApplicationContext().getResources();
-//        tabLayout.setBackgroundColor(getResources().getColor(tabLayoutColor));
         viewFixedBottom.setBackgroundColor(res.getColor(tabLayoutColor));
         imgGradient.setColorFilter(res.getColor(gradient));
         imgPlus.setColorFilter(res.getColor(plusIcon));
@@ -569,6 +559,10 @@ public class MainActivity extends AppCompatActivity
                     break;
                 case 26:
                     transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance(),"quickrequest");
+                    break;
+                case 27:
+                    transaction .replace(R.id.frame_container, StrangleAnglesFragment.newInstance(),"strangeangle");
+                    break;
             }
         }
 //        transaction.replace(R.id.frame_container, fragment);
