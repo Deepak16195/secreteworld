@@ -9,23 +9,24 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/charcoal"
         android:text="INVITE YOUR FRIENDS"
         android:textColor="@color/fontblack"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@color/grayColor" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/avenirltstd_light"
+        android:textSize="12sp"
         android:lines="5"
         android:text="Lorem Ipsum available,suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum" />
 
@@ -80,11 +81,17 @@
             app:srcCompat="@drawable/ic_whatsapp" />
 
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grayColor" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:textSize="12sp"
         android:fontFamily="@font/avenirltstd_medium"
         android:text="IMPORT CONTACTS"
@@ -154,11 +161,13 @@
     <Button
         android:paddingHorizontal="10dp"
         android:fontFamily="@font/charcoal"
-        android:textSize="12sp"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"
+        android:letterSpacing="0.1"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/cutomGreen"
         android:textColor="@color/white"
         android:text="INVITE"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="40dp" />
 </LinearLayout>

@@ -35,7 +35,7 @@ Context context;
     @Override
     public OrderHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.single_order_seller_row,parent, false);
+                .inflate(R.layout.single_seller_row,parent, false);
         final OrderHolder mViewHolder=new OrderHolder(v);
 //        v.setOnClickListener(new View.OnClickListener() {
 //            @Override

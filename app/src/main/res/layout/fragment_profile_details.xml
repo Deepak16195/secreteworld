@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <View
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -15,254 +16,395 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/shadow"
         android:padding="20dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/ic_edit" />
+
         <ScrollView
-            android:layout_marginTop="70dp"
-            android:paddingBottom="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:paddingBottom="30dp">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:text="NAME"
-                            android:textSize="12sp"
-                            android:textColor="#C3C3C3"
-                            android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                        <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="#D9D9D9"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/avenirltstd_medium"
+                                android:text="NAME"
+                                android:textColor="#C3C3C3"
+                                android:textSize="10sp" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#fff"
+                                android:paddingVertical="0dp"
+                                android:fontFamily="@font/avenirltstd_roman"
+                                android:paddingLeft="8dp"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <View
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="1dp"
+                            android:background="#D9D9D9" />
                     </LinearLayout>
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:text="SURNAME"
-                            android:textSize="12sp"
-                            android:textColor="#C3C3C3"
-                            android:fontFamily="@font/avenirltstd_medium"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                        <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="#D9D9D9"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="8dp"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="SURNAME"
+                                    android:textColor="#C3C3C3"
+                                    android:textSize="10sp" />
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#fff"
+                                    android:fontFamily="@font/avenirltstd_roman"
+                                    android:paddingLeft="8dp"
+                                    android:paddingVertical="0dp"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:button="@drawable/checkbox_eye" />
+                        </LinearLayout>
+
+                        <View
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="1dp"
+                            android:background="#D9D9D9" />
                     </LinearLayout>
-                    <CheckBox
-                        android:button="@drawable/checkbox_eye"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/avenirltstd_medium"
                             android:text="EMAIL"
-                            android:textSize="12sp"
                             android:textColor="#C3C3C3"
-                            android:fontFamily="@font/avenirltstd_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:textSize="10sp" />
+
                         <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="#D9D9D9"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#fff"
+                            android:fontFamily="@font/avenirltstd_roman"
+                            android:paddingLeft="8dp"
+                            android:paddingVertical="0dp"
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <CheckBox
-                        android:button="@drawable/checkbox_eye"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox_eye" />
+
                 </LinearLayout>
 
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <TextView
-                            android:text="PHONE"
-                            android:textSize="12sp"
-                            android:textColor="#C3C3C3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
                             android:fontFamily="@font/avenirltstd_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:text="PHONE"
+                            android:textColor="#C3C3C3"
+                            android:textSize="10sp" />
+
                         <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="#D9D9D9"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#fff"
+                            android:fontFamily="@font/avenirltstd_roman"
+                            android:paddingLeft="8dp"
+                            android:paddingVertical="0dp"
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <CheckBox
-                        android:button="@drawable/checkbox_eye"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox_eye" />
                 </LinearLayout>
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/avenirltstd_medium"
                             android:text="ADDRESS"
                             android:textColor="#C3C3C3"
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:textSize="10sp" />
+
                         <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="#D9D9D9"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#fff"
+                            android:fontFamily="@font/avenirltstd_roman"
+                            android:paddingLeft="8dp"
+                            android:paddingVertical="0dp"
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <CheckBox
-                        android:button="@drawable/checkbox_eye"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox_eye" />
                 </LinearLayout>
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:backgroundTint="#D9D9D9"
                             android:text="CITY"
-                            android:textSize="12sp"
                             android:textColor="#C3C3C3"
-                            android:backgroundTint="#D9D9D9"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:textSize="10sp" />
+
                         <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="#D9D9D9"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#fff"
+                            android:fontFamily="@font/avenirltstd_roman"
+                            android:paddingLeft="8dp"
+                            android:paddingVertical="0dp" />
                     </LinearLayout>
+
                     <CheckBox
-                        android:button="@drawable/checkbox_eye"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox_eye" />
                 </LinearLayout>
-                <LinearLayout
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/avenirltstd_medium"
                             android:text="COUNTRY"
-                            android:textSize="12sp"
                             android:textColor="#C3C3C3"
-                            android:fontFamily="@font/avenirltstd_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:textSize="10sp" />
+
                         <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="@color/fontblack"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#fff"
+                            android:fontFamily="@font/avenirltstd_roman"
+                            android:paddingLeft="8dp"
+                            android:paddingVertical="0dp"
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <CheckBox
-                        android:button="@drawable/checkbox_eye"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox_eye" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9" />
+
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <TextView
-                            android:text="DESCRIPTION"
-                            android:textSize="12sp"
-                            android:textColor="#C3C3C3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
                             android:fontFamily="@font/avenirltstd_medium"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:text="DESCRIPTION"
+                            android:textColor="#C3C3C3"
+                            android:textSize="10sp" />
+
                         <EditText
-                            android:textSize="12sp"
-                            android:fontFamily="@font/avenirltstd_roman"
-                            android:backgroundTint="#D9D9D9"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#fff"
+                            android:fontFamily="@font/avenirltstd_roman"
+                            android:paddingLeft="8dp"
+                            android:paddingVertical="0dp"
+                            android:textSize="12sp" />
                     </LinearLayout>
+
                     <CheckBox
-                        android:button="@drawable/checkbox_eye"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/checkbox_eye" />
                 </LinearLayout>
-                <TextView
-                    android:text="Click on eye icon to toggle public and private"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/avenirltstd_light"
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#D9D9D9" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenirltstd_light"
+                    android:text="Click on eye icon to toggle public and private"
+                    android:textSize="12sp" />
+
                 <Button
-                    android:text="SUBMIT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
                     android:backgroundTint="@color/cutomGreen"
                     android:fontFamily="@font/avenirltstd_roman"
+                    android:letterSpacing="0.1"
+                    android:text="SUBMIT"
                     android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp" />
+                    android:textSize="10sp" />
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>
@@ -274,11 +416,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:background="@drawable/ic_profile_man" />
-    <ImageView
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:civ_shadow="true"
         android:layout_below="@+id/img_user_profle"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/ic_profile_cam"
         android:layout_marginTop="-20dp"
-        android:layout_width="30dp"
-        android:layout_height="30dp"/>
+        android:background="@drawable/ic_profile_cam" />
 </RelativeLayout>

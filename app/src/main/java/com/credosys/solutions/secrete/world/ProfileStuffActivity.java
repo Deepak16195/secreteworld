@@ -77,7 +77,14 @@ MainApplication mainApp;
                         onBackPressed();
                         mainApp.getMainActivity().setFragmentsCommitAllowing(1,5);
                         break;
-
+                    case 6:
+                        onBackPressed();
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(3);
+                        break;
+                    case 7:
+                        onBackPressed();
+                        mainApp.getMainActivity().setFragmentsCommitAllowing(4);
+                        break;
                 }
             }
         });

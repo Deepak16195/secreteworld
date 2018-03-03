@@ -66,6 +66,7 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
         ViewStub simpleViewStub = v.findViewById(R.id.vs_all);
         simpleViewStub.setLayoutResource(R.layout.view_stub_and_content);
         View inflated = simpleViewStub.inflate();
+        TextView txtCommonAssistance=inflated.findViewById(R.id.txt_common_assistance);
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
@@ -73,7 +74,7 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
             switch (myInt){
                 case 1:
                     ((MainActivity)getActivity()).setActionBarTitle("ADD CONTENT");
-
+                    txtCommonAssistance.setText("MY CONTENT");
 
 //                    ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
 //                    ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
@@ -82,15 +83,19 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
                     break;
                 case 2:
                     ((MainActivity)getActivity()).setActionBarTitle("ADD TRIP ALBUM");
+                    txtCommonAssistance.setText("MY ALBUM");
                     break;
                 case 3:
                     ((MainActivity)getActivity()).setActionBarTitle("ADD TRIP DIARY");
+                    txtCommonAssistance.setText("MY DIARY");
                     break;
                 case 4:
                     ((MainActivity)getActivity()).setActionBarTitle("ADD ITIEARY");
+                    txtCommonAssistance.setText("MY ITIEARY");
                     break;
                 case 5:
                     ((MainActivity)getActivity()).setActionBarTitle("ADD EVENT");
+                    txtCommonAssistance.setText("MY EVENT");
                     break;
 
 

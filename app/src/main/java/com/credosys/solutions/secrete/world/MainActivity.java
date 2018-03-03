@@ -236,9 +236,6 @@ public class MainActivity extends AppCompatActivity
                     case 3:
                         setFragments(27);
                         break;
-                    case 4:
-                        setFragments(24);
-                        break;
                 }
                 drawer.closeDrawer(GravityCompat.START);
             }
@@ -283,6 +280,7 @@ public class MainActivity extends AppCompatActivity
         frameContainer = findViewById(R.id.frame_container);
         appBarLayout = findViewById(R.id.main_app_bar);
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar_layout);
+
 
         tf = Typeface.createFromAsset(getAssets(), "charcoal.ttf");
         collapsingToolbarLayout.setCollapsedTitleTypeface(tf);
@@ -552,7 +550,7 @@ public class MainActivity extends AppCompatActivity
             }
 
         }
-        else if(loc>24 && loc<30){
+        else if(loc>=25 && loc<30){
             switch(loc){
                 case 25:
                     transaction.replace(R.id.frame_container, MapViewFragment.newInstance(),"mapview");
@@ -601,6 +599,12 @@ public class MainActivity extends AppCompatActivity
                     setActionBarTitle("PROFILE");
                     transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
                     fragment = getSupportFragmentManager().findFragmentByTag("profile");
+                    break;
+                case 3:
+                    transaction.replace(R.id.frame_container, StrangleAnglesFragment.newInstance());
+                    break;
+                case 4:
+                    transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance());
                     break;
             }
         transaction.addToBackStack(null);

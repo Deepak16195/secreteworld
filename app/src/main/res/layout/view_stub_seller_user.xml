@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/avenirltstd_roman"
+        android:fontFamily="@font/avenirltstd_light"
         android:text="BECOME SELLER USER"
         android:textColor="@color/fontblack"
         android:textSize="25sp" />
@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"
+                android:textSize="12sp"
                 android:fontFamily="@font/avenirltstd_black"
                 android:text="FOLLOW THIS STEP TO START SELLING NOW"
                 android:textColor="@color/fontblack" />
@@ -102,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:textSize="12sp"
                 android:fontFamily="@font/avenirltstd_black"
                 android:text="PAYPAL ACCOUNT"
                 android:textColor="@color/fontblack" />
@@ -173,6 +175,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/avenirltstd_black"
                 android:text="TAX CODE"
+                android:textSize="12sp"
                 android:textColor="@color/fontblack" />
 
             <LinearLayout
@@ -208,6 +211,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/avenirltstd_black"
                 android:text="VAT NUMBER"
+                android:textSize="12sp"
                 android:textColor="@color/fontblack" />
 
             <LinearLayout
@@ -241,6 +245,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
+                android:textSize="12sp"
                 android:fontFamily="@font/avenirltstd_black"
                 android:lines="2"
                 android:text="JOIN THE CAMPAIGN\nFOR PREMIUM DISCOUNTS"
