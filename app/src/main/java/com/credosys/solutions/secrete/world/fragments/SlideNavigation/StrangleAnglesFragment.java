@@ -23,11 +23,13 @@ import com.nhaarman.supertooltips.ToolTipView;
  * Created by SONY on 02-03-18.
  */
 
-public class StrangleAnglesFragment extends Fragment implements View.OnClickListener, ToolTipView.OnToolTipViewClickedListener {
+public class StrangleAnglesFragment extends Fragment implements View.OnClickListener{
     LinearLayout LlAssistance;
     View inflated;
+    ViewGroup container;
     private ToolTipView mPurpleToolTipView;
-    ToolTipRelativeLayout toolTipRelativeLayout;
+//    ToolTipRelativeLayout toolTipRelativeLayout;
+
     public static StrangleAnglesFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -40,50 +42,52 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
-        ((MainActivity)getActivity()).setActionBarTitle("STRANGER ANGELS");
-        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
-        ViewStub viewStub=v.findViewById(R.id.vs_all);
+        this.container=container;
+        ((MainActivity) getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
+        ((MainActivity) getActivity()).setActionBarTitle("STRANGER ANGELS");
+        View v = inflater.inflate(R.layout.fragment_common_content, container, false);
+        ViewStub viewStub = v.findViewById(R.id.vs_all);
         viewStub.setLayoutResource(R.layout.view_stub_strangle_angles);
-       inflated=viewStub.inflate();
-        toolTipRelativeLayout = (ToolTipRelativeLayout) inflated.findViewById(R.id.activity_main_tooltipframelayout);
-        LlAssistance=inflated.findViewById(R.id.ll_assistance);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                addPurpleToolTipView();
-            }
-        }, 1300);
+        inflated = viewStub.inflate();
+//        toolTipRelativeLayout = inflated.findViewById(R.id.activity_main_tooltipframelayout);
+        LlAssistance = inflated.findViewById(R.id.ll_assistance);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                addPurpleToolTipView();
+//            }
+//        }, 1300);
         LlAssistance.setOnClickListener(this);
         return v;
     }
 
-    private void addPurpleToolTipView() {
-        ToolTip toolTip = new ToolTip()
-                .withContentView(LayoutInflater.from(getActivity()).inflate(R.layout.tooltip_assistance, null))
-                .withColor(getResources().getColor(R.color.grayColor))
-                .withAnimationType(ToolTip.AnimationType.NONE);
-
-        mPurpleToolTipView = toolTipRelativeLayout.showToolTipForView(toolTip, inflated.findViewById(R.id.ll_assistance));
-        mPurpleToolTipView.setOnToolTipViewClickedListener(this);
-    }
+//    private void addPurpleToolTipView() {
+//        ToolTip toolTip = new ToolTip()
+//                .withContentView(LayoutInflater.from(getActivity()).inflate(R.layout.tooltip_assistance, container,false))
+//                .withColor(getResources().getColor(R.color.grayColor))
+//                .withAnimationType(ToolTip.AnimationType.FROM_TOP);
+//
+//
+//        mPurpleToolTipView = toolTipRelativeLayout.showToolTipForView(toolTip, inflated.findViewById(R.id.ll_assistance));
+//        mPurpleToolTipView.setOnToolTipViewClickedListener(this);
+//    }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.ll_assistance:
-                addPurpleToolTipView();
+//                addPurpleToolTipView();
                 break;
         }
     }
 
-    @Override
-    public void onToolTipViewClicked(ToolTipView toolTipView) {
-        if (mPurpleToolTipView == null) {
-            addPurpleToolTipView();
-        } else {
-            mPurpleToolTipView.remove();
-            mPurpleToolTipView = null;
-        }
-    }
+//    @Override
+//    public void onToolTipViewClicked(ToolTipView toolTipView) {
+//        if (mPurpleToolTipView == null) {
+//            addPurpleToolTipView();
+//        } else {
+//            mPurpleToolTipView.remove();
+//            mPurpleToolTipView = null;
+//        }
+//    }
 }
