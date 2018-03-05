@@ -11,10 +11,10 @@
         android:background="#186972" />
 
     <LinearLayout
+        android:id="@+id/ll_view_stub_holder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="10dp"
         android:orientation="vertical"
        android:background="@drawable/shadow">
 

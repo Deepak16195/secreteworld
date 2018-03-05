@@ -85,7 +85,9 @@
         <item name="ttlm_font">fonts/at.ttc</item>
     </style>
 
+    <style name="simpletooltip_default" parent="@android:style/TextAppearance.Medium">
 
+    </style>
 
 
 </resources>

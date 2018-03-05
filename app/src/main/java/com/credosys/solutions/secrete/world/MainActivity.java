@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity
     Typeface tf;
     ImageView imgHomeBanner, imgPlus, navIconZero, navIconOne, navIconTwo, navIconThree, navIconFour, imgGradient, imgNavigationCross;
     View viewFixedBottom;
-    TextView txtTitle, txtMore, navTextZero, navTextOne, navTextTwo, navTextThree, navTextFour;
+    TextView txtTitle, txtMore, navTextZero, navTextOne, navTextTwo, navTextThree, navTextFour,txtToolbar;
     NonSwipeableViewPager viewPager;
     LinearLayout navZero, navOne, navTwo, navThree, navFour, bottomThird, llNav;
     Fragment fragment;
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity
     RelativeLayout rlProfileView;
     RecyclerView rvNavigation;
     MainApplication mainApp;
+
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -245,7 +247,23 @@ public class MainActivity extends AppCompatActivity
         rvNavigation.setItemAnimator(new DefaultItemAnimator());
         rvNavigation.setAdapter(navigationAdapter);
         setFragments(0);
+
         setUpTopHeader(R.drawable.launch_banner, Gravity.CENTER, true, true, true);
+    }
+
+
+
+    public void setConfigToolbar(int gradient) {
+        toolbar.setBackgroundResource(gradient);
+    }
+
+
+    public void setOverlap(int dimen) {
+        CoordinatorLayout.LayoutParams params =
+                (CoordinatorLayout.LayoutParams) frameContainer.getLayoutParams();
+        AppBarLayout.ScrollingViewBehavior behavior =
+                (AppBarLayout.ScrollingViewBehavior) params.getBehavior();
+        behavior.setOverlayTop((int)getResources().getDimension(dimen));
     }
 
     public void setTabLayoutColors(int tabLayoutColor, int gradient, int plusIcon, int icon, int text) {
@@ -280,6 +298,7 @@ public class MainActivity extends AppCompatActivity
         frameContainer = findViewById(R.id.frame_container);
         appBarLayout = findViewById(R.id.main_app_bar);
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar_layout);
+        txtToolbar=findViewById(R.id.txt_toolbar);
 
 
         tf = Typeface.createFromAsset(getAssets(), "charcoal.ttf");
@@ -370,6 +389,11 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public void setUpTxtToolbar(int visiblity,String txt){
+        txtToolbar.setVisibility(visiblity);
+        txtToolbar.setText(txt);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -456,22 +480,27 @@ public class MainActivity extends AppCompatActivity
             switch (loc) {
                 case 0:
                     transaction.replace(R.id.frame_container, HomeFragement.newInstance(), "home");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
 
                 case 1:
                     transaction.replace(R.id.frame_container, ExploreFragment.newInstance(), "explore");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
 
                 case 3:
                     transaction.replace(R.id.frame_container, RequestFragment.newInstance(), "request");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
 
                 case 4:
                     transaction.replace(R.id.frame_container, ProfileFragment.newInstance(), "diary");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
 
                 case 5:
                     transaction.replace(R.id.frame_container, SearchByCategoryFragment.newInstance(), "searchbycat");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
 
             }
@@ -480,86 +509,102 @@ public class MainActivity extends AppCompatActivity
 
                 case 6:
                     transaction.replace(R.id.frame_container, ContentsFragment.newInstance(), "contents");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 7:
                     transaction.replace(R.id.frame_container, WallFragment.newInstance(), "wall");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 8:
-
                     transaction.replace(R.id.frame_container, FriendsFragment.newInstance(), "friends");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 9:
-
                     transaction.replace(R.id.frame_container, MessagesFragment.newInstance(), "msg");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
             }
-        } else if (loc >= 11 && loc<15) {
+        } else if (loc >= 11 && loc < 15) {
             switch (loc) {
                 case 11:
                     transaction.replace(R.id.frame_container, RequestProfileFragment.newInstance(), "profilerequest");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 12:
                     transaction.replace(R.id.frame_container, OrderFragment.newInstance(), "ordersprofile");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 13:
                     transaction.replace(R.id.frame_container, SellerFragment.newInstance(), "sellerprofile");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 14:
                     transaction.replace(R.id.frame_container, ExpertFragment.newInstance(), "expert");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
             }
 
 
-        }
-        else if(loc>=15 && loc<20){
-            switch (loc){
+        } else if (loc >= 15 && loc < 20) {
+            switch (loc) {
                 case 15:
-                    transaction.replace(R.id.frame_container, ProfileDeatailsFragment.newInstance(),"profiledetails");
+                    transaction.replace(R.id.frame_container, ProfileDeatailsFragment.newInstance(), "profiledetails");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 16:
                     transaction.replace(R.id.frame_container, MuseumConcertFragment.newInstance(), "museumconcert");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 17:
-                    transaction.replace(R.id.frame_container, TicketFragment.newInstance(),"ticket");
+                    transaction.replace(R.id.frame_container, TicketFragment.newInstance(), "ticket");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 18:
-                    transaction.replace(R.id.frame_container, ExpertUserFragment.newInstance(),"expertuser");
+                    transaction.replace(R.id.frame_container, ExpertUserFragment.newInstance(), "expertuser");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 19:
-                    transaction.replace(R.id.frame_container, SellerUserFragment.newInstance(),"selleruser");
+                    transaction.replace(R.id.frame_container, SellerUserFragment.newInstance(), "selleruser");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
             }
-        }
-        else if(loc>=20 && loc<25){
-            switch(loc){
+        } else if (loc >= 20 && loc < 25) {
+            switch (loc) {
                 case 20:
-                    transaction.replace(R.id.frame_container, AddEnterTicketFragment.newInstance(),"addticket");
+                    transaction.replace(R.id.frame_container, AddEnterTicketFragment.newInstance(), "addticket");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 21:
-                    transaction.replace(R.id.frame_container, InviteFriendsFragment.newInstance(),"invitefriends");
+                    transaction.replace(R.id.frame_container, InviteFriendsFragment.newInstance(), "invitefriends");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 22:
-                    transaction.replace(R.id.frame_container, RecommendedPlacesFragment.newInstance(),"recommplace");
+                    transaction.replace(R.id.frame_container, RecommendedPlacesFragment.newInstance(), "recommplace");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 23:
-                    transaction.replace(R.id.frame_container, GetPrimiumFragment.newInstance(),"getprimium");
+                    transaction.replace(R.id.frame_container, GetPrimiumFragment.newInstance(), "getprimium");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 24:
-                    transaction.replace(R.id.frame_container, WhereEatFragment.newInstance(),"whereeat");
+                    transaction.replace(R.id.frame_container, WhereEatFragment.newInstance(), "whereeat");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
             }
 
-        }
-        else if(loc>=25 && loc<30){
-            switch(loc){
+        } else if (loc >= 25 && loc < 30) {
+            switch (loc) {
                 case 25:
-                    transaction.replace(R.id.frame_container, MapViewFragment.newInstance(),"mapview");
+                    transaction.replace(R.id.frame_container, MapViewFragment.newInstance(), "mapview");
+//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 26:
-                    transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance(),"quickrequest");
+                    transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance(), "quickrequest");
+//                    txtToolbar.setVisibility(View.VISIBLE);
                     break;
                 case 27:
-                    transaction .replace(R.id.frame_container, StrangleAnglesFragment.newInstance(),"strangeangle");
+                    transaction.replace(R.id.frame_container, StrangleAnglesFragment.newInstance(), "strangeangle");
+//                    txtToolbar.setVisibility(View.VISIBLE);
                     break;
             }
         }
@@ -586,32 +631,30 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
-
     public void setFragmentsCommitAllowing(int loc) {
         transaction = getSupportFragmentManager().beginTransaction();
-            switch (loc) {
-                case 1:
+        switch (loc) {
+            case 1:
 //                    transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
 //                    fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
-                    break;
-                case 2:
-                    setActionBarTitle("PROFILE");
-                    transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
-                    fragment = getSupportFragmentManager().findFragmentByTag("profile");
-                    break;
-                case 3:
-                    transaction.replace(R.id.frame_container, StrangleAnglesFragment.newInstance());
-                    break;
-                case 4:
-                    transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance());
-                    break;
-            }
+                break;
+            case 2:
+                setActionBarTitle("PROFILE");
+                transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
+                fragment = getSupportFragmentManager().findFragmentByTag("profile");
+                break;
+            case 3:
+                transaction.replace(R.id.frame_container, StrangleAnglesFragment.newInstance());
+                break;
+            case 4:
+                transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance());
+                break;
+        }
         transaction.addToBackStack(null);
         transaction.commitAllowingStateLoss();
     }
 
-    public void setFragmentsCommitAllowing(int loc,int titleIndex) {
+    public void setFragmentsCommitAllowing(int loc, int titleIndex) {
         transaction = getSupportFragmentManager().beginTransaction();
         switch (loc) {
             case 1:

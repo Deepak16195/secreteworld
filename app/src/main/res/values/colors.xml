@@ -23,10 +23,17 @@
     <color name="lable_four">#D68845</color>
     <color name="Historical_place">#B55218</color>
     <color name="customChocolate">#B4B4B4</color>
+    <color name="customRed">#F6472E</color>
+
 
     <color name="card_background">#ffffff</color>
     <color name="card_shadow_1">#d4d4d4</color>
     <color name="card_shadow_2">#dddddd</color>
     <color name="card_detailing">#eee</color>
+
+    <color name="simpletooltip_background">@color/colorAccent</color>
+    <color name="simpletooltip_text">@android:color/primary_text_light</color>
+    <color name="simpletooltip_arrow">@color/colorAccent</color>
+
 
 </resources>

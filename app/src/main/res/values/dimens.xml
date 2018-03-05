@@ -14,4 +14,16 @@
     <dimen name="ttlm_default_corner_radius">4dip</dimen>
     <dimen name="ttlm_default_stroke_weight">0dip</dimen>
     <dimen name="ttlm_default_elevation">2dp</dimen>
+
+
+
+    <dimen name="simpletooltip_overlay_offset">10dp</dimen>
+    <dimen name="simpletooltip_margin">10dp</dimen>
+    <dimen name="simpletooltip_padding">8dp</dimen>
+    <dimen name="simpletooltip_arrow_width">30dp</dimen>
+    <dimen name="simpletooltip_arrow_height">15dp</dimen>
+    <dimen name="simpletooltip_animation_padding">4dp</dimen>
+
+    <dimen name="collapoverlap">150dp</dimen>
+    <dimen name="collapsoverlapzero">0dp</dimen>
 </resources>
