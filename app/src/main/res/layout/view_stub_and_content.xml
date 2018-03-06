@@ -88,14 +88,16 @@
                         android:id="@+id/et_addcontent_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="12sp"
                         android:background="@drawable/square_border"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:hint="assigning meaningfull title"
-                        android:padding="10dp" />
+                        android:hint="ASSIGNING MEANIGNFUL TITLE"
+                        android:padding="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textSize="10sp"
                         android:layout_alignParentRight="true"
                         android:layout_below="@+id/et_addcontent_title"
                         android:text="MAX 80 CHARECTERS" />
@@ -197,15 +199,17 @@
                         android:id="@+id/et_addcontent_category"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="12sp"
                         android:background="@drawable/square_border"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:hint="assigning meaningfull title"
-                        android:padding="10dp" />
+                        android:hint="ASSIGNING MEANINGFUL TITLE"
+                        android:padding="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:textSize="12sp"
                         android:layout_below="@+id/et_addcontent_category"
                         android:text="MAX 80 CHARECTERS" />
                 </RelativeLayout>
@@ -305,6 +309,8 @@
                         android:id="@+id/et_addcontent_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:gravity="top"
                         android:background="@drawable/square_border"
                         android:fontFamily="@font/avenirltstd_medium"
                         android:hint="BRIF DESCRIPTION"
@@ -315,6 +321,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:textSize="12sp"
                         android:layout_below="@+id/et_addcontent_description"
                         android:text="MAX 500 CHARECTERS" />
                 </RelativeLayout>
@@ -571,15 +578,17 @@
                         android:id="@+id/et_addcontent_tag"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="12sp"
                         android:background="@drawable/square_border"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:hint="Tag Your Content"
-                        android:padding="10dp" />
+                        android:hint="TAG YOUR CONTENT"
+                        android:padding="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:textSize="12sp"
                         android:layout_below="@+id/et_addcontent_tag"
                         android:text="MAX 80 CHARECTERS" />
                 </RelativeLayout>
@@ -814,10 +823,11 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="12sp"
                         android:background="@drawable/square_border"
                         android:fontFamily="@font/avenirltstd_medium"
-                        android:hint="Type Location"
-                        android:padding="10dp" />
+                        android:hint="TYPE LOCATION"
+                        android:padding="5dp" />
                 </RelativeLayout>
             </RelativeLayout>
             <Button

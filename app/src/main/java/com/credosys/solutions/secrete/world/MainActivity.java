@@ -8,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -84,8 +85,7 @@ public class MainActivity extends AppCompatActivity
     Typeface tf;
     ImageView imgHomeBanner, imgPlus, navIconZero, navIconOne, navIconTwo, navIconThree, navIconFour, imgGradient/*, imgNavigationCross*/;
     View viewFixedBottom;
-    TextView txtTitle, txtMore, navTextZero, navTextOne, navTextTwo, navTextThree, navTextFour,txtToolbar;
-    NonSwipeableViewPager viewPager;
+    TextView txtTitle, txtMore, navTextZero, navTextOne, navTextTwo, navTextThree, navTextFour, txtToolbar;
     LinearLayout navZero, navOne, navTwo, navThree, navFour, bottomThird, llNav;
     Fragment fragment;
     FragmentTransaction transaction;
@@ -143,9 +143,11 @@ public class MainActivity extends AppCompatActivity
 
 
         List<Navigation> list = new ArrayList<Navigation>();
+        list.add(new Navigation("MY CONTENT", R.drawable.ic_my_content));
+        list.add(new Navigation("SELL TICKET", R.drawable.ic_ticket));
         list.add(new Navigation("CHANGE LOCATIONS", R.drawable.ic_nav_location));
         list.add(new Navigation("SELECT LANGUAGE", R.drawable.ic_nav_language));
-        list.add(new Navigation("SELECT RATE THE APP", R.drawable.ic_nav_star));
+//        list.add(new Navigation("SELECT RATE THE APP", R.drawable.ic_nav_star));
         list.add(new Navigation("TERMS & CONDITIONS", R.drawable.ic_nav_terms_conditions));
         list.add(new Navigation("PRIVACY POLICY", R.drawable.ic_nav_privacy_policy));
         list.add(new Navigation("SETTINGS", R.drawable.ic_nav_settings));
@@ -156,16 +158,22 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(View v, int position) {
                 switch (position) {
                     case 0:
-                        setFragments(16);
+                      Handler handler=new Handler();
+                      handler.postDelayed(new Runnable() {
+                          @Override
+                          public void run() {
+                              openMore();
+                          }
+                      },500);
                         break;
                     case 1:
                         setFragments(17);
                         break;
                     case 2:
-                        setFragments(26);
+
                         break;
                     case 3:
-                        setFragments(27);
+
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);
@@ -181,18 +189,23 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
     public void setConfigToolbar(int gradient) {
         toolbar.setBackgroundResource(gradient);
     }
 
+    public void lockDrawer() {
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+    }
+    public void unlockDrawer(){
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+    }
 
     public void setOverlap(int dimen) {
         CoordinatorLayout.LayoutParams params =
                 (CoordinatorLayout.LayoutParams) frameContainer.getLayoutParams();
         AppBarLayout.ScrollingViewBehavior behavior =
                 (AppBarLayout.ScrollingViewBehavior) params.getBehavior();
-        behavior.setOverlayTop((int)getResources().getDimension(dimen));
+        behavior.setOverlayTop((int) getResources().getDimension(dimen));
     }
 
     public void setTabLayoutColors(int tabLayoutColor, int gradient, int plusIcon, int icon, int text) {
@@ -227,7 +240,7 @@ public class MainActivity extends AppCompatActivity
         frameContainer = findViewById(R.id.frame_container);
         appBarLayout = findViewById(R.id.main_app_bar);
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar_layout);
-        txtToolbar=findViewById(R.id.txt_toolbar);
+        txtToolbar = findViewById(R.id.txt_toolbar);
 
 
         tf = Typeface.createFromAsset(getAssets(), "charcoal.ttf");
@@ -271,10 +284,7 @@ public class MainActivity extends AppCompatActivity
 
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-
-
-        else if (fragment != null) {
+        } else if (fragment != null) {
             if (fragment instanceof HomeFragement || fragment instanceof ExploreFragment || fragment instanceof RequestFragment || fragment instanceof MyDiaryFragment)
                 finish();
         } else if (fragment != null && fragment.getTag().equalsIgnoreCase("wall")) {
@@ -308,7 +318,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void setUpTxtToolbar(int visiblity,String txt){
+    public void setUpTxtToolbar(int visiblity, String txt) {
         txtToolbar.setVisibility(visiblity);
         txtToolbar.setText(txt);
     }
@@ -430,22 +440,18 @@ public class MainActivity extends AppCompatActivity
             switch (loc) {
                 case 20:
                     transaction.replace(R.id.frame_container, AddEnterTicketFragment.newInstance(), "addticket");
-//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 21:
                     transaction.replace(R.id.frame_container, InviteFriendsFragment.newInstance(), "invitefriends");
                     break;
                 case 22:
                     transaction.replace(R.id.frame_container, RecommendedPlacesFragment.newInstance(), "recommplace");
-//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 23:
                     transaction.replace(R.id.frame_container, GetPrimiumFragment.newInstance(), "getprimium");
-//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 24:
                     transaction.replace(R.id.frame_container, WhereEatFragment.newInstance(), "whereeat");
-//                    txtToolbar.setVisibility(View.GONE);
                     break;
             }
 
@@ -453,19 +459,15 @@ public class MainActivity extends AppCompatActivity
             switch (loc) {
                 case 25:
                     transaction.replace(R.id.frame_container, MapViewFragment.newInstance(), "mapview");
-//                    txtToolbar.setVisibility(View.GONE);
                     break;
                 case 26:
                     transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance(), "quickrequest");
-//                    txtToolbar.setVisibility(View.VISIBLE);
                     break;
                 case 27:
                     transaction.replace(R.id.frame_container, StrangleAnglesFragment.newInstance(), "strangeangle");
-//                    txtToolbar.setVisibility(View.VISIBLE);
                     break;
             }
         }
-//        transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
@@ -484,8 +486,6 @@ public class MainActivity extends AppCompatActivity
         transaction = getSupportFragmentManager().beginTransaction();
         switch (loc) {
             case 1:
-//                    transaction.replace(R.id.frame_container, AddContentFragment.newInstance(), "addcontent");
-//                    fragment = getSupportFragmentManager().findFragmentByTag("addcontent");
                 break;
             case 2:
                 setActionBarTitle("PROFILE");
@@ -499,8 +499,8 @@ public class MainActivity extends AppCompatActivity
                 transaction.replace(R.id.frame_container, QuickRequestFragment.newInstance());
                 break;
             case 5:
-            transaction.replace(R.id.frame_container, TicketFragment.newInstance(), "ticket");
-            break;
+                transaction.replace(R.id.frame_container, TicketFragment.newInstance(), "ticket");
+                break;
         }
         transaction.addToBackStack(null);
         transaction.commitAllowingStateLoss();
@@ -547,6 +547,11 @@ public class MainActivity extends AppCompatActivity
         appBarLayout.setExpanded(isExpanded, isExpandedAnimate);
     }
 
+    public void openMore(){
+        Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
+        startActivity(i2);
+        overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
+    }
     @Override
     public void onClick(View view) {
 
@@ -560,9 +565,10 @@ public class MainActivity extends AppCompatActivity
                 setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
                 break;
             case R.id.nav_two:
-                Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
-                startActivity(i2);
-                overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
+                openMore();
+//                Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
+//                startActivity(i2);
+//                overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
                 break;
             case R.id.nav_three:
                 setFragments(3);

@@ -41,6 +41,7 @@ public class ExpertFragment extends MainFragment {
         View v=inflater.inflate(R.layout.fragment_expert,null,false);
 
         ((MainActivity)getActivity()).setActionBarTitle("EXPERT");
+        ((MainActivity)getActivity()).lockDrawer();
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
         ((MainActivity)getActivity()).showBackButton(true);

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
@@ -25,6 +27,7 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
     View inflated;
     ViewGroup container;
     RelativeLayout rlBgBlue;
+    TextView txtCommonAssistance;
 
     public static StrangleAnglesFragment newInstance() {
 
@@ -42,6 +45,7 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
         ((MainActivity) getActivity()).setUpTopHeader(R.drawable.launch_banner, Gravity.TOP, false, true, false);
         ((MainActivity) getActivity()).setActionBarTitle(" ");
         ((MainActivity) getActivity()).setCollpsingImage(R.drawable.stranger_angels);
+
         init();
         View v = inflater.inflate(R.layout.fragment_common_content, container, false);
         rlBgBlue=v.findViewById(R.id.rl_bg_blue);
@@ -52,6 +56,8 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
         viewStub.setLayoutResource(R.layout.view_stub_strangle_angles);
         inflated = viewStub.inflate();
         LlAssistance = inflated.findViewById(R.id.ll_assistance);
+        txtCommonAssistance=inflated.findViewById(R.id.txt_common_assistance);
+        txtCommonAssistance.setText(" ");
         LlAssistance.setOnClickListener(this);
         return v;
     }

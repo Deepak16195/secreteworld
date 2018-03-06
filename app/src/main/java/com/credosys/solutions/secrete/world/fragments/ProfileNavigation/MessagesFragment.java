@@ -37,6 +37,7 @@ public class MessagesFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)getActivity()).lockDrawer();
         View v=inflater.inflate(R.layout.fragment_messages,null,false);
         ((MainActivity)getActivity()).setActionBarTitle("MY MESSAGE");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);

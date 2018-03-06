@@ -44,7 +44,7 @@ public class FriendsFragment extends MainFragment implements View.OnClickListene
         ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
         ((MainActivity) getActivity()).showBackButton(true);
-
+        ((MainActivity)getActivity()).lockDrawer();
         Button btnInvite=v.findViewById(R.id.btn_invite);
         rvFriends = v.findViewById(R.id.rv_friends);
 

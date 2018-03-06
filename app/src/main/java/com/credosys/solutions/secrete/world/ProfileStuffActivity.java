@@ -42,7 +42,7 @@ MainApplication mainApp;
         list.add(new ProfileStuff(R.drawable.profile_stuff_pencil,"ADD\nCONTENT"));
         list.add(new ProfileStuff(R.drawable.profile_stuff_cam,"ADD TRIP \n ALBUM"));
         list.add(new ProfileStuff(R.drawable.profile_stuff_trip,"ADD TRIP \n DIARY"));
-        list.add(new ProfileStuff(R.drawable.profile_stuff_location,"ADD \n ITIEARY"));
+        list.add(new ProfileStuff(R.drawable.profile_stuff_location,"ADD \n ITINERARY"));
         list.add(new ProfileStuff(R.drawable.profile_stuff_calendar,"ADD \n EVENT"));
         list.add(new ProfileStuff(R.drawable.profile_stuff_drama,"MUSEUMS &\nCONCERTS"));
         list.add(new ProfileStuff(R.drawable.main_screens_23,"STRANGER\nANDGELS"));

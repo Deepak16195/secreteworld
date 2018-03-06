@@ -60,6 +60,7 @@ public class ContentsFragment extends MainFragment implements View.OnClickListen
         btnPublish.setOnClickListener(this);
 
         ((MainActivity)getActivity()).setActionBarTitle("MY CONTENT");
+        ((MainActivity)getActivity()).lockDrawer();
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity)getActivity()).showBackButton(true);
 

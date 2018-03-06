@@ -38,6 +38,7 @@ public class RequestProfileFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
         View v=inflater.inflate(R.layout.fragment_profile_request,null,false);
         rvProfileRequest=v.findViewById(R.id.rv_profile_request);
 
@@ -45,6 +46,7 @@ public class RequestProfileFragment extends MainFragment {
         ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
         ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).lockDrawer();
         List<Request> list=new ArrayList<>();
         list.add(new Request(R.drawable.vadapav,"",""));
         list.add(new Request(R.drawable.savpuri,"",""));

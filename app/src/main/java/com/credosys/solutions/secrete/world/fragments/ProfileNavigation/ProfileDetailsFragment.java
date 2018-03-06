@@ -32,8 +32,10 @@ public class ProfileDetailsFragment extends MainFragment implements View.OnClick
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)getActivity()).lockDrawer();
         View v = inflater.inflate(R.layout.fragment_profile_details, container, false);
         ((MainActivity) getActivity()).setActionBarTitle("DETAILS");
+        ((MainActivity) getActivity()).lockDrawer();
         ((MainActivity) getActivity()).showBackButton(true);
         ((MainActivity) getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
 

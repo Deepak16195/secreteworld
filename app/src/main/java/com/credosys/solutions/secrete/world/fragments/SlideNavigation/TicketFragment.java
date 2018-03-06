@@ -47,7 +47,7 @@ public class TicketFragment extends MainFragment implements View.OnClickListener
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         ((MainActivity)getActivity()).setActionBarTitle("MUSEUMS & CONCERTS");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.NO_GRAVITY);
+        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
         ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
 

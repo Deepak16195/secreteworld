@@ -38,6 +38,7 @@ public class SellerFragment extends MainFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_orders_seller,null,false);
         ((MainActivity)getActivity()).setActionBarTitle("SELLERS");
+        ((MainActivity)getActivity()).lockDrawer();
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
 //        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
         ((MainActivity)getActivity()).showBackButton(true);

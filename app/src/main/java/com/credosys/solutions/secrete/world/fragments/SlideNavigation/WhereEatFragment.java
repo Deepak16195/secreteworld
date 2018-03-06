@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.CustomPagerAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
@@ -72,9 +74,8 @@ public class WhereEatFragment extends MainFragment implements View.OnClickListen
     }
     private void showReviewDialog(){
         Dialog dlg=new Dialog(getActivity());
+        dlg.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dlg.setContentView(R.layout.dialog_review);
-
-
         dlg.show();
     }
 }

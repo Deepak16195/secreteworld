@@ -39,6 +39,8 @@ public class ProfileFragment extends MainFragment implements View.OnClickListene
         profileNestedScrollView.setNestedScrollingEnabled(false);
 
         assert ((MainActivity)getActivity()) != null;
+
+        ((MainActivity)getActivity()).unlockDrawer();
         ((MainActivity)getActivity()).setActionBarTitle("PROFILE");
         ((MainActivity)getActivity()).setExpandableTitle(Gravity.NO_GRAVITY);
         ((MainActivity)getActivity()).showBackButton(false);

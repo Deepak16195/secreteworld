@@ -35,6 +35,7 @@ public class OrderFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)getActivity()).lockDrawer();
         View v=inflater.inflate(R.layout.fragment_orders_seller,null,false);
         ((MainActivity)getActivity()).setActionBarTitle("MY ORDER");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);

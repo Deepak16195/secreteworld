@@ -31,6 +31,7 @@ public class InviteFriendsFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)getActivity()).lockDrawer();
        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
         ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
         ViewStub viewStub=v.findViewById(R.id.vs_all);

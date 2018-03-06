@@ -59,6 +59,7 @@ public class WallFragment extends MainFragment implements View.OnClickListener{
         ((MainActivity)getActivity()).setActionBarTitle("MY WALL");
 //        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity)getActivity()).showBackButton(true);
+        ((MainActivity)getActivity()).lockDrawer();
 
         WallAdapter wa=new WallAdapter();
 
