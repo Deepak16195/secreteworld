@@ -18,7 +18,7 @@ import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>{
     List<HomeContentsPlaces> list;
-    CustomItemClickListener listener;
+    private CustomItemClickListener listener;
     public HomeAdapter(List<HomeContentsPlaces> list,CustomItemClickListener listener){
         this.list=list;
         this.listener=listener;

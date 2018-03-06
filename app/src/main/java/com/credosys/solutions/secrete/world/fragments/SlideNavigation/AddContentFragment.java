@@ -24,6 +24,7 @@ import android.widget.TimePicker;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 import java.util.Calendar;
@@ -34,7 +35,7 @@ import java.util.Calendar;
  */
 
 public class AddContentFragment extends MainFragment implements View.OnClickListener {
-    LinearLayout llMain,rlPicExpand;
+    LinearLayout llMain,rlPicExpand,LlAssistance;
     RelativeLayout llTitle,llCategory,llDesc,llExtdesc,llTag,llPic,llLocation;
     RelativeLayout rlTitleExpand,rlCategoryExpand,rlDescExpand,rlExtdescExpand,rlTagExpand,rlLocationExpand;
     ScrollView svMain;
@@ -90,15 +91,13 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
                     txtCommonAssistance.setText("MY DIARY");
                     break;
                 case 4:
-                    ((MainActivity)getActivity()).setActionBarTitle("ADD ITIEARY");
-                    txtCommonAssistance.setText("MY ITIEARY");
+                    ((MainActivity)getActivity()).setActionBarTitle("ADD ITINERARY");
+                    txtCommonAssistance.setText("MY ITINERARY");
                     break;
                 case 5:
                     ((MainActivity)getActivity()).setActionBarTitle("ADD EVENT");
                     txtCommonAssistance.setText("MY EVENT");
                     break;
-
-
 
             }
             ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
@@ -126,6 +125,7 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
         llTime=inflated.findViewById(R.id.ll_time);
         txtDate=inflated.findViewById(R.id.txt_date);
         txtTime=inflated.findViewById(R.id.txt_time);
+        LlAssistance = inflated.findViewById(R.id.ll_assistance);
 
 
         l=new ImageView[7];
@@ -155,6 +155,7 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
         llLocation.setOnClickListener(this);
         llDate.setOnClickListener(this);
         llTime.setOnClickListener(this);
+        LlAssistance.setOnClickListener(this);
 
         mYear = calendar.get(Calendar.YEAR);
         mMonth = calendar.get(Calendar.MONTH);
@@ -244,6 +245,9 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
                 break;
             case R.id.ll_time:
                 setTime();
+                break;
+            case R.id.ll_assistance:
+                new CommonAssistance(getActivity(),LlAssistance).show();
                 break;
 
         }

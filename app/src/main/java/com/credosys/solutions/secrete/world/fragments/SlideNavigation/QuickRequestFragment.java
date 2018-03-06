@@ -16,15 +16,16 @@ import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by credosys on 1/3/18.
  */
 
-public class QuickRequestFragment extends MainFragment {
+public class QuickRequestFragment extends MainFragment implements View.OnClickListener {
     RelativeLayout rlBgBlue;
-
+    LinearLayout LlAssistance;
     public static QuickRequestFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -41,6 +42,7 @@ public class QuickRequestFragment extends MainFragment {
         ((MainActivity) getActivity()).setUpTopHeader(R.drawable.launch_banner, Gravity.NO_GRAVITY, false, true, false);
         ((MainActivity) getActivity()).setActionBarTitle("QUICK REQUEST");
         ((MainActivity) getActivity()).setActionBarTitle(" ");
+        ((MainActivity) getActivity()).setCollpsingImage(R.drawable.quick_request);
         init();
         View v = inflater.inflate(R.layout.fragment_common_content, container, false);
         rlBgBlue = v.findViewById(R.id.rl_bg_blue);
@@ -50,6 +52,8 @@ public class QuickRequestFragment extends MainFragment {
         ViewStub viewStub = v.findViewById(R.id.vs_all);
         viewStub.setLayoutResource(R.layout.view_stub_quick_request);
         View inflated = viewStub.inflate();
+        LlAssistance = inflated.findViewById(R.id.ll_assistance);
+        LlAssistance.setOnClickListener(this);
         TextView pageTitle = inflated.findViewById(R.id.txt_common_assistance);
         pageTitle.setText("NEED HELP?");
         Spinner spinCategory = inflated.findViewById(R.id.spin_category);
@@ -61,7 +65,7 @@ public class QuickRequestFragment extends MainFragment {
     private void init() {
         ((MainActivity) getActivity()).setUpTxtToolbar(View.VISIBLE,"QUICK REQUEST");
         ((MainActivity) getActivity()).setOverlap(R.dimen.collapoverlap);
-        ((MainActivity) getActivity()).setConfigToolbar(R.drawable.gradiant_toolbar);
+//        ((MainActivity) getActivity()).setConfigToolbar(R.drawable.gradiant_toolbar);
     }
 
     @Override
@@ -75,6 +79,15 @@ public class QuickRequestFragment extends MainFragment {
         super.onStop();
         ((MainActivity) getActivity()).setUpTxtToolbar(View.GONE,"");
         ((MainActivity) getActivity()).setOverlap(R.dimen.collapsoverlapzero);
-        ((MainActivity) getActivity()).setConfigToolbar(0);
+//        ((MainActivity) getActivity()).setConfigToolbar(0);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.ll_assistance:
+                new CommonAssistance(getActivity(),LlAssistance).show();
+                break;
+        }
     }
 }

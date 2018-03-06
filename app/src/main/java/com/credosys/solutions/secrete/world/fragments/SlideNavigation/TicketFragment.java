@@ -13,12 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.TicketAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.Pojos.App.Ticket;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 import com.vipulasri.ticketview.TicketView;
 
@@ -31,6 +33,7 @@ import java.util.List;
 
 public class TicketFragment extends MainFragment implements View.OnClickListener{
     ImageView imgTicketAdd;
+    LinearLayout LlAssistance;
     public static TicketFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -52,6 +55,8 @@ public class TicketFragment extends MainFragment implements View.OnClickListener
         ViewStub simpleViewStub = v.findViewById(R.id.vs_all);
         simpleViewStub.setLayoutResource(R.layout.view_stub_museum_add_concert_ticket);
         View inflated = simpleViewStub.inflate();
+        LlAssistance = inflated.findViewById(R.id.ll_assistance);
+
         imgTicketAdd=inflated.findViewById(R.id.img_ticket_add);
         TextView txtCommonAssistance=inflated.findViewById(R.id.txt_common_assistance);
         txtCommonAssistance.setText("TICKETS");
@@ -71,7 +76,7 @@ public class TicketFragment extends MainFragment implements View.OnClickListener
         TicketView ticketView=inflated.findViewById(R.id.ticketView);
 
         imgTicketAdd.setOnClickListener(this);
-
+        LlAssistance.setOnClickListener(this);
         return v;
     }
 
@@ -80,6 +85,9 @@ public class TicketFragment extends MainFragment implements View.OnClickListener
         switch (v.getId()){
             case R.id.img_ticket_add:
                 ((MainActivity)getActivity()).setFragments(20);
+                break;
+            case R.id.ll_assistance:
+                new CommonAssistance(getActivity(),LlAssistance).show();
                 break;
         }
     }

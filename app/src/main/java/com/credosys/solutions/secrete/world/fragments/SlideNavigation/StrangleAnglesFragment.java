@@ -41,6 +41,7 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
         this.container=container;
         ((MainActivity) getActivity()).setUpTopHeader(R.drawable.launch_banner, Gravity.TOP, false, true, false);
         ((MainActivity) getActivity()).setActionBarTitle(" ");
+        ((MainActivity) getActivity()).setCollpsingImage(R.drawable.stranger_angels);
         init();
         View v = inflater.inflate(R.layout.fragment_common_content, container, false);
         rlBgBlue=v.findViewById(R.id.rl_bg_blue);
@@ -66,7 +67,7 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
     private void init(){
         ((MainActivity)getActivity()).setUpTxtToolbar(View.VISIBLE,"STRANGER ANGELS");
         ((MainActivity) getActivity()).setOverlap(R.dimen.collapoverlap);
-        ((MainActivity) getActivity()).setConfigToolbar(R.drawable.gradiant_toolbar);
+//        ((MainActivity) getActivity()).setConfigToolbar(R.drawable.gradiant_toolbar);
     }
     @Override
     public void onResume() {
@@ -79,6 +80,6 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
         super.onStop();
         ((MainActivity)getActivity()).setUpTxtToolbar(View.GONE,"");
         ((MainActivity) getActivity()).setOverlap(R.dimen.collapsoverlapzero);
-        ((MainActivity) getActivity()).setConfigToolbar(0);
+//        ((MainActivity) getActivity()).setConfigToolbar(0);
     }
 }

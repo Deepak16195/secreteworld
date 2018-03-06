@@ -6,13 +6,13 @@
     android:orientation="vertical"
     android:paddingTop="20dp">
 
-    <ImageView
-        android:id="@+id/img_navigation_cross"
-        app:srcCompat="@drawable/ic_cross_profile_stuff"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:layout_gravity="end"
-        android:layout_marginRight="10dp" />
+    <!--<ImageView-->
+        <!--android:id="@+id/img_navigation_cross"-->
+        <!--app:srcCompat="@drawable/ic_cross_profile_stuff"-->
+        <!--android:layout_width="22dp"-->
+        <!--android:layout_height="22dp"-->
+        <!--android:layout_gravity="end"-->
+        <!--android:layout_marginRight="10dp" />-->
 
     <RelativeLayout
         android:id="@+id/rl_profile_view"

@@ -10,19 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
 import com.credosys.solutions.secrete.world.R;
+import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 /**
  * Created by credosys on 20/2/18.
  */
 
-public class AddEnterTicketFragment extends MainFragment {
-
+public class AddEnterTicketFragment extends MainFragment implements View.OnClickListener {
+    LinearLayout LlAssistance;
     public static AddEnterTicketFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -42,6 +44,8 @@ public class AddEnterTicketFragment extends MainFragment {
         viewStub.setLayoutResource(R.layout.view_stub_add_enter_ticket);
         View inflated=viewStub.inflate();
 
+        LlAssistance = inflated.findViewById(R.id.ll_assistance);
+        LlAssistance.setOnClickListener(this);
         TextView txtCommonAssistance=inflated.findViewById(R.id.txt_common_assistance);
         txtCommonAssistance.setText("ENTER A TICKET");
 
@@ -57,5 +61,14 @@ public class AddEnterTicketFragment extends MainFragment {
         spinPerUnit.setAdapter(adapterPerUnit);
         spinCurrency.setAdapter(adapterCurrency);
         return v;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.ll_assistance:
+                new CommonAssistance(getActivity(),LlAssistance).show();
+                break;
+        }
     }
 }
