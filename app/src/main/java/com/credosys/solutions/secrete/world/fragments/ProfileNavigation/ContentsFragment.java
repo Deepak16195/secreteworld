@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ContentsAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.HomeContentsPlaces;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -33,7 +34,7 @@ public class ContentsFragment extends MainFragment implements View.OnClickListen
     RecyclerView rvContents;
     Button btnPublish;
     CardView cvNormalText,cvPublish;
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static ContentsFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -59,10 +60,10 @@ public class ContentsFragment extends MainFragment implements View.OnClickListen
         cvNormalText.setOnClickListener(this);
         btnPublish.setOnClickListener(this);
 
-        ((MainActivity)getActivity()).setActionBarTitle("MY CONTENT");
-        ((MainActivity)getActivity()).lockDrawer();
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).showBackButton(true);
+        mainApp.setActionBarTitle("MY CONTENT");
+        mainApp.lockDrawer();
+//        mainApp.setExpandableTitle(Gravity.CENTER);
+        mainApp.showBackButton(true);
 
 //
 //        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

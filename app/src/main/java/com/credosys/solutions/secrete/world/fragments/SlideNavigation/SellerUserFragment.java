@@ -17,6 +17,7 @@ import android.view.ViewStub;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -25,7 +26,7 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
  */
 
 public class SellerUserFragment extends MainFragment {
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     TextView txtPaypal;
     public static SellerUserFragment newInstance() {
 
@@ -40,9 +41,9 @@ public class SellerUserFragment extends MainFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_common_content, container, false);
-        ((MainActivity)getActivity()).setActionBarTitle(" ");
-        ((MainActivity)getActivity()).showBackButton(true);
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+        mainApp.setActionBarTitle(" ");
+        mainApp.showBackButton(true);
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
 
 
         ViewStub viewStub = v.findViewById(R.id.vs_all);

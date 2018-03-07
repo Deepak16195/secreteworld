@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.GoogleHorizontalAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.ExploreGooglePlaces;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -32,6 +33,7 @@ public class GooglePlacesFragment extends MainFragment implements View.OnClickLi
     RecyclerView rvFamous;
     SeekBar seekbarGoogle;
     TextView txtRadius;
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static GooglePlacesFragment newInstance() {
         GooglePlacesFragment fragmentFirst = new GooglePlacesFragment();
 //        Bundle args = new Bundle();
@@ -71,8 +73,8 @@ public class GooglePlacesFragment extends MainFragment implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.btn_category){
-            ((MainActivity)getActivity()).setFragments(5);
-            ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+            mainApp.setFragments(5);
+            mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
         }
     }
 

@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.CustomPagerAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -26,7 +27,7 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
 public class WhereEatFragment extends MainFragment implements View.OnClickListener{
     Context context;
     ImageView imgReview;
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static WhereEatFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -39,8 +40,8 @@ public class WhereEatFragment extends MainFragment implements View.OnClickListen
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        ((MainActivity)getActivity()).showBackButton(true);
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+        mainApp.showBackButton(true);
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
 
         context=getActivity();
         View v=inflater.inflate(R.layout.fragment_common_content,container,false);

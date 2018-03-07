@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -25,6 +26,7 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 public class AddEnterTicketFragment extends MainFragment implements View.OnClickListener {
     LinearLayout LlAssistance;
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static AddEnterTicketFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -38,8 +40,8 @@ public class AddEnterTicketFragment extends MainFragment implements View.OnClick
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View v=inflater.inflate(R.layout.fragment_common_content,container,false);
-        ((MainActivity)getActivity()).setActionBarTitle("MUSEUMS & CONCERTS");
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+        mainApp.setActionBarTitle("MUSEUMS & CONCERTS");
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
         ViewStub viewStub=v.findViewById(R.id.vs_all);
         viewStub.setLayoutResource(R.layout.view_stub_add_enter_ticket);
         View inflated=viewStub.inflate();

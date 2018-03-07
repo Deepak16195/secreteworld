@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.SplitAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -39,7 +40,7 @@ public class MuseumConcertFragment extends MainFragment implements View.OnClickL
     Calendar calendar = Calendar.getInstance();
     int mYear, mMonth, mDay;
     List<Date> dateList;
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
 
     public static MuseumConcertFragment newInstance() {
         Bundle args = new Bundle();
@@ -62,11 +63,11 @@ public class MuseumConcertFragment extends MainFragment implements View.OnClickL
         txtStartDate.setOnClickListener(this);
         txtEndDate.setOnClickListener(this);
 
-        ((MainActivity) getActivity()).setActionBarTitle("MUSEUMS & CONCERTS");
-        ((MainActivity) getActivity()).setExpandableTitle(Gravity.NO_GRAVITY);
-        ((MainActivity) getActivity()).setCollpsingImage(R.drawable.topbg);
-        ((MainActivity) getActivity()).setAppBarLayoutExpand(false, false);
-        ((MainActivity) getActivity()).showBackButton(false);
+        mainApp.setActionBarTitle("MUSEUMS & CONCERTS");
+        mainApp.setExpandableTitle(Gravity.NO_GRAVITY);
+        mainApp.setCollpsingImage(R.drawable.topbg);
+        mainApp.setAppBarLayoutExpand(false, false);
+        mainApp.showBackButton(false);
 
         rvMuseumConcert.setNestedScrollingEnabled(true);
 

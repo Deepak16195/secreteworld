@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -24,6 +25,7 @@ public class ProfileFragment extends MainFragment implements View.OnClickListene
     Button btnDetails,btnGetPrimium,btnSeller,btnExpert;
     LinearLayout LlWall,LlContents,LlFriends,LlMessages,LlRequest,LlOrders,LlSellers,LlExpert;
     NestedScrollView profileNestedScrollView;
+    MainActivity mainApp= MainApplication.getInstance().getMainActivity();
      public static ProfileFragment newInstance() {
         Bundle args = new Bundle();
         ProfileFragment fragment = new ProfileFragment();
@@ -33,19 +35,20 @@ public class ProfileFragment extends MainFragment implements View.OnClickListene
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
         View v=inflater.inflate(R.layout.fragment_profile,container,false);
         profileNestedScrollView = v.findViewById(R.id.profile_NestedScrollView);
 
         profileNestedScrollView.setNestedScrollingEnabled(false);
 
-        assert ((MainActivity)getActivity()) != null;
+        assert mainApp != null;
 
-        ((MainActivity)getActivity()).unlockDrawer();
-        ((MainActivity)getActivity()).setActionBarTitle("PROFILE");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.NO_GRAVITY);
-        ((MainActivity)getActivity()).showBackButton(false);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(false,false);
-        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
+        mainApp.unlockDrawer();
+        mainApp.setActionBarTitle("PROFILE");
+        mainApp.setExpandableTitle(Gravity.NO_GRAVITY);
+        mainApp.showBackButton(false);
+        mainApp.setAppBarLayoutExpand(false,false);
+        mainApp.setCollpsingImage(R.drawable.topbg);
 
         LlWall=v.findViewById(R.id.ll_wall);
         LlContents=v.findViewById(R.id.ll_contents);
@@ -80,48 +83,48 @@ public class ProfileFragment extends MainFragment implements View.OnClickListene
 
         switch(v.getId()) {
             case R.id.btn_profile_details:
-                ((MainActivity)getActivity()).setFragments(15);
+                mainApp.setFragments(15);
                 break;
             case R.id.btn_get_premium:
-                ((MainActivity)getActivity()).setFragments(23);
+                mainApp.setFragments(23);
                 break;
             case R.id.btn_seller_user:
-                ((MainActivity)getActivity()).setFragments(19);
+                mainApp.setFragments(19);
                 break;
             case R.id.btn_expert_user:
-                ((MainActivity)getActivity()).setFragments(18);
+                mainApp.setFragments(18);
                 break;
             case R.id.ll_wall:
-                ((MainActivity)getActivity()).setFragments(7);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(7);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_contents:
-                ((MainActivity)getActivity()).setFragments(6);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(6);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_friends:
-                ((MainActivity)getActivity()).setFragments(8);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(8);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_messages:
-                ((MainActivity)getActivity()).setFragments(9);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(9);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_request:
-                ((MainActivity)getActivity()).setFragments(11);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(11);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_orders:
-                ((MainActivity)getActivity()).setFragments(12);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(12);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_expert:
-                ((MainActivity)getActivity()).setFragments(14);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(14);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_sellers:
-                ((MainActivity)getActivity()).setFragments(13);
-                ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+                mainApp.setFragments(13);
+                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
         }
     }

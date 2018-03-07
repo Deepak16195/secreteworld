@@ -4,7 +4,7 @@
     <string name="title_3">Bad card</string>
     <string name="title_4">Ugly card</string>
     <string name="text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam eget ligula eu lectus lobortis condimentum.</string>
-    <string name="app_name">Secrect World</string>
+    <string name="app_name">Secret World</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="mc_start_date_set">%d/%d/%d</string>

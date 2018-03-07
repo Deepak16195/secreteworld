@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Adapters.ViewPagers.ExploreViewPagerAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -42,15 +43,16 @@ public class ExploreFragment extends MainFragment  implements TabLayout.OnTabSel
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        MainActivity mainApp= MainApplication.getInstance().getMainActivity();
         View v=inflater.inflate(R.layout.fragment_explore,null,false);
         final TabLayout fragmentTab=v.findViewById(R.id.fragment_tabs);
         final ViewPager fragmentViewPager = v.findViewById(R.id.fragment_viewpager);
 
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "avenirltstd_light.otf");
-        ((MainActivity)getActivity()).setActionBarTitle("SECRETS AROUND YOU");
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
-//        ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
-        ((MainActivity)getActivity()).showBackButton(false);
+        mainApp.setActionBarTitle("SECRETS AROUND YOU");
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+//        mainApp.setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+        mainApp.showBackButton(false);
             setupViewPager(fragmentViewPager);
             fragmentTab.setupWithViewPager(fragmentViewPager);
             fragmentTab.addOnTabSelectedListener(this);

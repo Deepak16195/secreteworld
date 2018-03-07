@@ -32,7 +32,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapViewFragment extends MainFragment implements OnMapReadyCallback, View.OnClickListener {
     private GoogleMap mMap;
     RelativeLayout rlMap;
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static MapViewFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -79,7 +79,7 @@ public class MapViewFragment extends MainFragment implements OnMapReadyCallback,
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.rl_map:
-                ((MainActivity)getActivity()).onBackPressed();
+                mainApp.onBackPressed();
                 break;
         }
 

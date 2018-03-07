@@ -17,6 +17,7 @@ import android.widget.Switch;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.SearchByCategoryAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.SearchCategory;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -34,6 +35,7 @@ public class SearchByCategoryFragment extends MainFragment implements View.OnCli
     ImageView imgBlueArrow;
     List<SearchCategory> sc;
     SearchByCategoryAdapter sbca;
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static SearchByCategoryFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -52,7 +54,7 @@ public class SearchByCategoryFragment extends MainFragment implements View.OnCli
         imgBlueArrow=v.findViewById(R.id.img_blue_arrow);
         imgBlueArrow.setOnClickListener(this);
 
-        ((MainActivity)getActivity()).setActionBarTitle("SECRETS AROUND YOU");
+        mainApp.setActionBarTitle("SECRETS AROUND YOU");
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rvSearchCategory.setLayoutManager(mLayoutManager);

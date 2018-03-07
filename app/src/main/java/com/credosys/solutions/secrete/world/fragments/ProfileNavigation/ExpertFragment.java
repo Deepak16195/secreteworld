@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ExpertAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.pojoExperts;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.SimpleDividerItemDecoration;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 
 public class ExpertFragment extends MainFragment {
     RecyclerView rvExpert;
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static ExpertFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -40,11 +42,11 @@ public class ExpertFragment extends MainFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_expert,null,false);
 
-        ((MainActivity)getActivity()).setActionBarTitle("EXPERT");
-        ((MainActivity)getActivity()).lockDrawer();
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+        mainApp.setActionBarTitle("EXPERT");
+        mainApp.lockDrawer();
+//        mainApp.setExpandableTitle(Gravity.CENTER);
+//        mainApp.setAppBarLayoutExpand(true,true);
+        mainApp.showBackButton(true);
 
         rvExpert=v.findViewById(R.id.rv_expert);
         ArrayList<pojoExperts> Experts = new ArrayList<>();

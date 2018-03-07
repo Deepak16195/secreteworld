@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.OrderAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.OrdersSellers;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class OrderFragment extends MainFragment {
     RecyclerView rvOrder;
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static OrderFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -35,12 +36,12 @@ public class OrderFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ((MainActivity)getActivity()).lockDrawer();
+        mainApp.lockDrawer();
         View v=inflater.inflate(R.layout.fragment_orders_seller,null,false);
-        ((MainActivity)getActivity()).setActionBarTitle("MY ORDER");
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+        mainApp.setActionBarTitle("MY ORDER");
+//        mainApp.setExpandableTitle(Gravity.CENTER);
+//        mainApp.setAppBarLayoutExpand(true,true);
+        mainApp.showBackButton(true);
 
         rvOrder=v.findViewById(R.id.rv_order);
 

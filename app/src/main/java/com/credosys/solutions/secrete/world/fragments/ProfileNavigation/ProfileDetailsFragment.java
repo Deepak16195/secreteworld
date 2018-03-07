@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -19,6 +20,7 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
  */
 
 public class ProfileDetailsFragment extends MainFragment implements View.OnClickListener {
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     Button btnSubmit;
     public static ProfileDetailsFragment newInstance() {
 
@@ -32,12 +34,12 @@ public class ProfileDetailsFragment extends MainFragment implements View.OnClick
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ((MainActivity)getActivity()).lockDrawer();
+        mainApp.lockDrawer();
         View v = inflater.inflate(R.layout.fragment_profile_details, container, false);
-        ((MainActivity) getActivity()).setActionBarTitle("DETAILS");
-        ((MainActivity) getActivity()).lockDrawer();
-        ((MainActivity) getActivity()).showBackButton(true);
-        ((MainActivity) getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
+        mainApp.setActionBarTitle("DETAILS");
+        mainApp.lockDrawer();
+        mainApp.showBackButton(true);
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
 
         ImageView imgEdit = v.findViewById(R.id.img_edit);
         btnSubmit = v.findViewById(R.id.btn_submit);

@@ -10,11 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.HomeAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.HomeContentsPlaces;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -30,7 +30,7 @@ public class HomeFragement extends MainFragment implements View.OnClickListener{
     RelativeLayout rlMap;
     RecyclerView rv;
     Context context;
-
+    MainActivity mainApp =MainApplication.getInstance().getMainActivity();
     public static HomeFragement newInstance() {
         HomeFragement fragmentFirst = new HomeFragement();
         Bundle args = new Bundle();
@@ -38,8 +38,7 @@ public class HomeFragement extends MainFragment implements View.OnClickListener{
         return fragmentFirst;
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         rv=view.findViewById(R.id.recyclerview_home);
         context=getActivity();
@@ -47,10 +46,11 @@ public class HomeFragement extends MainFragment implements View.OnClickListener{
         rlMap=view.findViewById(R.id.rl_map);
         rlMap.setOnClickListener(this);
 
-        ((MainActivity)getActivity()).setActionBarTitle("MUMBAI");
-//        ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
-        ((MainActivity)getActivity()).showBackButton(false);
+        mainApp.setActionBarTitle("MUMBAI");
+        mainApp.unlockDrawer();
+//        mainApp.setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+        mainApp.setUpTopHeader(R.drawable.launch_banner,Gravity.CENTER,true,true,true);
+        mainApp.showBackButton(false);
 
         HomeAdapter homeAdapter=new HomeAdapter(tempList(), new CustomItemClickListener() {
             @Override
@@ -82,7 +82,7 @@ public class HomeFragement extends MainFragment implements View.OnClickListener{
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.rl_map:
-                ((MainActivity)getActivity()).setFragments(25);
+                mainApp.setFragments(25);
                 break;
         }
     }

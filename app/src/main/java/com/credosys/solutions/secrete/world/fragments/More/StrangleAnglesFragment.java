@@ -1,9 +1,8 @@
-package com.credosys.solutions.secrete.world.fragments.SlideNavigation;
+package com.credosys.solutions.secrete.world.fragments.More;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,15 +13,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
+import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
 
 /**
  * Created by SONY on 02-03-18.
  */
 
-public class StrangleAnglesFragment extends Fragment implements View.OnClickListener{
+public class StrangleAnglesFragment extends MainFragment implements View.OnClickListener{
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     LinearLayout LlAssistance,llViewStubHolder;
     View inflated;
     ViewGroup container;
@@ -71,7 +73,7 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
         }
     }
     private void init(){
-        ((MainActivity)getActivity()).setUpTxtToolbar(View.VISIBLE,"STRANGER ANGELS");
+        mainApp.setUpTxtToolbar(View.VISIBLE,"STRANGER ANGELS");
         ((MainActivity) getActivity()).setOverlap(R.dimen.collapoverlap);
 //        ((MainActivity) getActivity()).setConfigToolbar(R.drawable.gradiant_toolbar);
     }
@@ -84,7 +86,7 @@ public class StrangleAnglesFragment extends Fragment implements View.OnClickList
     @Override
     public void onStop() {
         super.onStop();
-        ((MainActivity)getActivity()).setUpTxtToolbar(View.GONE,"");
+        mainApp.setUpTxtToolbar(View.GONE,"");
         ((MainActivity) getActivity()).setOverlap(R.dimen.collapsoverlapzero);
 //        ((MainActivity) getActivity()).setConfigToolbar(0);
     }

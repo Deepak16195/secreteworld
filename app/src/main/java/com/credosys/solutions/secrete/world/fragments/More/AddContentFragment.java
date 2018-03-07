@@ -1,4 +1,4 @@
-package com.credosys.solutions.secrete.world.fragments.SlideNavigation;
+package com.credosys.solutions.secrete.world.fragments.More;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +22,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -49,7 +49,7 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
     ImageView[] l;
     ImageView[] a;
     String[] colors={"FF422B","EC1660","0055AE","007CEE","008E80","82BB51","CAD441"};
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
 //   ExpandableRelativeLayout rlTitleExpand;
     public static AddContentFragment newInstance(int titleIndex) {
 
@@ -74,34 +74,34 @@ public class AddContentFragment extends MainFragment implements View.OnClickList
             int myInt = bundle.getInt("position", 0);
             switch (myInt){
                 case 1:
-                    ((MainActivity)getActivity()).setActionBarTitle("ADD CONTENT");
+                    mainApp.setActionBarTitle("ADD CONTENT");
                     txtCommonAssistance.setText("MY CONTENT");
 
-//                    ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
-//                    ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//                    ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+//                    mainApp.setCollpsingImage(R.drawable.topbg);
+//                    mainApp.setExpandableTitle(Gravity.CENTER);
+//                    mainApp.setAppBarLayoutExpand(true,true);
 
                     break;
                 case 2:
-                    ((MainActivity)getActivity()).setActionBarTitle("ADD TRIP ALBUM");
+                    mainApp.setActionBarTitle("ADD TRIP ALBUM");
                     txtCommonAssistance.setText("MY ALBUM");
                     break;
                 case 3:
-                    ((MainActivity)getActivity()).setActionBarTitle("ADD TRIP DIARY");
+                    mainApp.setActionBarTitle("ADD TRIP DIARY");
                     txtCommonAssistance.setText("MY DIARY");
                     break;
                 case 4:
-                    ((MainActivity)getActivity()).setActionBarTitle("ADD ITINERARY");
+                    mainApp.setActionBarTitle("ADD ITINERARY");
                     txtCommonAssistance.setText("MY ITINERARY");
                     break;
                 case 5:
-                    ((MainActivity)getActivity()).setActionBarTitle("ADD EVENT");
+                    mainApp.setActionBarTitle("ADD EVENT");
                     txtCommonAssistance.setText("MY EVENT");
                     break;
 
             }
-            ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
-            ((MainActivity)getActivity()).showBackButton(false);
+            mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+            mainApp.showBackButton(false);
         }
 
 

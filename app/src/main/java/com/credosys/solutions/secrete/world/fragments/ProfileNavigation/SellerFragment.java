@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.SellerAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.OrdersSellers;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class SellerFragment extends MainFragment {
     RecyclerView rvSeller;
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
 
     public static SellerFragment newInstance() {
 
@@ -37,11 +38,11 @@ public class SellerFragment extends MainFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_orders_seller,null,false);
-        ((MainActivity)getActivity()).setActionBarTitle("SELLERS");
-        ((MainActivity)getActivity()).lockDrawer();
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+        mainApp.setActionBarTitle("SELLERS");
+        mainApp.lockDrawer();
+//        mainApp.setExpandableTitle(Gravity.CENTER);
+//        mainApp.setAppBarLayoutExpand(true,true);
+        mainApp.showBackButton(true);
         rvSeller =v.findViewById(R.id.rv_order);
 
 

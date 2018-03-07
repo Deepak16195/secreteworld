@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardFragment;
 import com.credosys.solutions.secrete.world.SliderMaterial.CardFragmentPagerAdapter;
@@ -35,6 +36,7 @@ public class MyDiaryFragment extends MainFragment/* implements View.OnClickListe
     private ShadowTransformer mCardShadowTransformer;
     private CardFragmentPagerAdapter mFragmentCardAdapter;
     private ShadowTransformer mFragmentCardShadowTransformer;
+    MainActivity mainApp= MainApplication.getInstance().getMainActivity();
     public static Fragment newInstance() {
         return new MyDiaryFragment();
     }
@@ -44,13 +46,14 @@ public class MyDiaryFragment extends MainFragment/* implements View.OnClickListe
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View v=inflater.inflate(R.layout.fragment_mydiary,null,false);
         mViewPager =v.findViewById(R.id.viewpager_mydiary);
         txtMydiaryLableOne=v.findViewById(R.id.txt_mydiary_lable_one);
         txtMydiaryLableTwo=v.findViewById(R.id.txt_mydiary_lable_two);
-        ((MainActivity)getActivity()).setActionBarTitle("DIARY");
-//        ((MainActivity)getActivity()).  setTabLayoutColors(R.color.marineGreen, R.color.gradientColor, R.color.cutomGreen, R.color.white, R.color.white);
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+        mainApp.setActionBarTitle("DIARY");
+//        mainApp.  setTabLayoutColors(R.color.marineGreen, R.color.gradientColor, R.color.cutomGreen, R.color.white, R.color.white);
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
 //        mButton = (Button) v.findViewById(R.id.cardTypeBtn);
 //        ((CheckBox) v.findViewById(R.id.checkBox)).setOnCheckedChangeListener(this);
 //        mButton.setOnClickListener(this);

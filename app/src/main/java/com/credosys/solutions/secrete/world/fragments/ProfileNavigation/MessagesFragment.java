@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.MessagesAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.Messages;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -26,6 +27,7 @@ import java.util.List;
 
 public class MessagesFragment extends MainFragment {
     ListView LvMessages;
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static MessagesFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -37,12 +39,12 @@ public class MessagesFragment extends MainFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ((MainActivity)getActivity()).lockDrawer();
+        mainApp.lockDrawer();
         View v=inflater.inflate(R.layout.fragment_messages,null,false);
-        ((MainActivity)getActivity()).setActionBarTitle("MY MESSAGE");
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-//        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
+        mainApp.setActionBarTitle("MY MESSAGE");
+//        mainApp.setExpandableTitle(Gravity.CENTER);
+//        mainApp.setAppBarLayoutExpand(true,true);
+        mainApp.showBackButton(true);
 
         LvMessages=v.findViewById(R.id.lv_message);
         MessagesAdapter ma=new MessagesAdapter(getActivity(),getTemp());

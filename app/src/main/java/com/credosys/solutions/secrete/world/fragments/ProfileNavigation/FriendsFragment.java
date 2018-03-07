@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.FriendsAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.pojoFriends;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 public class FriendsFragment extends MainFragment implements View.OnClickListener{
     RecyclerView rvFriends;
     private RecyclerView.LayoutManager mLayoutManager;
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static FriendsFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -44,7 +45,7 @@ public class FriendsFragment extends MainFragment implements View.OnClickListene
         ((MainActivity) getActivity()).setExpandableTitle(Gravity.CENTER);
         ((MainActivity) getActivity()).setAppBarLayoutExpand(true, true);
         ((MainActivity) getActivity()).showBackButton(true);
-        ((MainActivity)getActivity()).lockDrawer();
+        mainApp.lockDrawer();
         Button btnInvite=v.findViewById(R.id.btn_invite);
         rvFriends = v.findViewById(R.id.rv_friends);
 
@@ -77,7 +78,7 @@ public class FriendsFragment extends MainFragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_invite:
-                ((MainActivity)getActivity()).setFragments(21);
+                mainApp.setFragments(21);
                 break;
         }
     }

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.ProfileRequestAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.Request;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
@@ -27,6 +28,7 @@ import java.util.List;
 
 public class RequestProfileFragment extends MainFragment {
     RecyclerView rvProfileRequest;
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static RequestProfileFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -42,11 +44,11 @@ public class RequestProfileFragment extends MainFragment {
         View v=inflater.inflate(R.layout.fragment_profile_request,null,false);
         rvProfileRequest=v.findViewById(R.id.rv_profile_request);
 
-        ((MainActivity)getActivity()).setActionBarTitle("MY REQUEST");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
-        ((MainActivity)getActivity()).showBackButton(true);
-        ((MainActivity)getActivity()).lockDrawer();
+        mainApp.setActionBarTitle("MY REQUEST");
+        mainApp.setExpandableTitle(Gravity.CENTER);
+        mainApp.setAppBarLayoutExpand(true,true);
+        mainApp.showBackButton(true);
+        mainApp.lockDrawer();
         List<Request> list=new ArrayList<>();
         list.add(new Request(R.drawable.vadapav,"",""));
         list.add(new Request(R.drawable.savpuri,"",""));

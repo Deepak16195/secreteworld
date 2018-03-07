@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.WallAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -27,6 +28,7 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
 public class WallFragment extends MainFragment implements View.OnClickListener{
     RelativeLayout rlBackground;
 //    LinearLayout llPublish;
+MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     RecyclerView rvWall;
     Button btnPublish;
     CardView cvNormalText,cvPublish;
@@ -56,10 +58,10 @@ public class WallFragment extends MainFragment implements View.OnClickListener{
         cvNormalText.setOnClickListener(this);
         btnPublish.setOnClickListener(this);
 
-        ((MainActivity)getActivity()).setActionBarTitle("MY WALL");
-//        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).showBackButton(true);
-        ((MainActivity)getActivity()).lockDrawer();
+        mainApp.setActionBarTitle("MY WALL");
+//        mainApp.setExpandableTitle(Gravity.CENTER);
+        mainApp.showBackButton(true);
+        mainApp.lockDrawer();
 
         WallAdapter wa=new WallAdapter();
 

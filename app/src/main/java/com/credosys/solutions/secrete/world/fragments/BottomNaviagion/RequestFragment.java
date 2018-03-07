@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -16,7 +17,7 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
  */
 
 public class RequestFragment extends MainFragment {
-
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static Fragment newInstance() {
         return new RequestFragment();
     }
@@ -27,10 +28,10 @@ public class RequestFragment extends MainFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_request,null,false);
-        ((MainActivity)getActivity()).setActionBarTitle("REQUEST");
-//        ((MainActivity)getActivity()).setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
-        ((MainActivity)getActivity()).showBackButton(false);
+        mainApp.setActionBarTitle("REQUEST");
+//        mainApp.setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
+        mainApp.showBackButton(false);
         return v;
     }
 }

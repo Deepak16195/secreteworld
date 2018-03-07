@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.TicketAdapter;
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.Pojos.App.Ticket;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.Utility.CommonAssistance;
@@ -32,6 +33,7 @@ import java.util.List;
  */
 
 public class TicketFragment extends MainFragment implements View.OnClickListener{
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     ImageView imgTicketAdd;
     LinearLayout LlAssistance;
     public static TicketFragment newInstance() {
@@ -46,10 +48,10 @@ public class TicketFragment extends MainFragment implements View.OnClickListener
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        ((MainActivity)getActivity()).setActionBarTitle("MUSEUMS & CONCERTS");
-        ((MainActivity)getActivity()).setExpandableTitle(Gravity.CENTER);
-        ((MainActivity)getActivity()).setCollpsingImage(R.drawable.topbg);
-        ((MainActivity)getActivity()).setAppBarLayoutExpand(true,true);
+        mainApp.setActionBarTitle("MUSEUMS & CONCERTS");
+        mainApp.setExpandableTitle(Gravity.CENTER);
+        mainApp.setCollpsingImage(R.drawable.topbg);
+        mainApp.setAppBarLayoutExpand(true,true);
 
         View v=inflater.inflate(R.layout.fragment_common_content,container,false);
         ViewStub simpleViewStub = v.findViewById(R.id.vs_all);
@@ -84,7 +86,7 @@ public class TicketFragment extends MainFragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.img_ticket_add:
-                ((MainActivity)getActivity()).setFragments(20);
+                mainApp.setFragments(20);
                 break;
             case R.id.ll_assistance:
                 new CommonAssistance(getActivity(),LlAssistance).show();

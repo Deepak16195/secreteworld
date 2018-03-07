@@ -38,7 +38,6 @@ import android.widget.TimePicker;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
 import com.credosys.solutions.secrete.world.Pojos.App.Navigation;
-import com.credosys.solutions.secrete.world.Utility.NonSwipeableViewPager;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ExploreFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.HomeFragement;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.MyDiaryFragment;
@@ -55,16 +54,16 @@ import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.ProfileD
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.RequestProfileFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.SellerFragment;
 import com.credosys.solutions.secrete.world.fragments.ProfileNavigation.WallFragment;
-import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddContentFragment;
+import com.credosys.solutions.secrete.world.fragments.More.AddContentFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.AddEnterTicketFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.ExpertUserFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.GetPrimiumFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.MuseumConcertFragment;
 import com.credosys.solutions.secrete.world.fragments.BottomNaviagion.ProfileFragment;
-import com.credosys.solutions.secrete.world.fragments.SlideNavigation.QuickRequestFragment;
+import com.credosys.solutions.secrete.world.fragments.More.QuickRequestFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.RecommendedPlacesFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.SellerUserFragment;
-import com.credosys.solutions.secrete.world.fragments.SlideNavigation.StrangleAnglesFragment;
+import com.credosys.solutions.secrete.world.fragments.More.StrangleAnglesFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.TicketFragment;
 import com.credosys.solutions.secrete.world.fragments.SlideNavigation.WhereEatFragment;
 

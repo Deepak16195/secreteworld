@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 
 import com.credosys.solutions.secrete.world.MainActivity;
+import com.credosys.solutions.secrete.world.MainApplication;
 import com.credosys.solutions.secrete.world.R;
 import com.credosys.solutions.secrete.world.fragments.MainFragment;
 
@@ -19,6 +20,7 @@ import com.credosys.solutions.secrete.world.fragments.MainFragment;
  */
 
 public class ExpertUserFragment extends MainFragment {
+    MainActivity mainApp = MainApplication.getInstance().getMainActivity();
     public static ExpertUserFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -32,9 +34,9 @@ public class ExpertUserFragment extends MainFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_common_content,container,false);
-        ((MainActivity)getActivity()).setActionBarTitle(" ");
-        ((MainActivity)getActivity()).showBackButton(true);
-        ((MainActivity)getActivity()).setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
+        mainApp.setActionBarTitle(" ");
+        mainApp.showBackButton(true);
+        mainApp.setUpTopHeader(R.drawable.topbg,Gravity.NO_GRAVITY,false,false,false);
         ViewStub viewStub=v.findViewById(R.id.vs_all);
         viewStub.setLayoutResource(R.layout.view_stub_expert_user);
          View inflated=viewStub.inflate();
