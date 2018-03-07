@@ -43,7 +43,7 @@ public class RequestProfileFragment extends MainFragment {
 
         View v=inflater.inflate(R.layout.fragment_profile_request,null,false);
         rvProfileRequest=v.findViewById(R.id.rv_profile_request);
-
+        mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
         mainApp.setActionBarTitle("MY REQUEST");
         mainApp.setExpandableTitle(Gravity.CENTER);
         mainApp.setAppBarLayoutExpand(true,true);

@@ -42,6 +42,7 @@ public class MessagesFragment extends MainFragment {
         mainApp.lockDrawer();
         View v=inflater.inflate(R.layout.fragment_messages,null,false);
         mainApp.setActionBarTitle("MY MESSAGE");
+        mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
 //        mainApp.setExpandableTitle(Gravity.CENTER);
 //        mainApp.setAppBarLayoutExpand(true,true);
         mainApp.showBackButton(true);

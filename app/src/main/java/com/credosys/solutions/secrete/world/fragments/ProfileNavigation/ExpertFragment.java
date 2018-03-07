@@ -44,6 +44,7 @@ public class ExpertFragment extends MainFragment {
 
         mainApp.setActionBarTitle("EXPERT");
         mainApp.lockDrawer();
+        mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
 //        mainApp.setExpandableTitle(Gravity.CENTER);
 //        mainApp.setAppBarLayoutExpand(true,true);
         mainApp.showBackButton(true);

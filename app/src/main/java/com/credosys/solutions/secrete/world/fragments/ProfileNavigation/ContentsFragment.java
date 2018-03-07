@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +60,7 @@ public class ContentsFragment extends MainFragment implements View.OnClickListen
 
         cvNormalText.setOnClickListener(this);
         btnPublish.setOnClickListener(this);
-
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.CENTER,true,true,true);
         mainApp.setActionBarTitle("MY CONTENT");
         mainApp.lockDrawer();
 //        mainApp.setExpandableTitle(Gravity.CENTER);

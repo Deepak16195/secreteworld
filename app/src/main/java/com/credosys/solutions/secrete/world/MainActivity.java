@@ -80,25 +80,25 @@ public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
 
 
-    FrameLayout frameContainer;
-    Typeface tf;
-    ImageView imgHomeBanner, imgPlus, navIconZero, navIconOne, navIconTwo, navIconThree, navIconFour, imgGradient/*, imgNavigationCross*/;
-    View viewFixedBottom;
-    TextView txtTitle, txtMore, navTextZero, navTextOne, navTextTwo, navTextThree, navTextFour, txtToolbar;
-    LinearLayout navZero, navOne, navTwo, navThree, navFour, bottomThird, llNav;
-    Fragment fragment;
-    FragmentTransaction transaction;
-    AppBarLayout appBarLayout;
-    Toolbar toolbar;
-    CollapsingToolbarLayout collapsingToolbarLayout;
-    DrawerLayout drawer;
-    ActionBarDrawerToggle toggle;
-    NavigationView navigationView;
+    private FrameLayout frameContainer;
+    private Typeface tf;
+    private ImageView imgHomeBanner, imgPlus, navIconZero, navIconOne, navIconTwo, navIconThree, navIconFour, imgGradient/*, imgNavigationCross*/;
+    private View viewFixedBottom;
+    private TextView txtTitle, txtMore, navTextZero, navTextOne, navTextTwo, navTextThree, navTextFour, txtToolbar;
+    private LinearLayout navZero, navOne, navTwo, navThree, navFour, bottomThird, llNav;
+    private Fragment fragment;
+    private FragmentTransaction transaction;
+    private AppBarLayout appBarLayout;
+    private Toolbar toolbar;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+    private DrawerLayout drawer;
+    private ActionBarDrawerToggle toggle;
+    private NavigationView navigationView;
     private boolean mToolBarNavigationListenerIsRegistered = false;
-    Calendar mcurrentTime;
-    RelativeLayout rlProfileView;
-    RecyclerView rvNavigation;
-    MainApplication mainApp;
+    private Calendar mcurrentTime;
+    private RelativeLayout rlProfileView;
+    private RecyclerView rvNavigation;
+    private MainApplication mainApp;
 
 
     @Override
@@ -146,7 +146,6 @@ public class MainActivity extends AppCompatActivity
         list.add(new Navigation("SELL TICKET", R.drawable.ic_ticket));
         list.add(new Navigation("CHANGE LOCATIONS", R.drawable.ic_nav_location));
         list.add(new Navigation("SELECT LANGUAGE", R.drawable.ic_nav_language));
-//        list.add(new Navigation("SELECT RATE THE APP", R.drawable.ic_nav_star));
         list.add(new Navigation("TERMS & CONDITIONS", R.drawable.ic_nav_terms_conditions));
         list.add(new Navigation("PRIVACY POLICY", R.drawable.ic_nav_privacy_policy));
         list.add(new Navigation("SETTINGS", R.drawable.ic_nav_settings));
@@ -465,6 +464,9 @@ public class MainActivity extends AppCompatActivity
                 case 27:
                     transaction.replace(R.id.frame_container, StrangleAnglesFragment.newInstance(), "strangeangle");
                     break;
+                case 28:
+                    transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
+                    break;
             }
         }
         transaction.addToBackStack(null);
@@ -565,9 +567,6 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_two:
                 openMore();
-//                Intent i2 = new Intent(MainActivity.this, ProfileStuffActivity.class);
-//                startActivity(i2);
-//                overridePendingTransition(R.anim.slide_up_info, R.anim.no_change);
                 break;
             case R.id.nav_three:
                 setFragments(3);
@@ -579,12 +578,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.rl_profile_view:
-                setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
-                setActionBarTitle("PROFILE");
-                transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_container, ProfileFragment.newInstance());
-                transaction.addToBackStack(null);
-                transaction.commit();
+                setFragments(28);
                 drawer.closeDrawer(GravityCompat.START);
                 break;
         }

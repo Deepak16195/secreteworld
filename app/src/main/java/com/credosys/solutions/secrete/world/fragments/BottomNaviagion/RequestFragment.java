@@ -29,6 +29,7 @@ public class RequestFragment extends MainFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_request,null,false);
         mainApp.setActionBarTitle("REQUEST");
+        mainApp.unlockDrawer();
 //        mainApp.setTabLayoutColors(R.color.white, R.color.white, R.color.customBlue, R.color.tab_layout_text, R.color.tab_layout_text);
         mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY,false,false,false);
         mainApp.showBackButton(false);

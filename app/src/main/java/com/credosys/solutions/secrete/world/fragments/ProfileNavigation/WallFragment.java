@@ -57,7 +57,7 @@ MainActivity mainApp = MainApplication.getInstance().getMainActivity();
 
         cvNormalText.setOnClickListener(this);
         btnPublish.setOnClickListener(this);
-
+        mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
         mainApp.setActionBarTitle("MY WALL");
 //        mainApp.setExpandableTitle(Gravity.CENTER);
         mainApp.showBackButton(true);

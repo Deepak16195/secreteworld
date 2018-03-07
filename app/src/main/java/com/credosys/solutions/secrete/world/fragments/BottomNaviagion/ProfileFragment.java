@@ -41,14 +41,10 @@ public class ProfileFragment extends MainFragment implements View.OnClickListene
 
         profileNestedScrollView.setNestedScrollingEnabled(false);
 
-        assert mainApp != null;
-
         mainApp.unlockDrawer();
         mainApp.setActionBarTitle("PROFILE");
-        mainApp.setExpandableTitle(Gravity.NO_GRAVITY);
         mainApp.showBackButton(false);
-        mainApp.setAppBarLayoutExpand(false,false);
-        mainApp.setCollpsingImage(R.drawable.topbg);
+        mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
 
         LlWall=v.findViewById(R.id.ll_wall);
         LlContents=v.findViewById(R.id.ll_contents);
@@ -96,35 +92,28 @@ public class ProfileFragment extends MainFragment implements View.OnClickListene
                 break;
             case R.id.ll_wall:
                 mainApp.setFragments(7);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_contents:
                 mainApp.setFragments(6);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_friends:
                 mainApp.setFragments(8);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_messages:
                 mainApp.setFragments(9);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_request:
                 mainApp.setFragments(11);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_orders:
                 mainApp.setFragments(12);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_expert:
                 mainApp.setFragments(14);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
                 break;
             case R.id.ll_sellers:
                 mainApp.setFragments(13);
-                mainApp.setUpTopHeader(R.drawable.topbg,Gravity.CENTER,true,true,true);
+
                 break;
         }
     }
