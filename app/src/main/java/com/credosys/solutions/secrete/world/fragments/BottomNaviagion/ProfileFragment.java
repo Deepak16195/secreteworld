@@ -42,7 +42,7 @@ public class ProfileFragment extends MainFragment implements View.OnClickListene
         profileNestedScrollView.setNestedScrollingEnabled(false);
 
         mainApp.unlockDrawer();
-        mainApp.setActionBarTitle("PROFILE");
+        mainApp.setActionBarTitle(getString(R.string.profile));
         mainApp.showBackButton(false);
         mainApp.setUpTopHeader(R.drawable.topbg, Gravity.NO_GRAVITY, false, false, false);
 

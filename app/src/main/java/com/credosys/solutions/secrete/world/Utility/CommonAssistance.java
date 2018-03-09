@@ -3,7 +3,6 @@ package com.credosys.solutions.secrete.world.Utility;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-
 import com.credosys.solutions.secrete.world.R;
 import com.michael.easydialog.EasyDialog;
 
@@ -12,13 +11,14 @@ import com.michael.easydialog.EasyDialog;
  */
 
 public class CommonAssistance {
-    Context context;
-    View assistanceView;
+    private Context context;
+    private View assistanceView;
 
     public CommonAssistance(Context context, View assistanceView) {
         this.context = context;
         this.assistanceView=assistanceView;
     }
+
     public void show(){
         new EasyDialog(context)
                 // .setLayoutResourceId(R.layout.layout_tip_content_horizontal)//layout resource id
@@ -28,9 +28,9 @@ public class CommonAssistance {
                 .setLocationByAttachedView(assistanceView)
                 .setMarginLeftAndRight(10,10)
                 .setGravity(EasyDialog.GRAVITY_BOTTOM)
-                .setAnimationTranslationShow(EasyDialog.DIRECTION_Y, 1000, -600, 100, -50, 50, 0)
+                .setAnimationTranslationShow(EasyDialog.DIRECTION_Y, 1000, 600, 100, -50, 50, 0)
                 .setAnimationAlphaShow(1000, 0.3f, 1.0f)
-                .setAnimationTranslationDismiss(EasyDialog.DIRECTION_Y, 500, -50, 800)
+                .setAnimationTranslationDismiss(EasyDialog.DIRECTION_Y, 500, 0, 800)
                 .setAnimationAlphaDismiss(500, 1.0f, 0.0f)
                 .setTouchOutsideDismiss(true)
                 .setMatchParent(true)
@@ -39,4 +39,5 @@ public class CommonAssistance {
                 .show();
     }
 }
-
+// .setAnimationTranslationShow(EasyDialog.DIRECTION_Y, 1000, -600, 100, -50, 50, 0)
+//         .setAnimationTranslationDismiss(EasyDialog.DIRECTION_Y, 500, -50, 800)

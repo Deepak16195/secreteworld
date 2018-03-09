@@ -1,29 +1,43 @@
 package com.credosys.solutions.secrete.world;
 
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
 import com.credosys.solutions.secrete.world.ApiCall.Api;
+import com.credosys.solutions.secrete.world.Pojos.ApiModalList.ForgotPwd;
 import com.credosys.solutions.secrete.world.Pojos.ApiModalList.Modal;
 import com.credosys.solutions.secrete.world.Pojos.App.Navigation;
 import com.credosys.solutions.secrete.world.Utility.CommonWaitingDialog;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +46,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainSigninSignupActivity extends AppCompatActivity
-        implements View.OnClickListener {
-    EditText etUsername, etPassword;
+public class MainSigninSignupActivity extends AppCompatActivity implements View.OnClickListener {
+    EditText etUsername, etPassword,etForgotEmail;
     CommonWaitingDialog cwd;
     Button btnLogin, btnCreateAc, btnSigninSignup, btnSignupSignin;
     RelativeLayout rlSignin, rlSignup;
     RecyclerView rvNavigation;
     DrawerLayout drawer;
+    TextView txtForgotPassword;
+    Dialog dlg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +64,7 @@ public class MainSigninSignupActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("SECRET WORLD");
+        getSupportActionBar().setTitle(R.string.app_name);
         drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -63,27 +79,29 @@ public class MainSigninSignupActivity extends AppCompatActivity
         btnCreateAc = findViewById(R.id.btn_create_account);
         rlSignin = findViewById(R.id.rl_signin);
         rlSignup = findViewById(R.id.rl_signup);
-        rvNavigation=findViewById(R.id.rv_navigation);
+        rvNavigation = findViewById(R.id.rv_navigation);
         drawer = findViewById(R.id.drawer_layout);
+        txtForgotPassword=findViewById(R.id.txt_forgot_password);
 
-        cwd=new CommonWaitingDialog(this);
+        cwd = new CommonWaitingDialog(this);
         btnLogin.setOnClickListener(this);
         btnSigninSignup.setOnClickListener(this);
         btnSignupSignin.setOnClickListener(this);
+        txtForgotPassword.setOnClickListener(this);
 
-        List<Navigation> list=new ArrayList<Navigation>();
-        list.add(new Navigation("CHANGE LOCATIONS",R.drawable.ic_nav_location));
-        list.add(new Navigation("SELECT LANGUAGE",R.drawable.ic_nav_language));
-        list.add(new Navigation("SELECT RATE THE APP",R.drawable.ic_nav_star));
-        list.add(new Navigation("TERMS & CONDITIONS",R.drawable.ic_nav_terms_conditions));
-        list.add(new Navigation("PRIVACY POLICY",R.drawable.ic_nav_privacy_policy));
-        list.add(new Navigation("SETTINGS",R.drawable.ic_nav_settings));
-        list.add(new Navigation("LOGOUT",R.drawable.ic_nav_logout));
+        List<Navigation> list = new ArrayList<Navigation>();
+        list.add(new Navigation("CHANGE LOCATIONS", R.drawable.ic_nav_location));
+        list.add(new Navigation("SELECT LANGUAGE", R.drawable.ic_nav_language));
+        list.add(new Navigation("SELECT RATE THE APP", R.drawable.ic_nav_star));
+        list.add(new Navigation("TERMS & CONDITIONS", R.drawable.ic_nav_terms_conditions));
+        list.add(new Navigation("PRIVACY POLICY", R.drawable.ic_nav_privacy_policy));
+        list.add(new Navigation("SETTINGS", R.drawable.ic_nav_settings));
+        list.add(new Navigation("LOGOUT", R.drawable.ic_nav_logout));
 
         NavigationAdapter navigationAdapter = new NavigationAdapter(list, new CustomItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                switch(position) {
+                switch (position) {
 
                 }
                 drawer.closeDrawer(GravityCompat.START);
@@ -106,46 +124,72 @@ public class MainSigninSignupActivity extends AppCompatActivity
     }
 
 
-
-    private void validate(){
-        String strUsername=etUsername.getText().toString();
-        String strpassword=etPassword.getText().toString();
-        if("".equals(strUsername))
+    private void validate() {
+        String strUsername = etUsername.getText().toString();
+        String strpassword = etPassword.getText().toString();
+        if ("".equals(strUsername))
             etUsername.setError("Mandatory Field");
+        else if ("".equals(strpassword))
+            etPassword.setError("Mandatory Field");
         else
-            if("".equals(strpassword))
-                etPassword.setError("Mandatory Field");
-            else
-                gotoHome();
+            gotoHome();
     }
 
-    private void gotoHome(){
-                        cwd.show();
-                Call<Modal> ulogin = Api.getApi().login(etUsername.getText().toString(), etPassword.getText().toString());
-                ulogin.enqueue(new Callback<Modal>() {
-                    @Override
-                    public void onResponse(Call<Modal> call, Response<Modal> response) {
-                        Log.d("loginto", "" + response);
-                        if (response.body().isSuccess()) {
-                            Toast.makeText(MainSigninSignupActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                            cwd.dismiss();
-                            startActivity(new Intent(MainSigninSignupActivity.this, MainActivity.class));
-                            finish();
-                        } else {
-                            cwd.dismiss();
-                            Toast.makeText(MainSigninSignupActivity.this, "failed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
+    private void gotoHome() {
+        cwd.show();
+        Call<Modal> ulogin = Api.getApi().login(etUsername.getText().toString(), etPassword.getText().toString());
+        ulogin.enqueue(new Callback<Modal>() {
+            @Override
+            public void onResponse(Call<Modal> call, Response<Modal> response) {
+                Log.d("loginto", "" + response);
+                if (response.body().isSuccess()) {
+                    Toast.makeText(MainSigninSignupActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    cwd.dismiss();
+                    startActivity(new Intent(MainSigninSignupActivity.this, MainActivity.class));
+                    finish();
+                } else {
+                    cwd.dismiss();
+                    Toast.makeText(MainSigninSignupActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-                    @Override
-                    public void onFailure(Call<Modal> call, Throwable t) {
-                        cwd.dismiss();
-                        Toast.makeText(MainSigninSignupActivity.this,"Fatal Error Network Failure",Toast.LENGTH_SHORT).show();
-                        t.printStackTrace();
-                    }
-                });
+            @Override
+            public void onFailure(@NonNull Call<Modal> call, @NonNull Throwable t) {
+                cwd.dismiss();
+                Toast.makeText(MainSigninSignupActivity.this, "Fatal Error Network Failure", Toast.LENGTH_SHORT).show();
+                t.printStackTrace();
+            }
+        });
     }
 
+    void showDialogForgotPwd() {
+        dlg=new Dialog(this);
+        dlg.setContentView(R.layout.dialog_forgot_password);
+
+        ImageView imgCross=dlg.findViewById(R.id.img_cross);
+        etForgotEmail=dlg.findViewById(R.id.et_email);
+        dlg.findViewById(R.id.btn_send_mail).setOnClickListener(this);
+        imgCross.setColorFilter(getResources().getColor(R.color.customRed), PorterDuff.Mode.SRC_ATOP);
+        imgCross.setOnClickListener(this);
+        dlg.setCancelable(false);
+        dlg.setTitle("Forgot Password");
+        dlg.show();
+    }
+    private void sendEmail(){
+        Call<ForgotPwd> call=Api.getApi().forgotPassword(etForgotEmail.getText().toString(),"english");
+        call.enqueue(new Callback<ForgotPwd>() {
+            @Override
+            public void onResponse(Call<ForgotPwd> call, Response<ForgotPwd> response) {
+                Toast.makeText(MainSigninSignupActivity.this,"response",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<ForgotPwd> call, Throwable t) {
+                t.printStackTrace();
+                Toast.makeText(MainSigninSignupActivity.this,"failure",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -164,6 +208,15 @@ public class MainSigninSignupActivity extends AppCompatActivity
             case R.id.btn_signup_signin:// button will change signup to signin
                 rlSignin.setVisibility(View.VISIBLE);
                 rlSignup.setVisibility(View.GONE);
+                break;
+            case R.id.txt_forgot_password:
+                showDialogForgotPwd();
+                break;
+            case R.id.img_cross:
+                dlg.dismiss();
+                break;
+            case R.id.btn_send_mail:
+                sendEmail();
                 break;
 
         }

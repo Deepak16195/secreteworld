@@ -1,5 +1,6 @@
 package com.credosys.solutions.secrete.world.ApiCall;
 
+import com.credosys.solutions.secrete.world.Pojos.ApiModalList.ForgotPwd;
 import com.credosys.solutions.secrete.world.Pojos.ApiModalList.Modal;
 
 import retrofit2.Call;
@@ -16,4 +17,9 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("api.php?o=login")
     Call<Modal> login(@Field("email") String uEmail, @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("api.php?o=forgottenPassword")
+    Call<ForgotPwd> forgotPassword(@Field("email") String email, @Field("language") String lang);
+
 }
