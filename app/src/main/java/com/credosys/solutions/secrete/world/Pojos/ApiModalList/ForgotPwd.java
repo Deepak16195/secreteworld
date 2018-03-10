@@ -10,8 +10,8 @@ import java.io.Serializable;
  */
 
 public class ForgotPwd implements Serializable {
-    @Expose
-    String status;
+    @SerializedName("status")
+    private  String status;
 
     public String getStatus() {
         return status;

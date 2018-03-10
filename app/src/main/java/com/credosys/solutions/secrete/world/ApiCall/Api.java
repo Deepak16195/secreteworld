@@ -26,7 +26,7 @@ public class Api {
         return retrofit;
     }
 
-    public static ApiInterface getApi() {
+    public ApiInterface getApi() {
         if (retrofit == null) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);

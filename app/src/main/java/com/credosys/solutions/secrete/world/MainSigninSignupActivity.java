@@ -1,29 +1,21 @@
 package com.credosys.solutions.secrete.world;
 
-
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,22 +23,20 @@ import android.widget.Toast;
 
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.CustomItemClickListener;
 import com.credosys.solutions.secrete.world.Adapters.NormalScroll.NavigationAdapter;
-import com.credosys.solutions.secrete.world.ApiCall.Api;
+import com.credosys.solutions.secrete.world.ApiCall.Presenter.SigninPresenter;
+import com.credosys.solutions.secrete.world.ApiCall.View.SigninView;
 import com.credosys.solutions.secrete.world.Pojos.ApiModalList.ForgotPwd;
 import com.credosys.solutions.secrete.world.Pojos.ApiModalList.Modal;
 import com.credosys.solutions.secrete.world.Pojos.App.Navigation;
+import com.credosys.solutions.secrete.world.ApiCall.Presenter.ForgotPasswordPresenter;
+import com.credosys.solutions.secrete.world.Utility.CommonMessageDialog;
 import com.credosys.solutions.secrete.world.Utility.CommonWaitingDialog;
-
-import org.json.JSONObject;
-
+import com.credosys.solutions.secrete.world.ApiCall.View.ForgotPasswordView;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-public class MainSigninSignupActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainSigninSignupActivity extends AppCompatActivity implements View.OnClickListener,ForgotPasswordView,SigninView {
     EditText etUsername, etPassword,etForgotEmail;
     CommonWaitingDialog cwd;
     Button btnLogin, btnCreateAc, btnSigninSignup, btnSignupSignin;
@@ -137,35 +127,35 @@ public class MainSigninSignupActivity extends AppCompatActivity implements View.
 
     private void gotoHome() {
         cwd.show();
-        Call<Modal> ulogin = Api.getApi().login(etUsername.getText().toString(), etPassword.getText().toString());
-        ulogin.enqueue(new Callback<Modal>() {
-            @Override
-            public void onResponse(Call<Modal> call, Response<Modal> response) {
-                Log.d("loginto", "" + response);
-                if (response.body().isSuccess()) {
-                    Toast.makeText(MainSigninSignupActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                    cwd.dismiss();
-                    startActivity(new Intent(MainSigninSignupActivity.this, MainActivity.class));
-                    finish();
-                } else {
-                    cwd.dismiss();
-                    Toast.makeText(MainSigninSignupActivity.this, "failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Modal> call, @NonNull Throwable t) {
-                cwd.dismiss();
-                Toast.makeText(MainSigninSignupActivity.this, "Fatal Error Network Failure", Toast.LENGTH_SHORT).show();
-                t.printStackTrace();
-            }
-        });
+        new SigninPresenter(this).signin(etUsername.getText().toString(), etPassword.getText().toString());
+//        Call<Modal> ulogin = new Api().getApi().login(etUsername.getText().toString(), etPassword.getText().toString());
+//        ulogin.enqueue(new Callback<Modal>() {
+//            @Override
+//            public void onResponse(Call<Modal> call, Response<Modal> response) {
+//                Log.d("loginto", "" + response);
+//                if (response.body().isSuccess()) {
+//                    Toast.makeText(MainSigninSignupActivity.this, "Success", Toast.LENGTH_SHORT).show();
+//                    cwd.dismiss();
+//                    startActivity(new Intent(MainSigninSignupActivity.this, MainActivity.class));
+//                    finish();
+//                } else {
+//                    cwd.dismiss();
+//                    Toast.makeText(MainSigninSignupActivity.this, "failed", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(@NonNull Call<Modal> call, @NonNull Throwable t) {
+//                cwd.dismiss();
+//                Toast.makeText(MainSigninSignupActivity.this, "Fatal Error Network Failure", Toast.LENGTH_SHORT).show();
+//                t.printStackTrace();
+//            }
+//        });
     }
 
     void showDialogForgotPwd() {
         dlg=new Dialog(this);
         dlg.setContentView(R.layout.dialog_forgot_password);
-
         ImageView imgCross=dlg.findViewById(R.id.img_cross);
         etForgotEmail=dlg.findViewById(R.id.et_email);
         dlg.findViewById(R.id.btn_send_mail).setOnClickListener(this);
@@ -175,21 +165,21 @@ public class MainSigninSignupActivity extends AppCompatActivity implements View.
         dlg.setTitle("Forgot Password");
         dlg.show();
     }
-    private void sendEmail(){
-        Call<ForgotPwd> call=Api.getApi().forgotPassword(etForgotEmail.getText().toString(),"english");
-        call.enqueue(new Callback<ForgotPwd>() {
-            @Override
-            public void onResponse(Call<ForgotPwd> call, Response<ForgotPwd> response) {
-                Toast.makeText(MainSigninSignupActivity.this,"response",Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<ForgotPwd> call, Throwable t) {
-                t.printStackTrace();
-                Toast.makeText(MainSigninSignupActivity.this,"failure",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void sendEmail(){
+//        Call<ForgotPwd> call=new Api().getApi().forgotPassword(etForgotEmail.getText().toString(),"english");
+//        call.enqueue(new Callback<ForgotPwd>() {
+//            @Override
+//            public void onResponse(Call<ForgotPwd> call, Response<ForgotPwd> response) {
+//                Toast.makeText(MainSigninSignupActivity.this,"response",Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ForgotPwd> call, Throwable t) {
+//                t.printStackTrace();
+//                Toast.makeText(MainSigninSignupActivity.this,"failure",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -216,9 +206,37 @@ public class MainSigninSignupActivity extends AppCompatActivity implements View.
                 dlg.dismiss();
                 break;
             case R.id.btn_send_mail:
-                sendEmail();
+                new ForgotPasswordPresenter(this).sendEmail(etForgotEmail.getText().toString(),"english");
+                cwd.show();
+
                 break;
 
+        }
+    }
+
+    @Override
+    public void forgotPass(ForgotPwd forgotPwd) {
+        cwd.dismiss();
+        dlg.dismiss();
+        Log.d("forgottnpass",forgotPwd.getStatus());
+        if(Boolean.valueOf(forgotPwd.getStatus())){
+            MainApplication.getInstance().show(this,"Email Has been sent\n please Reset password");
+        }else{
+            MainApplication.getInstance().show(this,"Email Has been Failed\n try Sign up");
+        }
+    }
+
+    @Override
+    public void signin(Modal modal) {
+        Log.d("loginto", "" + modal);
+        if (modal.isSuccess()) {
+            Toast.makeText(MainSigninSignupActivity.this, "Success", Toast.LENGTH_SHORT).show();
+            cwd.dismiss();
+            startActivity(new Intent(MainSigninSignupActivity.this, MainActivity.class));
+            finish();
+        } else {
+            cwd.dismiss();
+            Toast.makeText(MainSigninSignupActivity.this, "failed", Toast.LENGTH_SHORT).show();
         }
     }
 }
