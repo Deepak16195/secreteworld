@@ -187,15 +187,28 @@
                     android:text="or"
                     android:textSize="16sp" />
             </RelativeLayout>
-
             <EditText
-                android:id="@+id/et_fullname_signup"
+                android:id="@+id/et_name_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/avenirltstd_book"
-                android:hint="Full Name"
+                android:hint="First Name"
+                android:textSize="12sp"
+                android:inputType="textEmailAddress"
+                android:padding="5dp"
+                />
+
+            <EditText
+                android:id="@+id/et_last_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/avenirltstd_book"
+                android:hint="Last Name"
                 android:textSize="12sp"
                 android:inputType="textEmailAddress"
                 android:padding="5dp"

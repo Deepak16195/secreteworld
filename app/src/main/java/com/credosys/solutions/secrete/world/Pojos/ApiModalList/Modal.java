@@ -1,5 +1,6 @@
 package com.credosys.solutions.secrete.world.Pojos.ApiModalList;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -7,11 +8,34 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Modal {
-
+    @Expose
     private String message;
+    @Expose
     private String redirect;
+    @Expose
     private boolean success;
+    @Expose
     private boolean status;
+    @Expose
+    private boolean registered;
+    @Expose
+    private boolean emailSent;
+
+    public boolean isRegistered() {
+        return registered;
+    }
+
+    public void setRegistered(boolean registered) {
+        this.registered = registered;
+    }
+
+    public boolean isEmailSent() {
+        return emailSent;
+    }
+
+    public void setEmailSent(boolean emailSent) {
+        this.emailSent = emailSent;
+    }
 
     public boolean isStatus() {
         return status;
