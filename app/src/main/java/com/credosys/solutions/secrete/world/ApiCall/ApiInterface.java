@@ -26,7 +26,7 @@ public interface ApiInterface {
     @POST("api.php?o=forgottenPassword")
     Call<ForgotPwd> forgotPassword(@Field("email") String email, @Field("language") String lang);
 
-    @FormUrlEncoded
+
     @POST("api.php?o=registerUser")
-    Call<Modal> signUp(JSONObject jsonObject);
+    Call<Modal> signUp(@Body JSONObject jsonObject);
 }
