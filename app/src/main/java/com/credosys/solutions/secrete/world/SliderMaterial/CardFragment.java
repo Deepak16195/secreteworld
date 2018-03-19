@@ -35,7 +35,6 @@ public class CardFragment extends Fragment {
         imgDiaryCardBackground=view.findViewById(R.id.img_diary_card_background);
         imgDiaryCardForeground=view.findViewById(R.id.img_diary_card_foreground);
         setEachCard();
-
         return view;
     }
     public void setEachCard(){
