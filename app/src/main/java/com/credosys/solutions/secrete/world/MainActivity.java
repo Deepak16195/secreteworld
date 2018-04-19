@@ -4,6 +4,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.databinding.DataBindingUtil;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -112,6 +113,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         mainApp = MainApplication.getInstance();
         mainApp.setMainActivity(this);
+//       MainActivityBinding binding= DataBindingUtil.setContentView(this,R.layout.activity_main);
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
